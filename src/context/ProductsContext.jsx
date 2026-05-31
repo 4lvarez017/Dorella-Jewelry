@@ -12,7 +12,7 @@ export function ProductsProvider({ children }) {
     loadProducts();
   }, []);
 
-  const loadProducts = async () => {
+  async function loadProducts() {
     try {
       let data = [];
       try {
@@ -54,7 +54,7 @@ export function ProductsProvider({ children }) {
 
       // Dar formato a los productos (convertir a formato esperado por el frontend)
       const formatted = data.map((p) => {
-        let imgs = [];
+        let imgs;
         try {
           imgs = typeof p.images === "string" ? JSON.parse(p.images) : p.images;
         } catch (_) {
@@ -84,7 +84,7 @@ export function ProductsProvider({ children }) {
         }))
       );
     }
-  };
+  }
 
   // Agregar un producto nuevo
   const addProduct = async (newProduct) => {

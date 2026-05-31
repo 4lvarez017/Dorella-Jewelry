@@ -7,63 +7,68 @@ const TAB_TITLES = {
   pedidos:    "Pedidos",
 };
 
-export function AdminHeader({ activeTab, onMenuOpen, onAddProduct, selectedProdCategory }) {
-  const showAdd = activeTab === "productos" && !!selectedProdCategory;
+export function AdminHeader({ activeTab, onMenuOpen, isOpen, pendingOrders, onAddProduct }) {
+  const showAdd = activeTab === "productos";
 
   return (
     <header className="admin-mobile-header">
-      {/* Hamburger */}
+      {/* ── Hamburguesa animada ── */}
       <button
         onClick={onMenuOpen}
-        style={{
-          background: "none", border: "none",
-          cursor: "pointer", padding: 4,
-          display: "flex", flexDirection: "column", gap: 5,
-        }}
-        aria-label="Abrir menú"
+        className={`admin-hamburger${isOpen ? " open" : ""}`}
+        aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
+        style={{ position: "relative" }}
       >
-        {[0,1,2].map(i => (
-          <span key={i} style={{
-            display: "block",
-            width: i === 1 ? 18 : 24,
-            height: 2,
-            background: A.textPrimary,
-            borderRadius: 2,
-            transition: "width 0.2s",
-          }} />
-        ))}
+        <span />
+        <span />
+        <span />
+
+        {/* Badge de pedidos pendientes sobre el hamburger */}
+        {pendingOrders > 0 && !isOpen && (
+          <span style={{
+            position: "absolute", top: -4, right: -6,
+            minWidth: 16, height: 16, borderRadius: 8,
+            background: A.danger, color: "#fff",
+            fontSize: 9, fontWeight: 800,
+            display: "flex", alignItems: "center", justifyContent: "center",
+            border: "2px solid white",
+            padding: "0 3px",
+            animation: "pulseBadge 2s infinite",
+          }}>
+            {pendingOrders > 9 ? "9+" : pendingOrders}
+          </span>
+        )}
       </button>
 
-      {/* Logo centrado */}
+      {/* ── Título de sección ── */}
       <div style={{
         fontFamily: "'Cormorant Garamond', serif",
-        fontSize: 19,
-        fontWeight: 600,
-        color: A.goldDark,
-        letterSpacing: "0.5px",
+        fontSize: 19, fontWeight: 600,
+        color: A.goldDark, letterSpacing: "0.5px",
+        textAlign: "center",
       }}>
         {TAB_TITLES[activeTab] || "Admin"}
       </div>
 
-      {/* CTA contextual */}
+      {/* ── CTA contextual (solo en Productos) ── */}
       {showAdd ? (
         <button
           onClick={onAddProduct}
           style={{
-            background: A.gold,
-            border: "none", borderRadius: 8,
-            width: 34, height: 34,
+            background: `linear-gradient(135deg, ${A.gold}, ${A.goldLight})`,
+            border: "none", borderRadius: 9,
+            width: 36, height: 36,
             display: "flex", alignItems: "center", justifyContent: "center",
-            fontSize: 20, cursor: "pointer",
-            boxShadow: "0 2px 8px rgba(201,168,76,0.35)",
-            color: "#FFF",
+            fontSize: 22, cursor: "pointer", lineHeight: 1,
+            boxShadow: `0 2px 10px rgba(201,168,76,0.40)`,
+            color: "#FFF", fontWeight: 700,
           }}
           aria-label="Nuevo producto"
         >
           +
         </button>
       ) : (
-        <div style={{ width: 34 }} />
+        <div style={{ width: 36 }} />
       )}
     </header>
   );

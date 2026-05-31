@@ -107,27 +107,7 @@ export function HeroSection({ onExplore }) {
     };
   }, []);
 
-  // Butter-smooth render loop (constantly runs, lerping progress for ultimate fluidity)
-  useEffect(() => {
-    let animId;
-
-    const renderLoop = () => {
-      const diff = scrollProgressRef.current - smoothProgressRef.current;
-      smoothProgressRef.current += diff * 0.075;
-
-      timeRef.current += 0.015;
-      floatOffsetRef.current = Math.sin(timeRef.current) * 6;
-
-      updateVisuals(smoothProgressRef.current);
-
-      animId = requestAnimationFrame(renderLoop);
-    };
-
-    animId = requestAnimationFrame(renderLoop);
-    return () => cancelAnimationFrame(animId);
-  }, [isMobile]);
-
-  const updateVisuals = (progress) => {
+  function updateVisuals(progress) {
     // 1. Calculate Opacities for 5 layers
     let op1 = 0;
     let op2 = 0;
@@ -255,7 +235,27 @@ export function HeroSection({ onExplore }) {
     updateCard(card3Ref, op3);
     updateCard(card4Ref, op4);
     updateCard(card5Ref, op5);
-  };
+  }
+
+  // Butter-smooth render loop (constantly runs, lerping progress for ultimate fluidity)
+  useEffect(() => {
+    let animId;
+
+    const renderLoop = () => {
+      const diff = scrollProgressRef.current - smoothProgressRef.current;
+      smoothProgressRef.current += diff * 0.075;
+
+      timeRef.current += 0.015;
+      floatOffsetRef.current = Math.sin(timeRef.current) * 6;
+
+      updateVisuals(smoothProgressRef.current);
+
+      animId = requestAnimationFrame(renderLoop);
+    };
+
+    animId = requestAnimationFrame(renderLoop);
+    return () => cancelAnimationFrame(animId);
+  }, [isMobile]);;
 
   // Canvas particle loop
   useEffect(() => {

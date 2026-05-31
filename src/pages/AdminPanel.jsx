@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { adminCSS } from "../components/admin/AdminTheme";
+import { adminCSS, A } from "../components/admin/AdminTheme";
 import { AdminSidebar } from "../components/admin/AdminSidebar";
 import { AdminHeader }  from "../components/admin/AdminHeader";
 import { DashboardTab } from "../components/admin/DashboardTab";
@@ -20,7 +20,7 @@ function saveLocalOrders(orders) {
   catch (_) {}
 }
 
-// ─── Calcular ventas últimos 7 días ───────────────────────────────────────────
+// ─── Ventas últimos 7 días ────────────────────────────────────────────────────
 function getLast7DaysSales(orders) {
   const salesMap = {};
   const today = new Date();
@@ -33,17 +33,17 @@ function getLast7DaysSales(orders) {
       total: 0,
     };
   }
-  orders.filter((o) => o.status === "Completado").forEach((o) => {
+  orders.filter(o => o.status === "Completado").forEach(o => {
     const key = (o.created_at || "").split("T")[0];
     if (salesMap[key]) salesMap[key].total += o.total || 0;
   });
   return Object.values(salesMap);
 }
 
-// ─── Distribución de métodos de pago ─────────────────────────────────────────
+// ─── Métodos de pago ──────────────────────────────────────────────────────────
 function getPaymentStats(orders) {
   const stats = {};
-  orders.forEach((o) => {
+  orders.forEach(o => {
     const m = o.payment_method || "Efectivo";
     stats[m] = (stats[m] || 0) + 1;
   });
@@ -53,12 +53,12 @@ function getPaymentStats(orders) {
     .sort((a, b) => b.count - a.count);
 }
 
-// ─── Top 3 productos más vendidos ─────────────────────────────────────────────
+// ─── Top productos vendidos ───────────────────────────────────────────────────
 function getTopProducts(orders) {
   const counts = {};
-  orders.filter((o) => o.status === "Completado").forEach((o) => {
+  orders.filter(o => o.status === "Completado").forEach(o => {
     try {
-      JSON.parse(o.items || "[]").forEach((item) => {
+      JSON.parse(o.items || "[]").forEach(item => {
         counts[item.name] = (counts[item.name] || 0) + item.qty;
       });
     } catch (_) {}
@@ -69,17 +69,17 @@ function getTopProducts(orders) {
     .slice(0, 3);
 }
 
-// ─── Exportar a CSV ───────────────────────────────────────────────────────────
+// ─── Exportar CSV ─────────────────────────────────────────────────────────────
 function exportToCSV(orders) {
   const headers = ["ID", "Cliente", "Teléfono", "Dirección", "Ciudad", "Pago", "Total", "Estado", "Productos"];
-  const rows = orders.map((o) => {
-    let items = "";
-    try { items = JSON.parse(o.items || "[]").map((i) => `${i.name} (x${i.qty})`).join("; "); }
+  const rows = orders.map(o => {
+    let items;
+    try { items = JSON.parse(o.items || "[]").map(i => `${i.name} (x${i.qty})`).join("; "); }
     catch (_) { items = o.items || ""; }
     return [o.id, o.customer_name, o.phone, o.address, o.city, o.payment_method, o.total, o.status, items];
   });
   const csv = "data:text/csv;charset=utf-8,\uFEFF"
-    + [headers.join(","), ...rows.map((r) => r.map((v) => `"${String(v ?? "").replace(/"/g, '""')}"`).join(","))].join("\n");
+    + [headers.join(","), ...rows.map(r => r.map(v => `"${String(v ?? "").replace(/"/g, '""')}"`).join(","))].join("\n");
   const link = document.createElement("a");
   link.setAttribute("href", encodeURI(csv));
   link.setAttribute("download", `pedidos_dorella_${new Date().toISOString().split("T")[0]}.csv`);
@@ -92,16 +92,23 @@ function exportToCSV(orders) {
 export function AdminPanel({ activeTab, setActiveTab, onLogout }) {
   const { products, addProduct, updateProduct, deleteProduct, toggleVisibility } = useProducts();
 
-  // Sidebar drawer (móvil)
   const [sidebarOpen, setSidebarOpen] = useState(false);
-
-  // Pedidos
-  const [orders, setOrders]                   = useState([]);
-  const [loadingOrders, setLoadingOrders]     = useState(true);
+  const [orders, setOrders]           = useState([]);
+  const [loadingOrders, setLoadingOrders] = useState(true);
   const [supabaseAvailable, setSupabaseAvail] = useState(true);
-
-  // Ref para acción de "nuevo producto" desde el header móvil
   const addProductMobileRef = useRef(null);
+
+  // ── Toast system ────────────────────────────────────────────────────────────
+  const [toasts, setToasts] = useState([]);
+  const addToast = (message, type = "success") => {
+    const id = Date.now() + Math.random();
+    setToasts(t => [...t, { id, message, type }]);
+    setTimeout(() => setToasts(t => t.filter(x => x.id !== id)), 3800);
+  };
+
+  // ── Confirm modal ───────────────────────────────────────────────────────────
+  const [confirmModal, setConfirmModal] = useState(null);
+  const showConfirm = (message, onConfirm) => setConfirmModal({ message, onConfirm });
 
   // ── Cargar pedidos ──────────────────────────────────────────────────────────
   async function fetchOrders() {
@@ -109,8 +116,8 @@ export function AdminPanel({ activeTab, setActiveTab, onLogout }) {
     const local = getLocalOrders();
     try {
       const remote = await supabaseFetch("/orders?select=*&order=created_at.desc");
-      const remoteIds = new Set(remote.map((o) => o.id));
-      const onlyLocal = local.filter((o) => !remoteIds.has(o.id));
+      const remoteIds = new Set(remote.map(o => o.id));
+      const onlyLocal = local.filter(o => !remoteIds.has(o.id));
       const merged = [...remote, ...onlyLocal].sort(
         (a, b) => new Date(b.created_at) - new Date(a.created_at)
       );
@@ -122,13 +129,11 @@ export function AdminPanel({ activeTab, setActiveTab, onLogout }) {
         setOrders(local.sort((a, b) => new Date(b.created_at) - new Date(a.created_at)));
       } else {
         const today = new Date();
-        setOrders(
-          MOCK_ORDERS.map((o, idx) => {
-            const d = new Date(today);
-            d.setDate(today.getDate() - idx * 2);
-            return { ...o, created_at: d.toISOString(), _isMock: true };
-          })
-        );
+        setOrders(MOCK_ORDERS.map((o, idx) => {
+          const d = new Date(today);
+          d.setDate(today.getDate() - idx * 2);
+          return { ...o, created_at: d.toISOString(), _isMock: true };
+        }));
       }
     }
     setLoadingOrders(false);
@@ -136,7 +141,7 @@ export function AdminPanel({ activeTab, setActiveTab, onLogout }) {
 
   useEffect(() => { fetchOrders(); }, []);
 
-  // ── Actualizar estado de pedido ────────────────────────────────────────────
+  // ── Actualizar estado de pedido ─────────────────────────────────────────────
   async function updateOrderStatus(id, status) {
     try {
       await supabaseFetch(`/orders?id=eq.${id}`, {
@@ -144,40 +149,51 @@ export function AdminPanel({ activeTab, setActiveTab, onLogout }) {
         body: JSON.stringify({ status }),
       });
     } catch (_) {}
-    const updated = getLocalOrders().map((o) => (o.id === id ? { ...o, status } : o));
+    const updated = getLocalOrders().map(o => o.id === id ? { ...o, status } : o);
     saveLocalOrders(updated);
-    setOrders((prev) => prev.map((o) => (o.id === id ? { ...o, status } : o)));
+    setOrders(prev => prev.map(o => o.id === id ? { ...o, status } : o));
+    addToast(`Estado → ${status} ✓`);
   }
 
-  // ── Ayudante para stats por categoría ─────────────────────────────────────
-  const getCategoryStats = (name) => {
-    const cat = products.filter((p) => (p.category || "").startsWith(name));
+  // ── Eliminar pedido ─────────────────────────────────────────────────────────
+  async function deleteOrder(id) {
+    try {
+      await supabaseFetch(`/orders?id=eq.${id}`, { method: "DELETE" });
+    } catch (_) {}
+    const updated = getLocalOrders().filter(o => o.id !== id);
+    saveLocalOrders(updated);
+    setOrders(prev => prev.filter(o => o.id !== id));
+    addToast("Pedido eliminado", "error");
+  }
+
+  // ── Stats por categoría ─────────────────────────────────────────────────────
+  const getCategoryStats = name => {
+    const cat = products.filter(p => (p.category || "").startsWith(name));
     return {
       count:    cat.length,
       stock:    cat.reduce((s, p) => s + (p.stock || 0), 0),
-      lowStock: cat.filter((p) => (p.stock || 0) < 5).length,
+      lowStock: cat.filter(p => (p.stock || 0) < 5).length,
     };
   };
 
-  // ── Datos calculados para el Dashboard ────────────────────────────────────
+  // ── Dashboard data ──────────────────────────────────────────────────────────
   const chartSalesData = getLast7DaysSales(orders);
   const paymentStats   = getPaymentStats(orders);
   const topProducts    = getTopProducts(orders);
-  const pendingCount   = orders.filter((o) => o.status === "Pendiente").length;
+  const pendingCount   = orders.filter(o => o.status === "Pendiente").length;
 
-  // ── Tab change helper ──────────────────────────────────────────────────────
-  const handleTabChange = (tab) => {
+  // ── Tab change ──────────────────────────────────────────────────────────────
+  const handleTabChange = tab => {
     setActiveTab(tab);
     setSidebarOpen(false);
   };
 
   return (
     <>
-      {/* CSS del admin panel */}
       <style>{adminCSS}</style>
 
       <div className="admin-wrap">
-        {/* ── Sidebar ── */}
+        {/* Sidebar */}
         <AdminSidebar
           activeTab={activeTab}
           onTabChange={handleTabChange}
@@ -187,33 +203,30 @@ export function AdminPanel({ activeTab, setActiveTab, onLogout }) {
           onClose={() => setSidebarOpen(false)}
         />
 
-        {/* ── Área principal ── */}
+        {/* Área principal */}
         <div className="admin-main">
-          {/* Header móvil */}
           <AdminHeader
             activeTab={activeTab}
             onMenuOpen={() => setSidebarOpen(true)}
+            isOpen={sidebarOpen}
+            pendingOrders={pendingCount}
             onAddProduct={() => addProductMobileRef.current?.()}
-            selectedProdCategory={null /* ProductosTab maneja su propio estado */}
           />
 
-          {/* Contenido */}
           <main className="admin-content">
-            {/* Título de sección (solo desktop) */}
+            {/* Título + subtítulo */}
             <div style={{ marginBottom: 28 }}>
               <h1 style={{
                 fontFamily: "'Cormorant Garamond', serif",
                 fontSize: "clamp(24px, 3vw, 34px)",
-                fontWeight: 600,
-                color: "#9A7A2E",
-                lineHeight: 1.1,
+                fontWeight: 600, color: A.goldDark, lineHeight: 1.1,
               }}>
                 {activeTab === "dashboard"  && "Dashboard"}
                 {activeTab === "inventario" && "Inventario"}
                 {activeTab === "productos"  && "Productos"}
                 {activeTab === "pedidos"    && "Pedidos"}
               </h1>
-              <p style={{ fontSize: 13, color: "#6B6B70", marginTop: 6 }}>
+              <p style={{ fontSize: 13, color: A.textSecondary, marginTop: 6 }}>
                 {activeTab === "dashboard"  && "Resumen en tiempo real de finanzas, ventas y existencias."}
                 {activeTab === "inventario" && "Controla el stock de cada categoría de joyería."}
                 {activeTab === "productos"  && "Gestiona precios, visibilidad y registro de piezas."}
@@ -221,7 +234,7 @@ export function AdminPanel({ activeTab, setActiveTab, onLogout }) {
               </p>
             </div>
 
-            {/* Pestañas */}
+            {/* ── Tabs ── */}
             {activeTab === "dashboard" && (
               <DashboardTab
                 orders={orders}
@@ -239,6 +252,8 @@ export function AdminPanel({ activeTab, setActiveTab, onLogout }) {
                 updateProduct={updateProduct}
                 deleteProduct={deleteProduct}
                 getCategoryStats={getCategoryStats}
+                addToast={addToast}
+                showConfirm={showConfirm}
               />
             )}
 
@@ -250,7 +265,9 @@ export function AdminPanel({ activeTab, setActiveTab, onLogout }) {
                 toggleVisibility={toggleVisibility}
                 addProduct={addProduct}
                 getCategoryStats={getCategoryStats}
-                onAddProductMobile={addProductMobileRef}
+                onAddProductMobileRef={addProductMobileRef}
+                addToast={addToast}
+                showConfirm={showConfirm}
               />
             )}
 
@@ -262,11 +279,71 @@ export function AdminPanel({ activeTab, setActiveTab, onLogout }) {
                 onStatusChange={updateOrderStatus}
                 onRefresh={fetchOrders}
                 onExportCSV={() => exportToCSV(orders)}
+                onDeleteOrder={deleteOrder}
+                showConfirm={showConfirm}
               />
             )}
           </main>
         </div>
       </div>
+
+      {/* ── Toast container ── */}
+      <div className="admin-toast-container">
+        {toasts.map(t => (
+          <div key={t.id} className={`admin-toast admin-toast-${t.type}`}>
+            <span style={{ fontSize: 16, flexShrink: 0 }}>
+              {t.type === "success" && "✓"}
+              {t.type === "error"   && "✕"}
+              {t.type === "info"    && "ℹ"}
+            </span>
+            {t.message}
+          </div>
+        ))}
+      </div>
+
+      {/* ── Confirm modal ── */}
+      {confirmModal && (
+        <div
+          className="admin-confirm-overlay"
+          onClick={() => setConfirmModal(null)}
+        >
+          <div
+            className="admin-confirm-box"
+            onClick={e => e.stopPropagation()}
+          >
+            <div style={{ fontSize: 52, marginBottom: 16 }}>⚠️</div>
+            <h3 style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: 22, fontWeight: 600,
+              color: A.textPrimary, marginBottom: 12,
+            }}>
+              ¿Confirmar acción?
+            </h3>
+            <p style={{ fontSize: 14, color: A.textSecondary, lineHeight: 1.65, marginBottom: 28 }}>
+              {confirmModal.message}
+            </p>
+            <div style={{ display: "flex", gap: 12 }}>
+              <button
+                className="admin-btn-secondary"
+                style={{ flex: 1, padding: "12px 0" }}
+                onClick={() => setConfirmModal(null)}
+              >
+                Cancelar
+              </button>
+              <button
+                className="admin-btn-danger"
+                style={{ flex: 1, padding: "12px 0", background: A.dangerBg }}
+                onClick={() => {
+                  confirmModal.onConfirm();
+                  setConfirmModal(null);
+                }}
+              >
+                Sí, eliminar
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }
