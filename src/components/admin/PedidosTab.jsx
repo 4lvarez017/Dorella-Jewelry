@@ -307,7 +307,7 @@ function OrderCard({ o, onViewDetail, onStatusChange }) {
 // ─── Tab Principal ────────────────────────────────────────────────────────────
 export function PedidosTab({
   orders, loadingOrders, supabaseAvailable,
-  onStatusChange, onRefresh, onExportCSV, onDeleteOrder, showConfirm,
+  onStatusChange, onRefresh, onExportPDF, onExportExcel, onDeleteOrder, showConfirm,
 }) {
   const [filterStatus, setFilterStatus] = useState("Todos");
   const [search, setSearch] = useState("");
@@ -378,11 +378,18 @@ export function PedidosTab({
               🔄 Actualizar
             </button>
             <button
-              onClick={onExportCSV}
+              onClick={onExportPDF}
               className="admin-btn-secondary"
               style={{ display: "flex", alignItems: "center", gap: 6, flexShrink: 0 }}
             >
-              ⬇️ CSV
+              📄 PDF
+            </button>
+            <button
+              onClick={onExportExcel}
+              className="admin-btn-secondary"
+              style={{ display: "flex", alignItems: "center", gap: 6, flexShrink: 0 }}
+            >
+              📊 Excel
             </button>
           </div>
 
