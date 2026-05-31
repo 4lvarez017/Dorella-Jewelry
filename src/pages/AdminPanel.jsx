@@ -150,7 +150,7 @@ function ProductFormModal({ product, defaultCategory, onClose, onSave }) {
         price: product.price || "",
         stock: product.stock !== undefined ? product.stock : "",
         desc: product.desc || "",
-        image: product.image || "",
+        image: Array.isArray(product.images) ? product.images.join(", ") : (product.image || ""),
       });
     } else if (defaultCategory) {
       setForm((f) => ({ ...f, category: defaultCategory }));
@@ -168,13 +168,18 @@ function ProductFormModal({ product, defaultCategory, onClose, onSave }) {
       return;
     }
     
+    const imagesArray = form.image
+      ? form.image.split(",").map((url) => url.trim()).filter(Boolean)
+      : ["https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80"];
+
     const itemData = {
       name: form.name,
       category: form.category,
       price: Number(form.price),
       stock: form.stock !== "" ? Number(form.stock) : 10,
       desc: form.desc,
-      image: form.image || "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80", // placeholder lujo
+      images: imagesArray,
+      image: imagesArray[0] || "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80",
     };
 
     onSave(itemData);
@@ -305,13 +310,13 @@ function ProductFormModal({ product, defaultCategory, onClose, onSave }) {
           </div>
 
           <div>
-            <label style={{ fontSize: "12px", fontWeight: 600, color: LIGHT_THEME.textPrimary, textTransform: "uppercase" }}>URL de la Imagen</label>
+            <label style={{ fontSize: "12px", fontWeight: 600, color: LIGHT_THEME.textPrimary, textTransform: "uppercase" }}>URLs de las Imágenes (separadas por comas)</label>
             <input
               type="text"
               name="image"
               value={form.image}
               onChange={handleChange}
-              placeholder="https://..."
+              placeholder="https://ejemplo.com/foto1.jpg, https://ejemplo.com/foto2.jpg"
               style={{
                 width: "100%",
                 padding: "10px 14px",

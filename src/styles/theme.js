@@ -123,7 +123,13 @@ export const globalCSS = `
     border: 1px solid rgba(201,168,76,0.3);
   }
 
-  /* ── Product cards ── */
+  /* ── Product grids & cards ── */
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+  }
+
   .product-card {
     background: ${G.white};
     border: 1px solid ${G.creamDark};
@@ -131,16 +137,20 @@ export const globalCSS = `
     cursor: pointer;
     transition: transform 0.3s, box-shadow 0.3s;
     position: relative;
-    width: 280px;
+    width: 100%;
+    max-width: 280px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
   }
   .product-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 12px 40px rgba(201,168,76,0.15);
   }
   .product-card img {
-    width: 280px;
-    height: 280px;
+    width: 100%;
+    aspect-ratio: 1;
     object-fit: cover;
     transition: transform 0.5s;
     display: block;
@@ -154,16 +164,20 @@ export const globalCSS = `
     cursor: pointer;
     transition: transform 0.3s, border-color 0.3s;
     position: relative;
-    width: 280px;
+    width: 100%;
+    max-width: 280px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
   }
   .dark-product-card:hover {
     transform: translateY(-4px);
     border-color: ${G.gold};
   }
   .dark-product-card img {
-    width: 280px;
-    height: 280px;
+    width: 100%;
+    aspect-ratio: 1;
     object-fit: cover;
     transition: transform 0.5s;
     display: block;
@@ -417,6 +431,53 @@ export const globalCSS = `
     .nav-links-desktop { display: none !important; }
     .main-content { margin-left: 0 !important; }
     .brand-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+  }
+
+  @media (max-width: 600px) {
+    .product-grid {
+      grid-template-columns: repeat(2, 1fr) !important;
+      gap: 12px !important;
+    }
+    .product-card, .dark-product-card {
+      max-width: 100% !important;
+    }
+    .product-card .tag,
+    .dark-product-card .tag {
+      font-size: 8px !important;
+      padding: 1px 6px !important;
+    }
+    .product-card .serif,
+    .dark-product-card .serif {
+      font-size: 14px !important;
+      margin-top: 4px !important;
+      line-height: 1.2 !important;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .product-card p:not(.serif):not(.tag),
+    .dark-product-card p:not(.serif):not(.tag) {
+      font-size: 11px !important;
+      min-height: auto !important;
+      margin-top: 2px !important;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    /* Controlar el padding de la sección de texto de las tarjetas */
+    .product-card > div:last-child,
+    .dark-product-card > div:last-child {
+      padding: 10px !important;
+    }
+    /* Estilos de botones de compra en móviles para grilla de 2 columnas */
+    .product-card .overlay-add .gold-btn,
+    .dark-product-card .overlay-add .gold-btn {
+      font-size: 9px !important;
+      padding: 6px 12px !important;
+      letter-spacing: 0.5px !important;
+    }
   }
 `;
 

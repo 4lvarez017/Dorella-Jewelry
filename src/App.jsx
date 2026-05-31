@@ -13,7 +13,9 @@ export default function App() {
   const [page, setPage] = useState("home");
   const [activeCategory, setActiveCategory] = useState("Todos");
   const [selectedProduct, setSelectedProduct] = useState(null);
-  const [adminLoggedIn, setAdminLoggedIn] = useState(false);
+  const [adminLoggedIn, setAdminLoggedIn] = useState(() => {
+    return localStorage.getItem("dorella_admin_logged_in") === "true";
+  });
 
   const [adminTab, setAdminTab] = useState("dashboard");
   // NOTE: category selection for Inventario/Productos is now internal to AdminPanel
@@ -128,10 +130,17 @@ export default function App() {
               <AdminPanel
                 activeTab={adminTab}
                 setActiveTab={(tab) => navigateTo("admin", null, null, tab)}
-                onLogout={() => { setAdminLoggedIn(false); navigateTo("home", "Todos", null); }}
+                onLogout={() => {
+                  setAdminLoggedIn(false);
+                  localStorage.removeItem("dorella_admin_logged_in");
+                  navigateTo("home", "Todos", null);
+                }}
               />
             ) : (
-              <AdminLogin onLogin={() => setAdminLoggedIn(true)} />
+              <AdminLogin onLogin={() => {
+                setAdminLoggedIn(true);
+                localStorage.setItem("dorella_admin_logged_in", "true");
+              }} />
             )
           ) : page === "product" ? (
             <ProductDetailView

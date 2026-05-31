@@ -1,146 +1,163 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import { PRODUCTS as DEFAULT_PRODUCTS } from "../data/constants";
+import { supabaseFetch } from "../lib/supabase";
 
 const ProductsContext = createContext(null);
 
 export function ProductsProvider({ children }) {
   const [products, setProducts] = useState([]);
 
-  // Carga inicial y combinación de datos
+  // Carga inicial
   useEffect(() => {
     loadProducts();
   }, []);
 
-  const loadProducts = () => {
+  const loadProducts = async () => {
     try {
-      let added = [];
+      let data = [];
       try {
-        const rawAdded = JSON.parse(localStorage.getItem("dorella_added_products") || "[]");
-        added = Array.isArray(rawAdded) ? rawAdded.filter(p => p && typeof p === "object" && p.id) : [];
-      } catch(_) {}
+        data = await supabaseFetch("/products?select=*&order=created_at.desc");
+      } catch (err) {
+        console.error("Error al obtener productos de Supabase:", err);
+        throw err;
+      }
 
-      let deletedIds = [];
-      try {
-        const rawDeleted = JSON.parse(localStorage.getItem("dorella_deleted_ids") || "[]");
-        deletedIds = Array.isArray(rawDeleted) ? rawDeleted.map(id => String(id)) : [];
-      } catch(_) {}
+      // Si la base de datos está vacía, la inicializamos con los productos por defecto
+      if (!data || data.length === 0) {
+        console.log("Base de datos vacía. Inicializando productos por defecto...");
+        const initialProducts = DEFAULT_PRODUCTS.map((p) => ({
+          id: String(p.id),
+          name: p.name,
+          category: p.category,
+          price: Number(p.price),
+          images: [p.image || "/placeholder.jpg"],
+          desc: p.desc || "",
+          stock: 12,
+          visible: true,
+        }));
 
-      let overrides = {};
-      try {
-        const rawOverrides = JSON.parse(localStorage.getItem("dorella_products_overrides") || "{}");
-        overrides = (rawOverrides && typeof rawOverrides === "object") ? rawOverrides : {};
-      } catch(_) {}
+        for (const prod of initialProducts) {
+          try {
+            await supabaseFetch("/products", {
+              method: "POST",
+              headers: { "Prefer": "return=representation" },
+              body: JSON.stringify(prod),
+            });
+          } catch (insertErr) {
+            console.error(`Error inicializando producto ${prod.name}:`, insertErr);
+          }
+        }
 
-      // 1. Filtrar productos base y aplicar overrides
-      const baseProcessed = DEFAULT_PRODUCTS.filter(
-        (p) => p && !deletedIds.includes(String(p.id))
-      ).map((p) => {
-        const itemOverride = overrides[p.id] || {};
+        // Volver a cargar para obtener el orden correcto
+        data = await supabaseFetch("/products?select=*&order=created_at.desc");
+      }
+
+      // Dar formato a los productos (convertir a formato esperado por el frontend)
+      const formatted = data.map((p) => {
+        let imgs = [];
+        try {
+          imgs = typeof p.images === "string" ? JSON.parse(p.images) : p.images;
+        } catch (_) {
+          imgs = [p.image || "/placeholder.jpg"];
+        }
+        if (!Array.isArray(imgs)) {
+          imgs = [p.image || "/placeholder.jpg"];
+        }
+
         return {
           ...p,
-          stock: itemOverride.stock !== undefined ? itemOverride.stock : 12, // Stock por defecto
-          visible: itemOverride.visible !== undefined ? itemOverride.visible : true,
-          price: itemOverride.price !== undefined ? itemOverride.price : p.price,
-          name: itemOverride.name !== undefined ? itemOverride.name : p.name,
-          desc: itemOverride.desc !== undefined ? itemOverride.desc : p.desc,
-          image: itemOverride.image !== undefined ? itemOverride.image : p.image,
+          image: imgs[0] || "/placeholder.jpg",
+          images: imgs,
         };
       });
 
-      // 2. Procesar productos agregados por el usuario
-      const addedProcessed = added.filter(
-        (p) => p && !deletedIds.includes(String(p.id))
-      ).map((p) => {
-        const itemOverride = overrides[p.id] || {};
-        return {
-          ...p,
-          stock: itemOverride.stock !== undefined ? itemOverride.stock : p.stock,
-          visible: itemOverride.visible !== undefined ? itemOverride.visible : p.visible !== false,
-          price: itemOverride.price !== undefined ? itemOverride.price : p.price,
-          name: itemOverride.name !== undefined ? itemOverride.name : p.name,
-          desc: itemOverride.desc !== undefined ? itemOverride.desc : p.desc,
-          image: itemOverride.image !== undefined ? itemOverride.image : p.image,
-        };
-      });
-
-      setProducts([...baseProcessed, ...addedProcessed]);
+      setProducts(formatted);
     } catch (e) {
-      console.error("Error al cargar productos del almacenamiento local:", e);
-      setProducts(DEFAULT_PRODUCTS.map(p => ({ ...p, stock: 12, visible: true })));
+      console.error("Carga de fallback con productos locales:", e);
+      setProducts(
+        DEFAULT_PRODUCTS.map((p) => ({
+          ...p,
+          image: p.image || "/placeholder.jpg",
+          images: [p.image || "/placeholder.jpg"],
+          stock: 12,
+          visible: true,
+        }))
+      );
     }
   };
 
   // Agregar un producto nuevo
-  const addProduct = (newProduct) => {
+  const addProduct = async (newProduct) => {
     try {
-      const added = JSON.parse(localStorage.getItem("dorella_added_products") || "[]");
-      const productWithDefaults = {
-        id: `custom-${Date.now()}`,
-        visible: true,
-        stock: 10,
-        ...newProduct,
+      const id = `custom-${Date.now()}`;
+      const imgs = Array.isArray(newProduct.images)
+        ? newProduct.images
+        : [newProduct.image || "/placeholder.jpg"];
+
+      const productData = {
+        id,
+        name: newProduct.name,
+        category: newProduct.category,
+        price: Number(newProduct.price),
+        images: imgs,
+        desc: newProduct.desc || "",
+        stock: newProduct.stock !== undefined ? Number(newProduct.stock) : 10,
+        visible: newProduct.visible !== false,
       };
-      
-      const updatedAdded = [...added, productWithDefaults];
-      localStorage.setItem("dorella_added_products", JSON.stringify(updatedAdded));
-      loadProducts();
+
+      await supabaseFetch("/products", {
+        method: "POST",
+        headers: { "Prefer": "return=representation" },
+        body: JSON.stringify(productData),
+      });
+
+      await loadProducts();
     } catch (e) {
-      console.error(e);
+      console.error("Error al agregar producto en Supabase:", e);
     }
   };
 
   // Modificar detalles de un producto (stock, precio, visibilidad, etc.)
-  const updateProduct = (id, updatedFields) => {
+  const updateProduct = async (id, updatedFields) => {
     try {
-      // Si el producto es agregado, lo modificamos directamente en la lista de agregados
-      const added = JSON.parse(localStorage.getItem("dorella_added_products") || "[]");
-      const isAdded = added.some((p) => String(p.id) === String(id));
+      const payload = { ...updatedFields };
+      if (payload.price !== undefined) payload.price = Number(payload.price);
+      if (payload.stock !== undefined) payload.stock = Number(payload.stock);
 
-      if (isAdded) {
-        const updatedAdded = added.map((p) =>
-          String(p.id) === String(id) ? { ...p, ...updatedFields } : p
-        );
-        localStorage.setItem("dorella_added_products", JSON.stringify(updatedAdded));
-      } else {
-        // Si es un producto por defecto, guardamos los overrides
-        const overrides = JSON.parse(localStorage.getItem("dorella_products_overrides") || "{}");
-        overrides[id] = {
-          ...(overrides[id] || {}),
-          ...updatedFields,
-        };
-        localStorage.setItem("dorella_products_overrides", JSON.stringify(overrides));
+      // Si se pasa image individual, la convertimos a primer elemento de images
+      if (payload.image !== undefined && payload.images === undefined) {
+        payload.images = [payload.image];
+        delete payload.image;
       }
-      loadProducts();
+
+      await supabaseFetch(`/products?id=eq.${id}`, {
+        method: "PATCH",
+        body: JSON.stringify(payload),
+      });
+
+      await loadProducts();
     } catch (e) {
-      console.error(e);
+      console.error("Error al actualizar producto en Supabase:", e);
     }
   };
 
   // Eliminar un producto
-  const deleteProduct = (id) => {
+  const deleteProduct = async (id) => {
     try {
-      const deletedIds = JSON.parse(localStorage.getItem("dorella_deleted_ids") || "[]");
-      if (!deletedIds.includes(id)) {
-        deletedIds.push(id);
-      }
-      localStorage.setItem("dorella_deleted_ids", JSON.stringify(deletedIds));
-
-      // Limpiar también de la lista de agregados si aplica
-      const added = JSON.parse(localStorage.getItem("dorella_added_products") || "[]");
-      const updatedAdded = added.filter((p) => String(p.id) !== String(id));
-      localStorage.setItem("dorella_added_products", JSON.stringify(updatedAdded));
-
-      loadProducts();
+      await supabaseFetch(`/products?id=eq.${id}`, {
+        method: "DELETE",
+      });
+      await loadProducts();
     } catch (e) {
-      console.error(e);
+      console.error("Error al eliminar producto en Supabase:", e);
     }
   };
 
   // Alternar visibilidad
-  const toggleVisibility = (id) => {
+  const toggleVisibility = async (id) => {
     const product = products.find((p) => String(p.id) === String(id));
     if (product) {
-      updateProduct(id, { visible: !product.visible });
+      await updateProduct(id, { visible: !product.visible });
     }
   };
 
@@ -152,7 +169,7 @@ export function ProductsProvider({ children }) {
         updateProduct,
         deleteProduct,
         toggleVisibility,
-        reloadProducts: loadProducts
+        reloadProducts: loadProducts,
       }}
     >
       {children}

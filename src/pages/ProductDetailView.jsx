@@ -34,7 +34,17 @@ export function ProductDetailView({ setPage, product }) {
   const { cart, dispatch } = useCart();
   const [qty, setQty] = useState(1);
   const [reviews, setReviews] = useState([]);
-  
+  const [activeImageIdx, setActiveImageIdx] = useState(0);
+
+  // Reset active image index when product changes
+  useEffect(() => {
+    setActiveImageIdx(0);
+  }, [product]);
+
+  const productImages = Array.isArray(product?.images) && product.images.length > 0
+    ? product.images
+    : [product?.image || "/placeholder.jpg"];
+
   // Modals state
   const [cartOpen, setCartOpen] = useState(false);
   const [checkoutOpen, setCheckoutOpen] = useState(false);
@@ -175,9 +185,31 @@ export function ProductDetailView({ setPage, product }) {
         <div style={{ width: "110px", display: "flex", justifyContent: "flex-end" }} />
       </header>
 
+      {/* Estilos responsivos locales para celulares */}
+      <style>{`
+        @media (max-width: 768px) {
+          .detail-container {
+            padding: 20px 16px 60px !important;
+          }
+          .detail-grid {
+            gap: 30px !important;
+            margin-bottom: 40px !important;
+            grid-template-columns: 1fr !important;
+          }
+          .detail-image-box {
+            padding: 12px !important;
+          }
+          .detail-info-title {
+            font-size: 28px !important;
+            margin-top: 8px !important;
+          }
+        }
+      `}</style>
+
       {/* Main product card view wrapper */}
-      <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "60px 40px 100px" }}>
+      <div className="detail-container" style={{ maxWidth: "1100px", margin: "0 auto", padding: "60px 40px 100px" }}>
         <div 
+          className="detail-grid"
           style={{ 
             display: "grid", 
             gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", 
@@ -188,6 +220,7 @@ export function ProductDetailView({ setPage, product }) {
         >
           {/* Left Column: Image Display */}
           <div 
+            className="detail-image-box"
             style={{ 
               background: G.white, 
               border: `1px solid ${G.creamDark}`,
@@ -197,13 +230,49 @@ export function ProductDetailView({ setPage, product }) {
               textAlign: "center"
             }}
           >
-            <div className="premium-img-container" style={{ width: "100%", aspectRatio: "1", borderRadius: "1px", border: `1px solid rgba(201,168,76,0.1)` }}>
+            <div className="premium-img-container" style={{ width: "100%", aspectRatio: "1", borderRadius: "1px", border: `1px solid rgba(201,168,76,0.1)`, overflow: "hidden" }}>
               <img 
-                src={product.image} 
+                src={productImages[activeImageIdx]} 
                 alt={product.name} 
-                style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                style={{ width: "100%", height: "100%", objectFit: "cover", transition: "all 0.3s ease" }}
               />
             </div>
+
+            {/* Fila de miniaturas si hay múltiples imágenes */}
+            {productImages.length > 1 && (
+              <div 
+                style={{ 
+                  display: "flex", 
+                  gap: "10px", 
+                  marginTop: "12px", 
+                  justifyContent: "center", 
+                  overflowX: "auto", 
+                  paddingBottom: "6px" 
+                }}
+              >
+                {productImages.map((img, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setActiveImageIdx(idx)}
+                    style={{
+                      width: "60px",
+                      height: "60px",
+                      padding: 0,
+                      border: idx === activeImageIdx ? `2px solid ${G.gold}` : `1px solid ${G.creamDark}`,
+                      background: G.white,
+                      cursor: "pointer",
+                      borderRadius: "2px",
+                      overflow: "hidden",
+                      transition: "all 0.2s",
+                      flexShrink: 0
+                    }}
+                  >
+                    <img src={img} alt={`${product.name} - ${idx + 1}`} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                  </button>
+                ))}
+              </div>
+            )}
+
             <p style={{ marginTop: "16px", color: G.textMuted, fontSize: "12px", letterSpacing: "1px", textTransform: "uppercase" }}>
               🔍 Pasa el cursor para ver detalles
             </p>
@@ -212,7 +281,7 @@ export function ProductDetailView({ setPage, product }) {
           {/* Right Column: Info Details */}
           <div style={{ padding: "10px 0" }}>
             <span className="tag" style={{ marginBottom: "12px" }}>{product.category}</span>
-            <h1 className="serif" style={{ fontSize: "clamp(36px, 5vw, 52px)", fontWeight: 400, color: G.textDark, lineHeight: 1.1, margin: "12px 0 8px" }}>
+            <h1 className="serif detail-info-title" style={{ fontSize: "clamp(36px, 5vw, 52px)", fontWeight: 400, color: G.textDark, lineHeight: 1.1, margin: "12px 0 8px" }}>
               {product.name}
             </h1>
 

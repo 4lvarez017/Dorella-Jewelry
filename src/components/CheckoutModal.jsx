@@ -107,8 +107,16 @@ export function CheckoutModal({ onClose }) {
     setSuccess(orderId);
     dispatch({ type: "CLEAR" });
     setLoading(false);
+    
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     setTimeout(
-      () => window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`, "_blank"),
+      () => {
+        if (isMobile) {
+          window.location.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`;
+        } else {
+          window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`, "_blank");
+        }
+      },
       800
     );
   };

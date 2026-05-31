@@ -36,13 +36,7 @@ export function CatalogSection({ activeCategory, id, onViewDetails }) {
             </p>
           </div>
         ) : (
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
-              gap: "24px",
-            }}
-          >
+          <div className="product-grid">
             {filteredProducts.map((p) => (
               <ProductCard 
                 key={p.id} 
