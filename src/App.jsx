@@ -20,6 +20,11 @@ export default function App() {
   const [adminTab, setAdminTab] = useState("dashboard");
   // NOTE: category selection for Inventario/Productos is now internal to AdminPanel
 
+  // Scroll al inicio automático ante cambios de página o categoría
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "instant" });
+  }, [page, activeCategory]);
+
   // Leer estado inicial de la URL y sincronizar History API
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);

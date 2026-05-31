@@ -218,10 +218,10 @@ export function RouletteSection({ onViewDetails }) {
             <h3
               className="serif"
               style={{
-                fontSize: "28px",
+                fontSize: isMobile ? "22px" : "28px",
                 fontWeight: 400,
                 color: G.goldLight,
-                marginBottom: "12px",
+                marginBottom: isMobile ? "8px" : "12px",
               }}
             >
               {activeProduct.name}
@@ -229,11 +229,11 @@ export function RouletteSection({ onViewDetails }) {
 
             <p
               style={{
-                fontSize: "15px",
+                fontSize: isMobile ? "13px" : "15px",
                 color: G.textMid,
-                lineHeight: 1.7,
-                marginBottom: "24px",
-                minHeight: "75px",
+                lineHeight: isMobile ? 1.5 : 1.7,
+                marginBottom: isMobile ? "16px" : "24px",
+                minHeight: isMobile ? "auto" : "75px",
                 textShadow: "0 2px 4px rgba(0,0,0,0.5)",
               }}
             >
@@ -244,14 +244,14 @@ export function RouletteSection({ onViewDetails }) {
               style={{
                 display: "flex",
                 alignItems: "center",
-                gap: "14px",
-                marginBottom: "32px",
+                gap: isMobile ? "10px" : "14px",
+                marginBottom: isMobile ? "20px" : "32px",
                 justifyContent: isMobile ? "center" : "flex-start",
               }}
             >
               <span
                 style={{
-                  fontSize: "30px",
+                  fontSize: isMobile ? "24px" : "30px",
                   fontWeight: 600,
                   color: G.textDark,
                   fontFamily: "'Cormorant Garamond', serif",

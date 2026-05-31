@@ -41,11 +41,11 @@ export function HomeView({ setPage, onSelectCategory, onViewDetails }) {
     <div style={{ background: G.cream, minHeight: "100vh" }}>
       {/* Glassmorphic Navigation Header */}
       <header className={`glass-header ${scrolled ? "scrolled" : ""}`}>
-        <div 
-          className="nav-logo serif" 
-          style={{ 
-            fontSize: "26px", 
-            fontWeight: 500, 
+        <div
+          className="nav-logo serif"
+          style={{
+            fontSize: "26px",
+            fontWeight: 500,
             color: G.textDark,
             cursor: "pointer",
             letterSpacing: "1px"
@@ -61,8 +61,8 @@ export function HomeView({ setPage, onSelectCategory, onViewDetails }) {
           <span className="nav-item" onClick={() => scrollToSection("brand")}>Historia</span>
           <span className="nav-item" onClick={() => scrollToSection("roulette-showcase")}>Colecciones</span>
           <span className="nav-item" onClick={() => setPage("catalog")}>Catálogo</span>
-          <button 
-            className="nav-cta" 
+          <button
+            className="nav-cta"
             onClick={() => {
               onSelectCategory("Todos");
               setPage("catalog");
@@ -96,54 +96,161 @@ export function HomeView({ setPage, onSelectCategory, onViewDetails }) {
         `}</style>
       </header>
 
-      {/* Mobile Nav Overlay */}
-      {mobileMenuOpen && (
+      {/* Mobile Nav Drawer */}
+      <div
+        style={{
+          position: "fixed",
+          inset: 0,
+          zIndex: 10000,
+          pointerEvents: mobileMenuOpen ? "auto" : "none",
+          visibility: mobileMenuOpen ? "visible" : "hidden",
+          transition: "visibility 0.4s",
+        }}
+      >
+        {/* Backdrop overlay */}
+        <div
+          onClick={() => setMobileMenuOpen(false)}
+          style={{
+            position: "absolute",
+            inset: 0,
+            background: "rgba(0, 0, 0, 0.65)",
+            backdropFilter: "blur(4px)",
+            WebkitBackdropFilter: "blur(4px)",
+            opacity: mobileMenuOpen ? 1 : 0,
+            transition: "opacity 0.4s ease",
+          }}
+        />
+
+        {/* Sidebar Panel (Slide out from right) */}
         <div
           style={{
-            position: "fixed",
-            inset: 0,
-            background: G.black,
-            zIndex: 980,
+            position: "absolute",
+            right: 0,
+            top: 0,
+            bottom: 0,
+            width: "320px",
+            maxWidth: "85%",
+            background: "rgba(10, 9, 9, 0.95)",
+            backdropFilter: "blur(25px)",
+            WebkitBackdropFilter: "blur(25px)",
+            borderLeft: `1px solid rgba(201, 168, 76, 0.25)`,
             display: "flex",
             flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-            gap: "28px",
+            padding: "40px 24px",
+            transform: mobileMenuOpen ? "translateX(0)" : "translateX(100%)",
+            transition: "transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)",
+            boxShadow: "-10px 0 40px rgba(0, 0, 0, 0.6)",
           }}
         >
-          <span 
-            style={{ color: G.textDark, fontSize: "20px", textTransform: "uppercase", letterSpacing: "2px", cursor: "pointer" }}
-            onClick={() => { window.scrollTo({ top: 0, behavior: "smooth" }); setMobileMenuOpen(false); }}
+          <style>{`
+            .mobile-menu-item {
+              color: ${G.textDark};
+              font-size: 14px;
+              text-transform: uppercase;
+              letter-spacing: 2px;
+              cursor: pointer;
+              transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+              position: relative;
+              padding: 16px 12px;
+              display: flex;
+              align-items: center;
+              border-bottom: 1px solid rgba(201, 168, 76, 0.08);
+              font-family: 'Jost', sans-serif;
+            }
+            .mobile-menu-item:hover {
+              color: ${G.goldLight};
+              background: rgba(201, 168, 76, 0.04);
+              padding-left: 20px;
+            }
+            .mobile-menu-number {
+              color: ${G.gold};
+              font-size: 10px;
+              font-family: 'Cormorant Garamond', serif;
+              margin-right: 12px;
+              font-weight: 600;
+              opacity: 0.8;
+            }
+          `}</style>
+
+          {/* Close button */}
+          <button
+            onClick={() => setMobileMenuOpen(false)}
+            style={{
+              alignSelf: "flex-end",
+              background: "none",
+              border: "none",
+              color: G.textDark,
+              fontSize: "24px",
+              cursor: "pointer",
+              marginBottom: "30px",
+              padding: "4px 8px",
+              transition: "color 0.2s",
+            }}
+            onMouseEnter={(e) => e.currentTarget.style.color = G.gold}
+            onMouseLeave={(e) => e.currentTarget.style.color = G.textDark}
           >
-            Inicio
-          </span>
-          <span 
-            style={{ color: G.textDark, fontSize: "20px", textTransform: "uppercase", letterSpacing: "2px", cursor: "pointer" }}
-            onClick={() => scrollToSection("brand")}
-          >
-            Historia
-          </span>
-          <span 
-            style={{ color: G.textDark, fontSize: "20px", textTransform: "uppercase", letterSpacing: "2px", cursor: "pointer" }}
-            onClick={() => scrollToSection("roulette-showcase")}
-          >
-            Colecciones
-          </span>
-          <span 
-            style={{ color: G.textDark, fontSize: "20px", textTransform: "uppercase", letterSpacing: "2px", cursor: "pointer" }}
-            onClick={() => { onSelectCategory("Todos"); setPage("catalog"); }}
-          >
-            Catálogo
-          </span>
-          <button 
-            className="gold-btn"
-            style={{ marginTop: "12px" }}
-            onClick={() => { onSelectCategory("Todos"); setPage("catalog"); }}
-          >
-            Comprar Ahora
+            ✕
           </button>
+
+          {/* Logo brand */}
+          <div style={{ textAlign: "center", marginBottom: "40px" }}>
+            <p className="serif" style={{ fontSize: "32px", color: G.gold, fontWeight: 500, lineHeight: 1, letterSpacing: "1px" }}>
+              Dorella
+            </p>
+            <span style={{ fontSize: "9px", letterSpacing: "5px", textTransform: "uppercase", color: G.textMuted }}>
+              Jewelry
+            </span>
+            <div style={{ width: "30px", height: "1px", background: G.gold, margin: "16px auto 0", opacity: 0.5 }} />
+          </div>
+
+          {/* Navigation Links */}
+          <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
+            <span
+              className="mobile-menu-item"
+              onClick={() => { window.scrollTo({ top: 0, behavior: "smooth" }); setMobileMenuOpen(false); }}
+            >
+              <span className="mobile-menu-number">01</span> Inicio
+            </span>
+            <span
+              className="mobile-menu-item"
+              onClick={() => { scrollToSection("brand"); setMobileMenuOpen(false); }}
+            >
+              <span className="mobile-menu-number">02</span> Historia
+            </span>
+            <span
+              className="mobile-menu-item"
+              onClick={() => { scrollToSection("roulette-showcase"); setMobileMenuOpen(false); }}
+            >
+              <span className="mobile-menu-number">03</span> Colecciones
+            </span>
+            <span
+              className="mobile-menu-item"
+              onClick={() => { onSelectCategory("Todos"); setPage("catalog"); setMobileMenuOpen(false); }}
+            >
+              <span className="mobile-menu-number">04</span> Catálogo
+            </span>
+          </div>
+
+          {/* Action button inside sidebar */}
+          <div style={{ marginTop: "auto", display: "flex", flexDirection: "column", gap: "16px" }}>
+            <button
+              className="gold-btn"
+              style={{
+                width: "100%",
+                boxShadow: `0 4px 20px rgba(201, 168, 76, 0.15)`,
+                fontSize: "11px",
+                padding: "12px 24px"
+              }}
+              onClick={() => { onSelectCategory("Todos"); setPage("catalog"); setMobileMenuOpen(false); }}
+            >
+              Comprar Ahora
+            </button>
+            <span style={{ fontSize: "9px", letterSpacing: "2px", textTransform: "uppercase", color: G.textMuted, textAlign: "center" }}>
+              Oro 18K Laminado Exclusivo
+            </span>
+          </div>
         </div>
-      )}
+      </div>
 
       {/* Hero Section (First Scroll) */}
       <HeroSection onExplore={() => { onSelectCategory("Todos"); setPage("catalog"); }} />

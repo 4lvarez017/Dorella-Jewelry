@@ -456,27 +456,16 @@ export const globalCSS = `
       -webkit-box-orient: vertical;
       overflow: hidden;
     }
-    .product-card p:not(.serif):not(.tag),
-    .dark-product-card p:not(.serif):not(.tag) {
-      font-size: 11px !important;
-      min-height: auto !important;
-      margin-top: 2px !important;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
+    .product-desc {
+      display: none !important;
+    }
+    .overlay-add {
+      display: none !important;
     }
     /* Controlar el padding de la sección de texto de las tarjetas */
     .product-card > div:last-child,
     .dark-product-card > div:last-child {
       padding: 10px !important;
-    }
-    /* Estilos de botones de compra en móviles para grilla de 2 columnas */
-    .product-card .overlay-add .gold-btn,
-    .dark-product-card .overlay-add .gold-btn {
-      font-size: 9px !important;
-      padding: 6px 12px !important;
-      letter-spacing: 0.5px !important;
     }
   }
 `;

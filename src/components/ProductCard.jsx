@@ -43,6 +43,7 @@ export function ProductCard({ product, dark = false, onViewDetails }) {
           {product.name}
         </p>
         <p
+          className="product-desc"
           style={{
             fontSize: "12px",
             color: dark ? "rgba(255,255,255,0.5)" : G.textMuted,
