@@ -11,6 +11,7 @@ const INPUT_STYLE = {
   fontSize: "14px",
   marginTop: "6px",
   background: G.cream,
+  color: G.textDark,
 };
 
 const LABEL_STYLE = {

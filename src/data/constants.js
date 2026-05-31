@@ -11,6 +11,8 @@ import { CONJUNTOS } from "./products/conjuntos";
 import { HERRAJES } from "./products/herrajes";
 import { CRUCEROS } from "./products/cruceros";
 import { BRAZALETES_NINAS } from "./products/brazaletes_ninas";
+import { BRAZALETES_MUJER } from "./products/brazaletes_mujer";
+import { BRAZALETES_NINOS } from "./products/brazaletes_ninos";
 
 export const PRODUCTS = [
   ...ANILLOS,
@@ -25,6 +27,8 @@ export const PRODUCTS = [
   ...HERRAJES,
   ...CRUCEROS,
   ...BRAZALETES_NINAS,
+  ...BRAZALETES_MUJER,
+  ...BRAZALETES_NINOS,
 ];
 
 
