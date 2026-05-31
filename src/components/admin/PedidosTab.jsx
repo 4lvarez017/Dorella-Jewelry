@@ -238,7 +238,7 @@ function OrderDetailModal({ order, onClose, onStatusChange, onDelete, showConfir
 }
 
 // ─── Card de pedido (móvil) ───────────────────────────────────────────────────
-function OrderCard({ o, onViewDetail, onStatusChange }) {
+function OrderCard({ o, onViewDetail, onStatusChange, onDelete }) {
   const st = ORDER_STATUS[o.status] || {};
   return (
     <div style={{
@@ -292,14 +292,24 @@ function OrderCard({ o, onViewDetail, onStatusChange }) {
         <option value="Completado" style={{ color: A.textPrimary, background: "#FFF" }}>✅ Completado</option>
       </select>
 
-      {/* Ver detalle */}
-      <button
-        onClick={() => onViewDetail(o)}
-        className="admin-btn-secondary"
-        style={{ fontSize: 12, padding: "8px 0", width: "100%" }}
-      >
-        Ver Detalle Completo →
-      </button>
+      {/* Acciones */}
+      <div style={{ display: "flex", gap: 8 }}>
+        <button
+          onClick={() => onViewDetail(o)}
+          className="admin-btn-secondary"
+          style={{ fontSize: 12, padding: "8px 0", flex: 1 }}
+        >
+          Ver Detalle Completo →
+        </button>
+        <button
+          onClick={() => onDelete(o)}
+          className="admin-btn-danger"
+          style={{ padding: "8px 12px", fontSize: 14, borderRadius: 8, lineHeight: 1 }}
+          title="Eliminar pedido"
+        >
+          🗑
+        </button>
+      </div>
     </div>
   );
 }
@@ -328,6 +338,16 @@ export function PedidosTab({
     Pendiente: orders.filter(o => o.status === "Pendiente").length,
     Enviado:   orders.filter(o => o.status === "Enviado").length,
     Completado:orders.filter(o => o.status === "Completado").length,
+  };
+
+  const handleDeleteOrder = (order) => {
+    if (showConfirm) {
+      showConfirm(`¿Eliminar el pedido de "${order.customer_name}" (${order.id}) permanentemente?`, () => {
+        onDeleteOrder(order.id);
+      });
+    } else if (confirm(`¿Eliminar pedido ${order.id}?`)) {
+      onDeleteOrder(order.id);
+    }
   };
 
   return (
@@ -496,13 +516,23 @@ export function PedidosTab({
                             </select>
                           </td>
                           <td>
-                            <button
-                              onClick={() => setSelectedOrder(o)}
-                              className="admin-btn-secondary"
-                              style={{ fontSize: 12, padding: "6px 14px" }}
-                            >
-                              Ver Detalle
-                            </button>
+                            <div style={{ display: "flex", gap: 8 }}>
+                              <button
+                                onClick={() => setSelectedOrder(o)}
+                                className="admin-btn-secondary"
+                                style={{ fontSize: 12, padding: "6px 12px" }}
+                              >
+                                Ver Detalle
+                              </button>
+                              <button
+                                onClick={() => handleDeleteOrder(o)}
+                                className="admin-btn-danger"
+                                style={{ padding: "6px 10px", fontSize: 13, borderRadius: 8, lineHeight: 1 }}
+                                title="Eliminar pedido"
+                              >
+                                🗑
+                              </button>
+                            </div>
                           </td>
                         </tr>
                       );
@@ -520,6 +550,7 @@ export function PedidosTab({
                   o={o}
                   onViewDetail={setSelectedOrder}
                   onStatusChange={onStatusChange}
+                  onDelete={handleDeleteOrder}
                 />
               ))}
             </div>
