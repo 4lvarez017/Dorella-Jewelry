@@ -50,7 +50,7 @@ class GoldParticle {
 export function HeroSection({ onExplore }) {
   const containerRef = useRef(null);
   const canvasRef = useRef(null);
-  
+
   // Refs to DOM elements for lag-free direct styling bypass
   const layer1Ref = useRef(null);
   const layer2Ref = useRef(null);
@@ -72,7 +72,7 @@ export function HeroSection({ onExplore }) {
   const smoothProgressRef = useRef(0); // eased progress for visual layers
   const floatOffsetRef = useRef(0);
   const timeRef = useRef(0);
-  
+
   const [mouse, setMouse] = useState({ x: null, y: null });
   const [isMobile, setIsMobile] = useState(false);
 
@@ -93,7 +93,7 @@ export function HeroSection({ onExplore }) {
       const rect = containerRef.current.getBoundingClientRect();
       const totalHeight = containerRef.current.clientHeight - window.innerHeight;
       if (totalHeight <= 0) return;
-      
+
       const scrolled = -rect.top;
       scrollProgressRef.current = Math.max(0, Math.min(1, scrolled / totalHeight));
     };
@@ -114,7 +114,7 @@ export function HeroSection({ onExplore }) {
     const renderLoop = () => {
       const diff = scrollProgressRef.current - smoothProgressRef.current;
       smoothProgressRef.current += diff * 0.075;
-      
+
       timeRef.current += 0.015;
       floatOffsetRef.current = Math.sin(timeRef.current) * 6;
 
@@ -282,11 +282,11 @@ export function HeroSection({ onExplore }) {
 
       particles.forEach((p) => {
         p.update(canvas.width, canvas.height, mouse.x, mouse.y);
-        
+
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
         ctx.fillStyle = `rgba(232, 201, 107, ${p.opacity})`;
-        
+
         ctx.shadowBlur = p.radius * 2.5;
         ctx.shadowColor = "#C9A84C";
         ctx.fill();
@@ -654,11 +654,11 @@ export function HeroSection({ onExplore }) {
           style={{
             position: "absolute",
             right: isMobile ? "20px" : "6%",
-            bottom: isMobile ? "90px" : "auto",
+            bottom: isMobile ? "75px" : "auto",
             top: isMobile ? "auto" : "50%",
             transform: isMobile ? "none" : "translateY(-50%)",
             width: isMobile ? "calc(100% - 40px)" : "420px",
-            height: isMobile ? "200px" : "320px", // Fixed height for absolute cards container
+            height: isMobile ? "115px" : "320px", // Reduced height on mobile to prevent blocking the jewelry
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
@@ -749,16 +749,22 @@ export function HeroSection({ onExplore }) {
             <span className="step-number">05 / 05</span>
             <h3>TECNOLOGÍA DE ORO LAMINADO 18K</h3>
             <div className="step-divider" />
-            <p style={{ marginBottom: "8px" }}>
+            <p style={{ marginBottom: isMobile ? "0px" : "8px" }}>
               Desglose de fusión en 5 capas que proporciona resistencia a la perfumería, sudoración y desgaste:
             </p>
-            <ul style={{ paddingLeft: "16px", fontSize: "11px", color: G.textMid, display: "flex", flexDirection: "column", gap: "2px" }}>
-              <li><strong>1. Oro 18K Capa Externa:</strong> Brillo y protección anticorrosión.</li>
-              <li><strong>2. Oro 18K Capa Intermedia:</strong> Refuerzo de color y acabado.</li>
-              <li><strong>3. Níquel Barrera:</strong> Evita migración de metales y da firmeza.</li>
-              <li><strong>4. Cobre de Adherencia:</strong> Unión estructural entre metales.</li>
-              <li><strong>5. Bronce Joyería Base:</strong> Núcleo resistente de alta consistencia.</li>
-            </ul>
+            {!isMobile ? (
+              <ul style={{ paddingLeft: "16px", fontSize: "11px", color: G.textMid, display: "flex", flexDirection: "column", gap: "2px" }}>
+                <li><strong>1. Oro 18K Capa Externa:</strong> Brillo y protección anticorrosión.</li>
+                <li><strong>2. Oro 18K Capa Intermedia:</strong> Refuerzo de color y acabado.</li>
+                <li><strong>3. Níquel Barrera:</strong> Evita migración de metales y da firmeza.</li>
+                <li><strong>4. Cobre de Adherencia:</strong> Unión estructural entre metales.</li>
+                <li><strong>5. Bronce Joyería Base:</strong> Núcleo resistente de alta consistencia.</li>
+              </ul>
+            ) : (
+              <p style={{ fontSize: "10px", lineHeight: "1.4", color: G.textMid, marginTop: "4px" }}>
+                <strong>Capas:</strong> 1. Oro 18K (Ext.) • 2. Oro 18K (Int.) • 3. Barrera de Níquel • 4. Enlace de Cobre • 5. Núcleo de Bronce.
+              </p>
+            )}
           </div>
         </div>
 
@@ -963,17 +969,28 @@ export function HeroSection({ onExplore }) {
 
         @media (max-width: 768px) {
           .step-detail-card {
-            padding: 16px 20px !important;
+            padding: 10px 14px !important;
+            border-left-width: 3px !important;
+            border-radius: 6px !important;
+            background: rgba(10, 9, 9, 0.84) !important;
+            border-color: rgba(201, 168, 76, 0.25) !important;
+          }
+          .step-number {
+            font-size: 8px !important;
+            margin-bottom: 2px !important;
+            letter-spacing: 2px !important;
           }
           .step-detail-card h3 {
-            font-size: 18px !important;
+            font-size: 13px !important;
+            letter-spacing: 1px !important;
           }
           .step-divider {
-            margin: 8px 0 !important;
+            margin: 4px 0 !important;
+            width: 30px !important;
           }
           .step-detail-card p {
-            font-size: 11px !important;
-            line-height: 1.5 !important;
+            font-size: 10px !important;
+            line-height: 1.35 !important;
           }
         }
       `}</style>
