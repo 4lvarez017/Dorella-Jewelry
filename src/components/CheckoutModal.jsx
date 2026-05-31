@@ -2,6 +2,7 @@ import { useState } from "react";
 import { G } from "../styles/theme";
 import { WHATSAPP_NUMBER } from "../data/constants";
 import { useCart } from "../context/CartContext";
+import { supabaseFetch } from "../lib/supabase";
 
 const INPUT_STYLE = {
   width: "100%",
@@ -23,7 +24,7 @@ const LABEL_STYLE = {
 // ─── Helpers de localStorage ──────────────────────────────────────────────────
 export function getLocalOrders() {
   try {
-    return JSON.parse(localStorage.getItem("dorella_orders") || "[]");
+    return JSON.parse(localStorage.getItem("dorella_local_orders") || "[]");
   } catch (_) {
     return [];
   }
@@ -31,8 +32,8 @@ export function getLocalOrders() {
 
 export function saveLocalOrders(orders) {
   try {
-    localStorage.setItem("dorella_orders", JSON.stringify(orders));
-  } catch (_) {}
+    localStorage.setItem("dorella_local_orders", JSON.stringify(orders));
+  } catch (_) { }
 }
 
 // ─── Componente ───────────────────────────────────────────────────────────────
@@ -53,7 +54,7 @@ export function CheckoutModal({ onClose }) {
   const handleChange = (e) =>
     setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (!form.name || !form.phone || !form.address) {
       setError("Por favor completa todos los campos.");
       return;
@@ -77,6 +78,20 @@ export function CheckoutModal({ onClose }) {
       status: "Pendiente",
       created_at: new Date().toISOString(),
     };
+
+    try {
+      // Guardar en Supabase
+      await supabaseFetch("/orders", {
+        method: "POST",
+        headers: {
+          "Prefer": "return=representation"
+        },
+        body: JSON.stringify(orderData)
+      });
+    } catch (err) {
+      console.error("Error guardando el pedido en Supabase:", err);
+      // Aunque falle Supabase, permitimos que continúe localmente y por WhatsApp para no perder la venta
+    }
 
     // Guardar en localStorage
     const existing = getLocalOrders();

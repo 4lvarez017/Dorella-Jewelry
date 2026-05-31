@@ -1,7 +1,7 @@
 // ─── SUPABASE CONFIG ─────────────────────────────────────────────────────────
 // Replace these values with your actual Supabase project credentials
 export const SUPABASE_URL = "https://hszxtkwalgndaovckaug.supabase.co";
-export const SUPABASE_ANON_KEY = "sb_publishable_FOAmsWbXQtO5vU-a97eahQ_a2S-t3Px";
+export const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imhzenh0a3dhbGduZGFvdmNrYXVnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODAxODU3NTksImV4cCI6MjA5NTc2MTc1OX0.Bjbk9ASl1OjtkaHbh2YsdR1LzCQP1OMSnYQ6RZmcLcs";
 
 const supabaseHeaders = {
   "Content-Type": "application/json",
