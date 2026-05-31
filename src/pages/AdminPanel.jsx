@@ -9,9 +9,10 @@ import { PedidosTab }    from "../components/admin/PedidosTab";
 import { supabaseFetch } from "../lib/supabase";
 import { useProducts }   from "../context/ProductsContext";
 import { MOCK_ORDERS }   from "../data/constants";
-import * as XLSX from "xlsx";
 import { jsPDF } from "jspdf";
-import "jspdf-autotable";
+import autoTable from "jspdf-autotable";
+import ExcelJS from "exceljs";
+import { saveAs } from "file-saver";
 
 // ─── LocalStorage helpers ─────────────────────────────────────────────────────
 function getLocalOrders() {
@@ -73,18 +74,45 @@ function getTopProducts(orders) {
 }
 
 // ─── Exportar Excel ──────────────────────────────────────────────────────────
-function exportToExcel(orders) {
-  const headers = ["ID Pedido", "Fecha", "Cliente", "Teléfono", "Dirección", "Ciudad", "Método Pago", "Total", "Estado", "Detalle Productos"];
-  
-  const titleRows = [
-    ["👑 DORELLA JEWELRY - PANEL DE CONTROL"],
-    ["REPORTE OFICIAL DE PEDIDOS E INGRESOS"],
-    [`Fecha de generación: ${new Date().toLocaleString("es-CO")}`],
-    [], // Fila vacía de separación
-    headers
-  ];
+async function exportToExcel(orders) {
+  const workbook = new ExcelJS.Workbook();
+  const worksheet = workbook.addWorksheet("Pedidos");
 
-  const dataRows = orders.map(o => {
+  // 1. Títulos y Marca (Estilo premium en oro y gris oscuro)
+  const titleRow = worksheet.addRow(["👑 DORELLA JEWELRY - PANEL DE CONTROL"]);
+  titleRow.font = { name: "Arial", size: 16, bold: true, color: { argb: "FF9A7A2E" } };
+
+  const subtitleRow = worksheet.addRow(["REPORTE OFICIAL DE PEDIDOS E INGRESOS"]);
+  subtitleRow.font = { name: "Arial", size: 12, bold: true, color: { argb: "FF6B6B70" } };
+
+  const metaRow = worksheet.addRow([`Generado el: ${new Date().toLocaleString("es-CO")}`]);
+  metaRow.font = { name: "Arial", size: 9, italic: true, color: { argb: "FFA0A0A8" } };
+
+  worksheet.addRow([]); // Fila vacía de separación
+
+  // 2. Cabeceras con relleno dorado
+  const headers = ["ID Pedido", "Fecha", "Cliente", "Teléfono", "Dirección", "Ciudad", "Método Pago", "Total", "Estado", "Detalle Productos"];
+  const headerRow = worksheet.addRow(headers);
+  
+  headerRow.height = 26;
+  headerRow.eachCell((cell) => {
+    cell.font = { name: "Arial", size: 11, bold: true, color: { argb: "FFFFFFFF" } };
+    cell.fill = {
+      type: "pattern",
+      pattern: "solid",
+      fgColor: { argb: "FF9A7A2E" } // Color dorado oscuro de la joyería
+    };
+    cell.alignment = { vertical: "middle", horizontal: "center" };
+    cell.border = {
+      top: { style: "thin", color: { argb: "FFEDE9E3" } },
+      left: { style: "thin", color: { argb: "FFEDE9E3" } },
+      bottom: { style: "medium", color: { argb: "FFC9A84C" } },
+      right: { style: "thin", color: { argb: "FFEDE9E3" } }
+    };
+  });
+
+  // 3. Filas de datos
+  orders.forEach((o, index) => {
     let itemsStr;
     try {
       itemsStr = JSON.parse(o.items || "[]")
@@ -94,75 +122,136 @@ function exportToExcel(orders) {
       itemsStr = o.items || "";
     }
     const dateStr = o.created_at ? new Date(o.created_at).toLocaleDateString("es-CO") : "—";
-    return [
+    
+    const row = worksheet.addRow([
       o.id,
       dateStr,
       o.customer_name,
-      o.phone,
-      o.address,
-      o.city,
+      o.phone || "—",
+      o.address || "—",
+      o.city || "—",
       o.payment_method,
       Number(o.total || 0),
       o.status,
       itemsStr
-    ];
+    ]);
+
+    row.height = 20;
+
+    // Alternar fondo cebrado para legibilidad
+    const isEven = index % 2 === 0;
+    const rowBg = isEven ? "FFFFFFFF" : "FFFDFBF8";
+
+    row.eachCell((cell, colNumber) => {
+      cell.font = { name: "Arial", size: 10 };
+      cell.fill = {
+        type: "pattern",
+        pattern: "solid",
+        fgColor: { argb: rowBg }
+      };
+      cell.border = {
+        bottom: { style: "thin", color: { argb: "FFEDE9E3" } },
+        right: { style: "thin", color: { argb: "FFEDE9E3" } }
+      };
+      cell.alignment = { vertical: "middle", horizontal: "left" };
+
+      // Columna de total
+      if (colNumber === 8) {
+        cell.numFmt = '"$"#,##0';
+        cell.alignment = { vertical: "middle", horizontal: "right" };
+        cell.font = { name: "Arial", size: 10, bold: true };
+      }
+
+      // Columna de estado (Color condicional)
+      if (colNumber === 9) {
+        cell.alignment = { vertical: "middle", horizontal: "center" };
+        if (o.status === "Completado") {
+          cell.font = { name: "Arial", size: 10, bold: true, color: { argb: "FF2E7D32" } }; // success green
+        } else if (o.status === "Enviado") {
+          cell.font = { name: "Arial", size: 10, bold: true, color: { argb: "FF1565C0" } }; // info blue
+        } else {
+          cell.font = { name: "Arial", size: 10, bold: true, color: { argb: "FFE65100" } }; // warning orange
+        }
+      }
+    });
   });
 
-  const allRows = [...titleRows, ...dataRows];
-  const ws = XLSX.utils.aoa_to_sheet(allRows);
-
-  // Formatear columna de Total como moneda (COP)
-  const range = XLSX.utils.decode_range(ws["!ref"] || "A1:A1");
-  for (let r = 5; r <= range.e.r; r++) {
-    const cellRef = XLSX.utils.encode_cell({ r, c: 7 }); // Columna H (Total) es index 7
-    if (ws[cellRef]) {
-      ws[cellRef].t = "n";
-      ws[cellRef].z = '"$"#,##0';
-    }
-  }
-
-  // Configurar anchos de columna para evitar truncamientos
-  ws["!cols"] = [
-    { wch: 18 }, // ID Pedido
-    { wch: 12 }, // Fecha
-    { wch: 25 }, // Cliente
-    { wch: 15 }, // Teléfono
-    { wch: 30 }, // Dirección
-    { wch: 15 }, // Ciudad
-    { wch: 18 }, // Método Pago
-    { wch: 15 }, // Total
-    { wch: 12 }, // Estado
-    { wch: 50 }, // Detalle Productos
+  // Configurar anchos de columnas
+  worksheet.columns = [
+    { width: 22 }, // ID Pedido
+    { width: 14 }, // Fecha
+    { width: 25 }, // Cliente
+    { width: 16 }, // Teléfono
+    { width: 32 }, // Dirección
+    { width: 16 }, // Ciudad
+    { width: 18 }, // Método Pago
+    { width: 16 }, // Total
+    { width: 14 }, // Estado
+    { width: 55 }  // Detalle Productos
   ];
 
-  const wb = XLSX.utils.book_new();
-  XLSX.utils.book_append_sheet(wb, ws, "Pedidos Dorella");
-  XLSX.writeFile(wb, `pedidos_dorella_${new Date().toISOString().split("T")[0]}.xlsx`);
+  // Generar y descargar el archivo
+  const buffer = await workbook.xlsx.writeBuffer();
+  const blob = new Blob([buffer], { type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" });
+  saveAs(blob, `pedidos_dorella_${new Date().toISOString().split("T")[0]}.xlsx`);
 }
 
 // ─── Exportar PDF ─────────────────────────────────────────────────────────────
 function exportToPDF(orders) {
-  const doc = new jsPDF("landscape", "mm", "a4"); // Formato horizontal para más espacio
+  // jsPDF en horizontal (landscape, A4: 297mm x 210mm)
+  const doc = new jsPDF("landscape", "mm", "a4");
 
-  // Encabezado de la joyería
+  // Métricas financieras y totales
+  const completed = orders.filter(o => o.status === "Completado");
+  const revenue = completed.reduce((sum, o) => sum + (o.total || 0), 0);
+  const pendingCount = orders.filter(o => o.status === "Pendiente").length;
+  const sentCount = orders.filter(o => o.status === "Enviado").length;
+
+  // 1. Barra superior corporativa (Dorado de la joyería)
+  doc.setFillColor(154, 122, 46); // Dorado oscuro #9A7A2E
+  doc.rect(0, 0, 297, 13, "F");
+
+  doc.setTextColor(255, 255, 255);
   doc.setFont("helvetica", "bold");
-  doc.setFontSize(22);
-  doc.setTextColor(154, 122, 46); // Color dorado oscuro
-  doc.text("👑 DORELLA JEWELRY", 14, 20);
+  doc.setFontSize(11);
+  doc.text("👑 DORELLA JEWELRY  |  REPORTE COMPLETO DE VENTAS Y LOGÍSTICA", 14, 8);
+
+  // 2. Información del Reporte
+  doc.setTextColor(29, 29, 31);
+  doc.setFont("helvetica", "bold");
+  doc.setFontSize(16);
+  doc.text("Resumen General de Pedidos", 14, 24);
 
   doc.setFont("helvetica", "normal");
-  doc.setFontSize(10);
+  doc.setFontSize(9);
   doc.setTextColor(107, 107, 112);
-  doc.text("Reporte Oficial de Ventas y Pedidos - Sistema Administrativo", 14, 26);
-  doc.text(`Generado el: ${new Date().toLocaleString("es-CO")}`, 14, 31);
+  doc.text(`Generado el: ${new Date().toLocaleString("es-CO")}`, 14, 30);
 
-  // Línea dorada divisoria
+  // 3. Tarjeta de KPIs / Resumen (Caja a la derecha)
+  doc.setFillColor(247, 245, 242); // #F7F5F2
+  doc.rect(178, 17, 105, 15, "F");
+  
+  doc.setDrawColor(201, 168, 76); // Borde dorado
+  doc.setLineWidth(0.3);
+  doc.rect(178, 17, 105, 15, "D");
+
+  doc.setTextColor(154, 122, 46);
+  doc.setFont("helvetica", "bold");
+  doc.setFontSize(9.5);
+  doc.text(`Ingresos Completados: $${revenue.toLocaleString("es-CO")} COP`, 182, 23);
+
+  doc.setTextColor(80, 80, 85);
+  doc.setFont("helvetica", "normal");
+  doc.setFontSize(8.5);
+  doc.text(`Pedidos Totales: ${orders.length}  |  Pendientes: ${pendingCount}  |  Enviados: ${sentCount}`, 182, 28);
+
+  // 4. Separador visual
   doc.setDrawColor(201, 168, 76);
-  doc.setLineWidth(0.8);
-  doc.line(14, 35, 283, 35); // A4 horizontal tiene 297mm de ancho
+  doc.setLineWidth(0.5);
+  doc.line(14, 36, 283, 36);
 
-  // Columnas y Filas para el PDF
-  const tableColumn = ["ID Pedido", "Fecha", "Cliente", "Teléfono", "Ciudad", "Método Pago", "Total", "Estado", "Productos"];
+  // 5. Preparar datos de la tabla
+  const tableColumn = ["ID Pedido", "Fecha", "Cliente", "Teléfono", "Ciudad", "Método Pago", "Total", "Estado", "Detalle de Productos"];
   const tableRows = orders.map(o => {
     let itemsStr;
     try {
@@ -173,8 +262,6 @@ function exportToPDF(orders) {
       itemsStr = o.items || "";
     }
     const dateStr = o.created_at ? new Date(o.created_at).toLocaleDateString("es-CO") : "—";
-    
-    // Si el ID es un UUID largo, lo truncamos ligeramente para que entre en la tabla
     const shortId = (o.id || "").length > 15 ? (o.id.substring(0, 10) + "...") : o.id;
 
     return [
@@ -190,48 +277,48 @@ function exportToPDF(orders) {
     ];
   });
 
-  // Generar tabla elegante con jspdf-autotable
-  doc.autoTable({
+  // 6. Generar AutoTable con autoTable importado de forma segura (Compatible con Vite)
+  autoTable(doc, {
     startY: 40,
     head: [tableColumn],
     body: tableRows,
     theme: "striped",
     headStyles: {
-      fillColor: [154, 122, 46], // Fondo dorado
+      fillColor: [154, 122, 46], // Fondo de cabeceras en dorado
       textColor: [255, 255, 255],
       fontSize: 9,
-      fontStyle: "bold",
-      halign: "left"
+      fontStyle: "bold"
     },
     bodyStyles: {
-      fontSize: 8,
+      fontSize: 8.5,
       textColor: [29, 29, 31],
       valign: "middle"
     },
     columnStyles: {
-      0: { cellWidth: 24 }, // ID
+      0: { cellWidth: 22 }, // ID Pedido
       1: { cellWidth: 20 }, // Fecha
       2: { cellWidth: 32 }, // Cliente
       3: { cellWidth: 22 }, // Teléfono
       4: { cellWidth: 22 }, // Ciudad
-      5: { cellWidth: 24 }, // Pago
+      5: { cellWidth: 25 }, // Método Pago
       6: { cellWidth: 22, halign: "right", fontStyle: "bold" }, // Total
-      7: { cellWidth: 22 }, // Estado
-      8: { cellWidth: "auto" } // Productos
+      7: { cellWidth: 22, halign: "center" }, // Estado
+      8: { cellWidth: "auto" } // Detalle Productos
     },
     styles: {
       overflow: "linebreak",
-      cellPadding: 3
+      cellPadding: 2.5
     },
     didDrawPage: (data) => {
-      // Pie de página
+      // Pie de página corporativo
       doc.setFontSize(8);
       doc.setTextColor(160, 160, 168);
-      doc.text(`Página ${data.pageNumber}`, 14, doc.internal.pageSize.height - 10);
-      doc.text("Dorella Jewelry - Todos los derechos reservados ©", doc.internal.pageSize.width - 90, doc.internal.pageSize.height - 10);
+      doc.text(`Página ${data.pageNumber}`, 14, doc.internal.pageSize.height - 8);
+      doc.text("👑 Dorella Jewelry — Sistema de Gestión Administrativa", doc.internal.pageSize.width - 92, doc.internal.pageSize.height - 8);
     }
   });
 
+  // Guardar archivo
   doc.save(`pedidos_dorella_${new Date().toISOString().split("T")[0]}.pdf`);
 }
 
