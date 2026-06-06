@@ -62,6 +62,8 @@ export const CATEGORIES_LIST = [
   { name: "Cadenas",           icon: "🔗" },
   { name: "Pulseras",          icon: "💎" },
   { name: "Rosarios",          icon: "📿" },
+  { name: "Tobilleras",        icon: "🦶" },
+
   { name: "Brazaletes Mujer",  icon: "🪙" },
   { name: "Brazaletes Hombre", icon: "🪙" },
   { name: "Brazaletes Pareja", icon: "🪙" },
