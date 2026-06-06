@@ -35,20 +35,22 @@ export function CartFab({ totalItems, onClick }) {
 // ─── Vista de Catálogo ────────────────────────────────────────────────────────
 const GRID_CATEGORIES = [
   { name: "Anillos", icon: "💍", image: "/anillo_trebol.jpg" },
-  { name: "Aretes", icon: "🌙", image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=600&q=80" },
-  { name: "Brazaletes Hombre", icon: "🪙", image: "/brazalete_esferas_hilo.jpg" },
-  { name: "Brazaletes Mujer", icon: "🪙", image: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80" },
+  { name: "Aretes", icon: "🌙", image: "/ARETES/AR%20AMORE%20HALO%209%20MM.png" },
+  { name: "Brazaletes Hombre", icon: "🪙", image: "/BRAZALETES%20HOMBRE/BALIN%208%20MM.png" },
+  { name: "Brazaletes Mujer", icon: "🪙", image: "/pulsera_3_carriles.jpg" },
   { name: "Brazaletes Niñas", icon: "🪙", image: "https://images.unsplash.com/photo-1630502870826-7d63d59abfe8?w=600&q=80" },
   { name: "Brazaletes Niños", icon: "🪙", image: "https://images.unsplash.com/photo-1518895949257-7621c3c786d7?w=600&q=80" },
   { name: "Brazaletes Pareja", icon: "🪙", image: "https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?w=600&q=80" },
-  { name: "Cadenas", icon: "🔗", image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80" },
+  { name: "Cadenas", icon: "🔗", image: "/CADENAS/C%20CUBANA%20CON%20DESTELLOS%2060%20CM.png" },
   { name: "Conjuntos", icon: "✨", image: "https://images.unsplash.com/photo-1573408301185-9519f94de0e4?w=600&q=80" },
   { name: "Cruceros", icon: "⚓", image: "https://images.unsplash.com/photo-1610694955371-d4a3e0ce4b52?w=600&q=80" },
   { name: "Dijes", icon: "🔮", image: "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=600&q=80" },
-  { name: "Herrajes", icon: "⚙️", image: "/herraje_corazon.jpg" },
-  { name: "Pulseras", icon: "💎", image: "https://images.unsplash.com/photo-1611652022419-a9419f74343d?w=600&q=80" },
-  { name: "Rosarios", icon: "📿", image: "https://images.unsplash.com/photo-1547891654-e66ed7ebb968?w=600&q=80" },
+  { name: "Herrajes", icon: "⚙️", image: "/HERRAJES/H%20CORAZON%20CIRCONIA.png" },
+  { name: "Pulseras", icon: "💎", image: "/pulsera_ensamblada.jpg" },
+  { name: "Rosarios", icon: "📿", image: "/ROSARIOS/ROSARIO%20BENEDICTUS%2043%20CM.png" },
+  { name: "Tobilleras", icon: "🦶", image: "/TOBILLERA/T%20BLUE%20DREAM%2023%20CM.png" },
 ];
+
 
 export function CatalogView({ setPage, activeCategory, setActiveCategory, onViewDetails }) {
   const { cart } = useCart();
