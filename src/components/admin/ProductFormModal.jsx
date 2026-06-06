@@ -1,6 +1,177 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { A, CATEGORIES_LIST } from "./AdminTheme";
+import { uploadProductImage } from "../../lib/supabase";
 
+// ─── Drag & Drop Image Uploader ───────────────────────────────────────────────
+function ImageUploader({ category, images, onChange }) {
+  const inputRef = useRef(null);
+  const [dragging, setDragging] = useState(false);
+  const [uploading, setUploading] = useState(false);
+  const [uploadError, setUploadError] = useState(null);
+
+  const handleFiles = async (files) => {
+    if (!files || files.length === 0) return;
+    setUploading(true);
+    setUploadError(null);
+    const urls = [...images];
+    for (const file of Array.from(files)) {
+      if (!file.type.startsWith("image/")) continue;
+      try {
+        const url = await uploadProductImage(file, category);
+        urls.push(url);
+      } catch (e) {
+        setUploadError("Error al subir: " + (e.message || "intenta de nuevo"));
+      }
+    }
+    onChange(urls);
+    setUploading(false);
+  };
+
+  const handleDrop = (e) => {
+    e.preventDefault();
+    setDragging(false);
+    handleFiles(e.dataTransfer.files);
+  };
+
+  const removeImage = (idx) => {
+    const updated = images.filter((_, i) => i !== idx);
+    onChange(updated);
+  };
+
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+
+      {/* Zona de arrastrar / seleccionar */}
+      <div
+        onClick={() => !uploading && inputRef.current?.click()}
+        onDragOver={(e) => { e.preventDefault(); setDragging(true); }}
+        onDragLeave={() => setDragging(false)}
+        onDrop={handleDrop}
+        style={{
+          border: `2px dashed ${dragging ? A.goldMid : A.border}`,
+          borderRadius: 12,
+          padding: "24px 20px",
+          textAlign: "center",
+          cursor: uploading ? "wait" : "pointer",
+          background: dragging ? A.goldBg : A.surfaceBg,
+          transition: "all 0.2s",
+        }}
+      >
+        <input
+          ref={inputRef}
+          type="file"
+          accept="image/*"
+          multiple
+          style={{ display: "none" }}
+          onChange={(e) => handleFiles(e.target.files)}
+        />
+        {uploading ? (
+          <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 8 }}>
+            <div style={{
+              width: 28, height: 28,
+              border: `3px solid ${A.border}`,
+              borderTopColor: A.goldMid,
+              borderRadius: "50%",
+              animation: "spin 0.8s linear infinite",
+            }} />
+            <span style={{ fontSize: 13, color: A.textSecondary }}>Subiendo a Supabase...</span>
+          </div>
+        ) : (
+          <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 6 }}>
+            <span style={{ fontSize: 32 }}>📁</span>
+            <p style={{ fontSize: 14, color: A.textSecondary, margin: 0 }}>
+              <strong style={{ color: A.goldDark }}>Haz clic</strong> o arrastra imágenes aquí
+            </p>
+            <p style={{ fontSize: 11, color: A.textMuted, margin: 0 }}>
+              JPG, PNG, WEBP — múltiples archivos permitidos
+            </p>
+            <p style={{ fontSize: 11, color: A.goldMid, margin: 0, marginTop: 2 }}>
+              📂 Se guardarán en: <code style={{ background: A.goldBg, padding: "1px 6px", borderRadius: 4 }}>
+                products/{category.toLowerCase().replace(/ /g, "_")}
+              </code>
+            </p>
+          </div>
+        )}
+      </div>
+
+      {/* Error de upload */}
+      {uploadError && (
+        <p style={{ fontSize: 12, color: A.danger, margin: 0 }}>⚠️ {uploadError}</p>
+      )}
+
+      {/* Vista previa de imágenes subidas */}
+      {images.length > 0 && (
+        <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
+          {images.map((url, idx) => (
+            <div key={idx} style={{ position: "relative", width: 80, height: 80 }}>
+              <img
+                src={url}
+                alt={`img-${idx}`}
+                style={{
+                  width: "100%", height: "100%",
+                  objectFit: "cover",
+                  borderRadius: 8,
+                  border: idx === 0 ? `2px solid ${A.goldMid}` : `1px solid ${A.border}`,
+                }}
+              />
+              {idx === 0 && (
+                <span style={{
+                  position: "absolute", bottom: 2, left: 2,
+                  fontSize: 9, background: A.goldMid, color: "#fff",
+                  borderRadius: 3, padding: "1px 4px", fontWeight: 700,
+                }}>PRINCIPAL</span>
+              )}
+              <button
+                type="button"
+                onClick={() => removeImage(idx)}
+                style={{
+                  position: "absolute", top: -6, right: -6,
+                  width: 20, height: 20, borderRadius: "50%",
+                  background: A.danger, color: "#fff",
+                  border: "none", cursor: "pointer",
+                  fontSize: 11, display: "flex",
+                  alignItems: "center", justifyContent: "center",
+                  lineHeight: 1,
+                }}
+              >✕</button>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {/* Separador OR */}
+      <div style={{ display: "flex", alignItems: "center", gap: 10, margin: "2px 0" }}>
+        <div style={{ flex: 1, height: 1, background: A.border }} />
+        <span style={{ fontSize: 11, color: A.textMuted }}>o pega una URL externa</span>
+        <div style={{ flex: 1, height: 1, background: A.border }} />
+      </div>
+
+      {/* Input URL externa */}
+      <input
+        className="admin-input"
+        type="text"
+        placeholder="https://ejemplo.com/imagen.jpg"
+        onKeyDown={(e) => {
+          if (e.key === "Enter") {
+            e.preventDefault();
+            const url = e.target.value.trim();
+            if (url) { onChange([...images, url]); e.target.value = ""; }
+          }
+        }}
+        onBlur={(e) => {
+          const url = e.target.value.trim();
+          if (url && !images.includes(url)) { onChange([...images, url]); e.target.value = ""; }
+        }}
+        style={{ fontSize: 13 }}
+      />
+      <p style={{ fontSize: 11, color: A.textMuted, margin: "-6px 0 0" }}>
+        Presiona Enter o haz clic fuera para agregar la URL. La primera imagen es la principal.
+      </p>
+    </div>
+  );
+}
+
+// ─── Modal Principal ──────────────────────────────────────────────────────────
 export function ProductFormModal({ product, defaultCategory, onClose, onSave }) {
   const [form, setForm] = useState({
     name:     "",
@@ -8,11 +179,10 @@ export function ProductFormModal({ product, defaultCategory, onClose, onSave }) 
     price:    "",
     stock:    "",
     desc:     "",
-    image:    "",
   });
+  const [images, setImages] = useState([]);
   const [errors, setErrors] = useState({});
   const [saving, setSaving] = useState(false);
-  const [imgError, setImgError] = useState(false);
 
   // Cargar datos del producto a editar
   useEffect(() => {
@@ -23,26 +193,24 @@ export function ProductFormModal({ product, defaultCategory, onClose, onSave }) 
         price:    product.price    || "",
         stock:    product.stock !== undefined ? product.stock : "",
         desc:     product.desc     || "",
-        image:    Array.isArray(product.images)
-          ? product.images.join(", ")
-          : (product.image || ""),
       });
+      const imgs = Array.isArray(product.images)
+        ? product.images
+        : [product.image].filter(Boolean);
+      setImages(imgs);
     } else if (defaultCategory) {
       setForm(f => ({ ...f, category: defaultCategory }));
+      setImages([]);
     }
     setErrors({});
-    setImgError(false);
   }, [product, defaultCategory]);
 
   const handleChange = e => {
     const { name, value } = e.target;
     setForm(f => ({ ...f, [name]: value }));
-    // Limpiar error del campo al editar
     if (errors[name]) setErrors(er => ({ ...er, [name]: null }));
-    if (name === "image") setImgError(false);
   };
 
-  // Validación inline
   const validate = () => {
     const e = {};
     if (!form.name.trim())   e.name  = "El nombre es obligatorio.";
@@ -54,18 +222,15 @@ export function ProductFormModal({ product, defaultCategory, onClose, onSave }) 
   const handleSubmit = async e => {
     e.preventDefault();
     const errs = validate();
-    if (Object.keys(errs).length > 0) {
-      setErrors(errs);
-      return;
-    }
+    if (Object.keys(errs).length > 0) { setErrors(errs); return; }
 
     setSaving(true);
 
-    const imagesArray = form.image
-      ? form.image.split(",").map(u => u.trim()).filter(Boolean)
+    const finalImages = images.length > 0
+      ? images
       : ["https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80"];
 
-    await new Promise(r => setTimeout(r, 300)); // visual feedback mínimo
+    await new Promise(r => setTimeout(r, 200));
 
     onSave({
       name:     form.name.trim(),
@@ -73,24 +238,19 @@ export function ProductFormModal({ product, defaultCategory, onClose, onSave }) 
       price:    Number(form.price),
       stock:    form.stock !== "" ? Number(form.stock) : 10,
       desc:     form.desc.trim(),
-      images:   imagesArray,
-      image:    imagesArray[0],
+      images:   finalImages,
+      image:    finalImages[0],
     });
 
     setSaving(false);
   };
-
-  // Primera URL de imagen válida para el preview
-  const previewUrl = form.image
-    ? form.image.split(",")[0].trim()
-    : null;
 
   return (
     <div className="admin-modal-backdrop" onClick={onClose}>
       <div
         className="admin-modal"
         onClick={e => e.stopPropagation()}
-        style={{ width: "100%", maxWidth: 560 }}
+        style={{ width: "100%", maxWidth: 580 }}
       >
         {/* ── Header ── */}
         <div style={{
@@ -123,33 +283,6 @@ export function ProductFormModal({ product, defaultCategory, onClose, onSave }) 
         {/* ── Form ── */}
         <form onSubmit={handleSubmit} style={{ padding: "22px 28px 28px" }}>
           <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
-
-            {/* ── Preview de imagen ── */}
-            {previewUrl && (
-              <div style={{ display: "flex", gap: 16, alignItems: "flex-start" }}>
-                <div
-                  className={`img-preview-box${!imgError ? " has-img" : ""}`}
-                  style={{ width: 90, height: 90, flexShrink: 0 }}
-                >
-                  {!imgError && previewUrl ? (
-                    <img
-                      src={previewUrl}
-                      alt="Preview"
-                      onError={() => setImgError(true)}
-                      style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                    />
-                  ) : (
-                    <span style={{ fontSize: 28, color: A.textMuted }}>🖼</span>
-                  )}
-                </div>
-                <div style={{ fontSize: 12, color: A.textMuted, lineHeight: 1.6, paddingTop: 4 }}>
-                  <strong style={{ color: A.textSecondary }}>Preview en vivo</strong><br />
-                  {imgError
-                    ? "⚠️ La URL no carga una imagen válida."
-                    : "La primera URL se muestra arriba. Puedes pegar varias separadas por comas."}
-                </div>
-              </div>
-            )}
 
             {/* Nombre */}
             <div>
@@ -228,20 +361,25 @@ export function ProductFormModal({ product, defaultCategory, onClose, onSave }) 
               />
             </div>
 
-            {/* URLs de imágenes */}
+            {/* Uploader de imágenes */}
             <div>
-              <label className="admin-label">URLs de Imágenes (separadas por comas)</label>
-              <input
-                className="admin-input"
-                type="text"
-                name="image"
-                value={form.image}
-                onChange={handleChange}
-                placeholder="https://img1.jpg, https://img2.jpg"
+              <label className="admin-label">
+                Imágenes del Producto
+                {images.length > 0 && (
+                  <span style={{
+                    marginLeft: 8, fontSize: 11,
+                    background: A.goldBg, color: A.goldDark,
+                    borderRadius: 10, padding: "2px 8px",
+                  }}>
+                    {images.length} {images.length === 1 ? "imagen" : "imágenes"}
+                  </span>
+                )}
+              </label>
+              <ImageUploader
+                category={form.category}
+                images={images}
+                onChange={setImages}
               />
-              <p style={{ fontSize: 11, color: A.textMuted, marginTop: 6, lineHeight: 1.5 }}>
-                Puedes ingresar varias URLs separadas por comas para el carrusel de fotos. La primera se mostrará como principal.
-              </p>
             </div>
 
             {/* Acciones */}

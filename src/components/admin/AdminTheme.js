@@ -12,10 +12,14 @@ export const A = {
 
   // Gold palette
   gold: "#C9A84C",
+  goldMid: "#B8973E",
   goldDark: "#9A7A2E",
   goldLight: "#E8C96B",
   goldGlow: "rgba(201,168,76,0.18)",
   goldBg: "rgba(201,168,76,0.07)",
+
+  // Surface
+  surfaceBg: "#FDFCFA",
 
   // Borders
   border: "#EDE9E3",
