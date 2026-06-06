@@ -96,18 +96,18 @@ export function ProductsProvider({ children }) {
 
       const productData = {
         id,
-        name: newProduct.name,
+        name:     newProduct.name,
         category: newProduct.category,
-        price: Number(newProduct.price),
-        images: imgs,
-        desc: newProduct.desc || "",
-        stock: newProduct.stock !== undefined ? Number(newProduct.stock) : 10,
-        visible: newProduct.visible !== false,
+        price:    Number(newProduct.price),
+        images:   imgs,           // Única columna de imagen que existe en Supabase
+        desc:     newProduct.desc || "",
+        stock:    newProduct.stock !== undefined ? Number(newProduct.stock) : 10,
+        visible:  newProduct.visible !== false,
       };
 
       await supabaseFetch("/products", {
         method: "POST",
-        headers: { "Prefer": "return=representation" },
+        headers: { "Prefer": "return=minimal" },
         body: JSON.stringify(productData),
       });
 
@@ -124,14 +124,18 @@ export function ProductsProvider({ children }) {
       if (payload.price !== undefined) payload.price = Number(payload.price);
       if (payload.stock !== undefined) payload.stock = Number(payload.stock);
 
-      // Si se pasa image individual, la convertimos a primer elemento de images
-      if (payload.image !== undefined && payload.images === undefined) {
+      // La tabla solo tiene columna "images" (array), NO tiene "image".
+      // Si vino image suelto, lo convertimos a array. Luego borramos image del payload.
+      if (Array.isArray(payload.images) && payload.images.length > 0) {
+        // ya tiene images, solo asegurarse de que no vaya image
+      } else if (payload.image !== undefined && payload.images === undefined) {
         payload.images = [payload.image];
-        delete payload.image;
       }
+      delete payload.image; // La columna "image" NO existe en Supabase
 
       await supabaseFetch(`/products?id=eq.${id}`, {
         method: "PATCH",
+        headers: { "Prefer": "return=minimal" },
         body: JSON.stringify(payload),
       });
 

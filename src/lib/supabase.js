@@ -14,10 +14,35 @@ export async function supabaseFetch(path, options = {}) {
     headers: { ...supabaseHeaders, ...options.headers },
   });
   if (!res.ok) throw new Error(await res.text());
-  return res.json();
+  // 204 No Content (PATCH, DELETE) — no tiene body
+  if (res.status === 204 || res.headers.get("content-length") === "0") return null;
+  const text = await res.text();
+  return text ? JSON.parse(text) : null;
 }
 
-// ─── STORAGE: Subir imagen al bucket "products" ───────────────────────────────
+// ─── REVIEWS CRUD ────────────────────────────────────────────────────────────
+export async function fetchReviews(productId) {
+  return supabaseFetch(
+    `/reviews?product_id=eq.${encodeURIComponent(productId)}&order=created_at.desc`
+  );
+}
+
+export async function insertReview({ productId, name, rating, comment }) {
+  return supabaseFetch("/reviews", {
+    method: "POST",
+    headers: { "Prefer": "return=minimal" },
+    body: JSON.stringify({ product_id: productId, name, rating, comment }),
+  });
+}
+
+export async function deleteReview(id) {
+  return supabaseFetch(`/reviews?id=eq.${id}`, { method: "DELETE" });
+}
+
+export async function fetchAllReviews() {
+  return supabaseFetch("/reviews?select=*&order=created_at.desc");
+}
+
 /**
  * Sube un archivo de imagen a Supabase Storage dentro de la carpeta
  * correspondiente a la categoría del producto.

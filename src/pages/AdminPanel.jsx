@@ -6,6 +6,7 @@ import { DashboardTab } from "../components/admin/DashboardTab";
 import { InventarioTab } from "../components/admin/InventarioTab";
 import { ProductosTab }  from "../components/admin/ProductosTab";
 import { PedidosTab }    from "../components/admin/PedidosTab";
+import { ReviewsTab }    from "../components/admin/ReviewsTab";
 import { supabaseFetch } from "../lib/supabase";
 import { useProducts }   from "../context/ProductsContext";
 import { MOCK_ORDERS }   from "../data/constants";
@@ -375,29 +376,45 @@ export function AdminPanel({ activeTab, setActiveTab, onLogout }) {
 
   useEffect(() => { fetchOrders(); }, []);
 
-  // ── Actualizar estado de pedido ─────────────────────────────────────────────
+  // ── Actualizar estado de pedido ────────────────────────────────────────────────────────────
   async function updateOrderStatus(id, status) {
+    // Actualizar UI optimistamente
+    setOrders(prev => prev.map(o => o.id === id ? { ...o, status } : o));
+    const updated = getLocalOrders().map(o => o.id === id ? { ...o, status } : o);
+    saveLocalOrders(updated);
     try {
       await supabaseFetch(`/orders?id=eq.${id}`, {
         method: "PATCH",
+        headers: { "Prefer": "return=minimal" },
         body: JSON.stringify({ status }),
       });
-    } catch (_) {}
-    const updated = getLocalOrders().map(o => o.id === id ? { ...o, status } : o);
-    saveLocalOrders(updated);
-    setOrders(prev => prev.map(o => o.id === id ? { ...o, status } : o));
-    addToast(`Estado → ${status} ✓`);
+      addToast(`Estado → ${status} ✓`);
+    } catch (e) {
+      console.error("Error actualizando estado:", e);
+      addToast("Error al actualizar estado", "error");
+    }
   }
 
-  // ── Eliminar pedido ─────────────────────────────────────────────────────────
+  // ── Eliminar pedido ───────────────────────────────────────────────────────────────────────
   async function deleteOrder(id) {
-    try {
-      await supabaseFetch(`/orders?id=eq.${id}`, { method: "DELETE" });
-    } catch (_) {}
-    const updated = getLocalOrders().filter(o => o.id !== id);
-    saveLocalOrders(updated);
+    // 1. Borrar del estado local inmediatamente (optimistic UI)
     setOrders(prev => prev.filter(o => o.id !== id));
-    addToast("Pedido eliminado", "error");
+    const updatedLocal = getLocalOrders().filter(o => o.id !== id);
+    saveLocalOrders(updatedLocal);
+
+    // 2. Borrar de Supabase
+    try {
+      await supabaseFetch(`/orders?id=eq.${id}`, {
+        method: "DELETE",
+        headers: { "Prefer": "return=minimal" },
+      });
+      addToast("Pedido eliminado ✓", "error");
+    } catch (e) {
+      console.error("Error al eliminar pedido en Supabase:", e);
+      // Re-sincronizar para que si falló, el pedido vuelva a aparecer
+      await fetchOrders();
+      addToast("Error al eliminar — intenta de nuevo", "error");
+    }
   }
 
   // ── Stats por categoría ─────────────────────────────────────────────────────
@@ -459,12 +476,14 @@ export function AdminPanel({ activeTab, setActiveTab, onLogout }) {
                 {activeTab === "inventario" && "Inventario"}
                 {activeTab === "productos"  && "Productos"}
                 {activeTab === "pedidos"    && "Pedidos"}
+                {activeTab === "resenas"    && "Reseñas"}
               </h1>
               <p style={{ fontSize: 13, color: A.textSecondary, marginTop: 6 }}>
                 {activeTab === "dashboard"  && "Resumen en tiempo real de finanzas, ventas y existencias."}
                 {activeTab === "inventario" && "Controla el stock de cada categoría de joyería."}
                 {activeTab === "productos"  && "Gestiona precios, visibilidad y registro de piezas."}
                 {activeTab === "pedidos"    && "Administra y hace seguimiento de todos los pedidos."}
+                {activeTab === "resenas"    && "Modera y gestiona las opiniones de los clientes."}
               </p>
             </div>
 
@@ -515,6 +534,13 @@ export function AdminPanel({ activeTab, setActiveTab, onLogout }) {
                 onExportPDF={() => exportToPDF(orders)}
                 onExportExcel={() => exportToExcel(orders)}
                 onDeleteOrder={deleteOrder}
+                showConfirm={showConfirm}
+              />
+            )}
+
+            {activeTab === "resenas" && (
+              <ReviewsTab
+                addToast={addToast}
                 showConfirm={showConfirm}
               />
             )}

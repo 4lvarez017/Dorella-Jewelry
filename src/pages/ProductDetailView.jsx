@@ -6,6 +6,7 @@ import { Footer } from "../components/Footer";
 import { CartFab, WhatsAppFab } from "./CatalogView";
 import { CartModal } from "../components/CartModal";
 import { CheckoutModal } from "../components/CheckoutModal";
+import { fetchReviews, insertReview } from "../lib/supabase";
 
 // Generate customized mock reviews based on product details for high realism
 function getMockReviews(product) {
@@ -34,6 +35,7 @@ export function ProductDetailView({ setPage, product }) {
   const { cart, dispatch } = useCart();
   const [qty, setQty] = useState(1);
   const [reviews, setReviews] = useState([]);
+  const [reviewsLoading, setReviewsLoading] = useState(true);
   const [activeImageIdx, setActiveImageIdx] = useState(0);
 
   // Reset active image index when product changes
@@ -54,21 +56,21 @@ export function ProductDetailView({ setPage, product }) {
   const [newRating, setNewRating] = useState(5);
   const [newComment, setNewComment] = useState("");
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState(null);
+  const [submitting, setSubmitting] = useState(false);
 
   const totalItems = cart.reduce((s, i) => s + i.qty, 0);
 
-  // Initialize reviews from localStorage or default mocks
+  // Cargar reseñas desde Supabase
   useEffect(() => {
     if (!product) return;
-    const storageKey = `dorella_reviews_prod_${product.id}`;
-    const stored = localStorage.getItem(storageKey);
-    if (stored) {
-      setReviews(JSON.parse(stored));
-    } else {
-      const defaultMocks = getMockReviews(product);
-      setReviews(defaultMocks);
-      localStorage.setItem(storageKey, JSON.stringify(defaultMocks));
-    }
+    setReviewsLoading(true);
+    fetchReviews(String(product.id))
+      .then((data) => {
+        setReviews(Array.isArray(data) ? data : []);
+      })
+      .catch(() => setReviews([]))
+      .finally(() => setReviewsLoading(false));
   }, [product]);
 
   if (!product) {
@@ -87,29 +89,32 @@ export function ProductDetailView({ setPage, product }) {
     setCartOpen(true); // Open the cart so they see their item added!
   };
 
-  const handleAddReview = (e) => {
+  const handleAddReview = async (e) => {
     e.preventDefault();
     if (!newName.trim() || !newComment.trim()) return;
-
-    const newRev = {
-      name: newName,
-      rating: newRating,
-      date: "Hoy",
-      comment: newComment
-    };
-
-    const updated = [newRev, ...reviews];
-    setReviews(updated);
-    
-    const storageKey = `dorella_reviews_prod_${product.id}`;
-    localStorage.setItem(storageKey, JSON.stringify(updated));
-
-    // Reset form
-    setNewName("");
-    setNewRating(5);
-    setNewComment("");
-    setSubmitSuccess(true);
-    setTimeout(() => setSubmitSuccess(false), 3000);
+    setSubmitting(true);
+    setSubmitError(null);
+    try {
+      await insertReview({
+        productId: String(product.id),
+        name:      newName.trim(),
+        rating:    newRating,
+        comment:   newComment.trim(),
+      });
+      // Recargar reseñas desde Supabase para reflejar el orden real
+      const updated = await fetchReviews(String(product.id));
+      setReviews(Array.isArray(updated) ? updated : []);
+      // Limpiar formulario
+      setNewName("");
+      setNewRating(5);
+      setNewComment("");
+      setSubmitSuccess(true);
+      setTimeout(() => setSubmitSuccess(false), 4000);
+    } catch (err) {
+      setSubmitError("Error al publicar. Intenta de nuevo.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const averageRating = reviews.length > 0 
@@ -187,6 +192,7 @@ export function ProductDetailView({ setPage, product }) {
 
       {/* Estilos responsivos locales para celulares */}
       <style>{`
+        @keyframes spin { to { transform: rotate(360deg); } }
         @media (max-width: 768px) {
           .detail-container {
             padding: 20px 16px 60px !important;
@@ -411,23 +417,39 @@ export function ProductDetailView({ setPage, product }) {
               Opiniones de Clientes
             </h3>
             
-            {reviews.length === 0 ? (
+            {reviewsLoading ? (
+              <div style={{ display: "flex", alignItems: "center", gap: 10, color: G.textMuted, padding: "20px 0" }}>
+                <div style={{
+                  width: 18, height: 18,
+                  border: `2px solid ${G.creamDark}`,
+                  borderTopColor: G.gold,
+                  borderRadius: "50%",
+                  animation: "spin 0.8s linear infinite",
+                  flexShrink: 0,
+                }} />
+                Cargando opiniones...
+              </div>
+            ) : reviews.length === 0 ? (
               <p style={{ color: G.textMuted }}>No hay opiniones sobre este producto todavía. ¡Sé el primero en calificarlo!</p>
             ) : (
               <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
-                {reviews.map((rev, i) => (
-                  <div 
-                    key={i} 
-                    style={{ 
-                      background: G.white, 
-                      border: `1px solid ${G.creamDark}`, 
-                      padding: "20px", 
-                      borderRadius: "2px" 
+                {reviews.map((rev) => (
+                  <div
+                    key={rev.id || rev.created_at}
+                    style={{
+                      background: G.white,
+                      border: `1px solid ${G.creamDark}`,
+                      padding: "20px",
+                      borderRadius: "2px"
                     }}
                   >
                     <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "8px" }}>
                       <span style={{ fontWeight: 600, color: G.textDark, fontSize: "14px" }}>{rev.name}</span>
-                      <span style={{ fontSize: "11px", color: G.textMuted }}>{rev.date}</span>
+                      <span style={{ fontSize: "11px", color: G.textMuted }}>
+                        {rev.created_at
+                          ? new Date(rev.created_at).toLocaleDateString("es-CO", { day: "numeric", month: "short", year: "numeric" })
+                          : "Hoy"}
+                      </span>
                     </div>
                     <div style={{ color: G.goldLight, fontSize: "12px", marginBottom: "10px" }}>
                       {"★".repeat(rev.rating) + "☆".repeat(5 - rev.rating)}
@@ -524,12 +546,20 @@ export function ProductDetailView({ setPage, product }) {
 
               {submitSuccess && (
                 <p style={{ color: "#27ae60", fontSize: "13px" }}>
-                  ✅ ¡Gracias! Tu opinión ha sido publicada con éxito.
+                  ✅ ¡Gracias! Tu opinión ha sido publicada y ya es visible para todos.
                 </p>
               )}
+              {submitError && (
+                <p style={{ color: "#e74c3c", fontSize: "13px" }}>⚠️ {submitError}</p>
+              )}
 
-              <button type="submit" className="gold-btn" style={{ padding: "12px", fontSize: "12px", marginTop: "8px" }}>
-                Publicar Opinión
+              <button
+                type="submit"
+                className="gold-btn"
+                style={{ padding: "12px", fontSize: "12px", marginTop: "8px", opacity: submitting ? 0.7 : 1 }}
+                disabled={submitting}
+              >
+                {submitting ? "Publicando..." : "Publicar Opinión"}
               </button>
             </form>
           </div>
