@@ -1,21 +1,53 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, lazy, Suspense } from "react";
 import { CartProvider } from "./context/CartContext";
 import { ProductsProvider } from "./context/ProductsContext";
-import { globalCSS } from "./styles/theme";
+import { globalCSS, G } from "./styles/theme";
 import { HomeView } from "./pages/HomeView";
 import { CatalogView } from "./pages/CatalogView";
 import { ProductDetailView } from "./pages/ProductDetailView";
-import { AdminPanel } from "./pages/AdminPanel";
-import { AdminLogin } from "./pages/AdminLogin";
 import { PRODUCTS } from "./data/constants";
+import { getSession, signOut } from "./lib/supabase";
+
+// ── Carga diferida del Admin
+const AdminPanel = lazy(() => import("./pages/AdminPanel").then(m => ({ default: m.AdminPanel })));
+const AdminLogin = lazy(() => import("./pages/AdminLogin").then(m => ({ default: m.AdminLogin })));
+
+function AdminFallback() {
+  return (
+    <div style={{
+      display: "flex", alignItems: "center", justifyContent: "center",
+      minHeight: "100vh", background: G.cream, flexDirection: "column", gap: 20,
+    }}>
+      <div style={{
+        width: 40, height: 40, borderRadius: "50%",
+        border: `3px solid rgba(201,168,76,0.15)`,
+        borderTopColor: G.gold,
+        animation: "spin 0.8s linear infinite",
+      }} />
+      <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
+      <p style={{ fontFamily: "'Jost', sans-serif", fontSize: 11, letterSpacing: "3px",
+        textTransform: "uppercase", color: G.textMuted }}>
+        Cargando panel...
+      </p>
+    </div>
+  );
+}
+
 
 export default function App() {
   const [page, setPage] = useState("home");
   const [activeCategory, setActiveCategory] = useState("Todos");
   const [selectedProduct, setSelectedProduct] = useState(null);
-  const [adminLoggedIn, setAdminLoggedIn] = useState(() => {
-    return localStorage.getItem("dorella_admin_logged_in") === "true";
-  });
+  const [adminLoggedIn, setAdminLoggedIn] = useState(false);
+  const [sessionChecked, setSessionChecked] = useState(false);
+
+  // Verificar sesión real con Supabase al inicio
+  useEffect(() => {
+    getSession().then(session => {
+      setAdminLoggedIn(!!session);
+      setSessionChecked(true);
+    });
+  }, []);
 
   const [adminTab, setAdminTab] = useState("dashboard");
   // NOTE: category selection for Inventario/Productos is now internal to AdminPanel
@@ -131,22 +163,24 @@ export default function App() {
       <ProductsProvider>
         <CartProvider>
           {page === "admin" ? (
-            adminLoggedIn ? (
-              <AdminPanel
-                activeTab={adminTab}
-                setActiveTab={(tab) => navigateTo("admin", null, null, tab)}
-                onLogout={() => {
-                  setAdminLoggedIn(false);
-                  localStorage.removeItem("dorella_admin_logged_in");
-                  navigateTo("home", "Todos", null);
-                }}
-              />
-            ) : (
-              <AdminLogin onLogin={() => {
-                setAdminLoggedIn(true);
-                localStorage.setItem("dorella_admin_logged_in", "true");
-              }} />
-            )
+            <Suspense fallback={<AdminFallback />}>
+              {adminLoggedIn ? (
+                <AdminPanel
+                  activeTab={adminTab}
+                  setActiveTab={(tab) => navigateTo("admin", null, null, tab)}
+                  onLogout={async () => {
+                    await signOut();
+                    setAdminLoggedIn(false);
+                    navigateTo("home", "Todos", null);
+                  }}
+                />
+              ) : (
+                <AdminLogin onLogin={() => {
+                  setAdminLoggedIn(true);
+                }} />
+              )}
+            </Suspense>
+
           ) : page === "product" ? (
             <ProductDetailView
               setPage={(p) => navigateTo(p)}

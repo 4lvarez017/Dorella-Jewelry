@@ -292,19 +292,25 @@ export function CatalogView({ setPage, activeCategory, setActiveCategory, onView
                       transition: "all 0.5s cubic-bezier(0.16, 1, 0.3, 1)",
                     }}
                   >
-                    {/* Imagen de fondo */}
-                    <div
+                    {/* Imagen de fondo — lazy loading nativo */}
+                    <img
+                      src={cat.image}
+                      alt=""
+                      loading="lazy"
+                      decoding="async"
+                      aria-hidden="true"
                       className="card-bg-img"
                       style={{
                         position: "absolute",
                         inset: 0,
-                        backgroundImage: `url(${cat.image})`,
-                        backgroundSize: "cover",
-                        backgroundPosition: "center",
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
                         filter: "brightness(0.35) contrast(1.1)",
                         transition: "transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.8s cubic-bezier(0.16, 1, 0.3, 1)",
                       }}
                     />
+
 
                     {/* Contenido centrado */}
                     <div

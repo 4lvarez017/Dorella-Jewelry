@@ -13,6 +13,7 @@ import { CRUCEROS } from "./products/cruceros";
 import { BRAZALETES_NINAS } from "./products/brazaletes_ninas";
 import { BRAZALETES_MUJER } from "./products/brazaletes_mujer";
 import { BRAZALETES_NINOS } from "./products/brazaletes_ninos";
+import { TOBILLERAS } from "./products/tobilleras";
 
 export const PRODUCTS = [
   ...ANILLOS,
@@ -29,6 +30,7 @@ export const PRODUCTS = [
   ...BRAZALETES_NINAS,
   ...BRAZALETES_MUJER,
   ...BRAZALETES_NINOS,
+  ...TOBILLERAS,
 ];
 
 
@@ -43,6 +45,7 @@ export const CATEGORIES = [
   { name: "Cadenas",    icon: "🔗" },
   { name: "Pulseras",   icon: "💎" },
   { name: "Rosarios",   icon: "📿" },
+  { name: "Tobilleras", icon: "🦶" },
   {
     name: "Brazaletes",
     icon: "🪙",
@@ -90,10 +93,6 @@ export const MOCK_ORDERS = [
   },
 ];
 
-// ─── CREDENCIALES DE ADMIN ────────────────────────────────────────────────────
-// IMPORTANTE: Mover a variables de entorno (.env) antes de producción
-export const ADMIN_EMAIL    = "alanalvarez1507@gmail.com";
-export const ADMIN_PASSWORD = "Dorellajoyeria26!";
-
 // ─── NÚMERO DE WHATSAPP ───────────────────────────────────────────────────────
 export const WHATSAPP_NUMBER = "573132403081";
+

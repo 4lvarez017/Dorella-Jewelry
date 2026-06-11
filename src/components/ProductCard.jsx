@@ -1,21 +1,56 @@
+import { useState } from "react";
 import { G } from "../styles/theme";
 import { useCart } from "../context/CartContext";
 import { useFadeIn } from "../hooks/useFadeIn";
 
+// ─── Skeleton mientras carga la imagen ────────────────────────────────────────
+function ImageSkeleton() {
+  return (
+    <div style={{
+      width: "100%", aspectRatio: "1",
+      background: `linear-gradient(90deg, rgba(255,255,255,0.03) 25%, rgba(255,255,255,0.07) 50%, rgba(255,255,255,0.03) 75%)`,
+      backgroundSize: "200% 100%",
+      animation: "shimmer 1.6s infinite",
+    }} />
+  );
+}
+
 export function ProductCard({ product, dark = false, onViewDetails }) {
   const { dispatch } = useCart();
   const ref = useFadeIn();
+  const [imgLoaded, setImgLoaded] = useState(false);
+  const [imgError, setImgError] = useState(false);
 
   const cardClass = dark ? "dark-product-card fade-in" : "product-card fade-in";
+  const imgSrc = imgError ? "/placeholder.jpg" : (product.image || "/placeholder.jpg");
 
   return (
-    <div 
-      ref={ref} 
+    <div
+      ref={ref}
       className={cardClass}
       onClick={() => onViewDetails && onViewDetails(product)}
     >
+      <style>{`
+        @keyframes shimmer {
+          0%   { background-position: 200% 0; }
+          100% { background-position: -200% 0; }
+        }
+      `}</style>
+
       <div style={{ overflow: "hidden", position: "relative" }}>
-        <img src={product.image || "/placeholder.jpg"} alt={product.name} />
+        {/* Skeleton visible mientras la imagen no cargó */}
+        {!imgLoaded && <ImageSkeleton />}
+
+        <img
+          src={imgSrc}
+          alt={product.name}
+          loading="lazy"
+          decoding="async"
+          onLoad={() => setImgLoaded(true)}
+          onError={() => { setImgError(true); setImgLoaded(true); }}
+          style={{ display: imgLoaded ? "block" : "none" }}
+        />
+
         <div className="overlay-add">
           <button
             className="gold-btn"
@@ -29,6 +64,7 @@ export function ProductCard({ product, dark = false, onViewDetails }) {
           </button>
         </div>
       </div>
+
       <div style={{ padding: "16px" }}>
         <span className="tag">{product.category}</span>
         <p

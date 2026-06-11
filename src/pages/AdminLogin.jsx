@@ -1,16 +1,26 @@
 import { useState } from "react";
 import { G } from "../styles/theme";
-import { ADMIN_EMAIL, ADMIN_PASSWORD } from "../data/constants";
+import { signIn } from "../lib/supabase";
 
 export function AdminLogin({ onLogin }) {
   const [creds, setCreds] = useState({ email: "", password: "" });
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
 
-  const handleLogin = () => {
-    if (creds.email === ADMIN_EMAIL && creds.password === ADMIN_PASSWORD) {
+  const handleLogin = async () => {
+    if (!creds.email || !creds.password) {
+      setError("Completa todos los campos");
+      return;
+    }
+    setLoading(true);
+    setError(null);
+    try {
+      await signIn(creds.email, creds.password);
       onLogin();
-    } else {
-      setError("Credenciales incorrectas");
+    } catch (err) {
+      setError(err.message || "Credenciales incorrectas");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -22,6 +32,9 @@ export function AdminLogin({ onLogin }) {
     border: `1px solid rgba(255,255,255,0.1)`,
     color: G.textDark,
     fontSize: "14px",
+    fontFamily: "'Jost', sans-serif",
+    borderRadius: "2px",
+    transition: "border-color 0.3s",
   };
 
   const labelStyle = {
@@ -81,8 +94,12 @@ export function AdminLogin({ onLogin }) {
           <input
             type="email"
             value={creds.email}
+            autoComplete="email"
             onChange={(e) => setCreds((c) => ({ ...c, email: e.target.value }))}
+            onKeyDown={(e) => e.key === "Enter" && handleLogin()}
             style={inputStyle}
+            onFocus={e => e.target.style.borderColor = G.gold}
+            onBlur={e => e.target.style.borderColor = "rgba(255,255,255,0.1)"}
           />
         </div>
 
@@ -92,9 +109,12 @@ export function AdminLogin({ onLogin }) {
           <input
             type="password"
             value={creds.password}
+            autoComplete="current-password"
             onChange={(e) => setCreds((c) => ({ ...c, password: e.target.value }))}
             onKeyDown={(e) => e.key === "Enter" && handleLogin()}
             style={inputStyle}
+            onFocus={e => e.target.style.borderColor = G.gold}
+            onBlur={e => e.target.style.borderColor = "rgba(255,255,255,0.1)"}
           />
         </div>
 
@@ -102,8 +122,13 @@ export function AdminLogin({ onLogin }) {
           <p style={{ color: "#e74c3c", fontSize: "13px", marginBottom: "16px" }}>{error}</p>
         )}
 
-        <button className="gold-btn" style={{ width: "100%" }} onClick={handleLogin}>
-          Ingresar
+        <button
+          className="gold-btn"
+          style={{ width: "100%", opacity: loading ? 0.7 : 1 }}
+          onClick={handleLogin}
+          disabled={loading}
+        >
+          {loading ? "Verificando..." : "Ingresar"}
         </button>
       </div>
     </div>
