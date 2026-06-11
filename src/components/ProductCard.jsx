@@ -48,7 +48,15 @@ export function ProductCard({ product, dark = false, onViewDetails }) {
           decoding="async"
           onLoad={() => setImgLoaded(true)}
           onError={() => { setImgError(true); setImgLoaded(true); }}
-          style={{ display: imgLoaded ? "block" : "none" }}
+          style={{
+            position: imgLoaded ? "relative" : "absolute",
+            top: 0, left: 0,
+            opacity: imgLoaded ? 1 : 0,
+            transition: "opacity 0.4s ease",
+            width: "100%",
+            height: "100%",
+            objectFit: "cover"
+          }}
         />
 
         <div className="overlay-add">
