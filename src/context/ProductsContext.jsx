@@ -16,7 +16,18 @@ export function ProductsProvider({ children }) {
     try {
       let data = [];
       try {
-        data = await supabaseFetch("/products?select=*&order=created_at.desc");
+        // Paginar en lotes de 500 para evitar el límite max_rows de Supabase
+        const PAGE = 500;
+        let offset = 0;
+        while (true) {
+          const batch = await supabaseFetch(
+            `/products?select=*&order=created_at.desc&limit=${PAGE}&offset=${offset}`
+          );
+          if (!batch || batch.length === 0) break;
+          data = data.concat(batch);
+          if (batch.length < PAGE) break;
+          offset += PAGE;
+        }
       } catch (err) {
         console.error("Error al obtener productos de Supabase:", err);
         throw err;
