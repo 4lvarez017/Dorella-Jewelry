@@ -34,21 +34,21 @@ export function CartFab({ totalItems, onClick }) {
 
 // ─── Vista de Catálogo ────────────────────────────────────────────────────────
 const GRID_CATEGORIES = [
-  { name: "Anillos", icon: "💍", image: "/anillo_trebol.jpg" },
-  { name: "Aretes", icon: "🌙", image: "/ARETES/AR%20AMORE%20HALO%209%20MM.png" },
-  { name: "Brazaletes Hombre", icon: "🪙", image: "/BRAZALETES%20HOMBRE/BALIN%208%20MM.png" },
-  { name: "Brazaletes Mujer", icon: "🪙", image: "/pulsera_3_carriles.jpg" },
-  { name: "Brazaletes Niñas", icon: "🪙", image: "https://images.unsplash.com/photo-1630502870826-7d63d59abfe8?w=600&q=80" },
-  { name: "Brazaletes Niños", icon: "🪙", image: "https://images.unsplash.com/photo-1518895949257-7621c3c786d7?w=600&q=80" },
-  { name: "Brazaletes Pareja", icon: "🪙", image: "https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?w=600&q=80" },
-  { name: "Cadenas", icon: "🔗", image: "/CADENAS/C%20CUBANA%20CON%20DESTELLOS%2060%20CM.png" },
-  { name: "Conjuntos", icon: "✨", image: "https://images.unsplash.com/photo-1573408301185-9519f94de0e4?w=600&q=80" },
-  { name: "Cruceros", icon: "⚓", image: "https://images.unsplash.com/photo-1610694955371-d4a3e0ce4b52?w=600&q=80" },
-  { name: "Dijes", icon: "🔮", image: "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=600&q=80" },
-  { name: "Herrajes", icon: "⚙️", image: "/HERRAJES/H%20CORAZON%20CIRCONIA.png" },
-  { name: "Pulseras", icon: "💎", image: "/pulsera_ensamblada.jpg" },
-  { name: "Rosarios", icon: "📿", image: "/ROSARIOS/ROSARIO%20BENEDICTUS%2043%20CM.png" },
-  { name: "Tobilleras", icon: "🦶", image: "/TOBILLERA/T%20BLUE%20DREAM%2023%20CM.png" },
+  { name: "Anillos",           icon: "💍", image: "/ANILLOS/ANILLO ALIANZA T5.5.png" },
+  { name: "Aretes",            icon: "🌙", image: "/ARETES/AMORE HALO 9 MM.png" },
+  { name: "Brazaletes Hombre", icon: "🪙", image: "/BRAZALETES HOMBRE/FULL DIAMANTADO 8 MM.png" },
+  { name: "Brazaletes Mujer",  icon: "🪙", image: "/BRAZALETES MUJER/PERFECT LOVE + B. LISO 6 MM Y 5 MM.png" },
+  { name: "Brazaletes Niñas",  icon: "🪙", image: "/BRAZALETES MUJER/UNICORNIO + B. LISO 6 MM.png" },
+  { name: "Brazaletes Niños",  icon: "🪙", image: "/BRAZALETES HOMBRE/BALIN 8 MM.png" },
+  { name: "Brazaletes Pareja", icon: "🪙", image: "/BRAZALETES MUJER/VIRGEN MILAGROSA + TRICOLOR 5 MM.png" },
+  { name: "Cadenas",           icon: "🔗", image: "/CADENAS/CUBANA CON DESTELLOS 60 CM.png" },
+  { name: "Conjuntos",         icon: "✨", image: "/ARETES/HEART CIRCONES 15 MM.png" },
+  { name: "Cruceros",          icon: "⚓", image: "/CADENAS/CUBANA SOL 65 CM.png" },
+  { name: "Dijes",             icon: "🔮", image: "/HERRAJES/CHARMING.png" },
+  { name: "Herrajes",          icon: "⚙️", image: "/HERRAJES/CORAZON CIRCONIA.png" },
+  { name: "Pulseras",          icon: "💎", image: "/PULSERAS/CUBAN LINK 3.1 MM 19 CM.png" },
+  { name: "Rosarios",          icon: "📿", image: "/ROSARIOS/ROSARIO BENEDICTUS 43 CM.png" },
+  { name: "Tobilleras",        icon: "🦶", image: "/TOBILLERA/ROMANTIC 23 CM.png" },
 ];
 
 
