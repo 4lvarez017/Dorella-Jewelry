@@ -622,5 +622,381 @@ export const BRAZALETES_MUJER = [
     "price": 60000,
     "image": "https://orolaminado18k.com.co/img/PM9/PERFIL.webp",
     "desc": "PM9 - BALIN 4MM + TRICOLOR 4MM en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PM9."
+  },
+  {
+    "id": 157353,
+    "name": "PM029 - BALIN LISO 6MM + TRICOLOR 4MM",
+    "category": "Brazaletes Mujer",
+    "price": 70000,
+    "image": "https://orolaminado18k.com.co/img/PM029/PM029.webp",
+    "desc": "PM029 - BALIN LISO 6MM + TRICOLOR 4MM en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PM029."
+  },
+  {
+    "id": 131065,
+    "name": "PM030 - TEJIDO CONTINUO 4MM",
+    "category": "Brazaletes Mujer",
+    "price": 140000,
+    "image": "https://orolaminado18k.com.co/img/PM030/PERFIL.webp",
+    "desc": "PM030 - TEJIDO CONTINUO 4MM en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PM030."
+  },
+  {
+    "id": 116685,
+    "name": "PM031 - DIAMANTADO 6MM + BALIN 5MM",
+    "category": "Brazaletes Mujer",
+    "price": 90000,
+    "image": "https://orolaminado18k.com.co/img/PM031/PERFIL.webp",
+    "desc": "PM031 - DIAMANTADO 6MM + BALIN 5MM en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PM031."
+  },
+  {
+    "id": 139188,
+    "name": "PM032 - DOBLE RONDEL 5MM + DIAMANTADO 6MM +BALIN 5MM",
+    "category": "Brazaletes Mujer",
+    "price": 110000,
+    "image": "https://orolaminado18k.com.co/img/PM032/PERFIL.webp",
+    "desc": "PM032 - DOBLE RONDEL 5MM + DIAMANTADO 6MM +BALIN 5MM en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PM032."
+  },
+  {
+    "id": 180465,
+    "name": "PM033 - ROSTRO MINI + ITALI 5MM Y LISO 4MM",
+    "category": "Brazaletes Mujer",
+    "price": 100000,
+    "image": "https://orolaminado18k.com.co/img/PM033/PERFIL.webp",
+    "desc": "PM033 - ROSTRO MINI + ITALI 5MM Y LISO 4MM en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PM033."
+  },
+  {
+    "id": 184307,
+    "name": "PM034 - RONDEL 4MM + BALIN 5MM Y 4MM",
+    "category": "Brazaletes Mujer",
+    "price": 80000,
+    "image": "https://orolaminado18k.com.co/img/PM034/PM034.webp",
+    "desc": "PM034 - RONDEL 4MM + BALIN 5MM Y 4MM en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PM034."
+  },
+  {
+    "id": 141500,
+    "name": "PM035 - ITALI 5MM + LISO 4MM",
+    "category": "Brazaletes Mujer",
+    "price": 90000,
+    "image": "https://orolaminado18k.com.co/img/PM035/PM035.webp",
+    "desc": "PM035 - ITALI 5MM + LISO 4MM en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PM035."
+  },
+  {
+    "id": 175394,
+    "name": "PM036 - DIAMANTADO 6MM + NEOPRENO Y LISO 4MM",
+    "category": "Brazaletes Mujer",
+    "price": 70000,
+    "image": "https://orolaminado18k.com.co/img/PM036/PERFIL.webp",
+    "desc": "PM036 - DIAMANTADO 6MM + NEOPRENO Y LISO 4MM en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PM036."
+  },
+  {
+    "id": 138057,
+    "name": "PM037 - FULL 4MM",
+    "category": "Brazaletes Mujer",
+    "price": 60000,
+    "image": "https://orolaminado18k.com.co/img/PM037/PM037.webp",
+    "desc": "PM037 - FULL 4MM en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PM037."
+  },
+  {
+    "id": 198812,
+    "name": "PP038 - FULL 4MM + NEOPRENO 4MM",
+    "category": "Brazaletes Mujer",
+    "price": 60000,
+    "image": "https://orolaminado18k.com.co/img/PM038/PERFIL.webp",
+    "desc": "PP038 - FULL 4MM + NEOPRENO 4MM en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PM038."
+  },
+  {
+    "id": 133599,
+    "name": "PM039 - RONDEL Y ITALI 5MM + BALIN 4MM",
+    "category": "Brazaletes Mujer",
+    "price": 100000,
+    "image": "https://orolaminado18k.com.co/img/PM039/PERFIL.webp",
+    "desc": "PM039 - RONDEL Y ITALI 5MM + BALIN 4MM en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PM039."
+  },
+  {
+    "id": 191183,
+    "name": "Pulsera San Benito balin italiano y liso 4mm",
+    "category": "Brazaletes Mujer",
+    "price": 120000,
+    "image": "https://orolaminado18k.com.co/img/PM040/",
+    "desc": "Pulsera San Benito balin italiano y liso 4mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PM040."
+  },
+  {
+    "id": 172686,
+    "name": "Pulsera infinito balin liso 5mm",
+    "category": "Brazaletes Mujer",
+    "price": 70000,
+    "image": "https://orolaminado18k.com.co/img/PM041/",
+    "desc": "Pulsera infinito balin liso 5mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PM041."
+  },
+  {
+    "id": 163383,
+    "name": "Brazalete balin diamantado 4mm",
+    "category": "Brazaletes Mujer",
+    "price": 80000,
+    "image": "https://orolaminado18k.com.co/img/Pm042/",
+    "desc": "Brazalete balin diamantado 4mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia Pm042."
+  },
+  {
+    "id": 134059,
+    "name": "Pulsera balin 8 5 4 mm liso diamantado e italiano",
+    "category": "Brazaletes Mujer",
+    "price": 90000,
+    "image": "https://orolaminado18k.com.co/img/PM043/",
+    "desc": "Pulsera balin 8 5 4 mm liso diamantado e italiano en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PM043."
+  },
+  {
+    "id": 173236,
+    "name": "Pulsera san benito 7 nudos 3mm",
+    "category": "Brazaletes Mujer",
+    "price": 90000,
+    "image": "https://orolaminado18k.com.co/img/PM044/",
+    "desc": "Pulsera san benito 7 nudos 3mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PM044."
+  },
+  {
+    "id": 120881,
+    "name": "Pulsera san benito italiano 3mm doble carril",
+    "category": "Brazaletes Mujer",
+    "price": 150000,
+    "image": "https://orolaminado18k.com.co/img/PM045/",
+    "desc": "Pulsera san benito italiano 3mm doble carril en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PM045."
+  },
+  {
+    "id": 141813,
+    "name": "Pulsera balin diamantado 4mm",
+    "category": "Brazaletes Mujer",
+    "price": 80000,
+    "image": "https://orolaminado18k.com.co/img/PM046/",
+    "desc": "Pulsera balin diamantado 4mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PM046."
+  },
+  {
+    "id": 108176,
+    "name": "Pulsera balin 4mm",
+    "category": "Brazaletes Mujer",
+    "price": 130000,
+    "image": "https://orolaminado18k.com.co/img/PM047/",
+    "desc": "Pulsera balin 4mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PM047."
+  },
+  {
+    "id": 135739,
+    "name": "Pulsera balin 4mm deca",
+    "category": "Brazaletes Mujer",
+    "price": 70000,
+    "image": "https://orolaminado18k.com.co/img/PM048/",
+    "desc": "Pulsera balin 4mm deca en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PM048."
+  },
+  {
+    "id": 163464,
+    "name": "Pulsera san benito balin 4mm",
+    "category": "Brazaletes Mujer",
+    "price": 100000,
+    "image": "https://orolaminado18k.com.co/img/PM049/",
+    "desc": "Pulsera san benito balin 4mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PM049."
+  },
+  {
+    "id": 169636,
+    "name": "PM1 - BALIN DIAMANTADO Y NEO 6MM + BALIN 5 Y 4MM",
+    "category": "Brazaletes Mujer",
+    "price": 110000,
+    "image": "https://orolaminado18k.com.co/img/PM1/PERFIL.webp",
+    "desc": "PM1 - BALIN DIAMANTADO Y NEO 6MM + BALIN 5 Y 4MM en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PM1."
+  },
+  {
+    "id": 166540,
+    "name": "PM10 - MINISERPIENTE 3MM",
+    "category": "Brazaletes Mujer",
+    "price": 80000,
+    "image": "https://orolaminado18k.com.co/img/PM10/PERFIL.webp",
+    "desc": "PM10 - MINISERPIENTE 3MM en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PM10."
+  },
+  {
+    "id": 146859,
+    "name": "PM12 - VIRGEN MILAGROSA + TRICOLOR 5MM",
+    "category": "Brazaletes Mujer",
+    "price": 130000,
+    "image": "https://orolaminado18k.com.co/img/PM12/PERFIL.webp",
+    "desc": "PM12 - VIRGEN MILAGROSA + TRICOLOR 5MM en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PM12."
+  },
+  {
+    "id": 103518,
+    "name": "PM13 - ITALIANO Y LISO 3MM",
+    "category": "Brazaletes Mujer",
+    "price": 70000,
+    "image": "https://orolaminado18k.com.co/img/PM13/PERFIL.webp",
+    "desc": "PM13 - ITALIANO Y LISO 3MM en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PM13."
+  },
+  {
+    "id": 183522,
+    "name": "PM14 - ITALIANO 5MM + NEO 6MM",
+    "category": "Brazaletes Mujer",
+    "price": 140000,
+    "image": "https://orolaminado18k.com.co/img/PM14/PERFIL.webp",
+    "desc": "PM14 - ITALIANO 5MM + NEO 6MM en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PM14."
+  },
+  {
+    "id": 111685,
+    "name": "PM15 - ITALIANO 5MM Y LISO 4MM",
+    "category": "Brazaletes Mujer",
+    "price": 90000,
+    "image": "https://orolaminado18k.com.co/img/PM15/PERFIL.webp",
+    "desc": "PM15 - ITALIANO 5MM Y LISO 4MM en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PM15."
+  },
+  {
+    "id": 148366,
+    "name": "PM16 - UNICORN + BALIN 6MM",
+    "category": "Brazaletes Mujer",
+    "price": 140000,
+    "image": "https://orolaminado18k.com.co/img/PM16/PERFIL.webp",
+    "desc": "PM16 - UNICORN + BALIN 6MM en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PM16."
+  },
+  {
+    "id": 109848,
+    "name": "PM17 - BALIN ITALI Y LISO + NEOPRENO 4MM",
+    "category": "Brazaletes Mujer",
+    "price": 120000,
+    "image": "https://orolaminado18k.com.co/img/PM17/PERFIL.webp",
+    "desc": "PM17 - BALIN ITALI Y LISO + NEOPRENO 4MM en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PM17."
+  },
+  {
+    "id": 100138,
+    "name": "PM18 - BALIN 6MM + BALIN Y NEOPRENO 4MM",
+    "category": "Brazaletes Mujer",
+    "price": 150000,
+    "image": "https://orolaminado18k.com.co/img/PM18/PERFIL.webp",
+    "desc": "PM18 - BALIN 6MM + BALIN Y NEOPRENO 4MM en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PM18."
+  },
+  {
+    "id": 183657,
+    "name": "PM19 - BALIN Y NEOPRENO 6  MM",
+    "category": "Brazaletes Mujer",
+    "price": 130000,
+    "image": "https://orolaminado18k.com.co/img/PM19/PERFIL.webp",
+    "desc": "PM19 - BALIN Y NEOPRENO 6  MM en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PM19."
+  },
+  {
+    "id": 173178,
+    "name": "PM2 - RONDEL 4MM + BALIN 4 Y 3MM",
+    "category": "Brazaletes Mujer",
+    "price": 80000,
+    "image": "https://orolaminado18k.com.co/img/PM2/PERFIL.webp",
+    "desc": "PM2 - RONDEL 4MM + BALIN 4 Y 3MM en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PM2."
+  },
+  {
+    "id": 110627,
+    "name": "PM21 - FULL BALIN 4MM, 5MM Y 6 MM",
+    "category": "Brazaletes Mujer",
+    "price": 200000,
+    "image": "https://orolaminado18k.com.co/img/PM21/PERFIL.webp",
+    "desc": "PM21 - FULL BALIN 4MM, 5MM Y 6 MM en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PM21."
+  },
+  {
+    "id": 149040,
+    "name": "PM22 - FULL BALIN ROSADO 4MM",
+    "category": "Brazaletes Mujer",
+    "price": 150000,
+    "image": "https://orolaminado18k.com.co/img/PM22/PERFIL.webp",
+    "desc": "PM22 - FULL BALIN ROSADO 4MM en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PM22."
+  },
+  {
+    "id": 104353,
+    "name": "PM23 - LISO 4MM CONTINUO",
+    "category": "Brazaletes Mujer",
+    "price": 70000,
+    "image": "https://orolaminado18k.com.co/img/PM23/PERFIL.webp",
+    "desc": "PM23 - LISO 4MM CONTINUO en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PM23."
+  },
+  {
+    "id": 137121,
+    "name": "PM24 - MEDIA LUNA + BALIN Y NEO 6MM",
+    "category": "Brazaletes Mujer",
+    "price": 180000,
+    "image": "",
+    "desc": "PM24 - MEDIA LUNA + BALIN Y NEO 6MM en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PM24."
+  },
+  {
+    "id": 173993,
+    "name": "PM25 - SAN BENITO + BALIN 4MM",
+    "category": "Brazaletes Mujer",
+    "price": 110000,
+    "image": "https://orolaminado18k.com.co/img/PM25/PM25_1.webp",
+    "desc": "PM25 - SAN BENITO + BALIN 4MM en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PM25."
+  },
+  {
+    "id": 101269,
+    "name": "PM26 - NEOPRENO Y BALIN 4MM",
+    "category": "Brazaletes Mujer",
+    "price": 110000,
+    "image": "https://orolaminado18k.com.co/img/PM26/PERFIL.webp",
+    "desc": "PM26 - NEOPRENO Y BALIN 4MM en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PM26."
+  },
+  {
+    "id": 199313,
+    "name": "PM27 - BALIN LISO 6MM Y 4MM",
+    "category": "Brazaletes Mujer",
+    "price": 70000,
+    "image": "https://orolaminado18k.com.co/img/PM27/PERFIL.webp",
+    "desc": "PM27 - BALIN LISO 6MM Y 4MM en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PM27."
+  },
+  {
+    "id": 149486,
+    "name": "PM28 - PERFECT LOVE + BALIN 4 Y 5MM",
+    "category": "Brazaletes Mujer",
+    "price": 130000,
+    "image": "https://orolaminado18k.com.co/img/PM28/PERFIL.webp",
+    "desc": "PM28 - PERFECT LOVE + BALIN 4 Y 5MM en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PM28."
+  },
+  {
+    "id": 116218,
+    "name": "PM3 - RONDEL 4 MM + BALIN 5 Y 4MM",
+    "category": "Brazaletes Mujer",
+    "price": 80000,
+    "image": "https://orolaminado18k.com.co/img/PM3/PERFIL.webp",
+    "desc": "PM3 - RONDEL 4 MM + BALIN 5 Y 4MM en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PM3."
+  },
+  {
+    "id": 152688,
+    "name": "PM4 - DIAMANTADO 6MM + BALIN 4",
+    "category": "Brazaletes Mujer",
+    "price": 60000,
+    "image": "https://orolaminado18k.com.co/img/PM4/PERFIL.webp",
+    "desc": "PM4 - DIAMANTADO 6MM + BALIN 4 en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PM4."
+  },
+  {
+    "id": 123847,
+    "name": "PM5 - DIAMANTADO 6MM + BALIN 3MM",
+    "category": "Brazaletes Mujer",
+    "price": 60000,
+    "image": "https://orolaminado18k.com.co/img/PM5/PERFIL.webp",
+    "desc": "PM5 - DIAMANTADO 6MM + BALIN 3MM en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PM5."
+  },
+  {
+    "id": 116330,
+    "name": "PM6 - DIAMANTADO + RONDEL 5MM Y  BALIN 5MM",
+    "category": "Brazaletes Mujer",
+    "price": 110000,
+    "image": "https://orolaminado18k.com.co/img/PM6/PERFIL.webp",
+    "desc": "PM6 - DIAMANTADO + RONDEL 5MM Y  BALIN 5MM en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PM6."
+  },
+  {
+    "id": 166128,
+    "name": "PM7 - RONDEL 4MM + ITALIANO 4MM",
+    "category": "Brazaletes Mujer",
+    "price": 90000,
+    "image": "https://orolaminado18k.com.co/img/PM7/PERFIL.webp",
+    "desc": "PM7 - RONDEL 4MM + ITALIANO 4MM en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PM7."
+  },
+  {
+    "id": 116477,
+    "name": "PM8 - MANO FATIMA + RONDEL Y BALIN 4MM",
+    "category": "Brazaletes Mujer",
+    "price": 130000,
+    "image": "https://orolaminado18k.com.co/img/PM8/PERFIL.webp",
+    "desc": "PM8 - MANO FATIMA + RONDEL Y BALIN 4MM en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PM8."
+  },
+  {
+    "id": 193889,
+    "name": "PM9 - BALIN 4MM + TRICOLOR 4MM",
+    "category": "Brazaletes Mujer",
+    "price": 60000,
+    "image": "https://orolaminado18k.com.co/img/PM9/PERFIL.webp",
+    "desc": "PM9 - BALIN 4MM + TRICOLOR 4MM en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PM9."
   }
 ];
