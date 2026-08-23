@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { G } from "../styles/theme";
+import Topography from "./Topography";
 
 // Gold Particle Class for Canvas 2D floating dust
 class GoldParticle {
@@ -355,19 +356,39 @@ export function HeroSection({ onExplore }) {
           }}
         />
 
-        {/* Static Gold Veins Dark Backdrop */}
+        {/* Animated Topography WebGL Backdrop */}
         <div
           style={{
             position: "absolute",
             inset: 0,
-            backgroundImage: "url('/pulsera_base.jpg')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            filter: "brightness(0.08) blur(8px)",
-            pointerEvents: "none",
             zIndex: 1,
+            pointerEvents: "none",
           }}
-        />
+        >
+          <Topography
+            lowColor="#d3a000"
+            midColor="#ae4c08"
+            highColor="#4d573e"
+            speed={0.6}
+            morphAmount={3}
+            morphSpeed={0.05}
+            bands={2}
+            thickness={0.01}
+            scale={2}
+            pixelSize={1}
+            glow={0.5}
+            colorMode="elevation"
+            contrast={3}
+            brightness={1}
+            fillBands={false}
+            opacity={1}
+            grain
+            grainIntensity={0.05}
+            mouseInteraction
+            mouseRadius={0.3}
+            mouseStrength={0.4}
+          />
+        </div>
 
         {/* HQ Image Sequence layers (Using centered 4K assets) */}
         <div
