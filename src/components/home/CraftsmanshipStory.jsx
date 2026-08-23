@@ -185,10 +185,8 @@ export function CraftsmanshipStory() {
                 width: "100%",
                 height: "100%",
                 objectFit: "contain",
-                mixBlendMode: "screen",
-                WebkitMaskImage: "radial-gradient(circle at center, #000 45%, rgba(0,0,0,0.5) 70%, transparent 92%)",
-                maskImage: "radial-gradient(circle at center, #000 45%, rgba(0,0,0,0.5) 70%, transparent 92%)",
-                filter: "brightness(1.15) drop-shadow(0 0 30px rgba(201, 168, 76, 0.35))",
+                borderRadius: "4px",
+                filter: "drop-shadow(0 12px 28px rgba(0, 0, 0, 0.85))",
                 animation: "storyFadeIn 0.5s ease forwards",
               }}
             />

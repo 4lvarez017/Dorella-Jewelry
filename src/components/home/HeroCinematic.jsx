@@ -264,37 +264,50 @@ export function HeroCinematic({ onExplore }) {
           Ingeniería artesanal y fusión molecular. El arte del detalle sutil creado para perdurar por generaciones.
         </p>
 
-        {/* Hero Product Visual Stage (Integrated without rectangular box border) */}
+        {/* Hero Product Visual Stage (Seamlessly feathered into background) */}
         <div
           style={{
             position: "relative",
             width: "100%",
-            maxWidth: isMobile ? "280px" : "480px",
-            aspectRatio: "1.25",
+            maxWidth: isMobile ? "270px" : "400px",
+            aspectRatio: "1.1",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            margin: "0 auto 32px",
+            margin: "0 auto 20px",
           }}
         >
-          <img
-            src="/BRAZALETES HOMBRE/BALIN 8 MM.png"
-            alt="Brazalete Balín 8MM Oro 18K"
+          {/* Subtle warm halo directly under the bracelet */}
+          <div
             style={{
-              maxWidth: "100%",
-              maxHeight: "100%",
+              position: "absolute",
+              inset: "10%",
+              background: "radial-gradient(circle at center, rgba(201, 168, 76, 0.22) 0%, rgba(201, 168, 76, 0.05) 50%, transparent 70%)",
+              filter: "blur(25px)",
+              pointerEvents: "none",
+            }}
+          />
+
+          <img
+            src="/pulsera_base.jpg"
+            alt="Pulsera Dorella Oro 18K"
+            style={{
+              width: "100%",
+              height: "100%",
               objectFit: "contain",
-              filter: "drop-shadow(0 20px 30px rgba(0, 0, 0, 0.95)) drop-shadow(0 0 35px rgba(201, 168, 76, 0.4))",
-              transform: "scale(1.05)",
+              WebkitMaskImage: "radial-gradient(circle at 50% 50%, rgba(0,0,0,1) 32%, rgba(0,0,0,0.75) 54%, rgba(0,0,0,0) 72%)",
+              maskImage: "radial-gradient(circle at 50% 50%, rgba(0,0,0,1) 32%, rgba(0,0,0,0.75) 54%, rgba(0,0,0,0) 72%)",
+              filter: "brightness(1.08) contrast(1.05)",
+              transform: "scale(1.04)",
               transition: "transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)",
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.1)")}
-            onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
+            onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.09)")}
+            onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1.04)")}
           />
         </div>
 
         {/* Primary Call To Action */}
-        <div style={{ display: "flex", gap: "16px", flexWrap: "wrap", justifyContent: "center" }}>
+        <div style={{ display: "flex", gap: "16px", flexWrap: "wrap", justifyContent: "center", marginBottom: isMobile ? "24px" : "32px" }}>
           <button
             className="gold-btn"
             style={{
@@ -338,60 +351,62 @@ export function HeroCinematic({ onExplore }) {
       </div>
 
       {/* Scroll Down Hint Indicator */}
-      <div
-        onClick={scrollToStory}
-        style={{
-          position: "absolute",
-          bottom: "24px",
-          left: "50%",
-          transform: "translateX(-50%)",
-          zIndex: 6,
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          gap: "8px",
-          cursor: "pointer",
-          opacity: 0.7,
-          transition: "opacity 0.3s",
-        }}
-        onMouseEnter={(e) => (e.currentTarget.style.opacity = "1")}
-        onMouseLeave={(e) => (e.currentTarget.style.opacity = "0.7")}
-      >
-        <span
-          style={{
-            fontSize: "9px",
-            letterSpacing: "3px",
-            textTransform: "uppercase",
-            color: G.goldLight,
-            fontWeight: 600,
-          }}
-        >
-          DESLIZA PARA DESCUBRIR
-        </span>
+      {!isMobile && (
         <div
+          onClick={scrollToStory}
           style={{
-            width: "16px",
-            height: "26px",
-            border: `1.5px solid ${G.gold}`,
-            borderRadius: "10px",
-            position: "relative",
+            position: "absolute",
+            bottom: "20px",
+            left: "50%",
+            transform: "translateX(-50%)",
+            zIndex: 6,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            gap: "8px",
+            cursor: "pointer",
+            opacity: 0.7,
+            transition: "opacity 0.3s",
           }}
+          onMouseEnter={(e) => (e.currentTarget.style.opacity = "1")}
+          onMouseLeave={(e) => (e.currentTarget.style.opacity = "0.7")}
         >
+          <span
+            style={{
+              fontSize: "9px",
+              letterSpacing: "3px",
+              textTransform: "uppercase",
+              color: G.goldLight,
+              fontWeight: 600,
+            }}
+          >
+            DESLIZA PARA DESCUBRIR
+          </span>
           <div
             style={{
-              width: "3px",
-              height: "5px",
-              background: G.goldLight,
-              borderRadius: "50%",
-              position: "absolute",
-              left: "50%",
-              top: "5px",
-              transform: "translateX(-50%)",
-              animation: "heroMouseWheel 1.8s ease-in-out infinite",
+              width: "16px",
+              height: "26px",
+              border: `1.5px solid ${G.gold}`,
+              borderRadius: "10px",
+              position: "relative",
             }}
-          />
+          >
+            <div
+              style={{
+                width: "3px",
+                height: "5px",
+                background: G.goldLight,
+                borderRadius: "50%",
+                position: "absolute",
+                left: "50%",
+                top: "5px",
+                transform: "translateX(-50%)",
+                animation: "heroMouseWheel 1.8s ease-in-out infinite",
+              }}
+            />
+          </div>
         </div>
-      </div>
+      )}
 
       <style>{`
         @keyframes heroMouseWheel {
