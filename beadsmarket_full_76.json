@@ -1,0 +1,1480 @@
+[
+  {
+    "@type": "ListItem",
+    "position": 1,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph001-ph001",
+      "name": "PH001",
+      "sku": "PH001",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH001/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph001-ph001",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 2,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph002-ph002",
+      "name": "PH002",
+      "sku": "PH002",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH002/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph002-ph002",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 3,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph003-ph003",
+      "name": "PH003",
+      "sku": "PH003",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH003/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph003-ph003",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 4,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph004-ph004",
+      "name": "PH004",
+      "sku": "PH004",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH004/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph004-ph004",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 5,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph007-ph007",
+      "name": "PH007",
+      "sku": "PH007",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH007/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph007-ph007",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 6,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph010-ph010",
+      "name": "PH010",
+      "sku": "PH010",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH010/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph010-ph010",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 7,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph011-ph011",
+      "name": "PH011",
+      "sku": "PH011",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH011/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph011-ph011",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 8,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph012-ph012",
+      "name": "PH012",
+      "sku": "PH012",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH012/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph012-ph012",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 9,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph013-ph013",
+      "name": "PH013",
+      "sku": "PH013",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH013/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph013-ph013",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 10,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph014-ph014",
+      "name": "PH014",
+      "sku": "PH014",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH014/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph014-ph014",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 11,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph015-ph015",
+      "name": "PH015",
+      "sku": "PH015",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH015/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph015-ph015",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 12,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph016-ph016",
+      "name": "PH016",
+      "sku": "PH016",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH016/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph016-ph016",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 13,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph017-ph017",
+      "name": "PH017",
+      "sku": "PH017",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH017/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph017-ph017",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 14,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph018-ph018",
+      "name": "PH018",
+      "sku": "PH018",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH018/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph018-ph018",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 15,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph019-ph019",
+      "name": "PH019",
+      "sku": "PH019",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH019/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph019-ph019",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 16,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph020-ph020",
+      "name": "PH020",
+      "sku": "PH020",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH020/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph020-ph020",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 17,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph021-ph021",
+      "name": "PH021",
+      "sku": "PH021",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH021/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph021-ph021",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 18,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph022-ph022",
+      "name": "PH022",
+      "sku": "PH022",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH022/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph022-ph022",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 19,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph023-ph023",
+      "name": "PH023",
+      "sku": "PH023",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH023/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph023-ph023",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 20,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph024-ph024",
+      "name": "PH024",
+      "sku": "PH024",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH024/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph024-ph024",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 21,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph025-ph025",
+      "name": "PH025",
+      "sku": "PH025",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH025/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph025-ph025",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 22,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph026-ph026",
+      "name": "PH026",
+      "sku": "PH026",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH026/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph026-ph026",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 23,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph027-ph027",
+      "name": "PH027",
+      "sku": "PH027",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH027/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph027-ph027",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 24,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph028-ph028",
+      "name": "PH028",
+      "sku": "PH028",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH028/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph028-ph028",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 25,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph029-ph029",
+      "name": "PH029",
+      "sku": "PH029",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH029/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph029-ph029",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 26,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph030-ph030",
+      "name": "PH030",
+      "sku": "PH030",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH030/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph030-ph030",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 27,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph033-ph033",
+      "name": "PH033",
+      "sku": "PH033",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH033/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph033-ph033",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 28,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph035-ph035",
+      "name": "PH035",
+      "sku": "PH035",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH035/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph035-ph035",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 29,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph036-ph036",
+      "name": "PH036",
+      "sku": "PH036",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH036/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph036-ph036",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 30,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph037-ph037",
+      "name": "PH037",
+      "sku": "PH037",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH037/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph037-ph037",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 31,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph038-ph038",
+      "name": "PH038",
+      "sku": "PH038",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH038/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph038-ph038",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 32,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph041-ph041",
+      "name": "PH041",
+      "sku": "PH041",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH041/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph041-ph041",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 33,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph043-ph043",
+      "name": "PH043",
+      "sku": "PH043",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH043/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph043-ph043",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 34,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph044-ph044",
+      "name": "PH044",
+      "sku": "PH044",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH044/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph044-ph044",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 35,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph046-ph046",
+      "name": "PH046",
+      "sku": "PH046",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH046/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph046-ph046",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 36,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph047-ph047",
+      "name": "PH047",
+      "sku": "PH047",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH047/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph047-ph047",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 37,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph048-ph048",
+      "name": "PH048",
+      "sku": "PH048",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH048/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph048-ph048",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 38,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph049-ph049",
+      "name": "PH049",
+      "sku": "PH049",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH049/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph049-ph049",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 39,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph050-ph050",
+      "name": "PH050",
+      "sku": "PH050",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH050/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph050-ph050",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 40,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph051-ph051",
+      "name": "PH051",
+      "sku": "PH051",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH051/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph051-ph051",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 41,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph052-ph052",
+      "name": "PH052",
+      "sku": "PH052",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH052/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph052-ph052",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 42,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph054-ph054",
+      "name": "PH054",
+      "sku": "PH054",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH054/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph054-ph054",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 43,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph056-pulsera-con-barril-prisma-7-nudos",
+      "name": "pulsera con barril prisma 7 nudos",
+      "sku": "PH056",
+      "category": "Brazaletes Hombre",
+      "url": "https://www.beadsmarket.co/producto/ph056-pulsera-con-barril-prisma-7-nudos",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      },
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH001/perfil.webp",
+      "scrapedPrice": "55.000"
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 44,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph057-pulsera-tejida-con-canutillo-diamantado",
+      "name": "pulsera tejida con canutillo diamantado",
+      "sku": "PH057",
+      "category": "Brazaletes Hombre",
+      "url": "https://www.beadsmarket.co/producto/ph057-pulsera-tejida-con-canutillo-diamantado",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      },
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH001/perfil.webp",
+      "scrapedPrice": "51.600"
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 45,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph058-pulsera-coral-con-canutillos",
+      "name": "pulsera coral con canutillos ",
+      "sku": "PH058",
+      "category": "Brazaletes Hombre",
+      "url": "https://www.beadsmarket.co/producto/ph058-pulsera-coral-con-canutillos",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      },
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH001/perfil.webp",
+      "scrapedPrice": "97.200"
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 46,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph059-pulsera-rondel-lux-doble",
+      "name": "pulsera rondel lux doble",
+      "sku": "PH059",
+      "category": "Brazaletes Hombre",
+      "url": "https://www.beadsmarket.co/producto/ph059-pulsera-rondel-lux-doble",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      },
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH001/perfil.webp",
+      "scrapedPrice": "80.400"
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 47,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph060-pulsera-tejida-eclipse-italiana",
+      "name": "pulsera tejida eclipse italiana",
+      "sku": "PH060",
+      "category": "Brazaletes Hombre",
+      "url": "https://www.beadsmarket.co/producto/ph060-pulsera-tejida-eclipse-italiana",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      },
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH001/perfil.webp",
+      "scrapedPrice": "125.400"
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 48,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph061-pulsera-bolsa-de-dinero-azul",
+      "name": "pulsera bolsa de dinero azul",
+      "sku": "PH061",
+      "category": "Brazaletes Hombre",
+      "url": "https://www.beadsmarket.co/producto/ph061-pulsera-bolsa-de-dinero-azul",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      },
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH001/perfil.webp",
+      "scrapedPrice": "78.600"
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 49,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph062-pulsera-de-canutillos-unidos",
+      "name": "pulsera de canutillos unidos ",
+      "sku": "PH062",
+      "category": "Brazaletes Hombre",
+      "url": "https://www.beadsmarket.co/producto/ph062-pulsera-de-canutillos-unidos",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      },
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH001/perfil.webp",
+      "scrapedPrice": "75.800"
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 50,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph063-pulsera-rubi-sensilla",
+      "name": "pulsera rubi sensilla ",
+      "sku": "PH063",
+      "category": "Brazaletes Hombre",
+      "url": "https://www.beadsmarket.co/producto/ph063-pulsera-rubi-sensilla",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      },
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH001/perfil.webp",
+      "scrapedPrice": "68.400"
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 51,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph064-pulsera-triple-colr-de-hilo",
+      "name": "pulsera triple colr de hilo",
+      "sku": "PH064",
+      "category": "Brazaletes Hombre",
+      "url": "https://www.beadsmarket.co/producto/ph064-pulsera-triple-colr-de-hilo",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      },
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH001/perfil.webp",
+      "scrapedPrice": "44.000"
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 52,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph065-pulsera-destello-en-cruz",
+      "name": "pulsera destello en cruz",
+      "sku": "PH065",
+      "category": "Brazaletes Hombre",
+      "url": "https://www.beadsmarket.co/producto/ph065-pulsera-destello-en-cruz",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      },
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH001/perfil.webp",
+      "scrapedPrice": "59.000"
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 53,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph066-brazalete-emeral-triple-carril",
+      "name": "brazalete emeral triple carril",
+      "sku": "PH066",
+      "category": "Brazaletes Hombre",
+      "url": "https://www.beadsmarket.co/producto/ph066-brazalete-emeral-triple-carril",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      },
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH001/perfil.webp",
+      "scrapedPrice": "177.200"
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 54,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph067-pulsera-bolsa-de-dinero-italiano",
+      "name": "pulsera bolsa de dinero italiano",
+      "sku": "PH067",
+      "category": "Brazaletes Hombre",
+      "url": "https://www.beadsmarket.co/producto/ph067-pulsera-bolsa-de-dinero-italiano",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      },
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH001/perfil.webp",
+      "scrapedPrice": "68.600"
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 55,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph068-pulsera-de-dolar-italiana",
+      "name": "pulsera de dolar italiana",
+      "sku": "PH068",
+      "category": "Brazaletes Hombre",
+      "url": "https://www.beadsmarket.co/producto/ph068-pulsera-de-dolar-italiana",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      },
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH001/perfil.webp",
+      "scrapedPrice": "139.000"
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 56,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph069-pulsera-de-dolar-diamantada-h",
+      "name": "pulsera de dolar diamantada h",
+      "sku": "PH069",
+      "category": "Brazaletes Hombre",
+      "url": "https://www.beadsmarket.co/producto/ph069-pulsera-de-dolar-diamantada-h",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      },
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH001/perfil.webp",
+      "scrapedPrice": "124.200"
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 57,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph070-pulsera-herradura-diamantada-h",
+      "name": "pulsera herradura diamantada h",
+      "sku": "PH070",
+      "category": "Brazaletes Hombre",
+      "url": "https://www.beadsmarket.co/producto/ph070-pulsera-herradura-diamantada-h",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      },
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH001/perfil.webp",
+      "scrapedPrice": "119.700"
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 58,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph071-pulsera-con-herradura-bdd5",
+      "name": "pulsera con herradura bdd5",
+      "sku": "PH071",
+      "category": "Brazaletes Hombre",
+      "url": "https://www.beadsmarket.co/producto/ph071-pulsera-con-herradura-bdd5",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      },
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH001/perfil.webp",
+      "scrapedPrice": "76.400"
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 59,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph072-pulsera-tio-rico-8-6-5",
+      "name": "pulsera tio rico 8,6,5..",
+      "sku": "PH072",
+      "category": "Brazaletes Hombre",
+      "url": "https://www.beadsmarket.co/producto/ph072-pulsera-tio-rico-8-6-5",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      },
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH001/perfil.webp",
+      "scrapedPrice": "143.600"
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 60,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph073-pulsera-tejida-tio-rico",
+      "name": "pulsera tejida tio rico",
+      "sku": "PH073",
+      "category": "Brazaletes Hombre",
+      "url": "https://www.beadsmarket.co/producto/ph073-pulsera-tejida-tio-rico",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      },
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH001/perfil.webp",
+      "scrapedPrice": "149.800"
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 61,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph074-pulsera-rolex-balin-x",
+      "name": "pulsera rolex balin x",
+      "sku": "PH074",
+      "category": "Brazaletes Hombre",
+      "url": "https://www.beadsmarket.co/producto/ph074-pulsera-rolex-balin-x",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      },
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH001/perfil.webp",
+      "scrapedPrice": "107.400"
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 62,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph075-pulsera-triple-carril-brio",
+      "name": "pulsera triple carril brio",
+      "sku": "PH075",
+      "category": "Brazaletes Hombre",
+      "url": "https://www.beadsmarket.co/producto/ph075-pulsera-triple-carril-brio",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      },
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH001/perfil.webp",
+      "scrapedPrice": "114.000"
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 63,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph076-pulsera-barriles-centrales-h",
+      "name": "pulsera barriles centrales h",
+      "sku": "PH076",
+      "category": "Brazaletes Hombre",
+      "url": "https://www.beadsmarket.co/producto/ph076-pulsera-barriles-centrales-h",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      },
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH001/perfil.webp",
+      "scrapedPrice": "64.600"
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 64,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph077-pulsera-flor-rondel-full-3mm-lis",
+      "name": "pulsera flor rondel full 3mm lis",
+      "sku": "PH077",
+      "category": "Brazaletes Hombre",
+      "url": "https://www.beadsmarket.co/producto/ph077-pulsera-flor-rondel-full-3mm-lis",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      },
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH001/perfil.webp",
+      "scrapedPrice": "137.200"
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 65,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph078-pulseta-emeral-birondel-h",
+      "name": "pulseta emeral birondel h",
+      "sku": "Ph078",
+      "category": "Brazaletes Hombre",
+      "url": "https://www.beadsmarket.co/producto/ph078-pulseta-emeral-birondel-h",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      },
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH001/perfil.webp",
+      "scrapedPrice": "157.700"
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 66,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph079-pulsera-rondel-lux-diaman",
+      "name": "pulsera rondel lux diaman",
+      "sku": "PH079",
+      "category": "Brazaletes Hombre",
+      "url": "https://www.beadsmarket.co/producto/ph079-pulsera-rondel-lux-diaman",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      },
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH001/perfil.webp",
+      "scrapedPrice": "72.200"
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 67,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph080-pulsera-letra-italisa-5mm",
+      "name": "pulsera letra italisa 5mm",
+      "sku": "PH080",
+      "category": "Brazaletes Hombre",
+      "url": "https://www.beadsmarket.co/producto/ph080-pulsera-letra-italisa-5mm",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      },
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH001/perfil.webp",
+      "scrapedPrice": "90.200"
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 68,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph081-pulsera-triple-carril-aurora",
+      "name": "pulsera triple carril aurora",
+      "sku": "PH081",
+      "category": "Brazaletes Hombre",
+      "url": "https://www.beadsmarket.co/producto/ph081-pulsera-triple-carril-aurora",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      },
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH001/perfil.webp",
+      "scrapedPrice": "121.900"
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 69,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph082-pulsera-letra-diamantado-5mm",
+      "name": "pulsera letra diamantado 5mm",
+      "sku": "PH082",
+      "category": "Brazaletes Hombre",
+      "url": "https://www.beadsmarket.co/producto/ph082-pulsera-letra-diamantado-5mm",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      },
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH001/perfil.webp",
+      "scrapedPrice": "72.800"
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 70,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph083-pulsera-eclipse-halo",
+      "name": "pulsera eclipse halo",
+      "sku": "PH083",
+      "category": "Brazaletes Hombre",
+      "url": "https://www.beadsmarket.co/producto/ph083-pulsera-eclipse-halo",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      },
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH001/perfil.webp",
+      "scrapedPrice": "108.800"
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 71,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph084-pulsera-destello-balin-5mm",
+      "name": "pulsera destello balin 5mm",
+      "sku": "PH084",
+      "category": "Brazaletes Hombre",
+      "url": "https://www.beadsmarket.co/producto/ph084-pulsera-destello-balin-5mm",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      },
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH001/perfil.webp",
+      "scrapedPrice": "82.000"
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 72,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph085-pulsera-prisma-diamantada-5mm",
+      "name": "pulsera prisma diamantada 5mm",
+      "sku": "PH085",
+      "category": "Brazaletes Hombre",
+      "url": "https://www.beadsmarket.co/producto/ph085-pulsera-prisma-diamantada-5mm",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      },
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH001/perfil.webp",
+      "scrapedPrice": "67.800"
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 73,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph086-pulsera-doble-carril-aura",
+      "name": "pulsera doble carril aura",
+      "sku": "PH086",
+      "category": "Brazaletes Hombre",
+      "url": "https://www.beadsmarket.co/producto/ph086-pulsera-doble-carril-aura",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      },
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH001/perfil.webp",
+      "scrapedPrice": "123.600"
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 74,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph40-pulsera-tricolor-tejida",
+      "name": "pulsera tricolor tejida",
+      "sku": "ph40",
+      "category": "Brazaletes Hombre",
+      "url": "https://www.beadsmarket.co/producto/ph40-pulsera-tricolor-tejida",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      },
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH001/perfil.webp",
+      "scrapedPrice": "44.000"
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 75,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/pm047-pulsera-rolex-circon-extra",
+      "name": "pulsera rolex circon extra",
+      "sku": "PM047",
+      "category": "Brazaletes Hombre",
+      "url": "https://www.beadsmarket.co/producto/pm047-pulsera-rolex-circon-extra",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      },
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH001/perfil.webp",
+      "scrapedPrice": "151.200"
+    }
+  },
+  {
+    "@type": "ListItem",
+    "position": 76,
+    "item": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/pm074-pulsera-clover-cristal-diaman",
+      "name": "pulsera clover cristal diaman",
+      "sku": "PM074",
+      "category": "Brazaletes Hombre",
+      "url": "https://www.beadsmarket.co/producto/pm074-pulsera-clover-cristal-diaman",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      },
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH001/perfil.webp",
+      "scrapedPrice": "90.400"
+    }
+  }
+]

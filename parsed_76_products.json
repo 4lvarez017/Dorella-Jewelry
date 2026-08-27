@@ -1,0 +1,3692 @@
+[
+  {
+    "sku": "PH001",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph001-ph001",
+      "name": "PH001",
+      "sku": "PH001",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH001/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph001-ph001",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmp1favwu0000uoux441amk5b",
+      "referencia": "PH001",
+      "nombre": "PH001",
+      "numero": 996,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH001/perfil.webp",
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 55100
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 42450
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "PH002",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph002-ph002",
+      "name": "PH002",
+      "sku": "PH002",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH002/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph002-ph002",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmp1faww50001uouxjbllwm77",
+      "referencia": "PH002",
+      "nombre": "PH002",
+      "numero": 997,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH002/perfil.webp",
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 59400
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 47550
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "PH003",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph003-ph003",
+      "name": "PH003",
+      "sku": "PH003",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH003/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph003-ph003",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmp1faxvk0002uoux8aameecz",
+      "referencia": "PH003",
+      "nombre": "PH003",
+      "numero": 998,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH003/perfil.webp",
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 50500
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 38600
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "PH004",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph004-ph004",
+      "name": "PH004",
+      "sku": "PH004",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH004/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph004-ph004",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmp1fayu80003uoux5tvwiagx",
+      "referencia": "PH004",
+      "nombre": "PH004",
+      "numero": 999,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH004/perfil.webp",
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 63800
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 54600
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "PH007",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph007-ph007",
+      "name": "PH007",
+      "sku": "PH007",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH007/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph007-ph007",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmp1fb1rl0006uouxf6ohhi55",
+      "referencia": "PH007",
+      "nombre": "PH007",
+      "numero": 1002,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH007/perfil.webp",
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 33600
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 24800
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "PH010",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph010-ph010",
+      "name": "PH010",
+      "sku": "PH010",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH010/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph010-ph010",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmp1fb3su0008uouxasvd8yis",
+      "referencia": "PH010",
+      "nombre": "PH010",
+      "numero": 1004,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH010/perfil.webp",
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 125250
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 98600
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "PH011",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph011-ph011",
+      "name": "PH011",
+      "sku": "PH011",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH011/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph011-ph011",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmp1fb4pt0009uouxf5vtrqhx",
+      "referencia": "PH011",
+      "nombre": "PH011",
+      "numero": 1005,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH011/perfil.webp",
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 129700
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 100800
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "PH012",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph012-ph012",
+      "name": "PH012",
+      "sku": "PH012",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH012/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph012-ph012",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmp1fb5mt000auouxtf9beur6",
+      "referencia": "PH012",
+      "nombre": "PH012",
+      "numero": 1006,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH012/perfil.webp",
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 50600
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 38850
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "PH013",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph013-ph013",
+      "name": "PH013",
+      "sku": "PH013",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH013/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph013-ph013",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmp1fb6qd000buouxneesb77c",
+      "referencia": "PH013",
+      "nombre": "PH013",
+      "numero": 1007,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH013/perfil.webp",
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 50950
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 39800
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "PH014",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph014-ph014",
+      "name": "PH014",
+      "sku": "PH014",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH014/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph014-ph014",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmp1fb7nz000cuoux25wgn1i3",
+      "referencia": "PH014",
+      "nombre": "PH014",
+      "numero": 1008,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH014/perfil.webp",
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 86200
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 64450
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "PH015",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph015-ph015",
+      "name": "PH015",
+      "sku": "PH015",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH015/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph015-ph015",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmp1fb8mm000duouxujv1wpq0",
+      "referencia": "PH015",
+      "nombre": "PH015",
+      "numero": 1009,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH015/perfil.webp",
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 77000
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 60600
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "PH016",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph016-ph016",
+      "name": "PH016",
+      "sku": "PH016",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH016/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph016-ph016",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmp1fb9lw000euouxko305z0v",
+      "referencia": "PH016",
+      "nombre": "PH016",
+      "numero": 1010,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH016/perfil.webp",
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 92000
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 74900
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "PH017",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph017-ph017",
+      "name": "PH017",
+      "sku": "PH017",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH017/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph017-ph017",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmp1fbalq000fuouxtffq70g4",
+      "referencia": "PH017",
+      "nombre": "PH017",
+      "numero": 1011,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH017/perfil.webp",
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 95600
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 73600
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "PH018",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph018-ph018",
+      "name": "PH018",
+      "sku": "PH018",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH018/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph018-ph018",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmp1fbbnu000guoux3o066q3t",
+      "referencia": "PH018",
+      "nombre": "PH018",
+      "numero": 1012,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH018/perfil.webp",
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 119200
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 90900
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "PH019",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph019-ph019",
+      "name": "PH019",
+      "sku": "PH019",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH019/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph019-ph019",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmp1fbcqk000huouxzrlotlxn",
+      "referencia": "PH019",
+      "nombre": "PH019",
+      "numero": 1013,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH019/perfil.webp",
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 63600
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 51700
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "PH020",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph020-ph020",
+      "name": "PH020",
+      "sku": "PH020",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH020/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph020-ph020",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmp1fbdnn000iuouxqg0epwj5",
+      "referencia": "PH020",
+      "nombre": "PH020",
+      "numero": 1014,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH020/perfil.webp",
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 126800
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 72200
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "PH021",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph021-ph021",
+      "name": "PH021",
+      "sku": "PH021",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH021/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph021-ph021",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmp1fbell000juouxt4xae5f0",
+      "referencia": "PH021",
+      "nombre": "PH021",
+      "numero": 1015,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH021/perfil.webp",
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 78200
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 66750
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "PH022",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph022-ph022",
+      "name": "PH022",
+      "sku": "PH022",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH022/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph022-ph022",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmp1fbfjn000kuouxo9wihaz0",
+      "referencia": "PH022",
+      "nombre": "PH022",
+      "numero": 1016,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH022/perfil.webp",
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 30400
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 23000
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "PH023",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph023-ph023",
+      "name": "PH023",
+      "sku": "PH023",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH023/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph023-ph023",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmp1fbgh1000luouxggqc78hz",
+      "referencia": "PH023",
+      "nombre": "PH023",
+      "numero": 1017,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH023/perfil.webp",
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 182400
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 134200
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "PH024",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph024-ph024",
+      "name": "PH024",
+      "sku": "PH024",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH024/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph024-ph024",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmp1fbhdz000muouxizj59pbb",
+      "referencia": "PH024",
+      "nombre": "PH024",
+      "numero": 1018,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH024/perfil.webp",
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 62800
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 50500
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "PH025",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph025-ph025",
+      "name": "PH025",
+      "sku": "PH025",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH025/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph025-ph025",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmp1fbio8000nuouxdsbyzhzp",
+      "referencia": "PH025",
+      "nombre": "PH025",
+      "numero": 1019,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH025/perfil.webp",
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 65800
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 45650
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "PH026",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph026-ph026",
+      "name": "PH026",
+      "sku": "PH026",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH026/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph026-ph026",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmp1fbjly000ououxex2rte1y",
+      "referencia": "PH026",
+      "nombre": "PH026",
+      "numero": 1020,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH026/perfil.webp",
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 97600
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 75800
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "PH027",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph027-ph027",
+      "name": "PH027",
+      "sku": "PH027",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH027/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph027-ph027",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmp1fbkhm000puouxlg3t35dq",
+      "referencia": "PH027",
+      "nombre": "PH027",
+      "numero": 1021,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH027/perfil.webp",
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 52200
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 34800
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "PH028",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph028-ph028",
+      "name": "PH028",
+      "sku": "PH028",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH028/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph028-ph028",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmp1fblj0000quouxrky15q4t",
+      "referencia": "PH028",
+      "nombre": "PH028",
+      "numero": 1022,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH028/perfil.webp",
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 89400
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 68200
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "PH029",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph029-ph029",
+      "name": "PH029",
+      "sku": "PH029",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH029/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph029-ph029",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmp1fbmfj000ruouxnolidg8e",
+      "referencia": "PH029",
+      "nombre": "PH029",
+      "numero": 1023,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH029/perfil.webp",
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 86825
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 69100
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "PH030",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph030-ph030",
+      "name": "PH030",
+      "sku": "PH030",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH030/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph030-ph030",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmp1fbnc1000suouxnwb56xdp",
+      "referencia": "PH030",
+      "nombre": "PH030",
+      "numero": 1024,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH030/perfil.webp",
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 85700
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 67400
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "PH033",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph033-ph033",
+      "name": "PH033",
+      "sku": "PH033",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH033/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph033-ph033",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmp1fbpj8000uuouxmp8mlova",
+      "referencia": "PH033",
+      "nombre": "PH033",
+      "numero": 1026,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH033/perfil.webp",
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 112300
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 79800
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "PH035",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph035-ph035",
+      "name": "PH035",
+      "sku": "PH035",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH035/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph035-ph035",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmp1fbre5000wuoux59tirwu8",
+      "referencia": "PH035",
+      "nombre": "PH035",
+      "numero": 1028,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH035/perfil.webp",
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 45400
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 37800
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "PH036",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph036-ph036",
+      "name": "PH036",
+      "sku": "PH036",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH036/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph036-ph036",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmp1fbsbg000xuouxuyrw2jsd",
+      "referencia": "PH036",
+      "nombre": "PH036",
+      "numero": 1029,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH036/perfil.webp",
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 139600
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 108300
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "PH037",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph037-ph037",
+      "name": "PH037",
+      "sku": "PH037",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH037/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph037-ph037",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmp1fbtd5000yuouxp4ugy2kl",
+      "referencia": "PH037",
+      "nombre": "PH037",
+      "numero": 1030,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH037/perfil.webp",
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 73800
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 60800
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "PH038",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph038-ph038",
+      "name": "PH038",
+      "sku": "PH038",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH038/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph038-ph038",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmp1fbuck000zuouxvwrniajm",
+      "referencia": "PH038",
+      "nombre": "PH038",
+      "numero": 1031,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH038/perfil.webp",
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 46250
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 36400
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "PH041",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph041-ph041",
+      "name": "PH041",
+      "sku": "PH041",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH041/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph041-ph041",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmp1fbx2b0012uouxes81kngn",
+      "referencia": "PH041",
+      "nombre": "PH041",
+      "numero": 1034,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH041/perfil.webp",
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 125400
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 103300
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "PH043",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph043-ph043",
+      "name": "PH043",
+      "sku": "PH043",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH043/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph043-ph043",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmp1fbyxi0014uouxznwyx6yg",
+      "referencia": "PH043",
+      "nombre": "PH043",
+      "numero": 1036,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH043/perfil.webp",
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 58500
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 46300
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "PH044",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph044-ph044",
+      "name": "PH044",
+      "sku": "PH044",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH044/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph044-ph044",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmp1fbzv70015uoux7ph98mf4",
+      "referencia": "PH044",
+      "nombre": "PH044",
+      "numero": 1037,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH044/perfil.webp",
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 134600
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 116350
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "PH046",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph046-ph046",
+      "name": "PH046",
+      "sku": "PH046",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH046/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph046-ph046",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmp1fc23e0017uouxplgzewo5",
+      "referencia": "PH046",
+      "nombre": "PH046",
+      "numero": 1039,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH046/perfil.webp",
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 32600
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 25500
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "PH047",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph047-ph047",
+      "name": "PH047",
+      "sku": "PH047",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH047/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph047-ph047",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmp1fc3140018uouxu553jzou",
+      "referencia": "PH047",
+      "nombre": "PH047",
+      "numero": 1040,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH047/perfil.webp",
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 34900
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 28100
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "PH048",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph048-ph048",
+      "name": "PH048",
+      "sku": "PH048",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH048/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph048-ph048",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmp1fc3yl0019uouxfm5szihp",
+      "referencia": "PH048",
+      "nombre": "PH048",
+      "numero": 1041,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH048/perfil.webp",
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 129600
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 102200
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "PH049",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph049-ph049",
+      "name": "PH049",
+      "sku": "PH049",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH049/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph049-ph049",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmp1fc4xt001auoux6wk0to1h",
+      "referencia": "PH049",
+      "nombre": "PH049",
+      "numero": 1042,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH049/perfil.webp",
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 116600
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 60800
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "PH050",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph050-ph050",
+      "name": "PH050",
+      "sku": "PH050",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH050/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph050-ph050",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmp1fc5z2001buouxlrhw9wn5",
+      "referencia": "PH050",
+      "nombre": "PH050",
+      "numero": 1043,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH050/perfil.webp",
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 116600
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 93300
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "PH051",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph051-ph051",
+      "name": "PH051",
+      "sku": "PH051",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH051/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph051-ph051",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmp1fc717001cuouxlcvzmefn",
+      "referencia": "PH051",
+      "nombre": "PH051",
+      "numero": 1044,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH051/perfil.webp",
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 106500
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 73300
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "PH052",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph052-ph052",
+      "name": "PH052",
+      "sku": "PH052",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH052/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph052-ph052",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmp1fc8hh001duouxz4q8upvi",
+      "referencia": "PH052",
+      "nombre": "PH052",
+      "numero": 1045,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH052/perfil.webp",
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 55200
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 37800
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "PH054",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph054-ph054",
+      "name": "PH054",
+      "sku": "PH054",
+      "category": "Brazaletes Hombre",
+      "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH054/perfil.webp",
+      "url": "https://www.beadsmarket.co/producto/ph054-ph054",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmp1fcazr001fuouxnsbntspx",
+      "referencia": "PH054",
+      "nombre": "PH054",
+      "numero": 1047,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/PH054/perfil.webp",
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 137900
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 103200
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "PH056",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph056-pulsera-con-barril-prisma-7-nudos",
+      "name": "pulsera con barril prisma 7 nudos",
+      "sku": "PH056",
+      "category": "Brazaletes Hombre",
+      "url": "https://www.beadsmarket.co/producto/ph056-pulsera-con-barril-prisma-7-nudos",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmq1hupcp000204l2t12oh56d",
+      "referencia": "PH056",
+      "nombre": "pulsera con barril prisma 7 nudos",
+      "numero": 1376,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": null,
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 55000
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 49400
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "PH057",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph057-pulsera-tejida-con-canutillo-diamantado",
+      "name": "pulsera tejida con canutillo diamantado",
+      "sku": "PH057",
+      "category": "Brazaletes Hombre",
+      "url": "https://www.beadsmarket.co/producto/ph057-pulsera-tejida-con-canutillo-diamantado",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmq1i350g000004jy0fqovx4k",
+      "referencia": "PH057",
+      "nombre": "pulsera tejida con canutillo diamantado",
+      "numero": 1377,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": null,
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 51600
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 39200
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "PH058",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph058-pulsera-coral-con-canutillos",
+      "name": "pulsera coral con canutillos ",
+      "sku": "PH058",
+      "category": "Brazaletes Hombre",
+      "url": "https://www.beadsmarket.co/producto/ph058-pulsera-coral-con-canutillos",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmq1i6mif000104jyrhje644o",
+      "referencia": "PH058",
+      "nombre": "pulsera coral con canutillos ",
+      "numero": 1378,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": null,
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 97200
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 85600
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "PH059",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph059-pulsera-rondel-lux-doble",
+      "name": "pulsera rondel lux doble",
+      "sku": "PH059",
+      "category": "Brazaletes Hombre",
+      "url": "https://www.beadsmarket.co/producto/ph059-pulsera-rondel-lux-doble",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmq1i8pmf000004k6jvpyqscu",
+      "referencia": "PH059",
+      "nombre": "pulsera rondel lux doble",
+      "numero": 1379,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": null,
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 80400
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 63800
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "PH060",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph060-pulsera-tejida-eclipse-italiana",
+      "name": "pulsera tejida eclipse italiana",
+      "sku": "PH060",
+      "category": "Brazaletes Hombre",
+      "url": "https://www.beadsmarket.co/producto/ph060-pulsera-tejida-eclipse-italiana",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmq1iccoq000104k66zt6xcw6",
+      "referencia": "PH060",
+      "nombre": "pulsera tejida eclipse italiana",
+      "numero": 1380,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": null,
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 125400
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 101400
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "PH061",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph061-pulsera-bolsa-de-dinero-azul",
+      "name": "pulsera bolsa de dinero azul",
+      "sku": "PH061",
+      "category": "Brazaletes Hombre",
+      "url": "https://www.beadsmarket.co/producto/ph061-pulsera-bolsa-de-dinero-azul",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmq1igll6000204jyzzxft4b8",
+      "referencia": "PH061",
+      "nombre": "pulsera bolsa de dinero azul",
+      "numero": 1381,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": null,
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 78600
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 53600
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "PH062",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph062-pulsera-de-canutillos-unidos",
+      "name": "pulsera de canutillos unidos ",
+      "sku": "PH062",
+      "category": "Brazaletes Hombre",
+      "url": "https://www.beadsmarket.co/producto/ph062-pulsera-de-canutillos-unidos",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmq1ij82c000304jyygq9hdso",
+      "referencia": "PH062",
+      "nombre": "pulsera de canutillos unidos ",
+      "numero": 1382,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": null,
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 75800
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 63500
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "PH063",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph063-pulsera-rubi-sensilla",
+      "name": "pulsera rubi sensilla ",
+      "sku": "PH063",
+      "category": "Brazaletes Hombre",
+      "url": "https://www.beadsmarket.co/producto/ph063-pulsera-rubi-sensilla",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmq2k9qaw000004l4xtb74h2e",
+      "referencia": "PH063",
+      "nombre": "pulsera rubi sensilla ",
+      "numero": 1383,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": null,
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 68400
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 56600
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "PH064",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph064-pulsera-triple-colr-de-hilo",
+      "name": "pulsera triple colr de hilo",
+      "sku": "PH064",
+      "category": "Brazaletes Hombre",
+      "url": "https://www.beadsmarket.co/producto/ph064-pulsera-triple-colr-de-hilo",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmq2kxght000004l50hh6twt9",
+      "referencia": "PH064",
+      "nombre": "pulsera triple colr de hilo",
+      "numero": 1384,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": null,
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 44000
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 35600
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "PH065",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph065-pulsera-destello-en-cruz",
+      "name": "pulsera destello en cruz",
+      "sku": "PH065",
+      "category": "Brazaletes Hombre",
+      "url": "https://www.beadsmarket.co/producto/ph065-pulsera-destello-en-cruz",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmq2lakvq000204l5zron0qif",
+      "referencia": "PH065",
+      "nombre": "pulsera destello en cruz",
+      "numero": 1386,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": null,
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 59000
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 47000
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "PH066",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph066-brazalete-emeral-triple-carril",
+      "name": "brazalete emeral triple carril",
+      "sku": "PH066",
+      "category": "Brazaletes Hombre",
+      "url": "https://www.beadsmarket.co/producto/ph066-brazalete-emeral-triple-carril",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmq2lmnpr000004jpw2ryipwf",
+      "referencia": "PH066",
+      "nombre": "brazalete emeral triple carril",
+      "numero": 1388,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": null,
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 177200
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 137900
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "PH067",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph067-pulsera-bolsa-de-dinero-italiano",
+      "name": "pulsera bolsa de dinero italiano",
+      "sku": "PH067",
+      "category": "Brazaletes Hombre",
+      "url": "https://www.beadsmarket.co/producto/ph067-pulsera-bolsa-de-dinero-italiano",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmq2lsidq000104jp9ewy9zx7",
+      "referencia": "PH067",
+      "nombre": "pulsera bolsa de dinero italiano",
+      "numero": 1389,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": null,
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 68600
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 53200
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "PH068",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph068-pulsera-de-dolar-italiana",
+      "name": "pulsera de dolar italiana",
+      "sku": "PH068",
+      "category": "Brazaletes Hombre",
+      "url": "https://www.beadsmarket.co/producto/ph068-pulsera-de-dolar-italiana",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmq2mcplv000404l5by2bkw4f",
+      "referencia": "PH068",
+      "nombre": "pulsera de dolar italiana",
+      "numero": 1391,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": null,
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 139000
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 106700
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "PH069",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph069-pulsera-de-dolar-diamantada-h",
+      "name": "pulsera de dolar diamantada h",
+      "sku": "PH069",
+      "category": "Brazaletes Hombre",
+      "url": "https://www.beadsmarket.co/producto/ph069-pulsera-de-dolar-diamantada-h",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmq2mz2cq000004l8r5ilp7m8",
+      "referencia": "PH069",
+      "nombre": "pulsera de dolar diamantada h",
+      "numero": 1394,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": null,
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 124200
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 89900
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "PH070",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph070-pulsera-herradura-diamantada-h",
+      "name": "pulsera herradura diamantada h",
+      "sku": "PH070",
+      "category": "Brazaletes Hombre",
+      "url": "https://www.beadsmarket.co/producto/ph070-pulsera-herradura-diamantada-h",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmq2ntiqv000004l2jiqdki1y",
+      "referencia": "PH070",
+      "nombre": "pulsera herradura diamantada h",
+      "numero": 1395,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": null,
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 119700
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 100900
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "PH071",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph071-pulsera-con-herradura-bdd5",
+      "name": "pulsera con herradura bdd5",
+      "sku": "PH071",
+      "category": "Brazaletes Hombre",
+      "url": "https://www.beadsmarket.co/producto/ph071-pulsera-con-herradura-bdd5",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmq2pw79b000404l2by3tkhyf",
+      "referencia": "PH071",
+      "nombre": "pulsera con herradura bdd5",
+      "numero": 1400,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": null,
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 76400
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 62400
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "PH072",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph072-pulsera-tio-rico-8-6-5",
+      "name": "pulsera tio rico 8,6,5..",
+      "sku": "PH072",
+      "category": "Brazaletes Hombre",
+      "url": "https://www.beadsmarket.co/producto/ph072-pulsera-tio-rico-8-6-5",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmq2q23q5000504l22aasx2v9",
+      "referencia": "PH072",
+      "nombre": "pulsera tio rico 8,6,5..",
+      "numero": 1401,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": null,
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 143600
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 116300
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "PH073",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph073-pulsera-tejida-tio-rico",
+      "name": "pulsera tejida tio rico",
+      "sku": "PH073",
+      "category": "Brazaletes Hombre",
+      "url": "https://www.beadsmarket.co/producto/ph073-pulsera-tejida-tio-rico",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmq73ux3n000004lbx616wxlu",
+      "referencia": "PH073",
+      "nombre": "pulsera tejida tio rico",
+      "numero": 1426,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": null,
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 149800
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 117300
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "PH074",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph074-pulsera-rolex-balin-x",
+      "name": "pulsera rolex balin x",
+      "sku": "PH074",
+      "category": "Brazaletes Hombre",
+      "url": "https://www.beadsmarket.co/producto/ph074-pulsera-rolex-balin-x",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmq74wimq000004l5yu8ha32f",
+      "referencia": "PH074",
+      "nombre": "pulsera rolex balin x",
+      "numero": 1427,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": null,
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 107400
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 88600
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "PH075",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph075-pulsera-triple-carril-brio",
+      "name": "pulsera triple carril brio",
+      "sku": "PH075",
+      "category": "Brazaletes Hombre",
+      "url": "https://www.beadsmarket.co/producto/ph075-pulsera-triple-carril-brio",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmq752q0s000104l53qe1sxq2",
+      "referencia": "PH075",
+      "nombre": "pulsera triple carril brio",
+      "numero": 1428,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": null,
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 114000
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 86000
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "PH076",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph076-pulsera-barriles-centrales-h",
+      "name": "pulsera barriles centrales h",
+      "sku": "PH076",
+      "category": "Brazaletes Hombre",
+      "url": "https://www.beadsmarket.co/producto/ph076-pulsera-barriles-centrales-h",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmq8gb68p000004l24s6kiqvw",
+      "referencia": "PH076",
+      "nombre": "pulsera barriles centrales h",
+      "numero": 1437,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": null,
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 64600
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 52100
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "PH077",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph077-pulsera-flor-rondel-full-3mm-lis",
+      "name": "pulsera flor rondel full 3mm lis",
+      "sku": "PH077",
+      "category": "Brazaletes Hombre",
+      "url": "https://www.beadsmarket.co/producto/ph077-pulsera-flor-rondel-full-3mm-lis",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmq8ha6ux000104l21di3ey91",
+      "referencia": "PH077",
+      "nombre": "pulsera flor rondel full 3mm lis",
+      "numero": 1440,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": null,
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 137200
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 101800
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "Ph078",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph078-pulseta-emeral-birondel-h",
+      "name": "pulseta emeral birondel h",
+      "sku": "Ph078",
+      "category": "Brazaletes Hombre",
+      "url": "https://www.beadsmarket.co/producto/ph078-pulseta-emeral-birondel-h",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmq76o329000504l57v4g66rw",
+      "referencia": "Ph078",
+      "nombre": "pulseta emeral birondel h",
+      "numero": 1435,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": null,
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 157700
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 126000
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "PH079",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph079-pulsera-rondel-lux-diaman",
+      "name": "pulsera rondel lux diaman",
+      "sku": "PH079",
+      "category": "Brazaletes Hombre",
+      "url": "https://www.beadsmarket.co/producto/ph079-pulsera-rondel-lux-diaman",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmq8hyaib000004l2co4w9i8x",
+      "referencia": "PH079",
+      "nombre": "pulsera rondel lux diaman",
+      "numero": 1442,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": null,
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 72200
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 55400
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "PH080",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph080-pulsera-letra-italisa-5mm",
+      "name": "pulsera letra italisa 5mm",
+      "sku": "PH080",
+      "category": "Brazaletes Hombre",
+      "url": "https://www.beadsmarket.co/producto/ph080-pulsera-letra-italisa-5mm",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmq8i2kly000004jjo2qbjwn4",
+      "referencia": "PH080",
+      "nombre": "pulsera letra italisa 5mm",
+      "numero": 1443,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": null,
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 90200
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 71800
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "PH081",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph081-pulsera-triple-carril-aurora",
+      "name": "pulsera triple carril aurora",
+      "sku": "PH081",
+      "category": "Brazaletes Hombre",
+      "url": "https://www.beadsmarket.co/producto/ph081-pulsera-triple-carril-aurora",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmq8ihobl000004l5793lvjpm",
+      "referencia": "PH081",
+      "nombre": "pulsera triple carril aurora",
+      "numero": 1445,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": null,
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 121900
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 92800
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "PH082",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph082-pulsera-letra-diamantado-5mm",
+      "name": "pulsera letra diamantado 5mm",
+      "sku": "PH082",
+      "category": "Brazaletes Hombre",
+      "url": "https://www.beadsmarket.co/producto/ph082-pulsera-letra-diamantado-5mm",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmq8ix8hw000004i8wgkr2iw2",
+      "referencia": "PH082",
+      "nombre": "pulsera letra diamantado 5mm",
+      "numero": 1447,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": null,
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 72800
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 55200
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "PH083",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph083-pulsera-eclipse-halo",
+      "name": "pulsera eclipse halo",
+      "sku": "PH083",
+      "category": "Brazaletes Hombre",
+      "url": "https://www.beadsmarket.co/producto/ph083-pulsera-eclipse-halo",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmq8jbj08000004jyttk46yw8",
+      "referencia": "PH083",
+      "nombre": "pulsera eclipse halo",
+      "numero": 1448,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": null,
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 108800
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 94800
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "PH084",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph084-pulsera-destello-balin-5mm",
+      "name": "pulsera destello balin 5mm",
+      "sku": "PH084",
+      "category": "Brazaletes Hombre",
+      "url": "https://www.beadsmarket.co/producto/ph084-pulsera-destello-balin-5mm",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmq8kkt74000004joq3l039it",
+      "referencia": "PH084",
+      "nombre": "pulsera destello balin 5mm",
+      "numero": 1452,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": null,
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 82000
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 67400
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "PH085",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph085-pulsera-prisma-diamantada-5mm",
+      "name": "pulsera prisma diamantada 5mm",
+      "sku": "PH085",
+      "category": "Brazaletes Hombre",
+      "url": "https://www.beadsmarket.co/producto/ph085-pulsera-prisma-diamantada-5mm",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmq8l4iu7000004l5clmheuyn",
+      "referencia": "PH085",
+      "nombre": "pulsera prisma diamantada 5mm",
+      "numero": 1455,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": null,
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 67800
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 54600
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "PH086",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph086-pulsera-doble-carril-aura",
+      "name": "pulsera doble carril aura",
+      "sku": "PH086",
+      "category": "Brazaletes Hombre",
+      "url": "https://www.beadsmarket.co/producto/ph086-pulsera-doble-carril-aura",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmq8lfrzf000104l2k7c8xzv8",
+      "referencia": "PH086",
+      "nombre": "pulsera doble carril aura",
+      "numero": 1456,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": null,
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 123600
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 101800
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "ph40",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/ph40-pulsera-tricolor-tejida",
+      "name": "pulsera tricolor tejida",
+      "sku": "ph40",
+      "category": "Brazaletes Hombre",
+      "url": "https://www.beadsmarket.co/producto/ph40-pulsera-tricolor-tejida",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmq1hhj7p000104l2mf2ge1hq",
+      "referencia": "ph40",
+      "nombre": "pulsera tricolor tejida",
+      "numero": 1375,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": null,
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 44000
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 35600
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "PM047",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/pm047-pulsera-rolex-circon-extra",
+      "name": "pulsera rolex circon extra",
+      "sku": "PM047",
+      "category": "Brazaletes Hombre",
+      "url": "https://www.beadsmarket.co/producto/pm047-pulsera-rolex-circon-extra",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmq75hboo000304l50vx6kc58",
+      "referencia": "PM047",
+      "nombre": "pulsera rolex circon extra",
+      "numero": 1430,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": null,
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 151200
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 124800
+        }
+      ],
+      "oferta": null
+    }
+  },
+  {
+    "sku": "PM074",
+    "originalItem": {
+      "@type": "Product",
+      "@id": "https://www.beadsmarket.co/producto/pm074-pulsera-clover-cristal-diaman",
+      "name": "pulsera clover cristal diaman",
+      "sku": "PM074",
+      "category": "Brazaletes Hombre",
+      "url": "https://www.beadsmarket.co/producto/pm074-pulsera-clover-cristal-diaman",
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "COP",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    "parsedData": {
+      "id": "cmq75a1rr000204l5fm5rx27q",
+      "referencia": "PM074",
+      "nombre": "pulsera clover cristal diaman",
+      "numero": 1429,
+      "descripcion": null,
+      "categoria": "Brazaletes Hombre",
+      "categoryId": "cmon9yhwc0000u0uxizr2e85d",
+      "recetaIncompleta": false,
+      "agotado": false,
+      "unidad": "unidad",
+      "imagenUrl": null,
+      "imagenes": "$undefined",
+      "tipo": "COMPUESTO",
+      "pricingModel": "TIERED_2",
+      "retail": true,
+      "fabricante": "BM",
+      "priceTiers": [
+        {
+          "minQty": 1,
+          "maxQty": 11,
+          "precio": 90400
+        },
+        {
+          "minQty": 12,
+          "maxQty": null,
+          "precio": 70000
+        }
+      ],
+      "oferta": null
+    }
+  }
+]
