@@ -32,7 +32,7 @@ async function fetchSupabase(reqPath, options = {}) {
 }
 
 async function getAllExistingProducts() {
-  console.log("📥 Consultando productos existentes en Supabase...");
+  console.log("📥 Consultando todos los productos existentes en Supabase...");
   let all = [];
   const PAGE = 1000;
   let offset = 0;
@@ -85,13 +85,15 @@ async function sync() {
     console.log("==================================================");
 
     const localProducts = await loadAllLocalProducts();
-    console.log(`📦 Encontrados ${localProducts.length} productos en archivos locales (src/data/products/*.js).`);
+    console.log(`📦 Encontrados ${localProducts.length} productos en archivos locales.`);
 
     const existing = await getAllExistingProducts();
     console.log(`✅ Se encontraron ${existing.length} productos registrados en Supabase.`);
 
-    // Crear set de comprobación por ID y por (Categoría + Nombre)
+    // Crear set con TODOS los IDs existentes en Supabase
     const existingIds = new Set(existing.map((p) => String(p.id)));
+
+    // Crear set por (Categoría + Nombre) para evitar duplicar el mismo producto con otro ID
     const existingNamesByCat = new Set(
       existing.map((p) => `${normalizeStr(p.category)}:::${normalizeStr(p.name)}`)
     );
@@ -99,12 +101,22 @@ async function sync() {
     const toInsert = [];
 
     for (const p of localProducts) {
-      const idStr = String(p.id);
+      const rawId = String(p.id);
       const nameCatKey = `${normalizeStr(p.category)}:::${normalizeStr(p.name)}`;
 
-      // Omitir si ya existe
-      if (existingIds.has(idStr) || existingNamesByCat.has(nameCatKey)) {
+      // Si ya existe por nombre y categoría en Supabase, no lo volvemos a subir
+      if (existingNamesByCat.has(nameCatKey)) {
         continue;
+      }
+
+      // Generar ID único asegurando que no colisione con los de Supabase
+      let finalId = rawId.startsWith("prod-") || rawId.startsWith("chryso-") || rawId.startsWith("custom-")
+        ? rawId
+        : `prod-${rawId}`;
+
+      // Si por alguna razón ese ID ya existe en Supabase o en el lote actual, creamos un ID único garantizado
+      if (existingIds.has(finalId)) {
+        finalId = `prod-${rawId}-${Date.now().toString(36)}-${Math.random().toString(36).substring(2, 6)}`;
       }
 
       const imgs = Array.isArray(p.images)
@@ -112,9 +124,7 @@ async function sync() {
         : [p.image || "/placeholder.jpg"];
 
       toInsert.push({
-        id: idStr.startsWith("prod-") || idStr.startsWith("chryso-") || idStr.startsWith("custom-")
-          ? idStr
-          : `prod-${idStr}`,
+        id: finalId,
         name: p.name,
         category: p.category,
         price: Number(p.price) || 0,
@@ -124,31 +134,32 @@ async function sync() {
         visible: p.visible !== false,
       });
 
-      existingIds.add(idStr);
+      // Marcar para no duplicar en el mismo ciclo
+      existingIds.add(finalId);
       existingNamesByCat.add(nameCatKey);
     }
 
     console.log(`\n🔍 Nuevos productos listos para subir a Supabase: ${toInsert.length}`);
 
     if (toInsert.length === 0) {
-      console.log("✨ No hay nuevos productos por subir. Todo está al día.");
+      console.log("✨ Todos tus productos ya están completamente sincronizados en Supabase.");
       return;
     }
 
-    // Insertar en lotes pequeños
-    const BATCH_SIZE = 25;
+    // Insertar producto por producto o en lotes para máxima tolerancia a fallos
     let insertedCount = 0;
-
-    for (let i = 0; i < toInsert.length; i += BATCH_SIZE) {
-      const chunk = toInsert.slice(i, i + BATCH_SIZE);
-      await fetchSupabase("/products", {
-        method: "POST",
-        headers: { Prefer: "return=minimal" },
-        body: JSON.stringify(chunk),
-      });
-
-      insertedCount += chunk.length;
-      process.stdout.write(`\r⏳ Subiendo a Supabase: ${insertedCount}/${toInsert.length} productos...`);
+    for (const prod of toInsert) {
+      try {
+        await fetchSupabase("/products", {
+          method: "POST",
+          headers: { Prefer: "return=minimal" },
+          body: JSON.stringify(prod),
+        });
+        insertedCount++;
+        process.stdout.write(`\r⏳ Subiendo a Supabase: ${insertedCount}/${toInsert.length} productos...`);
+      } catch (insertErr) {
+        console.error(`\n⚠️ No se pudo insertar "${prod.name}":`, insertErr.message);
+      }
     }
 
     console.log("\n\n🎉 ¡Sincronización finalizada con éxito!");
