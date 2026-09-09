@@ -109,72 +109,108 @@ export function ProductsProvider({ children }) {
 
   // Agregar un producto nuevo
   const addProduct = async (newProduct) => {
+    const id = newProduct.id || `custom-${Date.now()}`;
+    const imgs = Array.isArray(newProduct.images) && newProduct.images.length > 0
+      ? newProduct.images
+      : [newProduct.image || "/placeholder.jpg"];
+
+    const productData = {
+      id,
+      name:     newProduct.name,
+      category: newProduct.category,
+      price:    Number(newProduct.price),
+      images:   imgs,           // Única columna de imagen que existe en Supabase
+      desc:     newProduct.desc || "",
+      stock:    newProduct.stock !== undefined ? Number(newProduct.stock) : 10,
+      visible:  newProduct.visible !== false,
+    };
+
+    // Actualización optimista inmediata
+    setProducts((prev) => [
+      {
+        ...productData,
+        image: imgs[0] || "/placeholder.jpg",
+      },
+      ...prev,
+    ]);
+
     try {
-      const id = `custom-${Date.now()}`;
-      const imgs = Array.isArray(newProduct.images)
-        ? newProduct.images
-        : [newProduct.image || "/placeholder.jpg"];
-
-      const productData = {
-        id,
-        name:     newProduct.name,
-        category: newProduct.category,
-        price:    Number(newProduct.price),
-        images:   imgs,           // Única columna de imagen que existe en Supabase
-        desc:     newProduct.desc || "",
-        stock:    newProduct.stock !== undefined ? Number(newProduct.stock) : 10,
-        visible:  newProduct.visible !== false,
-      };
-
       await supabaseFetch("/products", {
         method: "POST",
         headers: { "Prefer": "return=minimal" },
         body: JSON.stringify(productData),
       });
 
-      await loadProducts();
+      loadProducts().catch(() => {});
     } catch (e) {
       console.error("Error al agregar producto en Supabase:", e);
+      await loadProducts();
+      throw e;
     }
   };
 
-  // Modificar detalles de un producto (stock, precio, visibilidad, etc.)
+  // Modificar detalles de un producto (stock, precio, visibilidad, imágenes, etc.)
   const updateProduct = async (id, updatedFields) => {
+    const payload = { ...updatedFields };
+    if (payload.price !== undefined) payload.price = Number(payload.price);
+    if (payload.stock !== undefined) payload.stock = Number(payload.stock);
+
+    let finalImages = undefined;
+    if (Array.isArray(payload.images) && payload.images.length > 0) {
+      finalImages = payload.images;
+    } else if (payload.image !== undefined && payload.images === undefined) {
+      finalImages = [payload.image];
+    }
+    if (finalImages) {
+      payload.images = finalImages;
+    }
+    delete payload.image; // La columna "image" NO existe en Supabase
+
+    // 1. Actualización optimista inmediata en el estado de React
+    setProducts((prev) =>
+      prev.map((p) => {
+        if (String(p.id) !== String(id)) return p;
+        const imgs = finalImages || p.images || [p.image || "/placeholder.jpg"];
+        return {
+          ...p,
+          ...payload,
+          images: imgs,
+          image: imgs[0] || "/placeholder.jpg",
+        };
+      })
+    );
+
+    // 2. Persistir en Supabase
     try {
-      const payload = { ...updatedFields };
-      if (payload.price !== undefined) payload.price = Number(payload.price);
-      if (payload.stock !== undefined) payload.stock = Number(payload.stock);
-
-      // La tabla solo tiene columna "images" (array), NO tiene "image".
-      // Si vino image suelto, lo convertimos a array. Luego borramos image del payload.
-      if (Array.isArray(payload.images) && payload.images.length > 0) {
-        // ya tiene images, solo asegurarse de que no vaya image
-      } else if (payload.image !== undefined && payload.images === undefined) {
-        payload.images = [payload.image];
-      }
-      delete payload.image; // La columna "image" NO existe en Supabase
-
-      await supabaseFetch(`/products?id=eq.${id}`, {
+      await supabaseFetch(`/products?id=eq.${encodeURIComponent(id)}`, {
         method: "PATCH",
         headers: { "Prefer": "return=minimal" },
         body: JSON.stringify(payload),
       });
 
-      await loadProducts();
+      // Sincronizar en segundo plano sin retrasar la respuesta al usuario
+      loadProducts().catch(() => {});
     } catch (e) {
       console.error("Error al actualizar producto en Supabase:", e);
+      await loadProducts();
+      throw e;
     }
   };
 
   // Eliminar un producto
   const deleteProduct = async (id) => {
+    // Actualización optimista inmediata
+    setProducts((prev) => prev.filter((p) => String(p.id) !== String(id)));
+
     try {
-      await supabaseFetch(`/products?id=eq.${id}`, {
+      await supabaseFetch(`/products?id=eq.${encodeURIComponent(id)}`, {
         method: "DELETE",
       });
-      await loadProducts();
+      loadProducts().catch(() => {});
     } catch (e) {
       console.error("Error al eliminar producto en Supabase:", e);
+      await loadProducts();
+      throw e;
     }
   };
 

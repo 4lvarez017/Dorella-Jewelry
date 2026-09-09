@@ -14,6 +14,8 @@ export const CATEGORY_SLUG = {
   "Herrajes":            "herrajes",
   "Pulseras":            "pulseras",
   "Rosarios":            "rosarios",
+  "Tobilleras":          "tobilleras",
+  "Brazaletes":          "brazaletes",
 };
 
 /**

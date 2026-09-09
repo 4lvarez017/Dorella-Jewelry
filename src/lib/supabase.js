@@ -1,3 +1,5 @@
+import { categoryToSlug } from "./storageCategories.js";
+
 // ─── SUPABASE CONFIG ───────────────────────────────────────────────────────────
 export const SUPABASE_URL = "https://hszxtkwalgndaovckaug.supabase.co";
 export const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imhzenh0a3dhbGduZGFvdmNrYXVnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODAxODU3NTksImV4cCI6MjA5NTc2MTc1OX0.Bjbk9ASl1OjtkaHbh2YsdR1LzCQP1OMSnYQ6RZmcLcs";
@@ -23,7 +25,27 @@ export async function supabaseFetch(path, options = {}) {
       ...options.headers,
     },
   });
-  if (!res.ok) throw new Error(await res.text());
+
+  if (!res.ok) {
+    // Si la sesión expiró (401), reintentar automáticamente con anon key
+    if (res.status === 401 && session?.access_token) {
+      storeSession(null);
+      const retryRes = await fetch(`${SUPABASE_URL}/rest/v1${path}`, {
+        ...options,
+        headers: {
+          ...supabaseHeaders,
+          Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
+          ...options.headers,
+        },
+      });
+      if (!retryRes.ok) throw new Error(await retryRes.text());
+      if (retryRes.status === 204 || retryRes.headers.get("content-length") === "0") return null;
+      const retryText = await retryRes.text();
+      return retryText ? JSON.parse(retryText) : null;
+    }
+    throw new Error(await res.text());
+  }
+
   if (res.status === 204 || res.headers.get("content-length") === "0") return null;
   const text = await res.text();
   return text ? JSON.parse(text) : null;
@@ -115,26 +137,47 @@ export async function fetchAllReviews() {
  * @returns {Promise<string>} URL pública permanente de la imagen
  */
 export async function uploadProductImage(file, category) {
-  const { categoryToSlug } = await import("./storageCategories.js");
-
   // Generar nombre de archivo único para evitar colisiones
-  const ext      = file.name.split(".").pop().toLowerCase();
-  const slug     = categoryToSlug(category);
+  const rawExt = file.name ? file.name.split(".").pop().toLowerCase().replace(/[^a-z0-9]/g, "") : "jpg";
+  const ext = rawExt || "jpg";
+  const slug = categoryToSlug(category);
   const filename = `${Date.now()}_${Math.random().toString(36).slice(2, 8)}.${ext}`;
-  const path     = `${slug}/${filename}`;
+  const path = `${slug}/${filename}`;
 
-  const res = await fetch(
+  const session = getStoredSession();
+  const authHeader = session?.access_token
+    ? `Bearer ${session.access_token}`
+    : `Bearer ${SUPABASE_ANON_KEY}`;
+
+  let res = await fetch(
     `${SUPABASE_URL}/storage/v1/object/products/${path}`,
     {
       method: "POST",
       headers: {
-        apikey:        SUPABASE_ANON_KEY,
-        Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
+        apikey: SUPABASE_ANON_KEY,
+        Authorization: authHeader,
         "Content-Type": file.type || "image/jpeg",
       },
       body: file,
     }
   );
+
+  // Si falló por token expirado (401), reintentar automáticamente con anon key
+  if (!res.ok && res.status === 401 && session?.access_token) {
+    storeSession(null);
+    res = await fetch(
+      `${SUPABASE_URL}/storage/v1/object/products/${path}`,
+      {
+        method: "POST",
+        headers: {
+          apikey: SUPABASE_ANON_KEY,
+          Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
+          "Content-Type": file.type || "image/jpeg",
+        },
+        body: file,
+      }
+    );
+  }
 
   if (!res.ok) {
     const err = await res.text();
