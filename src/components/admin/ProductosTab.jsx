@@ -175,7 +175,7 @@ export function ProductosTab({
 
   // ── Filtrado ──
   const filtered = products.filter(p => {
-    const matchCat = selectedCategory === "Todos" || (p.category || "").startsWith(selectedCategory);
+    const matchCat = selectedCategory === "Todos" || (p.category || "") === selectedCategory;
     const q = search.trim().toLowerCase();
     const matchSearch = !q ||
       (p.name || "").toLowerCase().includes(q) ||

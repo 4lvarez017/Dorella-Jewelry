@@ -419,7 +419,7 @@ export function AdminPanel({ activeTab, setActiveTab, onLogout }) {
 
   // ── Stats por categoría ─────────────────────────────────────────────────────
   const getCategoryStats = name => {
-    const cat = products.filter(p => (p.category || "").startsWith(name));
+    const cat = products.filter(p => (p.category || "") === name);
     return {
       count:    cat.length,
       stock:    cat.reduce((s, p) => s + (p.stock || 0), 0),
