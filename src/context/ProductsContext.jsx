@@ -36,16 +36,21 @@ export function ProductsProvider({ children }) {
       // Si la base de datos está vacía, la inicializamos con los productos por defecto
       if (!data || data.length === 0) {
         console.log("Base de datos vacía. Inicializando productos por defecto...");
-        const initialProducts = DEFAULT_PRODUCTS.map((p) => ({
-          id: String(p.id),
-          name: p.name,
-          category: p.category,
-          price: Number(p.price),
-          images: [p.image || "/placeholder.jpg"],
-          desc: p.desc || "",
-          stock: 12,
-          visible: true,
-        }));
+        const initialProducts = DEFAULT_PRODUCTS.map((p) => {
+          const imgs = Array.isArray(p.images) && p.images.length > 0
+            ? p.images
+            : [p.image || "/placeholder.jpg"];
+          return {
+            id: String(p.id),
+            name: p.name,
+            category: p.category,
+            price: Number(p.price),
+            images: imgs,
+            desc: p.desc || "",
+            stock: p.stock !== undefined ? Number(p.stock) : 12,
+            visible: p.visible !== false,
+          };
+        });
 
         for (const prod of initialProducts) {
           try {
@@ -71,7 +76,7 @@ export function ProductsProvider({ children }) {
         } catch (_) {
           imgs = [p.image || "/placeholder.jpg"];
         }
-        if (!Array.isArray(imgs)) {
+        if (!Array.isArray(imgs) || imgs.length === 0) {
           imgs = [p.image || "/placeholder.jpg"];
         }
 
@@ -86,13 +91,18 @@ export function ProductsProvider({ children }) {
     } catch (e) {
       console.error("Carga de fallback con productos locales:", e);
       setProducts(
-        DEFAULT_PRODUCTS.map((p) => ({
-          ...p,
-          image: p.image || "/placeholder.jpg",
-          images: [p.image || "/placeholder.jpg"],
-          stock: 12,
-          visible: true,
-        }))
+        DEFAULT_PRODUCTS.map((p) => {
+          const imgs = Array.isArray(p.images) && p.images.length > 0
+            ? p.images
+            : [p.image || "/placeholder.jpg"];
+          return {
+            ...p,
+            image: imgs[0] || "/placeholder.jpg",
+            images: imgs,
+            stock: p.stock !== undefined ? Number(p.stock) : 12,
+            visible: p.visible !== false,
+          };
+        })
       );
     }
   }

@@ -8,6 +8,8 @@ function ImageUploader({ category, images, onChange }) {
   const [dragging, setDragging] = useState(false);
   const [uploading, setUploading] = useState(false);
   const [uploadError, setUploadError] = useState(null);
+  const [draggedIdx, setDraggedIdx] = useState(null);
+  const [dragOverIdx, setDragOverIdx] = useState(null);
 
   const handleFiles = async (files) => {
     if (!files || files.length === 0) return;
@@ -38,10 +40,26 @@ function ImageUploader({ category, images, onChange }) {
     onChange(updated);
   };
 
+  const moveImage = (fromIdx, toIdx) => {
+    if (fromIdx === toIdx || toIdx < 0 || toIdx >= images.length) return;
+    const updated = [...images];
+    const [item] = updated.splice(fromIdx, 1);
+    updated.splice(toIdx, 0, item);
+    onChange(updated);
+  };
+
+  const setAsPrimary = (idx) => {
+    if (idx === 0) return;
+    const updated = [...images];
+    const [item] = updated.splice(idx, 1);
+    updated.unshift(item);
+    onChange(updated);
+  };
+
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
 
-      {/* Zona de arrastrar / seleccionar */}
+      {/* Zona de arrastrar / seleccionar archivos */}
       <div
         onClick={() => !uploading && inputRef.current?.click()}
         onDragOver={(e) => { e.preventDefault(); setDragging(true); }}
@@ -50,7 +68,7 @@ function ImageUploader({ category, images, onChange }) {
         style={{
           border: `2px dashed ${dragging ? A.goldMid : A.border}`,
           borderRadius: 12,
-          padding: "24px 20px",
+          padding: "20px",
           textAlign: "center",
           cursor: uploading ? "wait" : "pointer",
           background: dragging ? A.goldBg : A.surfaceBg,
@@ -78,15 +96,15 @@ function ImageUploader({ category, images, onChange }) {
           </div>
         ) : (
           <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 6 }}>
-            <span style={{ fontSize: 32 }}>📁</span>
-            <p style={{ fontSize: 14, color: A.textSecondary, margin: 0 }}>
+            <span style={{ fontSize: 30 }}>📁</span>
+            <p style={{ fontSize: 13, color: A.textSecondary, margin: 0 }}>
               <strong style={{ color: A.goldDark }}>Haz clic</strong> o arrastra imágenes aquí
             </p>
             <p style={{ fontSize: 11, color: A.textMuted, margin: 0 }}>
               JPG, PNG, WEBP — múltiples archivos permitidos
             </p>
             <p style={{ fontSize: 11, color: A.goldMid, margin: 0, marginTop: 2 }}>
-              📂 Se guardarán en: <code style={{ background: A.goldBg, padding: "1px 6px", borderRadius: 4 }}>
+              📂 Guardar en: <code style={{ background: A.goldBg, padding: "1px 6px", borderRadius: 4 }}>
                 products/{category.toLowerCase().replace(/ /g, "_")}
               </code>
             </p>
@@ -99,43 +117,289 @@ function ImageUploader({ category, images, onChange }) {
         <p style={{ fontSize: 12, color: A.danger, margin: 0 }}>⚠️ {uploadError}</p>
       )}
 
-      {/* Vista previa de imágenes subidas */}
+      {/* Galería y reordenación de imágenes */}
       {images.length > 0 && (
-        <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
-          {images.map((url, idx) => (
-            <div key={idx} style={{ position: "relative", width: 80, height: 80 }}>
-              <img
-                src={url}
-                alt={`img-${idx}`}
-                style={{
-                  width: "100%", height: "100%",
-                  objectFit: "cover",
-                  borderRadius: 8,
-                  border: idx === 0 ? `2px solid ${A.goldMid}` : `1px solid ${A.border}`,
-                }}
-              />
-              {idx === 0 && (
-                <span style={{
-                  position: "absolute", bottom: 2, left: 2,
-                  fontSize: 9, background: A.goldMid, color: "#fff",
-                  borderRadius: 3, padding: "1px 4px", fontWeight: 700,
-                }}>PRINCIPAL</span>
-              )}
-              <button
-                type="button"
-                onClick={() => removeImage(idx)}
-                style={{
-                  position: "absolute", top: -6, right: -6,
-                  width: 20, height: 20, borderRadius: "50%",
-                  background: A.danger, color: "#fff",
-                  border: "none", cursor: "pointer",
-                  fontSize: 11, display: "flex",
-                  alignItems: "center", justifyContent: "center",
-                  lineHeight: 1,
-                }}
-              >✕</button>
-            </div>
-          ))}
+        <div style={{
+          background: "#FAF8F5",
+          border: `1px solid ${A.border}`,
+          borderRadius: 12,
+          padding: 12,
+          display: "flex",
+          flexDirection: "column",
+          gap: 10
+        }}>
+          {/* Instrucciones y leyenda */}
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 6 }}>
+            <span style={{ fontSize: 11, color: A.textSecondary, display: "flex", alignItems: "center", gap: 4 }}>
+              ⭐ <strong>Imagen #1 = Principal (portada).</strong> Arrastra o usa ◀ ▶ para ordenar.
+            </span>
+            <span style={{ fontSize: 11, color: A.goldDark, fontWeight: 600 }}>
+              {images.length} {images.length === 1 ? "imagen" : "imágenes"}
+            </span>
+          </div>
+
+          {/* Grid de imágenes interactivas */}
+          <div style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fill, minmax(118px, 1fr))",
+            gap: 10,
+          }}>
+            {images.map((url, idx) => {
+              const isMain = idx === 0;
+              const isDraggingThis = draggedIdx === idx;
+              const isTargeted = dragOverIdx === idx && draggedIdx !== idx;
+
+              return (
+                <div
+                  key={idx}
+                  draggable={!uploading}
+                  onDragStart={(e) => {
+                    e.dataTransfer.setData("text/plain", String(idx));
+                    setDraggedIdx(idx);
+                  }}
+                  onDragOver={(e) => {
+                    e.preventDefault();
+                    e.dataTransfer.dropEffect = "move";
+                    if (dragOverIdx !== idx) setDragOverIdx(idx);
+                  }}
+                  onDragLeave={() => {
+                    if (dragOverIdx === idx) setDragOverIdx(null);
+                  }}
+                  onDrop={(e) => {
+                    e.preventDefault();
+                    const fromStr = e.dataTransfer.getData("text/plain");
+                    const from = draggedIdx !== null ? draggedIdx : Number(fromStr);
+                    if (!isNaN(from) && from !== idx) {
+                      moveImage(from, idx);
+                    }
+                    setDraggedIdx(null);
+                    setDragOverIdx(null);
+                  }}
+                  onDragEnd={() => {
+                    setDraggedIdx(null);
+                    setDragOverIdx(null);
+                  }}
+                  style={{
+                    position: "relative",
+                    borderRadius: 10,
+                    overflow: "hidden",
+                    border: isTargeted
+                      ? `2px dashed ${A.gold}`
+                      : isMain
+                      ? `2px solid ${A.gold}`
+                      : `1px solid ${A.borderStrong}`,
+                    background: isMain ? "#FFFDF9" : "#FFFFFF",
+                    boxShadow: isMain ? A.shadowSm : "none",
+                    opacity: isDraggingThis ? 0.4 : 1,
+                    transform: isTargeted ? "scale(1.03)" : "scale(1)",
+                    transition: "transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease",
+                    display: "flex",
+                    flexDirection: "column",
+                    cursor: "grab",
+                  }}
+                  title="Arrastra para cambiar de posición"
+                >
+                  {/* Barra superior: Badge de orden + botón eliminar */}
+                  <div style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    padding: "4px 6px",
+                    background: isMain ? A.goldBg : "rgba(0,0,0,0.03)",
+                    borderBottom: `1px solid ${isMain ? "rgba(201,168,76,0.25)" : A.border}`,
+                  }}>
+                    <span style={{
+                      fontSize: 10,
+                      fontWeight: 800,
+                      color: isMain ? A.goldDark : A.textSecondary,
+                      display: "flex",
+                      alignItems: "center",
+                      gap: 2,
+                    }}>
+                      {isMain ? "⭐ #1" : `#${idx + 1}`}
+                    </span>
+
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        removeImage(idx);
+                      }}
+                      title="Eliminar imagen"
+                      style={{
+                        width: 18,
+                        height: 18,
+                        borderRadius: "50%",
+                        background: "rgba(229,57,53,0.12)",
+                        color: A.danger,
+                        border: "none",
+                        cursor: "pointer",
+                        fontSize: 10,
+                        fontWeight: 700,
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        lineHeight: 1,
+                        padding: 0,
+                        transition: "background 0.15s",
+                      }}
+                      onMouseEnter={(e) => { e.currentTarget.style.background = A.danger; e.currentTarget.style.color = "#fff"; }}
+                      onMouseLeave={(e) => { e.currentTarget.style.background = "rgba(229,57,53,0.12)"; e.currentTarget.style.color = A.danger; }}
+                    >
+                      ✕
+                    </button>
+                  </div>
+
+                  {/* Imagen Thumbnail */}
+                  <div style={{ width: "100%", height: 86, position: "relative", background: "#F5F3EF" }}>
+                    <img
+                      src={url}
+                      alt={`img-${idx}`}
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                        display: "block",
+                        userSelect: "none",
+                      }}
+                      onError={(e) => {
+                        e.target.src = "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=400&q=80";
+                      }}
+                    />
+                  </div>
+
+                  {/* Barra de Controles: Hacer Principal y Flechas ◀ ▶ */}
+                  <div style={{
+                    padding: "4px 4px 6px",
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: 4,
+                    background: isMain ? "#FFFDF9" : "#FFFFFF",
+                  }}>
+                    {/* Botón / Indicador Principal */}
+                    {isMain ? (
+                      <div style={{
+                        width: "100%",
+                        textAlign: "center",
+                        background: A.gold,
+                        color: "#FFFFFF",
+                        fontSize: 9,
+                        fontWeight: 700,
+                        letterSpacing: "0.5px",
+                        padding: "3px 0",
+                        borderRadius: 4,
+                        userSelect: "none",
+                      }}>
+                        ⭐ PRINCIPAL
+                      </div>
+                    ) : (
+                      <button
+                        type="button"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setAsPrimary(idx);
+                        }}
+                        title="Hacer esta imagen la principal"
+                        style={{
+                          width: "100%",
+                          background: A.goldBg,
+                          border: `1px solid ${A.goldLight}`,
+                          color: A.goldDark,
+                          fontSize: 9,
+                          fontWeight: 700,
+                          padding: "3px 0",
+                          borderRadius: 4,
+                          cursor: "pointer",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          gap: 3,
+                          transition: "all 0.15s",
+                        }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.background = A.gold;
+                          e.currentTarget.style.color = "#fff";
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.background = A.goldBg;
+                          e.currentTarget.style.color = A.goldDark;
+                        }}
+                      >
+                        ⭐ Portada
+                      </button>
+                    )}
+
+                    {/* Botones de desplazamiento ◀ ▶ */}
+                    <div style={{ display: "flex", gap: 3 }}>
+                      <button
+                        type="button"
+                        disabled={idx === 0}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          moveImage(idx, idx - 1);
+                        }}
+                        title={idx === 0 ? "Ya es la primera imagen" : "Mover hacia la izquierda (antes)"}
+                        style={{
+                          flex: 1,
+                          height: 22,
+                          background: idx === 0 ? "transparent" : "#F2EFE9",
+                          border: `1px solid ${idx === 0 ? "transparent" : A.border}`,
+                          color: idx === 0 ? "#C4BFB6" : A.textPrimary,
+                          borderRadius: 4,
+                          fontSize: 10,
+                          cursor: idx === 0 ? "default" : "pointer",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          transition: "all 0.15s",
+                        }}
+                        onMouseEnter={(e) => {
+                          if (idx !== 0) e.currentTarget.style.background = A.goldBg;
+                        }}
+                        onMouseLeave={(e) => {
+                          if (idx !== 0) e.currentTarget.style.background = "#F2EFE9";
+                        }}
+                      >
+                        ◀
+                      </button>
+
+                      <button
+                        type="button"
+                        disabled={idx === images.length - 1}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          moveImage(idx, idx + 1);
+                        }}
+                        title={idx === images.length - 1 ? "Ya es la última imagen" : "Mover hacia la derecha (después)"}
+                        style={{
+                          flex: 1,
+                          height: 22,
+                          background: idx === images.length - 1 ? "transparent" : "#F2EFE9",
+                          border: `1px solid ${idx === images.length - 1 ? "transparent" : A.border}`,
+                          color: idx === images.length - 1 ? "#C4BFB6" : A.textPrimary,
+                          borderRadius: 4,
+                          fontSize: 10,
+                          cursor: idx === images.length - 1 ? "default" : "pointer",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          transition: "all 0.15s",
+                        }}
+                        onMouseEnter={(e) => {
+                          if (idx !== images.length - 1) e.currentTarget.style.background = A.goldBg;
+                        }}
+                        onMouseLeave={(e) => {
+                          if (idx !== images.length - 1) e.currentTarget.style.background = "#F2EFE9";
+                        }}
+                      >
+                        ▶
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
       )}
 
@@ -165,7 +429,7 @@ function ImageUploader({ category, images, onChange }) {
         style={{ fontSize: 13 }}
       />
       <p style={{ fontSize: 11, color: A.textMuted, margin: "-6px 0 0" }}>
-        Presiona Enter o haz clic fuera para agregar la URL. La primera imagen es la principal.
+        Presiona Enter o haz clic fuera para agregar la URL. La imagen en posición <strong>#1</strong> es la principal de la tienda.
       </p>
     </div>
   );
