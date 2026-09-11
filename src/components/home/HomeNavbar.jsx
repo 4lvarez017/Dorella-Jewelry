@@ -86,36 +86,61 @@ export function HomeNavbar({ onNavigate, onSelectCategory }) {
             alignItems: "center",
           }}
         >
-          <span
+          <a
+            href="?page=home"
             className="nav-link-item"
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            style={{ textDecoration: "none" }}
+            onClick={(e) => {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
           >
             Inicio
-          </span>
-          <span
+          </a>
+          <a
+            href="#craftsmanship"
             className="nav-link-item"
-            onClick={() => scrollToSection("craftsmanship")}
+            style={{ textDecoration: "none" }}
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection("craftsmanship");
+            }}
           >
             Ingeniería 18K
-          </span>
-          <span
+          </a>
+          <a
+            href="#editorial-collections"
             className="nav-link-item"
-            onClick={() => scrollToSection("editorial-collections")}
+            style={{ textDecoration: "none" }}
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection("editorial-collections");
+            }}
           >
             Colecciones
-          </span>
-          <span
+          </a>
+          <a
+            href="#brand-narrative"
             className="nav-link-item"
-            onClick={() => scrollToSection("brand-narrative")}
+            style={{ textDecoration: "none" }}
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection("brand-narrative");
+            }}
           >
             Historia
-          </span>
-          <span
+          </a>
+          <a
+            href="?page=catalog"
             className="nav-link-item"
-            onClick={() => onNavigate("catalog")}
+            style={{ textDecoration: "none" }}
+            onClick={(e) => {
+              e.preventDefault();
+              onNavigate("catalog");
+            }}
           >
             Catálogo
-          </span>
+          </a>
 
           {/* Enlace telefónico directo (SEO Local / NAP) */}
           <a

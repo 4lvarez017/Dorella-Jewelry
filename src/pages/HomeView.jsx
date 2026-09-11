@@ -5,6 +5,7 @@ import { HeroCinematic } from "../components/home/HeroCinematic";
 import { CraftsmanshipStory } from "../components/home/CraftsmanshipStory";
 import { EditorialCollections } from "../components/home/EditorialCollections";
 import { FeaturedCurated } from "../components/home/FeaturedCurated";
+import { GoldComparisonTable } from "../components/home/GoldComparisonTable";
 import { BrandNarrative } from "../components/home/BrandNarrative";
 import { HomeFAQ } from "../components/home/HomeFAQ";
 import { Footer } from "../components/Footer";
@@ -45,7 +46,10 @@ export function HomeView({ setPage, onSelectCategory, onViewDetails }) {
         onNavigate={setPage}
       />
 
-      {/* 6. Scene 06: Brand Narrative (Ocaña & Montería Roots) */}
+      {/* 6. Technical Proof: Comparative Table 18K vs Conventional & Key Metrics */}
+      <GoldComparisonTable />
+
+      {/* 7. Scene 06: Brand Narrative (Ocaña & Montería Roots) */}
       <BrandNarrative />
 
       {/* 7. Scene 07: Verified FAQ & Direct AEO/GEO Inverted Pyramid Answers */}

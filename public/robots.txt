@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /api/
+
+# Sitemaps y directrices para agentes de IA y buscadores
+Sitemap: https://dorella-jewelry.vercel.app/sitemap.xml
+
+# Archivo de especificación LLM para IA (AEO / GEO)
+# https://dorella-jewelry.vercel.app/llms.txt

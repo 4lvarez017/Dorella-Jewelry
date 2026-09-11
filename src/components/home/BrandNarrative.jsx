@@ -78,17 +78,22 @@ export function BrandNarrative() {
                   Asesoría en WhatsApp
                 </button>
               </a>
-              <span
+              <a
+                href="https://maps.google.com/?q=Ocana+Norte+de+Santander+Colombia"
+                target="_blank"
+                rel="noopener noreferrer"
                 style={{
                   fontSize: "11px",
                   letterSpacing: "2px",
                   textTransform: "uppercase",
                   color: G.gold,
                   fontWeight: 600,
+                  textDecoration: "underline",
                 }}
+                title="Ver ubicación de talleres en Google Maps"
               >
-                📍 Ocaña • Montería
-              </span>
+                📍 Ocaña • Montería (Maps ↗)
+              </a>
             </div>
           </div>
 

@@ -75,9 +75,13 @@ export function FeaturedCurated({ onViewDetails, onNavigate }) {
           }}
         >
           {featured.map((prod) => (
-            <div
+            <a
               key={prod.id}
-              onClick={() => onViewDetails(prod)}
+              href={`?page=product&productId=${prod.id}`}
+              onClick={(e) => {
+                e.preventDefault();
+                onViewDetails(prod);
+              }}
               style={{
                 background: "#121110",
                 border: "1px solid rgba(201, 168, 76, 0.15)",
@@ -88,6 +92,8 @@ export function FeaturedCurated({ onViewDetails, onNavigate }) {
                 display: "flex",
                 flexDirection: "column",
                 position: "relative",
+                textDecoration: "none",
+                color: "inherit",
               }}
               className="featured-luxury-card"
             >
@@ -138,39 +144,63 @@ export function FeaturedCurated({ onViewDetails, onNavigate }) {
                 </span>
               </div>
 
-              {/* Information Body */}
+              {/* Product Info */}
               <div
                 style={{
-                  padding: "24px",
+                  padding: "20px 24px 24px",
                   display: "flex",
                   flexDirection: "column",
-                  flexGrow: 1,
-                  background: "linear-gradient(to bottom, #121110, #0A0909)",
+                  flex: 1,
+                  justifyContent: "space-between",
                 }}
               >
-                <h3
-                  className="serif"
+                <div>
+                  <h3
+                    className="serif"
+                    style={{
+                      fontSize: "18px",
+                      fontWeight: 400,
+                      color: G.textDark,
+                      marginBottom: "8px",
+                      lineHeight: 1.3,
+                    }}
+                  >
+                    {prod.name}
+                  </h3>
+                  <p
+                    style={{
+                      fontSize: "12px",
+                      color: G.textMuted,
+                      marginBottom: "16px",
+                      lineHeight: 1.5,
+                      display: "-webkit-box",
+                      WebkitLineClamp: 2,
+                      WebkitBoxOrient: "vertical",
+                      overflow: "hidden",
+                    }}
+                  >
+                    {prod.desc || "Joyería fina en oro laminado de 18K inalterable con acabado pulido espejo y garantía de calidad."}
+                  </p>
+                </div>
+
+                <div
                   style={{
-                    fontSize: "22px",
-                    fontWeight: 400,
-                    color: G.textDark,
-                    marginBottom: "8px",
-                    lineHeight: 1.3,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                    paddingTop: "16px",
+                    borderTop: "1px solid rgba(255, 255, 255, 0.06)",
                   }}
                 >
-                  {prod.name}
-                </h3>
-
-                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginTop: "auto", paddingTop: "16px" }}>
                   <span
                     style={{
                       fontSize: "18px",
-                      fontWeight: 600,
-                      color: G.gold,
-                      fontFamily: "'Jost', sans-serif",
+                      fontWeight: 500,
+                      color: G.goldLight,
+                      letterSpacing: "0.5px",
                     }}
                   >
-                    ${Number(prod.price).toLocaleString("es-CO")}
+                    ${Number(prod.price || 0).toLocaleString("es-CO")} COP
                   </span>
 
                   <button
@@ -180,6 +210,7 @@ export function FeaturedCurated({ onViewDetails, onNavigate }) {
                       color: addedId === prod.id ? G.black : G.goldLight,
                       border: `1px solid ${G.gold}`,
                       padding: "8px 16px",
+                      borderRadius: "1px",
                       fontSize: "11px",
                       fontWeight: 600,
                       letterSpacing: "1.5px",
@@ -192,23 +223,29 @@ export function FeaturedCurated({ onViewDetails, onNavigate }) {
                   </button>
                 </div>
               </div>
-            </div>
+            </a>
           ))}
         </div>
 
         {/* View All CTA */}
         <div style={{ textAlign: "center", marginTop: "56px" }}>
-          <button
+          <a
+            href="?page=catalog"
             className="gold-btn"
-            onClick={() => onNavigate("catalog")}
+            onClick={(e) => {
+              e.preventDefault();
+              onNavigate("catalog");
+            }}
             style={{
+              display: "inline-block",
+              textDecoration: "none",
               padding: "16px 48px",
               fontSize: "12px",
               letterSpacing: "3px",
             }}
           >
             Explorar Catálogo Completo
-          </button>
+          </a>
         </div>
       </div>
 

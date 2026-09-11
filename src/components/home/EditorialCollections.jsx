@@ -82,12 +82,17 @@ export function EditorialCollections({ onSelectCategory, onNavigate }) {
             </h2>
           </div>
 
-          <button
+          <a
+            href="?page=catalog"
             className="gold-outline-btn"
-            onClick={() => handleCategoryClick("Todos")}
+            style={{ textDecoration: "none", display: "inline-block" }}
+            onClick={(e) => {
+              e.preventDefault();
+              handleCategoryClick("Todos");
+            }}
           >
             Ver Catálogo Completo →
-          </button>
+          </a>
         </div>
 
         {/* Editorial Mosaic Layout */}
@@ -105,9 +110,13 @@ export function EditorialCollections({ onSelectCategory, onNavigate }) {
             else if (idx === 1) colSpan = "span 5";
 
             return (
-              <div
+              <a
                 key={cat.name}
-                onClick={() => handleCategoryClick(cat.name)}
+                href={`?page=catalog&category=${encodeURIComponent(cat.name)}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleCategoryClick(cat.name);
+                }}
                 style={{
                   gridColumn: colSpan,
                   position: "relative",
@@ -122,6 +131,8 @@ export function EditorialCollections({ onSelectCategory, onNavigate }) {
                   flexDirection: "column",
                   justifyContent: "flex-end",
                   padding: "32px",
+                  textDecoration: "none",
+                  color: "inherit",
                 }}
                 className="editorial-card"
               >
@@ -152,17 +163,17 @@ export function EditorialCollections({ onSelectCategory, onNavigate }) {
                     src={cat.img}
                     alt={cat.name}
                     style={{
-                      maxHeight: "100%",
-                      maxWidth: "100%",
+                      maxWidth: "75%",
+                      maxHeight: "75%",
                       objectFit: "contain",
-                      filter: "drop-shadow(0 15px 25px rgba(0,0,0,0.8))",
+                      filter: "drop-shadow(0 16px 30px rgba(0, 0, 0, 0.9))",
                       transition: "transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)",
                     }}
                     className="editorial-img"
                   />
                 </div>
 
-                {/* Card Content Overlay */}
+                {/* Content Overlay */}
                 <div
                   style={{
                     position: "relative",
@@ -205,7 +216,7 @@ export function EditorialCollections({ onSelectCategory, onNavigate }) {
                     {cat.desc}
                   </p>
                 </div>
-              </div>
+              </a>
             );
           })}
         </div>

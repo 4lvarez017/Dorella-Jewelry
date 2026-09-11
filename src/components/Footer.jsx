@@ -44,11 +44,32 @@ export function Footer() {
           >
             Nuestras Sedes
           </p>
-          <p style={{ fontSize: "13px", lineHeight: 1.8 }}>
-            📍 Ocaña, Norte de Santander
-            <br />
-            📍 Montería, Córdoba
-          </p>
+          <div style={{ fontSize: "13px", lineHeight: 1.8 }}>
+            <p style={{ margin: "4px 0" }}>
+              📍 <strong>Ocaña</strong>, Norte de Santander{" "}
+              <a
+                href="https://maps.google.com/?q=Ocana+Norte+de+Santander+Colombia"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: G.gold, fontSize: "11px", textDecoration: "underline", marginLeft: "4px" }}
+                title="Ver ubicación en Ocaña en Google Maps"
+              >
+                (Google Maps ↗)
+              </a>
+            </p>
+            <p style={{ margin: "4px 0" }}>
+              📍 <strong>Montería</strong>, Córdoba{" "}
+              <a
+                href="https://maps.google.com/?q=Monteria+Cordoba+Colombia"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: G.gold, fontSize: "11px", textDecoration: "underline", marginLeft: "4px" }}
+                title="Ver ubicación en Montería en Google Maps"
+              >
+                (Google Maps ↗)
+              </a>
+            </p>
+          </div>
         </div>
 
         {/* Contacto */}
