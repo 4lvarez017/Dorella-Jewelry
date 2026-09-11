@@ -420,7 +420,8 @@ export function AdminPanel({ activeTab, setActiveTab, onLogout }) {
 
   // ── Stats por categoría ─────────────────────────────────────────────────────
   const getCategoryStats = name => {
-    const cat = products.filter(p => (p.category || "") === name);
+    const target = (name || "").trim().toLowerCase();
+    const cat = products.filter(p => (p.category || "").trim().toLowerCase() === target);
     return {
       count:    cat.length,
       stock:    cat.reduce((s, p) => s + (p.stock || 0), 0),

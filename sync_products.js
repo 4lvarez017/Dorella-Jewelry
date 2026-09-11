@@ -59,6 +59,17 @@ function normalizeStr(str) {
     .replace(/[\u0300-\u036f]/g, "");
 }
 
+function normalizeProductName(str) {
+  return (str || "")
+    .trim()
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/^(t|a|p|c|d|h|r|bp|bm|bh)\s+/i, "")
+    .replace(/\b(cms|cm|mm)\b/g, "")
+    .replace(/[^a-z0-9]/g, "");
+}
+
 async function loadAllLocalProducts() {
   const productsDir = path.join(__dirname, "src", "data", "products");
   const files = fs.readdirSync(productsDir).filter((f) => f.endsWith(".js"));
@@ -95,10 +106,10 @@ async function sync() {
     // Crear mapa por ID para comparación rápida
     const existingById = new Map(existing.map((p) => [String(p.id), p]));
     
-    // Crear set por (Categoría + Nombre) para detectar duplicados por nombre
+    // Crear set por (Categoría + Nombre normalizado) para detectar duplicados semánticos
     const existingNamesByCat = new Map();
     existing.forEach(p => {
-      const key = `${normalizeStr(p.category)}:::${normalizeStr(p.name)}`;
+      const key = `${normalizeStr(p.category)}:::${normalizeProductName(p.name)}`;
       existingNamesByCat.set(key, p);
     });
 
@@ -170,8 +181,9 @@ async function sync() {
         }
       } else {
         // Verificar si existe por nombre+categoría (evitar duplicación semántica)
-        const nameCatKey = `${normalizeStr(p.category)}:::${normalizeStr(p.name)}`;
+        const nameCatKey = `${normalizeStr(p.category)}:::${normalizeProductName(p.name)}`;
         if (existingNamesByCat.has(nameCatKey)) {
+          console.log(`  ℹ️  Omitiendo duplicado semántico de "${p.name}" en categoría "${p.category}"`);
           skipped.push(productData);
         } else {
           toInsert.push(productData);

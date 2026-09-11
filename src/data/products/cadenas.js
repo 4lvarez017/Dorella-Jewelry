@@ -184,22 +184,6 @@ export const CADENAS = [
     "desc": "C Serpiente Finita 45 Cms en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 40006."
   },
   {
-    "id": 41413,
-    "name": "C Cubana Con Destellos 60 Cm",
-    "category": "Cadenas",
-    "price": 140000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/41413/PERFIL.webp",
-    "desc": "C Cubana Con Destellos 60 Cm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 41413."
-  },
-  {
-    "id": 42108,
-    "name": "C Espejo Cuadrada 65 Cms",
-    "category": "Cadenas",
-    "price": 160000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/42108/PERFIL.webp",
-    "desc": "C Espejo Cuadrada 65 Cms en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 42108."
-  },
-  {
     "id": 43011,
     "name": "C Tejido Egipcio 40  Cms + Extensor",
     "category": "Cadenas",
@@ -214,14 +198,6 @@ export const CADENAS = [
     "price": 280000,
     "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/43018/PERFIL.webp",
     "desc": "C Candado 65 Cms en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 43018."
-  },
-  {
-    "id": 43033,
-    "name": "C Cubana Sol 65 Cms",
-    "category": "Cadenas",
-    "price": 180000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/43033/PERFIL.webp",
-    "desc": "C Cubana Sol 65 Cms en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 43033."
   },
   {
     "id": 43036,
@@ -240,44 +216,12 @@ export const CADENAS = [
     "desc": "C Gucci Delgada 65 Cms en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 43038."
   },
   {
-    "id": 43058,
-    "name": "C Aros 3 mm 65 cms",
-    "category": "Cadenas",
-    "price": 200000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/43058/PERFIL.webp",
-    "desc": "C Aros 3 mm 65 cms en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 43058."
-  },
-  {
     "id": 43106,
     "name": "C Espejo mediana 45cms",
     "category": "Cadenas",
     "price": 100000,
     "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/43106/PERFIL.webp",
     "desc": "C Espejo mediana 45cms en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 43106."
-  },
-  {
-    "id": 43786,
-    "name": "C Franco 45 Cms",
-    "category": "Cadenas",
-    "price": 300000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/43786/PERFIL.webp",
-    "desc": "C Franco 45 Cms en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 43786."
-  },
-  {
-    "id": 43788,
-    "name": "C Franco 65 Cms",
-    "category": "Cadenas",
-    "price": 400000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/43788/PERFIL.webp",
-    "desc": "C Franco 65 Cms en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 43788."
-  },
-  {
-    "id": 43833,
-    "name": "C Serpiente 65 Cms",
-    "category": "Cadenas",
-    "price": 280000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/43833/PERFIL.webp",
-    "desc": "C Serpiente 65 Cms en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 43833."
   },
   {
     "id": 43886,
@@ -304,22 +248,6 @@ export const CADENAS = [
     "desc": "C Cubana circonios- 45 cm-extenso en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 44006."
   },
   {
-    "id": 44041,
-    "name": "C Vintage 1.1 mm 45 Cms",
-    "category": "Cadenas",
-    "price": 80000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/44041/PERFIL.webp",
-    "desc": "C Vintage 1.1 mm 45 Cms en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 44041."
-  },
-  {
-    "id": 44068,
-    "name": "C Serpiente  4 mm 65 Cms",
-    "category": "Cadenas",
-    "price": 400000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/44068/PERFIL.webp",
-    "desc": "C Serpiente  4 mm 65 Cms en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 44068."
-  },
-  {
     "id": 44293,
     "name": "C Escalera delg. Plana Lisa 65cm",
     "category": "Cadenas",
@@ -344,14 +272,6 @@ export const CADENAS = [
     "desc": "C Destellos 2.5 Mm 45 Cms en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 44751."
   },
   {
-    "id": 44768,
-    "name": "C Veneciana Gruesa 65 Cms",
-    "category": "Cadenas",
-    "price": 320000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/44768/PERFIL.webp",
-    "desc": "C Veneciana Gruesa 65 Cms en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 44768."
-  },
-  {
     "id": 44833,
     "name": "C Serpiente Plana Delg  1mm 65cm",
     "category": "Cadenas",
@@ -374,14 +294,6 @@ export const CADENAS = [
     "price": 550000,
     "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/44888/PERFIL.webp",
     "desc": "C T. Chino Doble Carril 65cm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 44888."
-  },
-  {
-    "id": 44898,
-    "name": "C Lazo 3 mm 65 Cms",
-    "category": "Cadenas",
-    "price": 400000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/44898/PERFIL.webp",
-    "desc": "C Lazo 3 mm 65 Cms en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 44898."
   },
   {
     "id": 44936,
@@ -574,14 +486,6 @@ export const CADENAS = [
     "price": 1300000,
     "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45103/PERFIL.webp",
     "desc": "C ICE 3L TRI IT 65 Cms en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 45103."
-  },
-  {
-    "id": 45128,
-    "name": "C 3*1 IT 2.9 mm 65 Cms",
-    "category": "Cadenas",
-    "price": 280000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45128/PERFIL.webp",
-    "desc": "C 3*1 IT 2.9 mm 65 Cms en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 45128."
   },
   {
     "id": 45150,

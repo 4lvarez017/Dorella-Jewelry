@@ -64,38 +64,6 @@ export const ANILLOS = [
     "desc": "Anillo Duality Clover ajustable en oro laminado 18k con diseño de trébol de doble cara."
   },
   {
-    "id": 13009,
-    "name": "Anillo Alianza T5",
-    "category": "Anillos",
-    "price": 65000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/13009-T5/PERFIL.webp",
-    "desc": "Anillo Alianza T5 en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 13009-T5."
-  },
-  {
-    "id": 13009,
-    "name": "Anillo Alianza T5.5",
-    "category": "Anillos",
-    "price": 65000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/13009-T5.5/PERFIL.webp",
-    "desc": "Anillo Alianza T5.5 en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 13009-T5.5."
-  },
-  {
-    "id": 13100,
-    "name": "Anillo Signal Ajustable",
-    "category": "Anillos",
-    "price": 90000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/13100/PERFIL.webp",
-    "desc": "Anillo Signal Ajustable en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 13100."
-  },
-  {
-    "id": 13102,
-    "name": "Anillo Flicker Ajustable",
-    "category": "Anillos",
-    "price": 90000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/13102/PERFIL.webp",
-    "desc": "Anillo Flicker Ajustable en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 13102."
-  },
-  {
     "id": 13105,
     "name": "Anillo CT Kingdom Ajustable",
     "category": "Anillos",
@@ -494,5 +462,5 @@ export const ANILLOS = [
     "price": 90000,
     "image": "/ANILLOS/1782588148250-qmzb9z.webp",
     "desc": "Anillo Triple Carril Barril Grande en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 13155."
-  },
+  }
 ];

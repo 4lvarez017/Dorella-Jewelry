@@ -416,14 +416,6 @@ export const ARETES = [
     "desc": "A Baby Heart en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 30002."
   },
   {
-    "id": 30003,
-    "name": "A Double",
-    "category": "Aretes",
-    "price": 20000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/30003/PERFIL.webp",
-    "desc": "A Double en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 30003."
-  },
-  {
     "id": 30009,
     "name": "A Candonga Arbol De La Vida",
     "category": "Aretes",
@@ -520,52 +512,12 @@ export const ARETES = [
     "desc": "A Candonga Clasic Link 24 mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 30034."
   },
   {
-    "id": 30037,
-    "name": "A Cat Mini",
-    "category": "Aretes",
-    "price": 45000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/30037/PERFIL.webp",
-    "desc": "A Cat Mini en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 30037."
-  },
-  {
-    "id": 30038,
-    "name": "A Topo Quadra Crystal 4 mm",
-    "category": "Aretes",
-    "price": 45000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/30038/PERFIL.webp",
-    "desc": "A Topo Quadra Crystal 4 mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 30038."
-  },
-  {
-    "id": 30041,
-    "name": "A Virgen de Guadalupe 9 mm",
-    "category": "Aretes",
-    "price": 55000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/30041/PERFIL.webp",
-    "desc": "A Virgen de Guadalupe 9 mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 30041."
-  },
-  {
     "id": 30044,
     "name": "A Corazon Crystal",
     "category": "Aretes",
     "price": 50000,
     "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/30044/PERFIL.webp",
     "desc": "A Corazon Crystal en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 30044."
-  },
-  {
-    "id": 30045,
-    "name": "A Topo Rolex 8 mm",
-    "category": "Aretes",
-    "price": 55000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/30045/PERFIL.webp",
-    "desc": "A Topo Rolex 8 mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 30045."
-  },
-  {
-    "id": 30046,
-    "name": "A Amore Halo 9 mm",
-    "category": "Aretes",
-    "price": 65000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/30046/PERFIL.webp",
-    "desc": "A Amore Halo 9 mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 30046."
   },
   {
     "id": 30048,
@@ -598,22 +550,6 @@ export const ARETES = [
     "price": 45000,
     "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/30055/PERFIL.webp",
     "desc": "A Love CTR 5 mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 30055."
-  },
-  {
-    "id": 30090,
-    "name": "A Move 12 mm",
-    "category": "Aretes",
-    "price": 75000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/30090/PERFIL.webp",
-    "desc": "A Move 12 mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 30090."
-  },
-  {
-    "id": 30369,
-    "name": "A Corazón Mini",
-    "category": "Aretes",
-    "price": 50000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/30369/PERFIL.webp",
-    "desc": "A Corazón Mini en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 30369."
   },
   {
     "id": 30406,
@@ -665,22 +601,6 @@ export const ARETES = [
   },
   {
     "id": 33023,
-    "name": "A Topo Circonia Corazón NEGRO",
-    "category": "Aretes",
-    "price": 35000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/33023-NEGRO/PERFIL.webp",
-    "desc": "A Topo Circonia Corazón NEGRO en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 33023-NEGRO."
-  },
-  {
-    "id": 33023,
-    "name": "A Topo Circonia Corazón ROJO",
-    "category": "Aretes",
-    "price": 35000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/33023-ROJO/PERFIL.webp",
-    "desc": "A Topo Circonia Corazón ROJO en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 33023-ROJO."
-  },
-  {
-    "id": 33023,
     "name": "A Topo Circonia Corazón ROSA",
     "category": "Aretes",
     "price": 35000,
@@ -710,14 +630,6 @@ export const ARETES = [
     "price": 30000,
     "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/33034/PERFIL.webp",
     "desc": "A Balin  # 4 en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 33034."
-  },
-  {
-    "id": 34003,
-    "name": "A Ojo Turco",
-    "category": "Aretes",
-    "price": 55000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/34003/PERFIL.webp",
-    "desc": "A Ojo Turco en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 34003."
   },
   {
     "id": 34009,
@@ -760,14 +672,6 @@ export const ARETES = [
     "desc": "A Pearcing fake 1.4cm VERDE en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 34034-VERDE."
   },
   {
-    "id": 34035,
-    "name": "A Cruz Sagrada Circonias",
-    "category": "Aretes",
-    "price": 55000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/34035/PERFIL.webp",
-    "desc": "A Cruz Sagrada Circonias en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 34035."
-  },
-  {
     "id": 34038,
     "name": "A Circonia redonda cristal 2mm",
     "category": "Aretes",
@@ -792,60 +696,12 @@ export const ARETES = [
     "desc": "A Circonia Verde Caja 2.5 mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 34044."
   },
   {
-    "id": 34067,
-    "name": "A Osito Teddy",
-    "category": "Aretes",
-    "price": 55000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/34067/PERFIL.webp",
-    "desc": "A Osito Teddy en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 34067."
-  },
-  {
     "id": 34079,
     "name": "A Perla 4mm",
     "category": "Aretes",
     "price": 25000,
     "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/34079/PERFIL.webp",
     "desc": "A Perla 4mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 34079."
-  },
-  {
-    "id": 34080,
-    "name": "A Gypsy",
-    "category": "Aretes",
-    "price": 50000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/34080/PERFIL.webp",
-    "desc": "A Gypsy en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 34080."
-  },
-  {
-    "id": 34102,
-    "name": "A Wave",
-    "category": "Aretes",
-    "price": 45000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/34102/PERFIL.webp",
-    "desc": "A Wave en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 34102."
-  },
-  {
-    "id": 34107,
-    "name": "A Cupcake Cristal",
-    "category": "Aretes",
-    "price": 50000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/34107-CRISTAL/PERFIL.webp",
-    "desc": "A Cupcake Cristal en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 34107-CRISTAL."
-  },
-  {
-    "id": 34107,
-    "name": "A Cupcake Verde",
-    "category": "Aretes",
-    "price": 50000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/34107-VERDE/PERFIL.webp",
-    "desc": "A Cupcake Verde en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 34107-VERDE."
-  },
-  {
-    "id": 34110,
-    "name": "A Baby Feet",
-    "category": "Aretes",
-    "price": 35000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/34110/PERFIL.webp",
-    "desc": "A Baby Feet en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 34110."
   },
   {
     "id": 34111,
@@ -878,22 +734,6 @@ export const ARETES = [
     "price": 65000,
     "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/34126/PERFIL.webp",
     "desc": "A Candonga Steel 1.5 Cms en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 34126."
-  },
-  {
-    "id": 34134,
-    "name": "A Semi Candonga 3.8 Cms",
-    "category": "Aretes",
-    "price": 80000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/34134/PERFIL.webp",
-    "desc": "A Semi Candonga 3.8 Cms en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 34134."
-  },
-  {
-    "id": 34139,
-    "name": "A Candonga Vintage",
-    "category": "Aretes",
-    "price": 65000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/34139/PERFIL.webp",
-    "desc": "A Candonga Vintage en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 34139."
   },
   {
     "id": 34149,
@@ -1118,14 +958,6 @@ export const ARETES = [
     "price": 50000,
     "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/34230/PERFIL.webp",
     "desc": "A Espíritu Santo en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 34230."
-  },
-  {
-    "id": 34238,
-    "name": "A Ojo Turco",
-    "category": "Aretes",
-    "price": 50000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/34238/PERFIL.webp",
-    "desc": "A Ojo Turco en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 34238."
   },
   {
     "id": 34245,

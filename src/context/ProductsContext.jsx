@@ -72,11 +72,11 @@ export function ProductsProvider({ children }) {
 
     const productData = {
       id,
-      name:     newProduct.name,
-      category: newProduct.category,
+      name:     (newProduct.name || "").trim(),
+      category: (newProduct.category || "Anillos").trim(),
       price:    Number(newProduct.price),
       images:   imgs,
-      desc:     newProduct.desc || "",
+      desc:     (newProduct.desc || "").trim(),
       stock:    newProduct.stock !== undefined ? Number(newProduct.stock) : 10,
       visible:  newProduct.visible !== false,
     };
@@ -100,6 +100,9 @@ export function ProductsProvider({ children }) {
   // Modificar detalles de un producto (stock, precio, visibilidad, imágenes, etc.)
   const updateProduct = async (id, updatedFields) => {
     const payload = { ...updatedFields };
+    if (payload.name !== undefined) payload.name = (payload.name || "").trim();
+    if (payload.category !== undefined) payload.category = (payload.category || "").trim();
+    if (payload.desc !== undefined) payload.desc = (payload.desc || "").trim();
     if (payload.price !== undefined) payload.price = Number(payload.price);
     if (payload.stock !== undefined) payload.stock = Number(payload.stock);
 

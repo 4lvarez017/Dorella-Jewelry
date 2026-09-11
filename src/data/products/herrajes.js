@@ -88,14 +88,6 @@ export const HERRAJES = [
     "desc": "H Cruz Mini 11 mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 20011."
   },
   {
-    "id": 20015,
-    "name": "H Cruz 15 mm",
-    "category": "Herrajes",
-    "price": 45000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/20015/PERFIL.webp",
-    "desc": "H Cruz 15 mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 20015."
-  },
-  {
     "id": 20429,
     "name": "H San Benito 8 mm",
     "category": "Herrajes",
@@ -160,22 +152,6 @@ export const HERRAJES = [
     "desc": "H Fortune en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 23241."
   },
   {
-    "id": 23255,
-    "name": "H Circonia Redonda Cristal",
-    "category": "Herrajes",
-    "price": 25000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/23255/PERFIL.webp",
-    "desc": "H Circonia Redonda Cristal en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 23255."
-  },
-  {
-    "id": 23264,
-    "name": "H Charming",
-    "category": "Herrajes",
-    "price": 35000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/23264/PERFIL.webp",
-    "desc": "H Charming en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 23264."
-  },
-  {
     "id": 23282,
     "name": "H Tubo circonia",
     "category": "Herrajes",
@@ -206,14 +182,6 @@ export const HERRAJES = [
     "price": 50000,
     "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/23286/PERFIL.webp",
     "desc": "H Bola de Fuego Ojo en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 23286."
-  },
-  {
-    "id": 23287,
-    "name": "H Luxo",
-    "category": "Herrajes",
-    "price": 30000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/23287/PERFIL.webp",
-    "desc": "H Luxo en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 23287."
   },
   {
     "id": 23288,
@@ -256,14 +224,6 @@ export const HERRAJES = [
     "desc": "H Zirclove en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 23342."
   },
   {
-    "id": 23343,
-    "name": "H Lovix",
-    "category": "Herrajes",
-    "price": 40000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/23343/PERFIL.webp",
-    "desc": "H Lovix en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 23343."
-  },
-  {
     "id": 23344,
     "name": "H Beatly",
     "category": "Herrajes",
@@ -304,14 +264,6 @@ export const HERRAJES = [
     "desc": "H Clover Sol Esfera Cristal en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 23399."
   },
   {
-    "id": 24075,
-    "name": "H Bola De Fuego 5 mm Cristal",
-    "category": "Herrajes",
-    "price": 30000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/24075-CRISTAL/PERFIL.webp",
-    "desc": "H Bola De Fuego 5 mm Cristal en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 24075-CRISTAL."
-  },
-  {
     "id": 24477,
     "name": "H San Benito",
     "category": "Herrajes",
@@ -326,14 +278,6 @@ export const HERRAJES = [
     "price": 35000,
     "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/24799-CRISTAL/PERFIL.webp",
     "desc": "H Rondel  Circonias x 3 4 mm Cristal en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 24799-CRISTAL."
-  },
-  {
-    "id": 24799,
-    "name": "H Rondel circonias x 3 4 mm Negro",
-    "category": "Herrajes",
-    "price": 35000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/24799-NEGRO/PERFIL.webp",
-    "desc": "H Rondel circonias x 3 4 mm Negro en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 24799-NEGRO."
   },
   {
     "id": 24800,

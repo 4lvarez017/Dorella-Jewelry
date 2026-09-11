@@ -1,0 +1,442 @@
+{
+  "anillos.js": {
+    "exportKey": "ANILLOS",
+    "totalBefore": 62,
+    "duplicatesCount": 4,
+    "totalAfter": 58,
+    "duplicates": [
+      {
+        "index": 8,
+        "id": 13009,
+        "name": "Anillo Alianza T5",
+        "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/13009-T5/PERFIL.webp",
+        "duplicatesCanonical": "Anillo Alianza T5",
+        "canonicalId": 2
+      },
+      {
+        "index": 9,
+        "id": 13009,
+        "name": "Anillo Alianza T5.5",
+        "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/13009-T5.5/PERFIL.webp",
+        "duplicatesCanonical": "Anillo Alianza T5.5",
+        "canonicalId": 1
+      },
+      {
+        "index": 10,
+        "id": 13100,
+        "name": "Anillo Signal Ajustable",
+        "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/13100/PERFIL.webp",
+        "duplicatesCanonical": "Anillo Signal Ajustable",
+        "canonicalId": 6
+      },
+      {
+        "index": 11,
+        "id": 13102,
+        "name": "Anillo Flicker Ajustable",
+        "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/13102/PERFIL.webp",
+        "duplicatesCanonical": "Anillo Flicker Ajustable",
+        "canonicalId": 3
+      }
+    ]
+  },
+  "aretes.js": {
+    "exportKey": "ARETES",
+    "totalBefore": 197,
+    "duplicatesCount": 21,
+    "totalAfter": 176,
+    "duplicates": [
+      {
+        "index": 52,
+        "id": 30003,
+        "name": "A Double",
+        "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/30003/PERFIL.webp",
+        "duplicatesCanonical": "Double",
+        "canonicalId": 119
+      },
+      {
+        "index": 65,
+        "id": 30037,
+        "name": "A Cat Mini",
+        "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/30037/PERFIL.webp",
+        "duplicatesCanonical": "Cat Mini",
+        "canonicalId": 108
+      },
+      {
+        "index": 66,
+        "id": 30038,
+        "name": "A Topo Quadra Crystal 4 mm",
+        "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/30038/PERFIL.webp",
+        "duplicatesCanonical": "Topo Quadra Crystal 4 MM",
+        "canonicalId": 146
+      },
+      {
+        "index": 67,
+        "id": 30041,
+        "name": "A Virgen de Guadalupe 9 mm",
+        "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/30041/PERFIL.webp",
+        "duplicatesCanonical": "Virgen de Guadalupe 9 MM",
+        "canonicalId": 149
+      },
+      {
+        "index": 69,
+        "id": 30045,
+        "name": "A Topo Rolex 8 mm",
+        "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/30045/PERFIL.webp",
+        "duplicatesCanonical": "Topo Rolex 8 MM",
+        "canonicalId": 147
+      },
+      {
+        "index": 70,
+        "id": 30046,
+        "name": "A Amore Halo 9 mm",
+        "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/30046/PERFIL.webp",
+        "duplicatesCanonical": "Amore Halo 9 MM",
+        "canonicalId": 100
+      },
+      {
+        "index": 75,
+        "id": 30090,
+        "name": "A Move 12 mm",
+        "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/30090/PERFIL.webp",
+        "duplicatesCanonical": "Move 12 MM",
+        "canonicalId": 131
+      },
+      {
+        "index": 76,
+        "id": 30369,
+        "name": "A Corazón Mini",
+        "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/30369/PERFIL.webp",
+        "duplicatesCanonical": "Corazón Mini",
+        "canonicalId": 115
+      },
+      {
+        "index": 83,
+        "id": 33023,
+        "name": "A Topo Circonia Corazón NEGRO",
+        "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/33023-NEGRO/PERFIL.webp",
+        "duplicatesCanonical": "Topo Circonia Corazón Negro",
+        "canonicalId": 144
+      },
+      {
+        "index": 84,
+        "id": 33023,
+        "name": "A Topo Circonia Corazón ROJO",
+        "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/33023-ROJO/PERFIL.webp",
+        "duplicatesCanonical": "Topo Circonia Corazón Rojo",
+        "canonicalId": 145
+      },
+      {
+        "index": 89,
+        "id": 34003,
+        "name": "A Ojo Turco",
+        "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/34003/PERFIL.webp",
+        "duplicatesCanonical": "Ojo Turco",
+        "canonicalId": 132
+      },
+      {
+        "index": 95,
+        "id": 34035,
+        "name": "A Cruz Sagrada Circonias",
+        "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/34035/PERFIL.webp",
+        "duplicatesCanonical": "Cruz Sagrada Circonias",
+        "canonicalId": 116
+      },
+      {
+        "index": 99,
+        "id": 34067,
+        "name": "A Osito Teddy",
+        "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/34067/PERFIL.webp",
+        "duplicatesCanonical": "Osito Teddy",
+        "canonicalId": 134
+      },
+      {
+        "index": 101,
+        "id": 34080,
+        "name": "A Gypsy",
+        "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/34080/PERFIL.webp",
+        "duplicatesCanonical": "Gypsy",
+        "canonicalId": 121
+      },
+      {
+        "index": 102,
+        "id": 34102,
+        "name": "A Wave",
+        "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/34102/PERFIL.webp",
+        "duplicatesCanonical": "Wave",
+        "canonicalId": 150
+      },
+      {
+        "index": 103,
+        "id": 34107,
+        "name": "A Cupcake Cristal",
+        "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/34107-CRISTAL/PERFIL.webp",
+        "duplicatesCanonical": "Cupcake Cristal",
+        "canonicalId": 117
+      },
+      {
+        "index": 104,
+        "id": 34107,
+        "name": "A Cupcake Verde",
+        "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/34107-VERDE/PERFIL.webp",
+        "duplicatesCanonical": "Cupcake Verde",
+        "canonicalId": 118
+      },
+      {
+        "index": 105,
+        "id": 34110,
+        "name": "A Baby Feet",
+        "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/34110/PERFIL.webp",
+        "duplicatesCanonical": "Baby Feet",
+        "canonicalId": 102
+      },
+      {
+        "index": 110,
+        "id": 34134,
+        "name": "A Semi Candonga 3.8 Cms",
+        "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/34134/PERFIL.webp",
+        "duplicatesCanonical": "Semi Candonga 3.8 CM",
+        "canonicalId": 140
+      },
+      {
+        "index": 111,
+        "id": 34139,
+        "name": "A Candonga Vintage",
+        "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/34139/PERFIL.webp",
+        "duplicatesCanonical": "Candonga Vintage",
+        "canonicalId": 107
+      },
+      {
+        "index": 140,
+        "id": 34238,
+        "name": "A Ojo Turco",
+        "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/34238/PERFIL.webp",
+        "duplicatesCanonical": "Ojo Turco",
+        "canonicalId": 132
+      }
+    ]
+  },
+  "cadenas.js": {
+    "exportKey": "CADENAS",
+    "totalBefore": 97,
+    "duplicatesCount": 12,
+    "totalAfter": 85,
+    "duplicates": [
+      {
+        "index": 23,
+        "id": 41413,
+        "name": "C Cubana Con Destellos 60 Cm",
+        "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/41413/PERFIL.webp",
+        "duplicatesCanonical": "Cubana con Destellos 60 CM",
+        "canonicalId": 405
+      },
+      {
+        "index": 24,
+        "id": 42108,
+        "name": "C Espejo Cuadrada 65 Cms",
+        "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/42108/PERFIL.webp",
+        "duplicatesCanonical": "Espejo Cuadrada 65 CM",
+        "canonicalId": 408
+      },
+      {
+        "index": 27,
+        "id": 43033,
+        "name": "C Cubana Sol 65 Cms",
+        "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/43033/PERFIL.webp",
+        "duplicatesCanonical": "Cubana Sol 65 CM",
+        "canonicalId": 406
+      },
+      {
+        "index": 30,
+        "id": 43058,
+        "name": "C Aros 3 mm 65 cms",
+        "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/43058/PERFIL.webp",
+        "duplicatesCanonical": "Aros 3 MM 65 CM",
+        "canonicalId": 401
+      },
+      {
+        "index": 32,
+        "id": 43786,
+        "name": "C Franco 45 Cms",
+        "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/43786/PERFIL.webp",
+        "duplicatesCanonical": "Franco 45 CM",
+        "canonicalId": 410
+      },
+      {
+        "index": 33,
+        "id": 43788,
+        "name": "C Franco 65 Cms",
+        "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/43788/PERFIL.webp",
+        "duplicatesCanonical": "Franco 65 CM",
+        "canonicalId": 411
+      },
+      {
+        "index": 34,
+        "id": 43833,
+        "name": "C Serpiente 65 Cms",
+        "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/43833/PERFIL.webp",
+        "duplicatesCanonical": "Serpiente 65 CM",
+        "canonicalId": 415
+      },
+      {
+        "index": 38,
+        "id": 44041,
+        "name": "C Vintage 1.1 mm 45 Cms",
+        "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/44041/PERFIL.webp",
+        "duplicatesCanonical": "Vintage 1.1 MM 45 CM",
+        "canonicalId": 421
+      },
+      {
+        "index": 39,
+        "id": 44068,
+        "name": "C Serpiente  4 mm 65 Cms",
+        "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/44068/PERFIL.webp",
+        "duplicatesCanonical": "Serpiente 4 MM 65 CM",
+        "canonicalId": 414
+      },
+      {
+        "index": 43,
+        "id": 44768,
+        "name": "C Veneciana Gruesa 65 Cms",
+        "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/44768/PERFIL.webp",
+        "duplicatesCanonical": "Veneciana Gruesa 65 CM",
+        "canonicalId": 420
+      },
+      {
+        "index": 47,
+        "id": 44898,
+        "name": "C Lazo 3 mm 65 Cms",
+        "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/44898/PERFIL.webp",
+        "duplicatesCanonical": "Lazo 3 MM 65 CM",
+        "canonicalId": 413
+      },
+      {
+        "index": 72,
+        "id": 45128,
+        "name": "C 3*1 IT 2.9 mm 65 Cms",
+        "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45128/PERFIL.webp",
+        "duplicatesCanonical": "3 1 IT 2.9 MM 65 Cms",
+        "canonicalId": 400
+      }
+    ]
+  },
+  "herrajes.js": {
+    "exportKey": "HERRAJES",
+    "totalBefore": 45,
+    "duplicatesCount": 7,
+    "totalAfter": 38,
+    "duplicates": [
+      {
+        "index": 11,
+        "id": 20015,
+        "name": "H Cruz 15 mm",
+        "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/20015/PERFIL.webp",
+        "duplicatesCanonical": "Cruz 15 MM",
+        "canonicalId": 505
+      },
+      {
+        "index": 20,
+        "id": 23255,
+        "name": "H Circonia Redonda Cristal",
+        "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/23255/PERFIL.webp",
+        "duplicatesCanonical": "Circonia Redonda Cristal",
+        "canonicalId": 502
+      },
+      {
+        "index": 21,
+        "id": 23264,
+        "name": "H Charming",
+        "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/23264/PERFIL.webp",
+        "duplicatesCanonical": "Charming",
+        "canonicalId": 501
+      },
+      {
+        "index": 26,
+        "id": 23287,
+        "name": "H Luxo",
+        "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/23287/PERFIL.webp",
+        "duplicatesCanonical": "Luxo",
+        "canonicalId": 507
+      },
+      {
+        "index": 32,
+        "id": 23343,
+        "name": "H Lovix",
+        "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/23343/PERFIL.webp",
+        "duplicatesCanonical": "Lovix",
+        "canonicalId": 506
+      },
+      {
+        "index": 38,
+        "id": 24075,
+        "name": "H Bola De Fuego 5 mm Cristal",
+        "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/24075-CRISTAL/PERFIL.webp",
+        "duplicatesCanonical": "Bola de Fuego 5 MM Cristal",
+        "canonicalId": 500
+      },
+      {
+        "index": 41,
+        "id": 24799,
+        "name": "H Rondel circonias x 3 4 mm Negro",
+        "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/24799-NEGRO/PERFIL.webp",
+        "duplicatesCanonical": "Rondel Circonias X3 4 MM Negro",
+        "canonicalId": 508
+      }
+    ]
+  },
+  "pulseras.js": {
+    "exportKey": "PULSERAS",
+    "totalBefore": 87,
+    "duplicatesCount": 3,
+    "totalAfter": 84,
+    "duplicates": [
+      {
+        "index": 43,
+        "id": 50030,
+        "name": "P Heart",
+        "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/50030/PERFIL.webp",
+        "duplicatesCanonical": "Heart",
+        "canonicalId": 620
+      },
+      {
+        "index": 48,
+        "id": 54007,
+        "name": "P Franco 20 Cms",
+        "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/54007/PERFIL.webp",
+        "duplicatesCanonical": "Franco 20 CM",
+        "canonicalId": 618
+      },
+      {
+        "index": 77,
+        "id": 55207,
+        "name": "P Cubana Cruzada 2,4 mm 19.5 Cms",
+        "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/55207/PERFIL.webp",
+        "duplicatesCanonical": "Cubana Cruzada 2.4 MM 19.5 CM",
+        "canonicalId": 614
+      }
+    ]
+  },
+  "rosarios.js": {
+    "exportKey": "ROSARIOS",
+    "totalBefore": 9,
+    "duplicatesCount": 2,
+    "totalAfter": 7,
+    "duplicates": [
+      {
+        "index": 6,
+        "id": 94034,
+        "name": "Rosario Hombre 65 cms 4 mm Cristal",
+        "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/94034-CRISTAL/PERFIL.jpg",
+        "duplicatesCanonical": "Rosario Hombre 65 CM 4 MM Cristal",
+        "canonicalId": 701
+      },
+      {
+        "index": 7,
+        "id": 94034,
+        "name": "Rosario Hombre 65 cms 4 mm Verde",
+        "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/94034-VERDE/PERFIL.webp",
+        "duplicatesCanonical": "Rosario Hombre 65 CM 4 MM Verde",
+        "canonicalId": 702
+      }
+    ]
+  }
+}

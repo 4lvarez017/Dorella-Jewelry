@@ -173,15 +173,27 @@ export function ProductosTab({
     }
   }, [onAddProductMobileRef]);
 
-  // ── Filtrado ──
-  const filtered = products.filter(p => {
-    const matchCat = selectedCategory === "Todos" || (p.category || "") === selectedCategory;
-    const q = search.trim().toLowerCase();
-    const matchSearch = !q ||
-      (p.name || "").toLowerCase().includes(q) ||
-      (p.desc || "").toLowerCase().includes(q);
-    return matchCat && matchSearch;
-  });
+  // ── Filtrado y ordenamiento ──
+  const filtered = products
+    .filter(p => {
+      const matchCat =
+        selectedCategory === "Todos" ||
+        (p.category || "").trim().toLowerCase() === selectedCategory.trim().toLowerCase();
+      const q = search.trim().toLowerCase();
+      const matchSearch = !q ||
+        (p.name || "").toLowerCase().includes(q) ||
+        (p.desc || "").toLowerCase().includes(q);
+      return matchCat && matchSearch;
+    })
+    .sort((a, b) => {
+      if (selectedCategory === "Todos" && !search.trim()) {
+        const catA = (a.category || "").trim();
+        const catB = (b.category || "").trim();
+        const catComp = catA.localeCompare(catB, "es", { sensitivity: "base" });
+        if (catComp !== 0) return catComp;
+      }
+      return (a.name || "").localeCompare(b.name || "", "es", { sensitivity: "base" });
+    });
 
   // ── Handlers ──
   const handleSave = async (data) => {

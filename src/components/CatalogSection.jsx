@@ -66,7 +66,8 @@ export function CatalogSection({ activeCategory, id, onViewDetails }) {
   const categoryProducts = useMemo(() => {
     const visible = products.filter(p => p.visible !== false);
     if (activeCategory === "Todos") return visible;
-    return visible.filter(p => (p.category || "") === activeCategory);
+    const target = (activeCategory || "").trim().toLowerCase();
+    return visible.filter(p => (p.category || "").trim().toLowerCase() === target);
   }, [products, activeCategory]);
 
   // Rango de precios dinámico

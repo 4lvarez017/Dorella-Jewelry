@@ -48,22 +48,6 @@ export const ROSARIOS = [
     "desc": "Rosario Benedictus 43 Cms + Ext en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 90008."
   },
   {
-    "id": 94034,
-    "name": "Rosario Hombre 65 cms 4 mm Cristal",
-    "category": "Rosarios",
-    "price": 320000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/94034-CRISTAL/PERFIL.jpg",
-    "desc": "Rosario Hombre 65 cms 4 mm Cristal en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 94034-CRISTAL."
-  },
-  {
-    "id": 94034,
-    "name": "Rosario Hombre 65 cms 4 mm Verde",
-    "category": "Rosarios",
-    "price": 320000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/94034-VERDE/PERFIL.webp",
-    "desc": "Rosario Hombre 65 cms 4 mm Verde en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 94034-VERDE."
-  },
-  {
     "id": 95036,
     "name": "Rosario IT Balin 2,5 mm 45 Cms",
     "category": "Rosarios",

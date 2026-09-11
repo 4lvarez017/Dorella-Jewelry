@@ -344,14 +344,6 @@ export const PULSERAS = [
     "desc": "P Hilo Laminado 15 Cms + Extensor en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 50003-ROJO."
   },
   {
-    "id": 50030,
-    "name": "P Heart",
-    "category": "Pulseras",
-    "price": 100000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/50030/PERFIL.webp",
-    "desc": "P Heart en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 50030."
-  },
-  {
     "id": 50096,
     "name": "P Cubana Clover 1,1 cm 15 Cm + Ext",
     "category": "Pulseras",
@@ -382,14 +374,6 @@ export const PULSERAS = [
     "price": 110000,
     "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/53887/PERFIL.webp",
     "desc": "P Tejido Chino 3 Mm 20 Cms en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 53887."
-  },
-  {
-    "id": 54007,
-    "name": "P Franco 20 Cms",
-    "category": "Pulseras",
-    "price": 380000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/54007/PERFIL.webp",
-    "desc": "P Franco 20 Cms en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 54007."
   },
   {
     "id": 54037,
@@ -614,14 +598,6 @@ export const PULSERAS = [
     "price": 60000,
     "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/55176/PERFIL.webp",
     "desc": "P Escalerita Con Destellos IT 1.7 mm 16.5 Cms en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 55176."
-  },
-  {
-    "id": 55207,
-    "name": "P Cubana Cruzada 2,4 mm 19.5 Cms",
-    "category": "Pulseras",
-    "price": 120000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/55207/PERFIL.webp",
-    "desc": "P Cubana Cruzada 2,4 mm 19.5 Cms en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 55207."
   },
   {
     "id": 55212,

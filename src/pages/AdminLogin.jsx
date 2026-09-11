@@ -109,7 +109,7 @@ export function AdminLogin({ onLogin }) {
             type="text"
             value={creds.username}
             autoComplete="username"
-            placeholder="Ej: Alex"
+            placeholder=""
             onChange={(e) => setCreds((c) => ({ ...c, username: e.target.value }))}
             onKeyDown={(e) => e.key === "Enter" && handleLogin()}
             style={inputStyle}
