@@ -4,28 +4,23 @@ import { WHATSAPP_NUMBER } from "../../data/constants";
 
 const FAQS = [
   {
-    q: "¿Qué es el oro laminado 18K y qué diferencia tiene con la fantasía o el baño de oro?",
-    a: "El oro laminado 18K es una lámina gruesa de oro auténtico de 18 quilates soldada por termofusión sobre una base metálica de alta densidad. A diferencia de los baños de oro convencionales o la bisutería tradicional, no se decolora ni se desprende con el uso, garantizando un acabado inalterable frente al agua y el sudor. Esto permite disfrutar de la estética, peso y durabilidad del oro sólido a una fracción de su costo.",
+    q: "¿Qué es el oro laminado 18K y por qué es inalterable?",
+    a: "El oro laminado 18K es una pieza con base metálica fundida térmicamente con capas de oro auténtico de 18 quilates de 3 a 5 micras. Es inalterable porque su unión molecular evita que el oro se desprenda, se pele o pierda brillo ante agua y sudor. A diferencia de un baño superficial, conserva la estética y durabilidad del oro sólido por años.",
     tag: "Materiales & Calidad",
   },
   {
     q: "¿Se pueden mojar las joyas de Dorella Jewelry en la piscina, mar o ducha?",
-    a: "Sí, todas las piezas de oro laminado 18K de Dorella Jewelry son resistentes al agua dulce, agua salada y duchas diarias. Su proceso de fabricación molecular previene la corrosión y la oxidación provocada por la humedad o el pH de la piel. Para preservar su brillo espejo a largo plazo, se recomienda enjuagarlas con agua limpia y secarlas con un paño suave tras la exposición a químicos fuertes o cloro concentrado.",
-    tag: "Uso Diario & Resistencia",
+    a: "Sí, todas las joyas de oro laminado 18K de Dorella Jewelry son 100% resistentes al agua dulce, agua salada y sudor corporal. Su estructura en 5 capas previene la corrosión y no mancha la piel en duchas diarias, playa o piscinas. Para conservar su brillo espejo a largo plazo, basta enjuagarlas con agua limpia y secarlas con paño suave.",
+    tag: "Resistencia al Agua",
   },
   {
-    q: "¿Cómo comprar y cuánto tarda en llegar un pedido en Colombia?",
-    a: "Puedes comprar seleccionando tus piezas en el catálogo web y completando el pedido mediante WhatsApp o pasarela digital segura. Los envíos se despachan con cobertura a nivel nacional, con tiempos de entrega de 1 a 2 días hábiles en ciudades principales y de 3 a 5 días en el resto de Colombia. Todos los paquetes viajan debidamente asegurados y cuentan con código de rastreo en tiempo real.",
-    tag: "Envíos & Pagos",
+    q: "¿Cómo comprar joyas con garantía y cuánto tarda el envío en Colombia?",
+    a: "Dorella Jewelry ofrece garantía formal por escrito sobre la inalterabilidad del tono y brillo del oro 18K. Los envíos asegurados tardan de 24 a 48 horas hábiles en ciudades principales y de 3 a 5 días en el resto de Colombia. Puedes comprar con pasarela segura o mediante asesoría personalizada directa en WhatsApp (+57 313 240 3081).",
+    tag: "Garantía & Envíos",
   },
   {
-    q: "¿Las joyas de Dorella Jewelry cuentan con garantía?",
-    a: "Sí, todas nuestras piezas cuentan con garantía formal sobre el tono, brillo y durabilidad del oro laminado de 18 quilates. Respaldamos la inalterabilidad de cada joya bajo condiciones normales de uso diario. Cada envío se somete a un riguroso control de calidad artesanal antes de su despacho.",
-    tag: "Garantía Oficial",
-  },
-  {
-    q: "¿Las piezas producen alergias o manchas oscuras en la piel?",
-    a: "No, las joyas de Dorella Jewelry son 100% hipoalergénicas y están libres de níquel o componentes reactivos. Al estar recubiertas enteramente por oro auténtico de 18 quilates, son completamente seguras para personas con piel sensible o tendencia a irritaciones cutáneas.",
+    q: "¿Las joyas producen alergias o manchas oscuras en la piel?",
+    a: "No, las piezas de Dorella Jewelry son 100% hipoalergénicas y están totalmente libres de níquel. Al tener contacto directo únicamente con oro de 18 quilates, garantizan total seguridad para pieles sensibles sin irritación.",
     tag: "Hipoalergénico",
   },
 ];
@@ -157,20 +152,19 @@ export function HomeFAQ() {
                   </span>
                 </button>
 
-                {isOpen && (
-                  <div
-                    style={{
-                      padding: "0 24px 24px 24px",
-                      color: G.textMid,
-                      fontSize: "14px",
-                      lineHeight: 1.7,
-                      borderTop: "1px solid rgba(201, 168, 76, 0.1)",
-                      paddingTop: "16px",
-                    }}
-                  >
-                    <p style={{ margin: 0 }}>{faq.a}</p>
-                  </div>
-                )}
+                <div
+                  style={{
+                    display: isOpen ? "block" : "none",
+                    padding: "0 24px 24px 24px",
+                    color: G.textMid,
+                    fontSize: "14px",
+                    lineHeight: 1.7,
+                    borderTop: "1px solid rgba(201, 168, 76, 0.1)",
+                    paddingTop: "16px",
+                  }}
+                >
+                  <p style={{ margin: 0 }}>{faq.a}</p>
+                </div>
               </div>
             );
           })}

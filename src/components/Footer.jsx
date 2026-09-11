@@ -46,7 +46,7 @@ export function Footer() {
           </p>
           <div style={{ fontSize: "13px", lineHeight: 1.8 }}>
             <p style={{ margin: "4px 0" }}>
-              📍 <strong>Ocaña</strong>, Norte de Santander (Código Postal: 546552){" "}
+              📍 <strong>Sede Principal y Taller:</strong> Ocaña, Norte de Santander (Código Postal: 546552){" "}
               <a
                 href="https://maps.google.com/?q=Ocana+Norte+de+Santander+Colombia"
                 target="_blank"
@@ -58,7 +58,7 @@ export function Footer() {
               </a>
             </p>
             <p style={{ margin: "4px 0" }}>
-              📍 <strong>Montería</strong>, Córdoba (Código Postal: 230001){" "}
+              📍 <strong>Sede Comercial:</strong> Montería, Córdoba{" "}
               <a
                 href="https://maps.google.com/?q=Monteria+Cordoba+Colombia"
                 target="_blank"

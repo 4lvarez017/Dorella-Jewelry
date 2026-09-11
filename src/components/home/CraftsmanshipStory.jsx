@@ -181,8 +181,9 @@ export function CraftsmanshipStory() {
               key={STEPS[activeStep].img}
               src={STEPS[activeStep].img}
               alt={STEPS[activeStep].title}
-              width="500"
-              height="416"
+              width="420"
+              height="350"
+              sizes="(max-width: 768px) 100vw, 420px"
               loading="lazy"
               decoding="async"
               style={{

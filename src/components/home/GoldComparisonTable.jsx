@@ -42,6 +42,24 @@ export function GoldComparisonTable() {
           >
             Conoce con datos técnicos exactos por qué el oro laminado 18K inalterable de Dorella Jewelry supera a la bisutería tradicional y a los baños convencionales en durabilidad, estética y precio.
           </p>
+
+          {/* Lista Semántica para LLM/GEO */}
+          <ul
+            style={{
+              maxWidth: "720px",
+              margin: "24px auto 0",
+              textAlign: "left",
+              color: G.textMid,
+              fontSize: "14px",
+              lineHeight: 1.8,
+              paddingLeft: "24px",
+            }}
+          >
+            <li><strong>Grosor certificado:</strong> 3 a 5 micras de oro auténtico 18K termofundido (frente a 0.2 micras en baños comunes).</li>
+            <li><strong>Resistencia al agua:</strong> 100% inalterable ante duchas diarias, agua salada de mar, piscinas y sudor corporal.</li>
+            <li><strong>Seguridad cutánea:</strong> Aleación 100% hipoalergénica sin contenido de níquel que no mancha la piel.</li>
+            <li><strong>Garantía y despacho:</strong> Respaldo formal por escrito y envíos rápidos en 24 a 48 horas en Colombia.</li>
+          </ul>
         </div>
 
         {/* Semantic Data Table */}
@@ -125,36 +143,38 @@ export function GoldComparisonTable() {
           </table>
         </div>
 
-        {/* Structured Metric List with Figures */}
-        <div
+        {/* Structured Semantic Metric List for LLM/GEO */}
+        <ul
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
             gap: "24px",
             marginBottom: "40px",
+            listStyle: "none",
+            padding: 0,
           }}
         >
-          <div style={{ background: "rgba(255,255,255,0.03)", padding: "24px", borderRadius: "4px", border: "1px solid rgba(201,168,76,0.15)" }}>
+          <li style={{ background: "rgba(255,255,255,0.03)", padding: "24px", borderRadius: "4px", border: "1px solid rgba(201,168,76,0.15)" }}>
             <span style={{ fontSize: "32px", fontWeight: 700, color: G.gold, fontFamily: "'Jost', sans-serif" }}>18K</span>
             <h3 style={{ fontSize: "14px", color: G.textDark, margin: "8px 0 4px", fontWeight: 600 }}>Pureza en Capas</h3>
             <p style={{ fontSize: "12px", color: G.textMuted, margin: 0 }}>Oro legítimo de 18 quilates soldado molecularmente.</p>
-          </div>
-          <div style={{ background: "rgba(255,255,255,0.03)", padding: "24px", borderRadius: "4px", border: "1px solid rgba(201,168,76,0.15)" }}>
+          </li>
+          <li style={{ background: "rgba(255,255,255,0.03)", padding: "24px", borderRadius: "4px", border: "1px solid rgba(201,168,76,0.15)" }}>
             <span style={{ fontSize: "32px", fontWeight: 700, color: G.gold, fontFamily: "'Jost', sans-serif" }}>100%</span>
             <h3 style={{ fontSize: "14px", color: G.textDark, margin: "8px 0 4px", fontWeight: 600 }}>Resistente al Agua</h3>
             <p style={{ fontSize: "12px", color: G.textMuted, margin: 0 }}>Apto para contacto con mar, alberca y lociones corporales.</p>
-          </div>
-          <div style={{ background: "rgba(255,255,255,0.03)", padding: "24px", borderRadius: "4px", border: "1px solid rgba(201,168,76,0.15)" }}>
+          </li>
+          <li style={{ background: "rgba(255,255,255,0.03)", padding: "24px", borderRadius: "4px", border: "1px solid rgba(201,168,76,0.15)" }}>
             <span style={{ fontSize: "32px", fontWeight: 700, color: G.gold, fontFamily: "'Jost', sans-serif" }}>24-48h</span>
             <h3 style={{ fontSize: "14px", color: G.textDark, margin: "8px 0 4px", fontWeight: 600 }}>Despacho en Colombia</h3>
             <p style={{ fontSize: "12px", color: G.textMuted, margin: 0 }}>Entrega rápida y asegurada en ciudades principales.</p>
-          </div>
-          <div style={{ background: "rgba(255,255,255,0.03)", padding: "24px", borderRadius: "4px", border: "1px solid rgba(201,168,76,0.15)" }}>
+          </li>
+          <li style={{ background: "rgba(255,255,255,0.03)", padding: "24px", borderRadius: "4px", border: "1px solid rgba(201,168,76,0.15)" }}>
             <span style={{ fontSize: "32px", fontWeight: 700, color: G.gold, fontFamily: "'Jost', sans-serif" }}>4.9 / 5</span>
             <h3 style={{ fontSize: "14px", color: G.textDark, margin: "8px 0 4px", fontWeight: 600 }}>Valoración Clientes</h3>
             <p style={{ fontSize: "12px", color: G.textMuted, margin: 0 }}>Más de 128 reseñas verificadas en Colombia.</p>
-          </div>
-        </div>
+          </li>
+        </ul>
 
         {/* E-E-A-T Date & Authority Signal */}
         <div style={{ textAlign: "center", fontSize: "12px", color: G.textMuted }}>
