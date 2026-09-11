@@ -162,6 +162,10 @@ export function EditorialCollections({ onSelectCategory, onNavigate }) {
                   <img
                     src={cat.img}
                     alt={cat.name}
+                    width="320"
+                    height="260"
+                    loading="lazy"
+                    decoding="async"
                     style={{
                       maxWidth: "75%",
                       maxHeight: "75%",

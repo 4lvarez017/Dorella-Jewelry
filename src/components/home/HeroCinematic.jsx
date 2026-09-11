@@ -261,7 +261,7 @@ export function HeroCinematic({ onExplore }) {
             letterSpacing: "0.5px",
           }}
         >
-          Alta joyería en oro laminado de 18 quilates con garantía real y envíos asegurados a toda Colombia. Fusión térmica de máxima durabilidad y resistencia al agua para perdurar por generaciones.
+          Dorella Jewelry diseña alta joyería en oro laminado de 18 quilates. Cada pieza ofrece 100% de resistencia frente al agua, mar y sudor. Respaldamos cada joya con garantía inalterable de fábrica. Realizamos despachos rápidos en 24 a 48 horas a toda Colombia.
         </p>
 
         {/* Hero Product Visual Stage (Seamlessly feathered into background) */}

@@ -181,6 +181,10 @@ export function CraftsmanshipStory() {
               key={STEPS[activeStep].img}
               src={STEPS[activeStep].img}
               alt={STEPS[activeStep].title}
+              width="500"
+              height="416"
+              loading="lazy"
+              decoding="async"
               style={{
                 width: "100%",
                 height: "100%",

@@ -110,6 +110,10 @@ export function BrandNarrative() {
             <img
               src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=800&q=80"
               alt="Artesanía Dorella Jewelry"
+              width="800"
+              height="600"
+              loading="lazy"
+              decoding="async"
               style={{
                 width: "100%",
                 aspectRatio: "4/3",

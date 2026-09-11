@@ -113,6 +113,10 @@ export function FeaturedCurated({ onViewDetails, onNavigate }) {
                 <img
                   src={prod.image || (prod.images && prod.images[0]) || "/placeholder.jpg"}
                   alt={prod.name}
+                  width="300"
+                  height="300"
+                  loading="lazy"
+                  decoding="async"
                   style={{
                     maxWidth: "85%",
                     maxHeight: "85%",

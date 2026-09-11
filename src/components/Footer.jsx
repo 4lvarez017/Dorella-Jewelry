@@ -46,7 +46,7 @@ export function Footer() {
           </p>
           <div style={{ fontSize: "13px", lineHeight: 1.8 }}>
             <p style={{ margin: "4px 0" }}>
-              📍 <strong>Ocaña</strong>, Norte de Santander{" "}
+              📍 <strong>Ocaña</strong>, Norte de Santander (Código Postal: 546552){" "}
               <a
                 href="https://maps.google.com/?q=Ocana+Norte+de+Santander+Colombia"
                 target="_blank"
@@ -58,7 +58,7 @@ export function Footer() {
               </a>
             </p>
             <p style={{ margin: "4px 0" }}>
-              📍 <strong>Montería</strong>, Córdoba{" "}
+              📍 <strong>Montería</strong>, Córdoba (Código Postal: 230001){" "}
               <a
                 href="https://maps.google.com/?q=Monteria+Cordoba+Colombia"
                 target="_blank"
@@ -128,9 +128,9 @@ export function Footer() {
               marginBottom: "12px",
             }}
           >
-            Redes Sociales
+            Redes Sociales &amp; Ficha
           </p>
-          <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
+          <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", marginBottom: "16px" }}>
             {["Instagram", "Facebook", "TikTok"].map((r) => (
               <div
                 key={r}
@@ -150,6 +150,52 @@ export function Footer() {
               </div>
             ))}
           </div>
+          <a
+            href="https://maps.google.com/?q=Ocana+Norte+de+Santander+Colombia"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: "inline-block",
+              color: G.goldLight,
+              fontSize: "11px",
+              letterSpacing: "1px",
+              textTransform: "uppercase",
+              textDecoration: "underline",
+            }}
+          >
+            Ver Ficha en Google Maps ↗
+          </a>
+        </div>
+
+        {/* Mapa Incrustado (Google Business / Local SEO) */}
+        <div style={{ gridColumn: "1 / -1", marginTop: "16px", paddingTop: "24px", borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "12px", flexWrap: "wrap", gap: "8px" }}>
+            <span style={{ color: G.gold, fontSize: "11px", letterSpacing: "2px", textTransform: "uppercase", fontWeight: 600 }}>
+              📍 Mapa de Ubicación Oficial (Ocaña, Norte de Santander — CP 546552)
+            </span>
+            <a
+              href="https://maps.google.com/?q=Ocana+Norte+de+Santander+Colombia"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: G.goldLight, fontSize: "12px", textDecoration: "underline" }}
+            >
+              Abrir Mapa Completo ↗
+            </a>
+          </div>
+          <iframe
+            title="Mapa de ubicación Dorella Jewelry"
+            src="https://maps.google.com/maps?q=Ocana+Norte+de+Santander+Colombia&t=&z=14&ie=UTF8&iwloc=&output=embed"
+            width="100%"
+            height="180"
+            style={{
+              border: 0,
+              borderRadius: "4px",
+              filter: "invert(90%) hue-rotate(180deg) brightness(95%) contrast(90%)",
+              display: "block",
+            }}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
         </div>
       </div>
 
