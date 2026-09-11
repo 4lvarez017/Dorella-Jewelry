@@ -117,6 +117,30 @@ export function HomeNavbar({ onNavigate, onSelectCategory }) {
             Catálogo
           </span>
 
+          {/* Enlace telefónico directo (SEO Local / NAP) */}
+          <a
+            href="tel:+573132403081"
+            className="nav-phone-btn"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "6px",
+              color: G.textDark,
+              fontSize: "12px",
+              fontWeight: 500,
+              textDecoration: "none",
+              padding: "7px 14px",
+              borderRadius: "20px",
+              border: `1px solid ${G.gold}50`,
+              background: "rgba(201, 168, 76, 0.08)",
+              transition: "all 0.25s ease",
+            }}
+            title="Llamar a atención al cliente Dorella Jewelry"
+          >
+            <span>📞</span>
+            <span>+57 313 240 3081</span>
+          </a>
+
           {/* CTA Button */}
           <button
             className="nav-gold-cta"
@@ -268,7 +292,26 @@ export function HomeNavbar({ onNavigate, onSelectCategory }) {
             </span>
           </div>
 
-          <div style={{ marginTop: "auto", display: "flex", flexDirection: "column", gap: "16px" }}>
+          <div style={{ marginTop: "auto", display: "flex", flexDirection: "column", gap: "12px" }}>
+            <a
+              href="tel:+573132403081"
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: "8px",
+                padding: "12px 20px",
+                borderRadius: "2px",
+                border: `1px solid ${G.gold}50`,
+                color: G.goldLight,
+                textDecoration: "none",
+                fontSize: "13px",
+                fontWeight: 500,
+                background: "rgba(201, 168, 76, 0.08)",
+              }}
+            >
+              <span>📞 Llamar: +57 313 240 3081</span>
+            </a>
             <button
               className="gold-btn"
               style={{

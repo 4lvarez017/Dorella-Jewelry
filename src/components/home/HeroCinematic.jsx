@@ -247,21 +247,21 @@ export function HeroCinematic({ onExplore }) {
             marginBottom: "8px",
           }}
         >
-          Oro 18K Inalterable
+          Joyas en Oro 18K Inalterable
         </h1>
 
         <p
           style={{
             fontSize: "clamp(13px, 1.5vw, 15px)",
             color: G.textMid,
-            maxWidth: "540px",
+            maxWidth: "600px",
             lineHeight: 1.7,
             margin: "0 auto 28px",
             fontWeight: 300,
             letterSpacing: "0.5px",
           }}
         >
-          Ingeniería artesanal y fusión molecular. El arte del detalle sutil creado para perdurar por generaciones.
+          Alta joyería en oro laminado de 18 quilates con garantía real y envíos asegurados a toda Colombia. Fusión térmica de máxima durabilidad y resistencia al agua para perdurar por generaciones.
         </p>
 
         {/* Hero Product Visual Stage (Seamlessly feathered into background) */}

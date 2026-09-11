@@ -6,6 +6,7 @@ import { CraftsmanshipStory } from "../components/home/CraftsmanshipStory";
 import { EditorialCollections } from "../components/home/EditorialCollections";
 import { FeaturedCurated } from "../components/home/FeaturedCurated";
 import { BrandNarrative } from "../components/home/BrandNarrative";
+import { HomeFAQ } from "../components/home/HomeFAQ";
 import { Footer } from "../components/Footer";
 
 export function HomeView({ setPage, onSelectCategory, onViewDetails }) {
@@ -47,7 +48,10 @@ export function HomeView({ setPage, onSelectCategory, onViewDetails }) {
       {/* 6. Scene 06: Brand Narrative (Ocaña & Montería Roots) */}
       <BrandNarrative />
 
-      {/* 7. Footer */}
+      {/* 7. Scene 07: Verified FAQ & Direct AEO/GEO Inverted Pyramid Answers */}
+      <HomeFAQ />
+
+      {/* 8. Footer with Enhanced NAP */}
       <Footer />
 
       {/* Admin Panel Link */}

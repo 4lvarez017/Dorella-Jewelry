@@ -62,15 +62,38 @@ export function Footer() {
               marginBottom: "12px",
             }}
           >
-            Contáctanos
+            Atención al Cliente (NAP)
           </p>
-          <p style={{ fontSize: "13px", lineHeight: 1.8 }}>
-            📱 +57 313 240 3081
-            <br />
-            💬 WhatsApp disponible
-            <br />
-            🕐 Lun – Sáb: 8am – 7pm
-          </p>
+          <div style={{ fontSize: "13px", lineHeight: 1.8 }}>
+            <p style={{ margin: "2px 0" }}>
+              📱 Tel:{" "}
+              <a
+                href="tel:+573132403081"
+                style={{ color: "rgba(255,255,255,0.85)", textDecoration: "none", fontWeight: 500 }}
+                title="Llamar a Dorella Jewelry"
+              >
+                +57 313 240 3081
+              </a>
+            </p>
+            <p style={{ margin: "2px 0" }}>
+              💬 WhatsApp:{" "}
+              <a
+                href={`https://wa.me/${WHATSAPP_NUMBER}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: G.gold, textDecoration: "underline" }}
+                title="Escribir por WhatsApp a Dorella Jewelry"
+              >
+                Chat Directo (+57 313 240 3081)
+              </a>
+            </p>
+            <p style={{ margin: "4px 0", color: "rgba(255,255,255,0.5)", fontSize: "12px" }}>
+              🕐 Horario: Lunes a Sábado: 8:00 AM – 7:00 PM
+            </p>
+            <p style={{ margin: "2px 0", color: "rgba(255,255,255,0.5)", fontSize: "12px" }}>
+              🇨🇴 Envíos asegurados a toda Colombia
+            </p>
+          </div>
         </div>
 
         {/* Redes sociales */}
