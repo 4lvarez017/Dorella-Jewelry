@@ -2,23 +2,37 @@ import { useState } from "react";
 import { G } from "../styles/theme";
 import { signIn } from "../lib/supabase";
 
+const ADMIN_USERNAMES = {
+  alex: "alex.dorellajewelry@gmail.com",
+  alvarez: "alanalvarez1507@gmail.com",
+  alan: "alanalvarez1507@gmail.com",
+  admin: "alanalvarez1507@gmail.com",
+  dorella: "alanalvarez1507@gmail.com",
+};
+
 export function AdminLogin({ onLogin }) {
-  const [creds, setCreds] = useState({ email: "", password: "" });
+  const [creds, setCreds] = useState({ username: "", password: "" });
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
   const handleLogin = async () => {
-    if (!creds.email || !creds.password) {
-      setError("Completa todos los campos");
+    const rawUser = (creds.username || "").trim();
+    if (!rawUser || !creds.password) {
+      setError("Ingresa tu nombre de usuario y contraseña");
       return;
     }
     setLoading(true);
     setError(null);
+
+    // Mapeo automático de Nombre de Usuario -> Credencial de autenticación
+    const lowerUser = rawUser.toLowerCase();
+    const emailToUse = ADMIN_USERNAMES[lowerUser] || (rawUser.includes("@") ? rawUser : `${lowerUser}@gmail.com`);
+
     try {
-      await signIn(creds.email, creds.password);
+      await signIn(emailToUse, creds.password);
       onLogin();
     } catch (err) {
-      setError(err.message || "Credenciales incorrectas");
+      setError("Usuario o contraseña incorrectos");
     } finally {
       setLoading(false);
     }
@@ -88,14 +102,15 @@ export function AdminLogin({ onLogin }) {
           Panel Administrativo
         </p>
 
-        {/* Email */}
+        {/* Nombre de Usuario */}
         <div style={{ marginBottom: "16px", textAlign: "left" }}>
-          <label style={labelStyle}>Email</label>
+          <label style={labelStyle}>Nombre de Usuario</label>
           <input
-            type="email"
-            value={creds.email}
-            autoComplete="email"
-            onChange={(e) => setCreds((c) => ({ ...c, email: e.target.value }))}
+            type="text"
+            value={creds.username}
+            autoComplete="username"
+            placeholder="Ej: Alex"
+            onChange={(e) => setCreds((c) => ({ ...c, username: e.target.value }))}
             onKeyDown={(e) => e.key === "Enter" && handleLogin()}
             style={inputStyle}
             onFocus={e => e.target.style.borderColor = G.gold}
@@ -110,6 +125,7 @@ export function AdminLogin({ onLogin }) {
             type="password"
             value={creds.password}
             autoComplete="current-password"
+            placeholder="Tu contraseña"
             onChange={(e) => setCreds((c) => ({ ...c, password: e.target.value }))}
             onKeyDown={(e) => e.key === "Enter" && handleLogin()}
             style={inputStyle}
