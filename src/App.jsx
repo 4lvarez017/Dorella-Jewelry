@@ -1,11 +1,10 @@
 import { useState, useEffect, lazy, Suspense } from "react";
 import { CartProvider } from "./context/CartContext";
-import { ProductsProvider } from "./context/ProductsContext";
+import { ProductsProvider, useProducts } from "./context/ProductsContext";
 import { globalCSS, G } from "./styles/theme";
 import { HomeView } from "./pages/HomeView";
 import { CatalogView } from "./pages/CatalogView";
 import { ProductDetailView } from "./pages/ProductDetailView";
-import { PRODUCTS } from "./data/constants";
 import { getSession, signOut } from "./lib/supabase";
 
 // ── Carga diferida del Admin
@@ -33,8 +32,9 @@ function AdminFallback() {
   );
 }
 
-
-export default function App() {
+// ── Componente interno que usa ProductsContext para resolver productos por URL
+function AppContent() {
+  const { products } = useProducts();
   const [page, setPage] = useState("home");
   const [activeCategory, setActiveCategory] = useState("Todos");
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -50,7 +50,6 @@ export default function App() {
   }, []);
 
   const [adminTab, setAdminTab] = useState("dashboard");
-  // NOTE: category selection for Inventario/Productos is now internal to AdminPanel
 
   // Scroll al inicio automático ante cambios de página o categoría
   useEffect(() => {
@@ -64,17 +63,14 @@ export default function App() {
     const urlCategory = params.get("category") || "Todos";
     const urlProductId = params.get("productId");
     const urlTab = params.get("tab") || "dashboard";
-    const urlAdminCategory = params.get("adminCategory") || null;
 
     setPage(urlPage);
     setActiveCategory(urlCategory);
     setAdminTab(urlTab);
 
+    // El producto se resuelve cuando los productos estén cargados
     if (urlProductId) {
-      const prod = PRODUCTS.find((p) => String(p.id) === String(urlProductId));
-      if (prod) {
-        setSelectedProduct(prod);
-      }
+      setSelectedProduct({ _pendingId: urlProductId });
     }
 
     // Inicializar el estado de historia para la URL actual
@@ -96,8 +92,8 @@ export default function App() {
         setAdminTab(e.state.tab || "dashboard");
 
         if (e.state.productId) {
-          const prod = PRODUCTS.find((p) => String(p.id) === String(e.state.productId));
-          setSelectedProduct(prod || null);
+          // Se resolverá con el efecto de abajo
+          setSelectedProduct({ _pendingId: e.state.productId });
         } else {
           setSelectedProduct(null);
         }
@@ -113,6 +109,14 @@ export default function App() {
     window.addEventListener("popstate", handlePopState);
     return () => window.removeEventListener("popstate", handlePopState);
   }, []);
+
+  // Resolver producto pendiente cuando los productos de Supabase estén disponibles
+  useEffect(() => {
+    if (selectedProduct?._pendingId && products.length > 0) {
+      const prod = products.find((p) => String(p.id) === String(selectedProduct._pendingId));
+      setSelectedProduct(prod || null);
+    }
+  }, [products, selectedProduct?._pendingId]);
 
   // Función para navegar y empujar historial
   const navigateTo = (newPage, newCategory = null, newProduct = null, tab = null) => {
@@ -157,52 +161,60 @@ export default function App() {
 
   return (
     <>
-      {/* Estilos globales inyectados una sola vez */}
-      <style>{globalCSS}</style>
+      <CartProvider>
+        {page === "admin" ? (
+          <Suspense fallback={<AdminFallback />}>
+            {adminLoggedIn ? (
+              <AdminPanel
+                activeTab={adminTab}
+                setActiveTab={(tab) => navigateTo("admin", null, null, tab)}
+                onLogout={async () => {
+                  await signOut();
+                  setAdminLoggedIn(false);
+                  navigateTo("home", "Todos", null);
+                }}
+              />
+            ) : (
+              <AdminLogin onLogin={() => {
+                setAdminLoggedIn(true);
+              }} />
+            )}
+          </Suspense>
 
-      <ProductsProvider>
-        <CartProvider>
-          {page === "admin" ? (
-            <Suspense fallback={<AdminFallback />}>
-              {adminLoggedIn ? (
-                <AdminPanel
-                  activeTab={adminTab}
-                  setActiveTab={(tab) => navigateTo("admin", null, null, tab)}
-                  onLogout={async () => {
-                    await signOut();
-                    setAdminLoggedIn(false);
-                    navigateTo("home", "Todos", null);
-                  }}
-                />
-              ) : (
-                <AdminLogin onLogin={() => {
-                  setAdminLoggedIn(true);
-                }} />
-              )}
-            </Suspense>
-
-          ) : page === "product" ? (
-            <ProductDetailView
-              setPage={(p) => navigateTo(p)}
-              product={selectedProduct}
-            />
-          ) : page === "catalog" ? (
-            <CatalogView
-              setPage={(p) => navigateTo(p)}
-              activeCategory={activeCategory}
-              setActiveCategory={(c) => navigateTo("catalog", c, null)}
-              onViewDetails={handleViewDetails}
-            />
-          ) : (
-            <HomeView
-              setPage={(p) => navigateTo(p)}
-              onSelectCategory={(c) => navigateTo("catalog", c, null)}
-              onViewDetails={handleViewDetails}
-            />
-          )}
-        </CartProvider>
-      </ProductsProvider>
+        ) : page === "product" ? (
+          <ProductDetailView
+            setPage={(p) => navigateTo(p)}
+            product={selectedProduct?._pendingId ? null : selectedProduct}
+          />
+        ) : page === "catalog" ? (
+          <CatalogView
+            setPage={(p) => navigateTo(p)}
+            activeCategory={activeCategory}
+            setActiveCategory={(c) => navigateTo("catalog", c, null)}
+            onViewDetails={handleViewDetails}
+          />
+        ) : (
+          <HomeView
+            setPage={(p) => navigateTo(p)}
+            onSelectCategory={(c) => navigateTo("catalog", c, null)}
+            onViewDetails={handleViewDetails}
+          />
+        )}
+      </CartProvider>
     </>
   );
 }
 
+
+export default function App() {
+  return (
+    <>
+      {/* Estilos globales inyectados una sola vez */}
+      <style>{globalCSS}</style>
+
+      <ProductsProvider>
+        <AppContent />
+      </ProductsProvider>
+    </>
+  );
+}

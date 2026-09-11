@@ -8,7 +8,9 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "sync": "node sync_products.js"
+    "sync": "node sync_products.js",
+    "test:categories": "node scripts/test_categories.js",
+    "test:rls": "node scripts/test_rls.js"
   },
   "dependencies": {
     "exceljs": "^4.4.0",

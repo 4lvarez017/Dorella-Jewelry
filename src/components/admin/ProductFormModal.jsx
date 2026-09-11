@@ -494,19 +494,24 @@ export function ProductFormModal({ product, defaultCategory, onClose, onSave }) 
       ? images
       : ["https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80"];
 
-    await new Promise(r => setTimeout(r, 200));
-
-    onSave({
-      name:     form.name.trim(),
-      category: form.category,
-      price:    Number(form.price),
-      stock:    form.stock !== "" ? Number(form.stock) : 10,
-      desc:     form.desc.trim(),
-      images:   finalImages,
-      image:    finalImages[0],
-    });
-
-    setSaving(false);
+    try {
+      await onSave({
+        name:     form.name.trim(),
+        category: form.category,
+        price:    Number(form.price),
+        stock:    form.stock !== "" ? Number(form.stock) : 10,
+        desc:     form.desc.trim(),
+        images:   finalImages,
+        image:    finalImages[0],
+      });
+      // Si onSave resuelve sin error, el modal se cerrará desde el padre
+    } catch (e) {
+      // Si onSave lanza error, el modal permanece abierto
+      // El error ya se maneja en ProductosTab con un toast
+      console.error("Error en onSave:", e);
+    } finally {
+      setSaving(false);
+    }
   };
 
   return (

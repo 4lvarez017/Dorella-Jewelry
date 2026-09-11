@@ -27,23 +27,16 @@ export async function supabaseFetch(path, options = {}) {
   });
 
   if (!res.ok) {
-    // Si la sesión expiró (401), reintentar automáticamente con anon key
+    // Si la sesión expiró (401) y estábamos usando un token de sesión:
+    // NO reintentar con anon key — eso sería una degradación de permisos peligrosa.
+    // Limpiar la sesión inválida y propagar el error para forzar re-login.
     if (res.status === 401 && session?.access_token) {
       storeSession(null);
-      const retryRes = await fetch(`${SUPABASE_URL}/rest/v1${path}`, {
-        ...options,
-        headers: {
-          ...supabaseHeaders,
-          Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
-          ...options.headers,
-        },
-      });
-      if (!retryRes.ok) throw new Error(await retryRes.text());
-      if (retryRes.status === 204 || retryRes.headers.get("content-length") === "0") return null;
-      const retryText = await retryRes.text();
-      return retryText ? JSON.parse(retryText) : null;
+      const errorText = await res.text();
+      throw new Error(`Sesión expirada. Por favor inicia sesión nuevamente. (${errorText})`);
     }
-    throw new Error(await res.text());
+    const errorText = await res.text();
+    throw new Error(errorText);
   }
 
   if (res.status === 204 || res.headers.get("content-length") === "0") return null;
@@ -103,6 +96,23 @@ export async function getSession() {
   return session;
 }
 
+/**
+ * Verifica si la sesión actual tiene el rol de administrador.
+ * Comprueba app_metadata.role === 'admin' en el JWT decodificado.
+ */
+export function isAdminSession() {
+  const session = getStoredSession();
+  if (!session?.access_token) return false;
+
+  try {
+    // Decodificar el payload del JWT (base64url)
+    const payload = session.access_token.split('.')[1];
+    const decoded = JSON.parse(atob(payload.replace(/-/g, '+').replace(/_/g, '/')));
+    return decoded?.app_metadata?.role === 'admin';
+  } catch {
+    return false;
+  }
+}
 
 
 // ─── REVIEWS CRUD ────────────────────────────────────────────────────────────
@@ -137,6 +147,12 @@ export async function fetchAllReviews() {
  * @returns {Promise<string>} URL pública permanente de la imagen
  */
 export async function uploadProductImage(file, category) {
+  // Verificar que hay sesión activa — NO subir como anon
+  const session = getStoredSession();
+  if (!session?.access_token) {
+    throw new Error("Debes iniciar sesión para subir imágenes. Tu sesión puede haber expirado.");
+  }
+
   // Generar nombre de archivo único para evitar colisiones
   const rawExt = file.name ? file.name.split(".").pop().toLowerCase().replace(/[^a-z0-9]/g, "") : "jpg";
   const ext = rawExt || "jpg";
@@ -144,42 +160,24 @@ export async function uploadProductImage(file, category) {
   const filename = `${Date.now()}_${Math.random().toString(36).slice(2, 8)}.${ext}`;
   const path = `${slug}/${filename}`;
 
-  const session = getStoredSession();
-  const authHeader = session?.access_token
-    ? `Bearer ${session.access_token}`
-    : `Bearer ${SUPABASE_ANON_KEY}`;
-
-  let res = await fetch(
+  const res = await fetch(
     `${SUPABASE_URL}/storage/v1/object/products/${path}`,
     {
       method: "POST",
       headers: {
         apikey: SUPABASE_ANON_KEY,
-        Authorization: authHeader,
+        Authorization: `Bearer ${session.access_token}`,
         "Content-Type": file.type || "image/jpeg",
       },
       body: file,
     }
   );
 
-  // Si falló por token expirado (401), reintentar automáticamente con anon key
-  if (!res.ok && res.status === 401 && session?.access_token) {
-    storeSession(null);
-    res = await fetch(
-      `${SUPABASE_URL}/storage/v1/object/products/${path}`,
-      {
-        method: "POST",
-        headers: {
-          apikey: SUPABASE_ANON_KEY,
-          Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
-          "Content-Type": file.type || "image/jpeg",
-        },
-        body: file,
-      }
-    );
-  }
-
   if (!res.ok) {
+    if (res.status === 401) {
+      storeSession(null);
+      throw new Error("Sesión expirada. Por favor inicia sesión nuevamente para subir imágenes.");
+    }
     const err = await res.text();
     throw new Error(`Error al subir imagen: ${err}`);
   }

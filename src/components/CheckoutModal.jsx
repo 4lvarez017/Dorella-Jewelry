@@ -61,29 +61,65 @@ export function CheckoutModal({ onClose }) {
   // ─── Guardar pedido en Supabase ───────────────────────────────────────────
   const saveOrder = async (payMethod) => {
     const id = `DJ-${Date.now()}`;
-    const orderData = {
+    const items = cart.map((i) => ({ product_id: i.id, id: i.id, name: i.name, qty: i.qty, price: i.price }));
+    
+    // Intentar vía RPC (validación server-side y decremento de stock atómico)
+    let savedViaRpc = false;
+    try {
+      await supabaseFetch("/rpc/create_order", {
+        method: "POST",
+        body: JSON.stringify({
+          p_order_id: id,
+          p_customer_name: form.name,
+          p_customer_phone: form.phone,
+          p_customer_city: form.city,
+          p_customer_address: form.address,
+          p_customer_notes: "",
+          p_payment_method: payMethod,
+          p_items: items,
+        }),
+      });
+      savedViaRpc = true;
+    } catch (rpcErr) {
+      // Si el RPC aún no fue creado en Supabase, hacer fallback a inserción directa
+      console.warn("RPC create_order no disponible en Supabase, usando inserción directa:", rpcErr.message);
+    }
+
+    if (!savedViaRpc) {
+      const orderData = {
+        id,
+        customer_name: form.name,
+        phone: form.phone,
+        address: form.address,
+        city: form.city,
+        payment_method: payMethod,
+        items: JSON.stringify(items),
+        total,
+        status: "Pendiente",
+        created_at: new Date().toISOString(),
+      };
+
+      await supabaseFetch("/orders", {
+        method: "POST",
+        headers: { "Prefer": "return=minimal" },
+        body: JSON.stringify(orderData),
+      });
+    }
+
+    // Guardar en localStorage como backup tras éxito confirmado en Supabase
+    const existing = getLocalOrders();
+    existing.unshift({
       id,
       customer_name: form.name,
       phone: form.phone,
       address: form.address,
       city: form.city,
       payment_method: payMethod,
-      items: JSON.stringify(cart.map((i) => ({ id: i.id, name: i.name, qty: i.qty, price: i.price }))),
+      items: JSON.stringify(items),
       total,
       status: "Pendiente",
       created_at: new Date().toISOString(),
-    };
-    try {
-      await supabaseFetch("/orders", {
-        method: "POST",
-        headers: { "Prefer": "return=minimal" },
-        body: JSON.stringify(orderData),
-      });
-    } catch (err) {
-      console.warn("Supabase order save failed:", err);
-    }
-    const existing = getLocalOrders();
-    existing.unshift(orderData);
+    });
     saveLocalOrders(existing);
     return id;
   };
@@ -96,20 +132,26 @@ export function CheckoutModal({ onClose }) {
     }
     setLoading(true);
     setError(null);
-    const id = await saveOrder("WhatsApp");
-    setOrderId(id);
-    dispatch({ type: "CLEAR" });
-    setLoading(false);
-    setStep("success");
-    const productList = cart.map((i) => `${i.name} x${i.qty}`).join(", ");
-    const msg = encodeURIComponent(
-      `Hola Dorella Jewelry 💎, acabo de realizar un pedido desde la web.\n\n👤 *${form.name}*\n📱 ${form.phone}\n📍 ${form.address}, ${form.city}\n\n🛒 *Productos:* ${productList}\n\n💰 *Total: $${total.toLocaleString("es-CO")}*\n\n🆔 Pedido: ${id}`
-    );
-    const isMobile = /Android|iPhone|iPad/i.test(navigator.userAgent);
-    setTimeout(() => {
-      if (isMobile) window.location.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`;
-      else window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`, "_blank");
-    }, 800);
+    try {
+      const id = await saveOrder("WhatsApp");
+      setOrderId(id);
+      dispatch({ type: "CLEAR" });
+      setStep("success");
+      const productList = cart.map((i) => `${i.name} x${i.qty}`).join(", ");
+      const msg = encodeURIComponent(
+        `Hola Dorella Jewelry 💎, acabo de realizar un pedido desde la web.\n\n👤 *${form.name}*\n📱 ${form.phone}\n📍 ${form.address}, ${form.city}\n\n🛒 *Productos:* ${productList}\n\n💰 *Total: $${total.toLocaleString("es-CO")}*\n\n🆔 Pedido: ${id}`
+      );
+      const isMobile = /Android|iPhone|iPad/i.test(navigator.userAgent);
+      setTimeout(() => {
+        if (isMobile) window.location.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`;
+        else window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`, "_blank");
+      }, 800);
+    } catch (err) {
+      console.error("Error al registrar pedido:", err);
+      setError("No se pudo registrar tu pedido. Por favor intenta de nuevo o contáctanos por WhatsApp.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   // ─── Flujo Wompi ──────────────────────────────────────────────────────────
@@ -120,10 +162,16 @@ export function CheckoutModal({ onClose }) {
     }
     setLoading(true);
     setError(null);
-    const id = await saveOrder("Wompi - Pago en línea");
-    setOrderId(id);
-    setLoading(false);
-    setStep("payment");
+    try {
+      const id = await saveOrder("Wompi - Pago en línea");
+      setOrderId(id);
+      setStep("payment");
+    } catch (err) {
+      console.error("Error al registrar pedido para pago:", err);
+      setError("No se pudo registrar tu pedido. Por favor intenta de nuevo.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   // Montar widget de Wompi cuando se cambia al paso "payment"

@@ -184,43 +184,66 @@ export function ProductosTab({
   });
 
   // ── Handlers ──
-  const handleSave = data => {
-    if (editingProduct) {
-      updateProduct(editingProduct.id, data);
-      addToast?.("Producto actualizado ✓");
-    } else {
-      addProduct(data);
-      addToast?.("Producto registrado ✓");
+  const handleSave = async (data) => {
+    try {
+      if (editingProduct) {
+        await updateProduct(editingProduct.id, data);
+        addToast?.("Producto actualizado ✓");
+      } else {
+        await addProduct(data);
+        addToast?.("Producto registrado ✓");
+      }
+      setShowModal(false);
+      setEditingProduct(null);
+    } catch (e) {
+      console.error("Error al guardar producto:", e);
+      addToast?.("Error al guardar: " + (e.message || "intenta de nuevo"), "error");
+      // Modal permanece abierto para que el usuario pueda reintentar
     }
-    setShowModal(false);
-    setEditingProduct(null);
   };
 
-  const handleDelete = p => {
+  const handleDelete = (p) => {
     if (showConfirm) {
-      showConfirm(`¿Eliminar "${p.name}" permanentemente? Esta acción no se puede deshacer.`, () => {
-        deleteProduct(p.id);
-        addToast?.("Producto eliminado", "error");
+      showConfirm(`¿Eliminar "${p.name}" permanentemente? Esta acción no se puede deshacer.`, async () => {
+        try {
+          await deleteProduct(p.id);
+          addToast?.("Producto eliminado", "error");
+        } catch (e) {
+          console.error("Error al eliminar producto:", e);
+          addToast?.("Error al eliminar: " + (e.message || "intenta de nuevo"), "error");
+        }
       });
     } else {
       if (confirm(`¿Eliminar "${p.name}"?`)) {
-        deleteProduct(p.id);
+        deleteProduct(p.id).catch(e => {
+          addToast?.("Error al eliminar: " + (e.message || "intenta de nuevo"), "error");
+        });
       }
     }
   };
 
-  const handleToggleVisibility = id => {
+  const handleToggleVisibility = async (id) => {
     const prod = products.find(x => String(x.id) === String(id));
-    toggleVisibility(id);
-    addToast?.(
-      prod?.visible !== false ? "Producto ocultado" : "Producto visible ✓",
-      "info"
-    );
+    try {
+      await toggleVisibility(id);
+      addToast?.(
+        prod?.visible !== false ? "Producto ocultado" : "Producto visible ✓",
+        "info"
+      );
+    } catch (e) {
+      console.error("Error al cambiar visibilidad:", e);
+      addToast?.("Error al cambiar visibilidad", "error");
+    }
   };
 
-  const handleUpdatePrice = (id, price) => {
-    updateProduct(id, { price });
-    addToast?.("Precio actualizado ✓");
+  const handleUpdatePrice = async (id, price) => {
+    try {
+      await updateProduct(id, { price });
+      addToast?.("Precio actualizado ✓");
+    } catch (e) {
+      console.error("Error al actualizar precio:", e);
+      addToast?.("Error al actualizar precio", "error");
+    }
   };
 
   // Chips de categoría — "Todos" + todas las cats
@@ -366,7 +389,7 @@ export function ProductosTab({
           <div className="prod-card-grid admin-stagger">
             {filtered.map(p => (
               <ProductCard
-                key={p.id}
+                key={`${p.id}-${p.category}`}
                 p={p}
                 onEdit={prod => { setEditingProduct(prod); setShowModal(true); }}
                 onDelete={handleDelete}

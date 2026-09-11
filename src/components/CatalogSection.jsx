@@ -66,7 +66,7 @@ export function CatalogSection({ activeCategory, id, onViewDetails }) {
   const categoryProducts = useMemo(() => {
     const visible = products.filter(p => p.visible !== false);
     if (activeCategory === "Todos") return visible;
-    return visible.filter(p => (p.category || "").startsWith(activeCategory));
+    return visible.filter(p => (p.category || "") === activeCategory);
   }, [products, activeCategory]);
 
   // Rango de precios dinámico
@@ -317,7 +317,7 @@ export function CatalogSection({ activeCategory, id, onViewDetails }) {
           <>
             <div className="product-grid">
               {displayed.map(p => (
-                <ProductCard key={p.id} product={p} dark={isDark} onViewDetails={onViewDetails} />
+                <ProductCard key={`${p.id}-${p.category}`} product={p} dark={isDark} onViewDetails={onViewDetails} />
               ))}
             </div>
 

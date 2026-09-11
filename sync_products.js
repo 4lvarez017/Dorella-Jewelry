@@ -6,6 +6,7 @@ import { SUPABASE_URL, SUPABASE_ANON_KEY } from "./src/lib/supabase.js";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+// ─── Helpers ────────────────────────────────────────────────────────────────
 async function fetchSupabase(reqPath, options = {}) {
   const url = `${SUPABASE_URL}/rest/v1${reqPath}`;
   const res = await fetch(url, {
@@ -39,7 +40,7 @@ async function getAllExistingProducts() {
 
   while (true) {
     const batch = await fetchSupabase(
-      `/products?select=id,name,category&limit=${PAGE}&offset=${offset}`
+      `/products?select=id,name,category,price,stock,visible,desc,images&limit=${PAGE}&offset=${offset}`
     );
     if (!batch || batch.length === 0) break;
     all = all.concat(batch);
@@ -78,10 +79,11 @@ async function loadAllLocalProducts() {
   return allProducts;
 }
 
+// ─── Sync principal ─────────────────────────────────────────────────────────
 async function sync() {
   try {
     console.log("==================================================");
-    console.log("🚀 INICIANDO SINCRONIZACIÓN DE TODAS LAS CATEGORÍAS");
+    console.log("🚀 SINCRONIZACIÓN IDEMPOTENTE DE TODAS LAS CATEGORÍAS");
     console.log("==================================================");
 
     const localProducts = await loadAllLocalProducts();
@@ -90,40 +92,58 @@ async function sync() {
     const existing = await getAllExistingProducts();
     console.log(`✅ Se encontraron ${existing.length} productos registrados en Supabase.`);
 
-    // Crear set con TODOS los IDs existentes en Supabase
-    const existingIds = new Set(existing.map((p) => String(p.id)));
+    // Crear mapa por ID para comparación rápida
+    const existingById = new Map(existing.map((p) => [String(p.id), p]));
+    
+    // Crear set por (Categoría + Nombre) para detectar duplicados por nombre
+    const existingNamesByCat = new Map();
+    existing.forEach(p => {
+      const key = `${normalizeStr(p.category)}:::${normalizeStr(p.name)}`;
+      existingNamesByCat.set(key, p);
+    });
 
-    // Crear set por (Categoría + Nombre) para evitar duplicar el mismo producto con otro ID
-    const existingNamesByCat = new Set(
-      existing.map((p) => `${normalizeStr(p.category)}:::${normalizeStr(p.name)}`)
-    );
+    // Detectar IDs duplicados en datos locales
+    const idCounts = {};
+    localProducts.forEach(p => {
+      const id = String(p.id);
+      idCounts[id] = (idCounts[id] || 0) + 1;
+    });
+    const duplicateIds = Object.entries(idCounts).filter(([, c]) => c > 1);
+    if (duplicateIds.length > 0) {
+      console.log(`\n⚠️  ADVERTENCIA: ${duplicateIds.length} IDs duplicados encontrados en datos locales.`);
+      console.log("   Estos productos necesitan IDs únicos antes de sincronizar.");
+      duplicateIds.forEach(([id, count]) => {
+        const names = localProducts.filter(p => String(p.id) === id).map(p => `"${p.name}" (${p.category})`);
+        console.log(`   ID "${id}" × ${count}: ${names.join(", ")}`);
+      });
+      console.log("");
+    }
 
     const toInsert = [];
+    const toUpdate = [];
+    const skipped = [];
+    const seenIds = new Set();
 
     for (const p of localProducts) {
       const rawId = String(p.id);
-      const nameCatKey = `${normalizeStr(p.category)}:::${normalizeStr(p.name)}`;
-
-      // Si ya existe por nombre y categoría en Supabase, no lo volvemos a subir
-      if (existingNamesByCat.has(nameCatKey)) {
-        continue;
+      
+      // Si el ID ya fue procesado en este ciclo (duplicado local), generar uno nuevo
+      let finalId;
+      if (seenIds.has(rawId)) {
+        finalId = `prod-${normalizeStr(p.category).replace(/\s/g, '_')}-${Date.now().toString(36)}-${Math.random().toString(36).substring(2, 6)}`;
+        console.log(`  ⚠️  ID duplicado "${rawId}" → generado "${finalId}" para "${p.name}"`);
+      } else {
+        finalId = rawId.startsWith("prod-") || rawId.startsWith("chryso-") || rawId.startsWith("custom-")
+          ? rawId
+          : rawId;
       }
-
-      // Generar ID único asegurando que no colisione con los de Supabase
-      let finalId = rawId.startsWith("prod-") || rawId.startsWith("chryso-") || rawId.startsWith("custom-")
-        ? rawId
-        : `prod-${rawId}`;
-
-      // Si por alguna razón ese ID ya existe en Supabase o en el lote actual, creamos un ID único garantizado
-      if (existingIds.has(finalId)) {
-        finalId = `prod-${rawId}-${Date.now().toString(36)}-${Math.random().toString(36).substring(2, 6)}`;
-      }
+      seenIds.add(finalId);
 
       const imgs = Array.isArray(p.images)
         ? p.images
         : [p.image || "/placeholder.jpg"];
 
-      toInsert.push({
+      const productData = {
         id: finalId,
         name: p.name,
         category: p.category,
@@ -132,38 +152,89 @@ async function sync() {
         desc: p.desc || "",
         stock: p.stock !== undefined ? Number(p.stock) : 10,
         visible: p.visible !== false,
-      });
+      };
 
-      // Marcar para no duplicar en el mismo ciclo
-      existingIds.add(finalId);
-      existingNamesByCat.add(nameCatKey);
-    }
-
-    console.log(`\n🔍 Nuevos productos listos para subir a Supabase: ${toInsert.length}`);
-
-    if (toInsert.length === 0) {
-      console.log("✨ Todos tus productos ya están completamente sincronizados en Supabase.");
-      return;
-    }
-
-    // Insertar producto por producto o en lotes para máxima tolerancia a fallos
-    let insertedCount = 0;
-    for (const prod of toInsert) {
-      try {
-        await fetchSupabase("/products", {
-          method: "POST",
-          headers: { Prefer: "return=minimal" },
-          body: JSON.stringify(prod),
-        });
-        insertedCount++;
-        process.stdout.write(`\r⏳ Subiendo a Supabase: ${insertedCount}/${toInsert.length} productos...`);
-      } catch (insertErr) {
-        console.error(`\n⚠️ No se pudo insertar "${prod.name}":`, insertErr.message);
+      const existingProduct = existingById.get(finalId);
+      
+      if (existingProduct) {
+        // Producto ya existe por ID — verificar si necesita actualización
+        const needsUpdate =
+          existingProduct.name !== productData.name ||
+          existingProduct.category !== productData.category ||
+          existingProduct.price !== productData.price;
+        
+        if (needsUpdate) {
+          toUpdate.push(productData);
+        } else {
+          skipped.push(productData);
+        }
+      } else {
+        // Verificar si existe por nombre+categoría (evitar duplicación semántica)
+        const nameCatKey = `${normalizeStr(p.category)}:::${normalizeStr(p.name)}`;
+        if (existingNamesByCat.has(nameCatKey)) {
+          skipped.push(productData);
+        } else {
+          toInsert.push(productData);
+          existingNamesByCat.set(nameCatKey, productData);
+        }
       }
     }
 
-    console.log("\n\n🎉 ¡Sincronización finalizada con éxito!");
-    console.log(`Total de productos nuevos ingresados a Supabase: ${insertedCount}`);
+    console.log(`\n📊 Resumen de sincronización:`);
+    console.log(`   ✅ Sin cambios: ${skipped.length}`);
+    console.log(`   🆕 Nuevos para insertar: ${toInsert.length}`);
+    console.log(`   🔄 Para actualizar: ${toUpdate.length}`);
+
+    if (toInsert.length === 0 && toUpdate.length === 0) {
+      console.log("\n✨ Todos tus productos ya están completamente sincronizados en Supabase.");
+      return;
+    }
+
+    // Insertar nuevos productos usando UPSERT para máxima seguridad
+    if (toInsert.length > 0) {
+      console.log(`\n⏳ Insertando ${toInsert.length} productos nuevos...`);
+      let insertedCount = 0;
+      for (const prod of toInsert) {
+        try {
+          await fetchSupabase("/products", {
+            method: "POST",
+            headers: { 
+              Prefer: "return=minimal",
+              "on-conflict": "id",
+            },
+            body: JSON.stringify(prod),
+          });
+          insertedCount++;
+          process.stdout.write(`\r   Insertados: ${insertedCount}/${toInsert.length}`);
+        } catch (insertErr) {
+          console.error(`\n   ⚠️ No se pudo insertar "${prod.name}":`, insertErr.message);
+        }
+      }
+      console.log("");
+    }
+
+    // Actualizar productos existentes
+    if (toUpdate.length > 0) {
+      console.log(`\n⏳ Actualizando ${toUpdate.length} productos...`);
+      let updatedCount = 0;
+      for (const prod of toUpdate) {
+        try {
+          const { id, ...updates } = prod;
+          await fetchSupabase(`/products?id=eq.${encodeURIComponent(id)}`, {
+            method: "PATCH",
+            headers: { Prefer: "return=minimal" },
+            body: JSON.stringify(updates),
+          });
+          updatedCount++;
+          process.stdout.write(`\r   Actualizados: ${updatedCount}/${toUpdate.length}`);
+        } catch (updateErr) {
+          console.error(`\n   ⚠️ No se pudo actualizar "${prod.name}":`, updateErr.message);
+        }
+      }
+      console.log("");
+    }
+
+    console.log("\n🎉 ¡Sincronización finalizada con éxito!");
   } catch (err) {
     console.error("\n❌ Error durante la sincronización:", err.message);
     process.exit(1);

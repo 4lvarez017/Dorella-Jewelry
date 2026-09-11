@@ -21,14 +21,34 @@ function StockCard({ p, onUpdate, onDelete, showConfirm, addToast }) {
       ? A.warning
       : `linear-gradient(90deg, ${A.gold}, ${A.goldLight})`;
 
+  const [updating, setUpdating] = useState(false);
+
+  const handleStockChange = async (newStock) => {
+    if (updating) return;
+    setUpdating(true);
+    try {
+      await onUpdate(p.id, { stock: Math.max(0, newStock) });
+    } catch (err) {
+      addToast?.(err.message || "Error al actualizar stock", "error");
+    } finally {
+      setUpdating(false);
+    }
+  };
+
   const handleDelete = () => {
-    if (showConfirm) {
-      showConfirm(`¿Eliminar "${p.name}" del inventario?`, () => {
-        onDelete(p.id);
+    const doDelete = async () => {
+      try {
+        await onDelete(p.id);
         addToast?.("Producto eliminado del inventario", "error");
-      });
-    } else if (confirm(`¿Eliminar "${p.name}"?`)) {
-      onDelete(p.id);
+      } catch (err) {
+        addToast?.(err.message || "Error al eliminar producto", "error");
+      }
+    };
+
+    if (showConfirm) {
+      showConfirm(`¿Eliminar "${p.name}" del inventario?`, doDelete);
+    } else if (window.confirm(`¿Eliminar "${p.name}"?`)) {
+      doDelete();
     }
   };
 
@@ -95,10 +115,11 @@ function StockCard({ p, onUpdate, onDelete, showConfirm, addToast }) {
       </div>
 
       {/* Controles de stock */}
-      <div style={{ display: "flex", alignItems: "center", gap: 6, flexShrink: 0 }}>
+      <div style={{ display: "flex", alignItems: "center", gap: 6, flexShrink: 0, opacity: updating ? 0.6 : 1 }}>
         <button
           className="admin-btn-icon"
-          onClick={() => onUpdate(p.id, { stock: Math.max(0, stock - 1) })}
+          onClick={() => handleStockChange(stock - 1)}
+          disabled={updating}
           title="Reducir stock"
         >
           −
@@ -106,12 +127,14 @@ function StockCard({ p, onUpdate, onDelete, showConfirm, addToast }) {
         <input
           type="number" min="0"
           value={stock}
-          onChange={e => onUpdate(p.id, { stock: Math.max(0, Number(e.target.value)) })}
+          disabled={updating}
+          onChange={e => handleStockChange(Number(e.target.value))}
           className="admin-stock-input"
         />
         <button
           className="admin-btn-icon"
-          onClick={() => onUpdate(p.id, { stock: stock + 1 })}
+          onClick={() => handleStockChange(stock + 1)}
+          disabled={updating}
           title="Aumentar stock"
         >
           +
@@ -120,6 +143,7 @@ function StockCard({ p, onUpdate, onDelete, showConfirm, addToast }) {
           className="admin-btn-danger"
           style={{ padding: "7px 10px", fontSize: 15, borderRadius: 8 }}
           onClick={handleDelete}
+          disabled={updating}
           title="Eliminar producto"
         >
           🗑
@@ -135,7 +159,7 @@ export function InventarioTab({ products, updateProduct, deleteProduct, getCateg
   const [search, setSearch] = useState("");
 
   const filtered = products.filter(p => {
-    const matchCat = selectedCategory === "Todos" || (p.category || "").startsWith(selectedCategory);
+    const matchCat = selectedCategory === "Todos" || (p.category || "") === selectedCategory;
     const q = search.trim().toLowerCase();
     const matchSearch = !q || (p.name || "").toLowerCase().includes(q);
     return matchCat && matchSearch;
@@ -261,7 +285,7 @@ export function InventarioTab({ products, updateProduct, deleteProduct, getCateg
         <div style={{ display: "flex", flexDirection: "column", gap: 10 }} className="admin-stagger">
           {filtered.map(p => (
             <StockCard
-              key={p.id}
+              key={`${p.id}-${p.category}`}
               p={p}
               onUpdate={updateProduct}
               onDelete={deleteProduct}

@@ -9,7 +9,6 @@ import { PedidosTab }    from "../components/admin/PedidosTab";
 import { ReviewsTab }    from "../components/admin/ReviewsTab";
 import { supabaseFetch } from "../lib/supabase";
 import { useProducts }   from "../context/ProductsContext";
-import { MOCK_ORDERS }   from "../data/constants";
 import { jsPDF } from "jspdf";
 import autoTable from "jspdf-autotable";
 import ExcelJS from "exceljs";
@@ -358,17 +357,14 @@ export function AdminPanel({ activeTab, setActiveTab, onLogout }) {
       );
       setOrders(merged);
       setSupabaseAvail(true);
-    } catch (_) {
+    } catch (err) {
+      console.error("Error al cargar pedidos:", err);
       setSupabaseAvail(false);
+      // Solo mostrar pedidos locales si existen — NO mostrar datos de demostración
       if (local.length > 0) {
         setOrders(local.sort((a, b) => new Date(b.created_at) - new Date(a.created_at)));
       } else {
-        const today = new Date();
-        setOrders(MOCK_ORDERS.map((o, idx) => {
-          const d = new Date(today);
-          d.setDate(today.getDate() - idx * 2);
-          return { ...o, created_at: d.toISOString(), _isMock: true };
-        }));
+        setOrders([]);
       }
     }
     setLoadingOrders(false);
@@ -378,20 +374,25 @@ export function AdminPanel({ activeTab, setActiveTab, onLogout }) {
 
   // ── Actualizar estado de pedido ────────────────────────────────────────────────────────────
   async function updateOrderStatus(id, status) {
+    // Guardar estado anterior para rollback
+    const previousOrders = [...orders];
     // Actualizar UI optimistamente
     setOrders(prev => prev.map(o => o.id === id ? { ...o, status } : o));
-    const updated = getLocalOrders().map(o => o.id === id ? { ...o, status } : o);
-    saveLocalOrders(updated);
     try {
       await supabaseFetch(`/orders?id=eq.${id}`, {
         method: "PATCH",
         headers: { "Prefer": "return=minimal" },
         body: JSON.stringify({ status }),
       });
+      // Solo actualizar localStorage DESPUÉS de éxito en Supabase
+      const updated = getLocalOrders().map(o => o.id === id ? { ...o, status } : o);
+      saveLocalOrders(updated);
       addToast(`Estado → ${status} ✓`);
     } catch (e) {
       console.error("Error actualizando estado:", e);
-      addToast("Error al actualizar estado", "error");
+      // Rollback: restaurar estado anterior
+      setOrders(previousOrders);
+      addToast("Error al actualizar estado — cambio revertido", "error");
     }
   }
 
