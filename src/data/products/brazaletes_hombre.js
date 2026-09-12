@@ -4,7 +4,7 @@ export const BRAZALETES_HOMBRE = [
     "name": "3 Carriles",
     "category": "Brazaletes Hombre",
     "price": 155000,
-    "image": "/BRAZALETES HOMBRE/3 carriles.jpeg",
+    "image": "/BRAZALETES HOMBRE/3 carriles.webp",
     "desc": "Brazalete de 3 carriles en oro laminado 18k, diseño elegante y masculino."
   },
   {
@@ -12,7 +12,7 @@ export const BRAZALETES_HOMBRE = [
     "name": "Balín 8 MM",
     "category": "Brazaletes Hombre",
     "price": 145000,
-    "image": "/BRAZALETES HOMBRE/BALIN 8 MM.png",
+    "image": "/BRAZALETES HOMBRE/BALIN 8 MM.webp",
     "desc": "Brazalete de balín 8mm en oro laminado 18k, clásico y robusto."
   },
   {
@@ -20,7 +20,7 @@ export const BRAZALETES_HOMBRE = [
     "name": "Balín 8MM + Neo Argollado 8MM",
     "category": "Brazaletes Hombre",
     "price": 175000,
-    "image": "/BRAZALETES HOMBRE/BALIN 8MM + NEO ARGOLLADO 8MM.png",
+    "image": "/BRAZALETES HOMBRE/BALIN 8MM + NEO ARGOLLADO 8MM.webp",
     "desc": "Brazalete combinado balín 8mm con neopreno argollado 8mm en oro laminado 18k."
   },
   {
@@ -28,7 +28,7 @@ export const BRAZALETES_HOMBRE = [
     "name": "Balín Italiano y Liso 5MM + Neopreno 6MM",
     "category": "Brazaletes Hombre",
     "price": 165000,
-    "image": "/BRAZALETES HOMBRE/BALIN ITALIANO Y LISO 5MM + NEOPRENO 6MM.png",
+    "image": "/BRAZALETES HOMBRE/BALIN ITALIANO Y LISO 5MM + NEOPRENO 6MM.webp",
     "desc": "Brazalete balín italiano y liso 5mm más neopreno 6mm en oro laminado 18k."
   },
   {
@@ -36,7 +36,7 @@ export const BRAZALETES_HOMBRE = [
     "name": "Balín Liso 6-4MM y Italy 4MM",
     "category": "Brazaletes Hombre",
     "price": 168000,
-    "image": "/BRAZALETES HOMBRE/BALN LISO 6 - 4MM Y ITALY 4 MM.png",
+    "image": "/BRAZALETES HOMBRE/BALN LISO 6 - 4MM Y ITALY 4 MM.webp",
     "desc": "Brazalete balín liso 6-4mm combinado con italianito 4mm en oro laminado 18k."
   },
   {
@@ -44,7 +44,7 @@ export const BRAZALETES_HOMBRE = [
     "name": "Dije Manto Sagrado + Balín 5MM y Itali 6MM",
     "category": "Brazaletes Hombre",
     "price": 185000,
-    "image": "/BRAZALETES HOMBRE/DIJE MANTO SAGRADO + BALIN 5 MM Y ITALI 6MM.png",
+    "image": "/BRAZALETES HOMBRE/DIJE MANTO SAGRADO + BALIN 5 MM Y ITALI 6MM.webp",
     "desc": "Brazalete con dije Manto Sagrado, balín 5mm e italianito 6mm en oro laminado 18k."
   },
   {
@@ -52,7 +52,7 @@ export const BRAZALETES_HOMBRE = [
     "name": "Fortune + Balín 5 y Itali 5",
     "category": "Brazaletes Hombre",
     "price": 178000,
-    "image": "/BRAZALETES HOMBRE/FORTUNE + BALIN 5 Y ITALI 5.png",
+    "image": "/BRAZALETES HOMBRE/FORTUNE + BALIN 5 Y ITALI 5.webp",
     "desc": "Brazalete Fortune con balín 5mm e italianito 5mm en oro laminado 18k."
   },
   {
@@ -60,7 +60,7 @@ export const BRAZALETES_HOMBRE = [
     "name": "Fortune + Balín Diamantado",
     "category": "Brazaletes Hombre",
     "price": 190000,
-    "image": "/BRAZALETES HOMBRE/FORTUNE + BALIN DIAMANTADO.png",
+    "image": "/BRAZALETES HOMBRE/FORTUNE + BALIN DIAMANTADO.webp",
     "desc": "Brazalete Fortune con balín diamantado en oro laminado 18k, acabado premium."
   },
   {
@@ -68,7 +68,7 @@ export const BRAZALETES_HOMBRE = [
     "name": "Full Diamantado 8 MM",
     "category": "Brazaletes Hombre",
     "price": 210000,
-    "image": "/BRAZALETES HOMBRE/FULL DIAMANTADO 8 MM.png",
+    "image": "/BRAZALETES HOMBRE/FULL DIAMANTADO 8 MM.webp",
     "desc": "Brazalete full diamantado 8mm en oro laminado 18k, máximo brillo y estilo."
   },
   {
@@ -76,7 +76,7 @@ export const BRAZALETES_HOMBRE = [
     "name": "Full Italy 6 MM",
     "category": "Brazaletes Hombre",
     "price": 195000,
-    "image": "/BRAZALETES HOMBRE/FULL ITALY 6 MM.png",
+    "image": "/BRAZALETES HOMBRE/FULL ITALY 6 MM.webp",
     "desc": "Brazalete full italianito 6mm en oro laminado 18k, diseño clásico italiano."
   },
   {
@@ -84,7 +84,7 @@ export const BRAZALETES_HOMBRE = [
     "name": "Rondel + Balín 6 MM y 4 MM",
     "category": "Brazaletes Hombre",
     "price": 160000,
-    "image": "/BRAZALETES HOMBRE/RONDEL + BALIN 6 MM Y 4 MM.png",
+    "image": "/BRAZALETES HOMBRE/RONDEL + BALIN 6 MM Y 4 MM.webp",
     "desc": "Brazalete con rondeles y balines 6mm y 4mm en oro laminado 18k."
   },
   {

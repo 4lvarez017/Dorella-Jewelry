@@ -4,7 +4,7 @@ export const PULSERAS = [
     "name": "3x1 1.6 MM 16 CM",
     "category": "Pulseras",
     "price": 130000,
-    "image": "/PULSERAS/3x1 1.6 MM 16 CM.png",
+    "image": "/PULSERAS/3x1 1.6 MM 16 CM.webp",
     "desc": "Pulsera 3x1 1.6mm, 16cm en oro laminado 18k, diseño clásico y elegante."
   },
   {
@@ -12,7 +12,7 @@ export const PULSERAS = [
     "name": "3x1 2.9 MM 19.5 CM",
     "category": "Pulseras",
     "price": 145000,
-    "image": "/PULSERAS/3x1 2.9 MM 19.5 CM.png",
+    "image": "/PULSERAS/3x1 2.9 MM 19.5 CM.webp",
     "desc": "Pulsera 3x1 2.9mm, 19.5cm en oro laminado 18k."
   },
   {
@@ -20,7 +20,7 @@ export const PULSERAS = [
     "name": "Aros 2 MM + Extensor 15.5 CM - 19.5 CM",
     "category": "Pulseras",
     "price": 135000,
-    "image": "/PULSERAS/AROS 2 MM + EXTENSOR 15.5 CM - 19.5 CM.png",
+    "image": "/PULSERAS/AROS 2 MM + EXTENSOR 15.5 CM - 19.5 CM.webp",
     "desc": "Pulsera de aros 2mm con extensor, ajustable de 15.5cm a 19.5cm en oro laminado 18k."
   },
   {
@@ -28,7 +28,7 @@ export const PULSERAS = [
     "name": "Barril Nova 19.5 CM",
     "category": "Pulseras",
     "price": 148000,
-    "image": "/PULSERAS/BARRIL NOVA 19.5 CM.png",
+    "image": "/PULSERAS/BARRIL NOVA 19.5 CM.webp",
     "desc": "Pulsera barril Nova, 19.5cm en oro laminado 18k."
   },
   {
@@ -36,7 +36,7 @@ export const PULSERAS = [
     "name": "Barril Prismc 16 CM - 19.5 CM",
     "category": "Pulseras",
     "price": 152000,
-    "image": "/PULSERAS/BARRIL PRISMC 16 CM - 19.5 CM.png",
+    "image": "/PULSERAS/BARRIL PRISMC 16 CM - 19.5 CM.webp",
     "desc": "Pulsera barril Prismc, ajustable de 16cm a 19.5cm en oro laminado 18k."
   },
   {
@@ -44,7 +44,7 @@ export const PULSERAS = [
     "name": "Barril Prismc Rose 16 CM - 19 CM",
     "category": "Pulseras",
     "price": 152000,
-    "image": "/PULSERAS/BARRIL PRISMC ROSE 16 CM - 19 CM.png",
+    "image": "/PULSERAS/BARRIL PRISMC ROSE 16 CM - 19 CM.webp",
     "desc": "Pulsera barril Prismc Rose, ajustable de 16cm a 19cm en oro laminado 18k rosado."
   },
   {
@@ -52,7 +52,7 @@ export const PULSERAS = [
     "name": "Blue Dream + Extensor 16 CM",
     "category": "Pulseras",
     "price": 140000,
-    "image": "/PULSERAS/BLUE DREAM + EXTENSOR 16 CM.png",
+    "image": "/PULSERAS/BLUE DREAM + EXTENSOR 16 CM.webp",
     "desc": "Pulsera Blue Dream con extensor, 16cm en oro laminado 18k con detalles azules."
   },
   {
@@ -60,7 +60,7 @@ export const PULSERAS = [
     "name": "China 2 MM 16 CM - 19.5 CM",
     "category": "Pulseras",
     "price": 138000,
-    "image": "/PULSERAS/CHINA 2 MM 16 CM - 19.5 CM.png",
+    "image": "/PULSERAS/CHINA 2 MM 16 CM - 19.5 CM.webp",
     "desc": "Pulsera china 2mm, ajustable de 16cm a 19.5cm en oro laminado 18k."
   },
   {
@@ -68,7 +68,7 @@ export const PULSERAS = [
     "name": "China 3 MM 16 CM - 19.5 CM",
     "category": "Pulseras",
     "price": 142000,
-    "image": "/PULSERAS/CHINA 3 MM 16 CM - 19.5 CM.png",
+    "image": "/PULSERAS/CHINA 3 MM 16 CM - 19.5 CM.webp",
     "desc": "Pulsera china 3mm, ajustable de 16cm a 19.5cm en oro laminado 18k."
   },
   {
@@ -76,7 +76,7 @@ export const PULSERAS = [
     "name": "Cuban Link 3.1 MM 19 CM",
     "category": "Pulseras",
     "price": 165000,
-    "image": "/PULSERAS/CUBAN LINK 3.1 MM 19 CM.png",
+    "image": "/PULSERAS/CUBAN LINK 3.1 MM 19 CM.webp",
     "desc": "Pulsera Cuban Link 3.1mm, 19cm en oro laminado 18k, estilo urbano y premium."
   },
   {
@@ -84,7 +84,7 @@ export const PULSERAS = [
     "name": "Cubana 2 MM 19 CM",
     "category": "Pulseras",
     "price": 155000,
-    "image": "/PULSERAS/CUBANA 2 MM 19 CM.png",
+    "image": "/PULSERAS/CUBANA 2 MM 19 CM.webp",
     "desc": "Pulsera cubana 2mm, 19cm en oro laminado 18k."
   },
   {
@@ -92,7 +92,7 @@ export const PULSERAS = [
     "name": "Cubana 3 MM 19.5 CM",
     "category": "Pulseras",
     "price": 162000,
-    "image": "/PULSERAS/CUBANA 3 MM 19.5 CM.png",
+    "image": "/PULSERAS/CUBANA 3 MM 19.5 CM.webp",
     "desc": "Pulsera cubana 3mm, 19.5cm en oro laminado 18k."
   },
   {
@@ -100,7 +100,7 @@ export const PULSERAS = [
     "name": "Cubana Clover 1.1 CM + Extensor 15 CM",
     "category": "Pulseras",
     "price": 155000,
-    "image": "/PULSERAS/CUBANA CLOVER 1,1 CM + EXTENSOR 15 CM.png",
+    "image": "/PULSERAS/CUBANA CLOVER 1,1 CM + EXTENSOR 15 CM.webp",
     "desc": "Pulsera cubana clover 1.1cm con extensor, 15cm en oro laminado 18k."
   },
   {
@@ -108,7 +108,7 @@ export const PULSERAS = [
     "name": "Cubana Continua 2.3 MM 19 CM",
     "category": "Pulseras",
     "price": 158000,
-    "image": "/PULSERAS/CUBANA CONTINUA 2.3 MM 19 CM.png",
+    "image": "/PULSERAS/CUBANA CONTINUA 2.3 MM 19 CM.webp",
     "desc": "Pulsera cubana continua 2.3mm, 19cm en oro laminado 18k."
   },
   {
@@ -116,7 +116,7 @@ export const PULSERAS = [
     "name": "Cubana Cruzada 2.4 MM 19.5 CM",
     "category": "Pulseras",
     "price": 160000,
-    "image": "/PULSERAS/CUBANA CRUZADA 2.4 MM 19.5 CM.png",
+    "image": "/PULSERAS/CUBANA CRUZADA 2.4 MM 19.5 CM.webp",
     "desc": "Pulsera cubana cruzada 2.4mm, 19.5cm en oro laminado 18k."
   },
   {
@@ -124,7 +124,7 @@ export const PULSERAS = [
     "name": "Cubanita 1 MM 15 CM",
     "category": "Pulseras",
     "price": 128000,
-    "image": "/PULSERAS/CUBANITA 1 MM 15 CM.png",
+    "image": "/PULSERAS/CUBANITA 1 MM 15 CM.webp",
     "desc": "Pulsera cubanita 1mm, 15cm en oro laminado 18k, delicada y elegante."
   },
   {
@@ -132,7 +132,7 @@ export const PULSERAS = [
     "name": "Cubanita 1.5 MM 19.5 CM",
     "category": "Pulseras",
     "price": 135000,
-    "image": "/PULSERAS/CUBANITA 1.5 MM 19.5 CM.png",
+    "image": "/PULSERAS/CUBANITA 1.5 MM 19.5 CM.webp",
     "desc": "Pulsera cubanita 1.5mm, 19.5cm en oro laminado 18k."
   },
   {
@@ -140,7 +140,7 @@ export const PULSERAS = [
     "name": "Escalera con Destellos 1.7 MM 16.5 CM",
     "category": "Pulseras",
     "price": 145000,
-    "image": "/PULSERAS/Escalera Con Destellos 1.7 MM 16.5 CM.png",
+    "image": "/PULSERAS/Escalera Con Destellos 1.7 MM 16.5 CM.webp",
     "desc": "Pulsera escalera con destellos 1.7mm, 16.5cm en oro laminado 18k."
   },
   {
@@ -148,7 +148,7 @@ export const PULSERAS = [
     "name": "Franco 20 CM",
     "category": "Pulseras",
     "price": 148000,
-    "image": "/PULSERAS/FRANCO 20 CM.png",
+    "image": "/PULSERAS/FRANCO 20 CM.webp",
     "desc": "Pulsera franco, 20cm en oro laminado 18k, diseño clásico y robusto."
   },
   {
@@ -156,7 +156,7 @@ export const PULSERAS = [
     "name": "Grumetta Rada 16 CM",
     "category": "Pulseras",
     "price": 142000,
-    "image": "/PULSERAS/GRUMETTA RADA 16 CM.png",
+    "image": "/PULSERAS/GRUMETTA RADA 16 CM.webp",
     "desc": "Pulsera grumetta rada, 16cm en oro laminado 18k."
   },
   {
@@ -164,7 +164,7 @@ export const PULSERAS = [
     "name": "Heart",
     "category": "Pulseras",
     "price": 150000,
-    "image": "/PULSERAS/HEART.png",
+    "image": "/PULSERAS/HEART.webp",
     "desc": "Pulsera Heart en oro laminado 18k, un tributo al amor."
   },
   {
@@ -172,7 +172,7 @@ export const PULSERAS = [
     "name": "Hilo Azul Laminado + Extensor 15 CM",
     "category": "Pulseras",
     "price": 125000,
-    "image": "/PULSERAS/HILO AZUL LAMINADO + EXTENSOR 15 CM.png",
+    "image": "/PULSERAS/HILO AZUL LAMINADO + EXTENSOR 15 CM.webp",
     "desc": "Pulsera hilo azul laminado con extensor, 15cm en oro laminado 18k."
   },
   {
@@ -180,7 +180,7 @@ export const PULSERAS = [
     "name": "Hilo Negro Laminado + Extensor 15 CM",
     "category": "Pulseras",
     "price": 125000,
-    "image": "/PULSERAS/HILO NEGRO LAMINADO + EXTENSOR 15 CM.png",
+    "image": "/PULSERAS/HILO NEGRO LAMINADO + EXTENSOR 15 CM.webp",
     "desc": "Pulsera hilo negro laminado con extensor, 15cm en oro laminado 18k."
   },
   {
@@ -188,7 +188,7 @@ export const PULSERAS = [
     "name": "Hilo Rojo Laminado + Extensor 15 CM",
     "category": "Pulseras",
     "price": 125000,
-    "image": "/PULSERAS/HILO ROJO LAMINADO + EXTENSOR 15 CM.png",
+    "image": "/PULSERAS/HILO ROJO LAMINADO + EXTENSOR 15 CM.webp",
     "desc": "Pulsera hilo rojo laminado con extensor, 15cm en oro laminado 18k."
   },
   {
@@ -196,7 +196,7 @@ export const PULSERAS = [
     "name": "ICE 2L 16CM - 19 CM",
     "category": "Pulseras",
     "price": 155000,
-    "image": "/PULSERAS/ICE 2L 16CM - 19 CM.png",
+    "image": "/PULSERAS/ICE 2L 16CM - 19 CM.webp",
     "desc": "Pulsera ICE doble línea, ajustable de 16cm a 19cm en oro laminado 18k."
   },
   {
@@ -204,7 +204,7 @@ export const PULSERAS = [
     "name": "ICE 3L TRI 19.5 CM",
     "category": "Pulseras",
     "price": 162000,
-    "image": "/PULSERAS/ICE 3L TRI 19.5 CM.png",
+    "image": "/PULSERAS/ICE 3L TRI 19.5 CM.webp",
     "desc": "Pulsera ICE triple línea tricolor, 19.5cm en oro laminado 18k."
   },
   {
@@ -212,7 +212,7 @@ export const PULSERAS = [
     "name": "ICE Gold 2L 19.5 CM",
     "category": "Pulseras",
     "price": 158000,
-    "image": "/PULSERAS/ICE GOLD 2L 19.5 CM.png",
+    "image": "/PULSERAS/ICE GOLD 2L 19.5 CM.webp",
     "desc": "Pulsera ICE Gold doble línea, 19.5cm en oro laminado 18k."
   },
   {
@@ -220,7 +220,7 @@ export const PULSERAS = [
     "name": "Marine 1.5 MM 19.5 CM",
     "category": "Pulseras",
     "price": 140000,
-    "image": "/PULSERAS/MARINE 1.5 MM 19.5 CM.png",
+    "image": "/PULSERAS/MARINE 1.5 MM 19.5 CM.webp",
     "desc": "Pulsera marine 1.5mm, 19.5cm en oro laminado 18k."
   },
   {
@@ -228,7 +228,7 @@ export const PULSERAS = [
     "name": "Marine 2.8 MM 19.5 CM",
     "category": "Pulseras",
     "price": 148000,
-    "image": "/PULSERAS/MARINE 2.8 MM 19.5 CM.png",
+    "image": "/PULSERAS/MARINE 2.8 MM 19.5 CM.webp",
     "desc": "Pulsera marine 2.8mm, 19.5cm en oro laminado 18k."
   },
   {
@@ -236,7 +236,7 @@ export const PULSERAS = [
     "name": "Militar 19.5 CM",
     "category": "Pulseras",
     "price": 145000,
-    "image": "/PULSERAS/MILITAR 19.5 CM.png",
+    "image": "/PULSERAS/MILITAR 19.5 CM.webp",
     "desc": "Pulsera militar, 19.5cm en oro laminado 18k."
   },
   {
@@ -244,7 +244,7 @@ export const PULSERAS = [
     "name": "San Benito + Extensor 16.5 CM",
     "category": "Pulseras",
     "price": 138000,
-    "image": "/PULSERAS/SAN BENITO + EXTENSOR 16.5 CM.png",
+    "image": "/PULSERAS/SAN BENITO + EXTENSOR 16.5 CM.webp",
     "desc": "Pulsera con medalla San Benito y extensor, 16.5cm en oro laminado 18k."
   },
   {
@@ -252,7 +252,7 @@ export const PULSERAS = [
     "name": "Singapur 1.5 MM + Extensor 16 CM",
     "category": "Pulseras",
     "price": 132000,
-    "image": "/PULSERAS/SINGAPUR 1.5 MM + EXTENSOR 16 CM.png",
+    "image": "/PULSERAS/SINGAPUR 1.5 MM + EXTENSOR 16 CM.webp",
     "desc": "Pulsera singapur 1.5mm con extensor, 16cm en oro laminado 18k."
   },
   {
@@ -260,7 +260,7 @@ export const PULSERAS = [
     "name": "Singapur 1.8 MM + Extensor 16 CM",
     "category": "Pulseras",
     "price": 135000,
-    "image": "/PULSERAS/SINGAPUR 1.8 MM + EXTENSOR 16 CM.png",
+    "image": "/PULSERAS/SINGAPUR 1.8 MM + EXTENSOR 16 CM.webp",
     "desc": "Pulsera singapur 1.8mm con extensor, 16cm en oro laminado 18k."
   },
   {
@@ -268,7 +268,7 @@ export const PULSERAS = [
     "name": "Station Redonda 3C 16.5 CM - 19.5 CM",
     "category": "Pulseras",
     "price": 155000,
-    "image": "/PULSERAS/STATION REDONDA 3C 16.5 CM - 19.5 CM.png",
+    "image": "/PULSERAS/STATION REDONDA 3C 16.5 CM - 19.5 CM.webp",
     "desc": "Pulsera station redonda 3 circones, ajustable de 16.5cm a 19.5cm en oro laminado 18k."
   },
   {
@@ -276,7 +276,7 @@ export const PULSERAS = [
     "name": "Sweet Lemon + Extensor 16 CM",
     "category": "Pulseras",
     "price": 142000,
-    "image": "/PULSERAS/SWEET LEMON + EXTENSOR 16 CM.png",
+    "image": "/PULSERAS/SWEET LEMON + EXTENSOR 16 CM.webp",
     "desc": "Pulsera Sweet Lemon con extensor, 16cm en oro laminado 18k."
   },
   {
@@ -284,7 +284,7 @@ export const PULSERAS = [
     "name": "Tennis Azul + Extensor 16 CM",
     "category": "Pulseras",
     "price": 148000,
-    "image": "/PULSERAS/TENNIS AZUL + EXTENSOR 16 CM.png",
+    "image": "/PULSERAS/TENNIS AZUL + EXTENSOR 16 CM.webp",
     "desc": "Pulsera tennis azul con extensor, 16cm en oro laminado 18k con circonias azules."
   },
   {
@@ -292,7 +292,7 @@ export const PULSERAS = [
     "name": "Tube Gold 19.5 CM",
     "category": "Pulseras",
     "price": 158000,
-    "image": "/PULSERAS/TUBE GOLD 19.5 CM.png",
+    "image": "/PULSERAS/TUBE GOLD 19.5 CM.webp",
     "desc": "Pulsera tube gold, 19.5cm en oro laminado 18k."
   },
   {
@@ -300,7 +300,7 @@ export const PULSERAS = [
     "name": "Tube Rose 19.5 CM",
     "category": "Pulseras",
     "price": 158000,
-    "image": "/PULSERAS/TUBE ROSE 19.5 CM.png",
+    "image": "/PULSERAS/TUBE ROSE 19.5 CM.webp",
     "desc": "Pulsera tube rose, 19.5cm en oro laminado 18k rosado."
   },
   {
@@ -308,7 +308,7 @@ export const PULSERAS = [
     "name": "Vintage 1.2 MM + Extensor 16 CM",
     "category": "Pulseras",
     "price": 130000,
-    "image": "/PULSERAS/VINTAGE 1.2 MM + EXTENSOR 16 CM.png",
+    "image": "/PULSERAS/VINTAGE 1.2 MM + EXTENSOR 16 CM.webp",
     "desc": "Pulsera vintage 1.2mm con extensor, 16cm en oro laminado 18k."
   },
   {
@@ -316,7 +316,7 @@ export const PULSERAS = [
     "name": "Virgen del Carmen + Extensor 16.5 CM",
     "category": "Pulseras",
     "price": 145000,
-    "image": "/PULSERAS/VIRGEN DEL CARMEN + EXTENSOR 16.5 CM.png",
+    "image": "/PULSERAS/VIRGEN DEL CARMEN + EXTENSOR 16.5 CM.webp",
     "desc": "Pulsera con medalla Virgen del Carmen y extensor, 16.5cm en oro laminado 18k."
   },
   {

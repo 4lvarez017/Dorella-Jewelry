@@ -4,7 +4,7 @@ export const HERRAJES = [
     "name": "Bola de Fuego 5 MM Cristal",
     "category": "Herrajes",
     "price": 90000,
-    "image": "/HERRAJES/BOLA DE FUEGO 5 MM CRISTAL.png",
+    "image": "/HERRAJES/BOLA DE FUEGO 5 MM CRISTAL.webp",
     "desc": "Herraje bola de fuego 5mm cristal en oro laminado 18k, brillo y fuego en un detalle."
   },
   {
@@ -12,7 +12,7 @@ export const HERRAJES = [
     "name": "Charming",
     "category": "Herrajes",
     "price": 95000,
-    "image": "/HERRAJES/CHARMING.png",
+    "image": "/HERRAJES/CHARMING.webp",
     "desc": "Herraje Charming en oro laminado 18k, encantador y sofisticado."
   },
   {
@@ -20,7 +20,7 @@ export const HERRAJES = [
     "name": "Circonia Redonda Cristal",
     "category": "Herrajes",
     "price": 98000,
-    "image": "/HERRAJES/CIRCONIA REDONDA CRISTAL.png",
+    "image": "/HERRAJES/CIRCONIA REDONDA CRISTAL.webp",
     "desc": "Herraje circonia redonda cristal en oro laminado 18k, máxima transparencia y brillo."
   },
   {
@@ -28,7 +28,7 @@ export const HERRAJES = [
     "name": "Clover Circonia 8MM",
     "category": "Herrajes",
     "price": 105000,
-    "image": "/HERRAJES/CLOVER CIRCONIA 8MM.png",
+    "image": "/HERRAJES/CLOVER CIRCONIA 8MM.webp",
     "desc": "Herraje trébol circonia 8mm en oro laminado 18k, suerte y elegancia en cada detalle."
   },
   {
@@ -36,7 +36,7 @@ export const HERRAJES = [
     "name": "Corazón Circonia",
     "category": "Herrajes",
     "price": 92000,
-    "image": "/HERRAJES/CORAZON CIRCONIA.png",
+    "image": "/HERRAJES/CORAZON CIRCONIA.webp",
     "desc": "Herraje corazón con circonia en oro laminado 18k, romántico y brillante."
   },
   {
@@ -44,7 +44,7 @@ export const HERRAJES = [
     "name": "Cruz 15 MM",
     "category": "Herrajes",
     "price": 100000,
-    "image": "/HERRAJES/CRUZ 15 MM.png",
+    "image": "/HERRAJES/CRUZ 15 MM.webp",
     "desc": "Herraje cruz 15mm en oro laminado 18k, símbolo de fe con acabado impecable."
   },
   {
@@ -52,7 +52,7 @@ export const HERRAJES = [
     "name": "Lovix",
     "category": "Herrajes",
     "price": 88000,
-    "image": "/HERRAJES/LOVIX.png",
+    "image": "/HERRAJES/LOVIX.webp",
     "desc": "Herraje Lovix en oro laminado 18k, diseño moderno y seductor."
   },
   {
@@ -60,7 +60,7 @@ export const HERRAJES = [
     "name": "Luxo",
     "category": "Herrajes",
     "price": 110000,
-    "image": "/HERRAJES/LUXO.png",
+    "image": "/HERRAJES/LUXO.webp",
     "desc": "Herraje Luxo en oro laminado 18k, lujo puro en cada milímetro."
   },
   {
@@ -68,7 +68,7 @@ export const HERRAJES = [
     "name": "Rondel Circonias X3 4 MM Negro",
     "category": "Herrajes",
     "price": 95000,
-    "image": "/HERRAJES/RONDEL CIRCONIAS X3 4 MM NEGRO.png",
+    "image": "/HERRAJES/RONDEL CIRCONIAS X3 4 MM NEGRO.webp",
     "desc": "Set de 3 rondeles con circonias negras 4mm en oro laminado 18k."
   },
   {
@@ -76,7 +76,7 @@ export const HERRAJES = [
     "name": "Rondel Circonias X3 5 MM Cristal",
     "category": "Herrajes",
     "price": 98000,
-    "image": "/HERRAJES/RONDEL CIRCONIAS X3 5 MM CRISTAL.png",
+    "image": "/HERRAJES/RONDEL CIRCONIAS X3 5 MM CRISTAL.webp",
     "desc": "Set de 3 rondeles con circonias cristal 5mm en oro laminado 18k."
   },
   {

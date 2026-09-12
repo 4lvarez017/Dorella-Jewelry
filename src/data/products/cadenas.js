@@ -4,7 +4,7 @@ export const CADENAS = [
     "name": "3 1 IT 2.9 MM 65 Cms",
     "category": "Cadenas",
     "price": 220000,
-    "image": "/CADENAS/3 1 IT 2.9 mm 65 Cms.png",
+    "image": "/CADENAS/3 1 IT 2.9 mm 65 Cms.webp",
     "desc": "Cadena 3x1 italiana 2.9mm, 65cm en oro laminado 18k, diseño clásico y resistente."
   },
   {
@@ -12,7 +12,7 @@ export const CADENAS = [
     "name": "Aros 3 MM 65 CM",
     "category": "Cadenas",
     "price": 210000,
-    "image": "/CADENAS/AROS 3 MM 65 CM.png",
+    "image": "/CADENAS/AROS 3 MM 65 CM.webp",
     "desc": "Cadena de aros 3mm, 65cm en oro laminado 18k, ligera y elegante."
   },
   {
@@ -20,7 +20,7 @@ export const CADENAS = [
     "name": "Continua 3 MM 45 CM",
     "category": "Cadenas",
     "price": 185000,
-    "image": "/CADENAS/CONTINUA 3 MM 45 CM.png",
+    "image": "/CADENAS/CONTINUA 3 MM 45 CM.webp",
     "desc": "Cadena continua 3mm, 45cm en oro laminado 18k."
   },
   {
@@ -28,7 +28,7 @@ export const CADENAS = [
     "name": "Continua 4 MM 65 CM",
     "category": "Cadenas",
     "price": 205000,
-    "image": "/CADENAS/CONTINUA 4 MM 65 CM.png",
+    "image": "/CADENAS/CONTINUA 4 MM 65 CM.webp",
     "desc": "Cadena continua 4mm, 65cm en oro laminado 18k."
   },
   {
@@ -36,7 +36,7 @@ export const CADENAS = [
     "name": "Cubana Circonios 45 CM",
     "category": "Cadenas",
     "price": 240000,
-    "image": "/CADENAS/CUBANA CIRCONIOS 45 CM.png",
+    "image": "/CADENAS/CUBANA CIRCONIOS 45 CM.webp",
     "desc": "Cadena cubana con circonios, 45cm en oro laminado 18k, máximo brillo."
   },
   {
@@ -44,7 +44,7 @@ export const CADENAS = [
     "name": "Cubana con Destellos 60 CM",
     "category": "Cadenas",
     "price": 255000,
-    "image": "/CADENAS/CUBANA CON DESTELLOS 60 CM.png",
+    "image": "/CADENAS/CUBANA CON DESTELLOS 60 CM.webp",
     "desc": "Cadena cubana con destellos, 60cm en oro laminado 18k."
   },
   {
@@ -52,7 +52,7 @@ export const CADENAS = [
     "name": "Cubana Sol 65 CM",
     "category": "Cadenas",
     "price": 265000,
-    "image": "/CADENAS/CUBANA SOL 65 CM.png",
+    "image": "/CADENAS/CUBANA SOL 65 CM.webp",
     "desc": "Cadena cubana sol, 65cm en oro laminado 18k, diseño sol radiante."
   },
   {
@@ -60,7 +60,7 @@ export const CADENAS = [
     "name": "Escalera Plana Lisa 65 CM",
     "category": "Cadenas",
     "price": 225000,
-    "image": "/CADENAS/ESCALERA PLANA LISA 65 CM.png",
+    "image": "/CADENAS/ESCALERA PLANA LISA 65 CM.webp",
     "desc": "Cadena escalera plana lisa, 65cm en oro laminado 18k."
   },
   {
@@ -68,7 +68,7 @@ export const CADENAS = [
     "name": "Espejo Cuadrada 65 CM",
     "category": "Cadenas",
     "price": 230000,
-    "image": "/CADENAS/ESPEJO CUADRADA 65 CM.png",
+    "image": "/CADENAS/ESPEJO CUADRADA 65 CM.webp",
     "desc": "Cadena espejo cuadrada, 65cm en oro laminado 18k, acabado espejo impactante."
   },
   {
@@ -76,7 +76,7 @@ export const CADENAS = [
     "name": "Espejo Mediana 45 CM",
     "category": "Cadenas",
     "price": 215000,
-    "image": "/CADENAS/ESPEJO MEDIANA 45 CM.png",
+    "image": "/CADENAS/ESPEJO MEDIANA 45 CM.webp",
     "desc": "Cadena espejo mediana, 45cm en oro laminado 18k."
   },
   {
@@ -84,7 +84,7 @@ export const CADENAS = [
     "name": "Franco 45 CM",
     "category": "Cadenas",
     "price": 195000,
-    "image": "/CADENAS/FRANCO 45 CM.png",
+    "image": "/CADENAS/FRANCO 45 CM.webp",
     "desc": "Cadena franco, 45cm en oro laminado 18k, diseño clásico y resistente."
   },
   {
@@ -92,7 +92,7 @@ export const CADENAS = [
     "name": "Franco 65 CM",
     "category": "Cadenas",
     "price": 220000,
-    "image": "/CADENAS/FRANCO 65 CM.png",
+    "image": "/CADENAS/FRANCO 65 CM.webp",
     "desc": "Cadena franco, 65cm en oro laminado 18k."
   },
   {
@@ -100,7 +100,7 @@ export const CADENAS = [
     "name": "Gypsy + Extensor 35 CM",
     "category": "Cadenas",
     "price": 175000,
-    "image": "/CADENAS/GYPSY + EXTENSOR 35 CM.png",
+    "image": "/CADENAS/GYPSY + EXTENSOR 35 CM.webp",
     "desc": "Cadena gypsy con extensor, 35cm en oro laminado 18k, estilo bohemio."
   },
   {
@@ -108,7 +108,7 @@ export const CADENAS = [
     "name": "Lazo 3 MM 65 CM",
     "category": "Cadenas",
     "price": 200000,
-    "image": "/CADENAS/LAZO 3 MM 65 CM.png",
+    "image": "/CADENAS/LAZO 3 MM 65 CM.webp",
     "desc": "Cadena lazo 3mm, 65cm en oro laminado 18k."
   },
   {
@@ -116,7 +116,7 @@ export const CADENAS = [
     "name": "Serpiente 4 MM 65 CM",
     "category": "Cadenas",
     "price": 210000,
-    "image": "/CADENAS/SERPIENTE 4 MM 65 CM.png",
+    "image": "/CADENAS/SERPIENTE 4 MM 65 CM.webp",
     "desc": "Cadena serpiente 4mm, 65cm en oro laminado 18k, diseño fluido y elegante."
   },
   {
@@ -124,7 +124,7 @@ export const CADENAS = [
     "name": "Serpiente 65 CM",
     "category": "Cadenas",
     "price": 205000,
-    "image": "/CADENAS/SERPIENTE 65 CM.png",
+    "image": "/CADENAS/SERPIENTE 65 CM.webp",
     "desc": "Cadena serpiente, 65cm en oro laminado 18k."
   },
   {
@@ -132,7 +132,7 @@ export const CADENAS = [
     "name": "Serpiente Fina 45 CM",
     "category": "Cadenas",
     "price": 190000,
-    "image": "/CADENAS/SERPIENTE FINA 45 CM.png",
+    "image": "/CADENAS/SERPIENTE FINA 45 CM.webp",
     "desc": "Cadena serpiente fina, 45cm en oro laminado 18k, delicada y sofisticada."
   },
   {
@@ -140,7 +140,7 @@ export const CADENAS = [
     "name": "Serpiente Plana 1 MM 65 CM",
     "category": "Cadenas",
     "price": 185000,
-    "image": "/CADENAS/SERPIENTE PLANA 1 MM 65 CM.png",
+    "image": "/CADENAS/SERPIENTE PLANA 1 MM 65 CM.webp",
     "desc": "Cadena serpiente plana 1mm, 65cm en oro laminado 18k."
   },
   {
@@ -148,7 +148,7 @@ export const CADENAS = [
     "name": "Tejido Chino Doble Carril 65 CM",
     "category": "Cadenas",
     "price": 230000,
-    "image": "/CADENAS/TEJIDO CHINO DOBLE CARRIL 65 CM.png",
+    "image": "/CADENAS/TEJIDO CHINO DOBLE CARRIL 65 CM.webp",
     "desc": "Cadena tejido chino doble carril, 65cm en oro laminado 18k."
   },
   {
@@ -156,7 +156,7 @@ export const CADENAS = [
     "name": "Tejido Egipcio + Extensor 40 CM",
     "category": "Cadenas",
     "price": 218000,
-    "image": "/CADENAS/TEJIDO EGIPCIO + EXTENSOR 40 CM.png",
+    "image": "/CADENAS/TEJIDO EGIPCIO + EXTENSOR 40 CM.webp",
     "desc": "Cadena tejido egipcio con extensor, 40cm en oro laminado 18k."
   },
   {
@@ -164,7 +164,7 @@ export const CADENAS = [
     "name": "Veneciana Gruesa 65 CM",
     "category": "Cadenas",
     "price": 225000,
-    "image": "/CADENAS/VENECIANA GRUESA 65 CM.png",
+    "image": "/CADENAS/VENECIANA GRUESA 65 CM.webp",
     "desc": "Cadena veneciana gruesa, 65cm en oro laminado 18k, estilo italiano clásico."
   },
   {
@@ -172,7 +172,7 @@ export const CADENAS = [
     "name": "Vintage 1.1 MM 45 CM",
     "category": "Cadenas",
     "price": 175000,
-    "image": "/CADENAS/VINTAGE 1.1 MM 45 CM.png",
+    "image": "/CADENAS/VINTAGE 1.1 MM 45 CM.webp",
     "desc": "Cadena vintage 1.1mm, 45cm en oro laminado 18k, fina y atemporal."
   },
   {
@@ -268,7 +268,7 @@ export const CADENAS = [
     "name": "C Destellos 2.5 Mm 45 Cms",
     "category": "Cadenas",
     "price": 140000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/44751/PERFIL.jpg",
+    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/44751/PERFIL.webp",
     "desc": "C Destellos 2.5 Mm 45 Cms en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 44751."
   },
   {

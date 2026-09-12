@@ -404,7 +404,7 @@ export function HeroSection({ onExplore }) {
           {/* Layer 1: Pulsera Base */}
           <img
             ref={layer1Ref}
-            src="/pulsera_base.jpg"
+            src="/pulsera_base.webp"
             alt="Pulsera Base"
             style={{
               position: "absolute",
@@ -420,7 +420,7 @@ export function HeroSection({ onExplore }) {
           {/* Layer 2: 3 Carriles */}
           <img
             ref={layer2Ref}
-            src="/pulsera_3_carriles.jpg"
+            src="/pulsera_3_carriles.webp"
             alt="Diseño en 3 Carriles"
             style={{
               position: "absolute",
@@ -436,7 +436,7 @@ export function HeroSection({ onExplore }) {
           {/* Layer 3: 4 Carriles */}
           <img
             ref={layer3Ref}
-            src="/pulsera_4_carriles.jpg"
+            src="/pulsera_4_carriles.webp"
             alt="Diseño en 4 Carriles"
             style={{
               position: "absolute",
@@ -452,7 +452,7 @@ export function HeroSection({ onExplore }) {
           {/* Layer 4: Pulsera Ensamblada */}
           <img
             ref={layer4Ref}
-            src="/pulsera_ensamblada.jpg"
+            src="/pulsera_ensamblada.webp"
             alt="Pulsera Ensamblada"
             style={{
               position: "absolute",
@@ -468,7 +468,7 @@ export function HeroSection({ onExplore }) {
           {/* Layer 5: Desglose de Materiales */}
           <img
             ref={layer5Ref}
-            src="/pulsera_materiales.jpg"
+            src="/pulsera_materiales.webp"
             alt="Materiales de Oro Laminado 18K"
             style={{
               position: "absolute",

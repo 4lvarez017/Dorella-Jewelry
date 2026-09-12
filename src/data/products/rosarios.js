@@ -4,7 +4,7 @@ export const ROSARIOS = [
     "name": "Rosario Benedictus 43 CM",
     "category": "Rosarios",
     "price": 145000,
-    "image": "/ROSARIOS/ROSARIO BENEDICTUS 43 CM.png",
+    "image": "/ROSARIOS/ROSARIO BENEDICTUS 43 CM.webp",
     "desc": "Rosario Benedictus 43cm en oro laminado 18k, de gran devoción y acabado impecable."
   },
   {
@@ -12,7 +12,7 @@ export const ROSARIOS = [
     "name": "Rosario Hombre 65 CM 4 MM Cristal",
     "category": "Rosarios",
     "price": 175000,
-    "image": "/ROSARIOS/ROSARIO HOMBRE 65 CM 4 MM CRISTAL.png",
+    "image": "/ROSARIOS/ROSARIO HOMBRE 65 CM 4 MM CRISTAL.webp",
     "desc": "Rosario para hombre 65cm, bolitas 4mm cristal en oro laminado 18k."
   },
   {
@@ -20,7 +20,7 @@ export const ROSARIOS = [
     "name": "Rosario Hombre 65 CM 4 MM Verde",
     "category": "Rosarios",
     "price": 175000,
-    "image": "/ROSARIOS/ROSARIO HOMBRE 65 CM 4 MM VERDE.png",
+    "image": "/ROSARIOS/ROSARIO HOMBRE 65 CM 4 MM VERDE.webp",
     "desc": "Rosario para hombre 65cm, bolitas 4mm verde en oro laminado 18k."
   },
   {
@@ -28,7 +28,7 @@ export const ROSARIOS = [
     "name": "Rosario Hombre 65 CM",
     "category": "Rosarios",
     "price": 160000,
-    "image": "/ROSARIOS/ROSARIO HOMBRE 65 CM.png",
+    "image": "/ROSARIOS/ROSARIO HOMBRE 65 CM.webp",
     "desc": "Rosario para hombre 65cm en oro laminado 18k, clásico y elegante."
   },
   {
@@ -36,7 +36,7 @@ export const ROSARIOS = [
     "name": "Rosario IT Balín 2.5 MM 45 CM",
     "category": "Rosarios",
     "price": 138000,
-    "image": "/ROSARIOS/ROSARIO IT BALIN 2,5 MM 45 CM.png",
+    "image": "/ROSARIOS/ROSARIO IT BALIN 2,5 MM 45 CM.webp",
     "desc": "Rosario italiano balín 2.5mm, 45cm en oro laminado 18k, delicado y elegante."
   },
   {

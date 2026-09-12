@@ -4,7 +4,7 @@ export const BRAZALETES_MUJER = [
     "name": "B. Diamantado 6 MM + Neopreno",
     "category": "Brazaletes Mujer",
     "price": 165000,
-    "image": "/BRAZALETES MUJER/B. DIAMANTADO 6 MM + NEOPRENO.png",
+    "image": "/BRAZALETES MUJER/B. DIAMANTADO 6 MM + NEOPRENO.webp",
     "desc": "Brazalete diamantado 6mm con neopreno en oro laminado 18k, estilo femenino y moderno."
   },
   {
@@ -12,7 +12,7 @@ export const BRAZALETES_MUJER = [
     "name": "B. Diamantado 8 MM + B. Liso 6 MM",
     "category": "Brazaletes Mujer",
     "price": 175000,
-    "image": "/BRAZALETES MUJER/B. DIAMANTADO 8 MM + B. LISO 6 MM.png",
+    "image": "/BRAZALETES MUJER/B. DIAMANTADO 8 MM + B. LISO 6 MM.webp",
     "desc": "Brazalete diamantado 8mm combinado con liso 6mm en oro laminado 18k."
   },
   {
@@ -20,7 +20,7 @@ export const BRAZALETES_MUJER = [
     "name": "B. Diamantado y Liso 3 MM",
     "category": "Brazaletes Mujer",
     "price": 145000,
-    "image": "/BRAZALETES MUJER/B. DIAMANTADO Y LISO 3 MM.png",
+    "image": "/BRAZALETES MUJER/B. DIAMANTADO Y LISO 3 MM.webp",
     "desc": "Brazalete diamantado y liso 3mm en oro laminado 18k, delicado y elegante."
   },
   {
@@ -28,7 +28,7 @@ export const BRAZALETES_MUJER = [
     "name": "B. Diamantado y Liso 6 MM + Neopreno",
     "category": "Brazaletes Mujer",
     "price": 168000,
-    "image": "/BRAZALETES MUJER/B. DIAMANTADO Y LISO 6 MM + NEOPRENO.png",
+    "image": "/BRAZALETES MUJER/B. DIAMANTADO Y LISO 6 MM + NEOPRENO.webp",
     "desc": "Brazalete diamantado y liso 6mm con neopreno en oro laminado 18k."
   },
   {
@@ -36,7 +36,7 @@ export const BRAZALETES_MUJER = [
     "name": "B. Liso 4 MM Continuo",
     "category": "Brazaletes Mujer",
     "price": 140000,
-    "image": "/BRAZALETES MUJER/B. LISO 4 MM CONTINUO.png",
+    "image": "/BRAZALETES MUJER/B. LISO 4 MM CONTINUO.webp",
     "desc": "Brazalete liso 4mm continuo en oro laminado 18k, minimalista y clásico."
   },
   {
@@ -44,7 +44,7 @@ export const BRAZALETES_MUJER = [
     "name": "B. Liso 6 MM + Neopreno",
     "category": "Brazaletes Mujer",
     "price": 155000,
-    "image": "/BRAZALETES MUJER/B. LISO 6 MM + NEOPRENO.png",
+    "image": "/BRAZALETES MUJER/B. LISO 6 MM + NEOPRENO.webp",
     "desc": "Brazalete liso 6mm con neopreno en oro laminado 18k."
   },
   {
@@ -52,7 +52,7 @@ export const BRAZALETES_MUJER = [
     "name": "B. Liso 6 MM y 4 MM",
     "category": "Brazaletes Mujer",
     "price": 160000,
-    "image": "/BRAZALETES MUJER/B. LISO 6 MM Y 4 MM.png",
+    "image": "/BRAZALETES MUJER/B. LISO 6 MM Y 4 MM.webp",
     "desc": "Brazalete doble liso 6mm y 4mm en oro laminado 18k, combinación perfecta."
   },
   {
@@ -60,7 +60,7 @@ export const BRAZALETES_MUJER = [
     "name": "B. Liso 8 MM - 6 MM + Neopreno",
     "category": "Brazaletes Mujer",
     "price": 172000,
-    "image": "/BRAZALETES MUJER/B. LISO 8 MM - 6 MM + NEOPRENO.png",
+    "image": "/BRAZALETES MUJER/B. LISO 8 MM - 6 MM + NEOPRENO.webp",
     "desc": "Brazalete liso triple 8mm-6mm con neopreno en oro laminado 18k."
   },
   {
@@ -68,7 +68,7 @@ export const BRAZALETES_MUJER = [
     "name": "B. Liso Full 6 MM - 5 MM - 4 MM",
     "category": "Brazaletes Mujer",
     "price": 180000,
-    "image": "/BRAZALETES MUJER/B. LISO FULL 6 MM - 5 MM - 4 MM.png",
+    "image": "/BRAZALETES MUJER/B. LISO FULL 6 MM - 5 MM - 4 MM.webp",
     "desc": "Brazalete liso full en tres tallas 6mm-5mm-4mm en oro laminado 18k."
   },
   {
@@ -76,7 +76,7 @@ export const BRAZALETES_MUJER = [
     "name": "B. Liso Rosa Full 4 MM",
     "category": "Brazaletes Mujer",
     "price": 148000,
-    "image": "/BRAZALETES MUJER/B. LISO ROSA FULL 4 MM.png",
+    "image": "/BRAZALETES MUJER/B. LISO ROSA FULL 4 MM.webp",
     "desc": "Brazalete liso rosa full 4mm en oro laminado 18k rosa, femenino y delicado."
   },
   {
@@ -84,7 +84,7 @@ export const BRAZALETES_MUJER = [
     "name": "Balín 5 MM + Neopreno",
     "category": "Brazaletes Mujer",
     "price": 150000,
-    "image": "/BRAZALETES MUJER/BALIN 5 MM + NEOPRENO.png",
+    "image": "/BRAZALETES MUJER/BALIN 5 MM + NEOPRENO.webp",
     "desc": "Brazalete balín 5mm con neopreno en oro laminado 18k."
   },
   {
@@ -92,7 +92,7 @@ export const BRAZALETES_MUJER = [
     "name": "Balín Liso 5 MM + Neopreno",
     "category": "Brazaletes Mujer",
     "price": 152000,
-    "image": "/BRAZALETES MUJER/BALIN LISO 5 MM + NEOPRENO.png",
+    "image": "/BRAZALETES MUJER/BALIN LISO 5 MM + NEOPRENO.webp",
     "desc": "Brazalete balín liso 5mm con neopreno en oro laminado 18k."
   },
   {
@@ -100,7 +100,7 @@ export const BRAZALETES_MUJER = [
     "name": "Balín Liso 6 MM + Bicolor 4 MM",
     "category": "Brazaletes Mujer",
     "price": 162000,
-    "image": "/BRAZALETES MUJER/BALIN LISO 6 MM + BICOLOR 4 MM.png",
+    "image": "/BRAZALETES MUJER/BALIN LISO 6 MM + BICOLOR 4 MM.webp",
     "desc": "Brazalete balín liso 6mm con bicolor 4mm en oro laminado 18k."
   },
   {
@@ -108,7 +108,7 @@ export const BRAZALETES_MUJER = [
     "name": "Balín Liso Full 5 MM",
     "category": "Brazaletes Mujer",
     "price": 155000,
-    "image": "/BRAZALETES MUJER/BALIN LISO FULL 5 MM.png",
+    "image": "/BRAZALETES MUJER/BALIN LISO FULL 5 MM.webp",
     "desc": "Brazalete balín liso full 5mm en oro laminado 18k."
   },
   {
@@ -116,7 +116,7 @@ export const BRAZALETES_MUJER = [
     "name": "Balín X 6 MM + Neopreno y Liso 5 MM",
     "category": "Brazaletes Mujer",
     "price": 168000,
-    "image": "/BRAZALETES MUJER/BALIN X 6 MM + NEOPRENO Y LISO 5 MM.png",
+    "image": "/BRAZALETES MUJER/BALIN X 6 MM + NEOPRENO Y LISO 5 MM.webp",
     "desc": "Brazalete balín X 6mm con neopreno y liso 5mm en oro laminado 18k."
   },
   {
@@ -124,7 +124,7 @@ export const BRAZALETES_MUJER = [
     "name": "Balín X 8 MM y Neopreno + B. Diamantado y Liso 6 MM",
     "category": "Brazaletes Mujer",
     "price": 185000,
-    "image": "/BRAZALETES MUJER/BALIN X 8 MM  Y NEOPRENO + B. DIAMANTADO Y LISO 6 MM.png",
+    "image": "/BRAZALETES MUJER/BALIN X 8 MM  Y NEOPRENO + B. DIAMANTADO Y LISO 6 MM.webp",
     "desc": "Brazalete balín X 8mm y neopreno combinado con diamantado y liso 6mm en oro laminado 18k."
   },
   {
@@ -132,7 +132,7 @@ export const BRAZALETES_MUJER = [
     "name": "Balín X 8 MM + B. Liso 6 MM",
     "category": "Brazaletes Mujer",
     "price": 175000,
-    "image": "/BRAZALETES MUJER/BALIN X 8 MM + B. LISO 6 MM.png",
+    "image": "/BRAZALETES MUJER/BALIN X 8 MM + B. LISO 6 MM.webp",
     "desc": "Brazalete balín X 8mm con liso 6mm en oro laminado 18k."
   },
   {
@@ -140,7 +140,7 @@ export const BRAZALETES_MUJER = [
     "name": "Diamantado 5 MM + Liso 4 MM",
     "category": "Brazaletes Mujer",
     "price": 158000,
-    "image": "/BRAZALETES MUJER/DIAMANTADO 5 MM + LISO 4 MM.png",
+    "image": "/BRAZALETES MUJER/DIAMANTADO 5 MM + LISO 4 MM.webp",
     "desc": "Brazalete diamantado 5mm con liso 4mm en oro laminado 18k."
   },
   {
@@ -148,7 +148,7 @@ export const BRAZALETES_MUJER = [
     "name": "Diamantado 6 MM + Balín 5 MM",
     "category": "Brazaletes Mujer",
     "price": 163000,
-    "image": "/BRAZALETES MUJER/DIAMANTADO 6 MM + BALIN 5 MM.png",
+    "image": "/BRAZALETES MUJER/DIAMANTADO 6 MM + BALIN 5 MM.webp",
     "desc": "Brazalete diamantado 6mm con balín 5mm en oro laminado 18k."
   },
   {
@@ -156,7 +156,7 @@ export const BRAZALETES_MUJER = [
     "name": "Media Luna + B. Liso 6 MM y Neopreno",
     "category": "Brazaletes Mujer",
     "price": 170000,
-    "image": "/BRAZALETES MUJER/MEDIA LUNA + B. LISO 6 MM Y NEOPRENO.png",
+    "image": "/BRAZALETES MUJER/MEDIA LUNA + B. LISO 6 MM Y NEOPRENO.webp",
     "desc": "Brazalete media luna con liso 6mm y neopreno en oro laminado 18k."
   },
   {
@@ -164,7 +164,7 @@ export const BRAZALETES_MUJER = [
     "name": "Mini Rostro + Diamantado 6 MM y Liso 5 MM",
     "category": "Brazaletes Mujer",
     "price": 178000,
-    "image": "/BRAZALETES MUJER/MINI ROSTRO + DIAMANTADO 6 MM Y LISO 5 MM.png",
+    "image": "/BRAZALETES MUJER/MINI ROSTRO + DIAMANTADO 6 MM Y LISO 5 MM.webp",
     "desc": "Brazalete con dije mini rostro, diamantado 6mm y liso 5mm en oro laminado 18k."
   },
   {
@@ -172,7 +172,7 @@ export const BRAZALETES_MUJER = [
     "name": "Mini Serpiente 3 MM",
     "category": "Brazaletes Mujer",
     "price": 145000,
-    "image": "/BRAZALETES MUJER/MINI SERPIENTE 3 MM.png",
+    "image": "/BRAZALETES MUJER/MINI SERPIENTE 3 MM.webp",
     "desc": "Brazalete mini serpiente 3mm en oro laminado 18k, fino y elegante."
   },
   {
@@ -180,7 +180,7 @@ export const BRAZALETES_MUJER = [
     "name": "Perfect Love + B. Liso 6 MM y 5 MM",
     "category": "Brazaletes Mujer",
     "price": 180000,
-    "image": "/BRAZALETES MUJER/PERFECT LOVE + B. LISO 6 MM Y 5 MM.png",
+    "image": "/BRAZALETES MUJER/PERFECT LOVE + B. LISO 6 MM Y 5 MM.webp",
     "desc": "Brazalete Perfect Love con liso 6mm y 5mm en oro laminado 18k."
   },
   {
@@ -188,7 +188,7 @@ export const BRAZALETES_MUJER = [
     "name": "Rondel 4 MM + Balín 4 MM y 3 MM",
     "category": "Brazaletes Mujer",
     "price": 155000,
-    "image": "/BRAZALETES MUJER/RONDEL 4 MM + BALIN 4 MM Y 3 MM.png",
+    "image": "/BRAZALETES MUJER/RONDEL 4 MM + BALIN 4 MM Y 3 MM.webp",
     "desc": "Brazalete rondel 4mm con balín 4mm y 3mm en oro laminado 18k."
   },
   {
@@ -196,7 +196,7 @@ export const BRAZALETES_MUJER = [
     "name": "Rondel 4 MM + Balín Liso 5 MM - 4 MM",
     "category": "Brazaletes Mujer",
     "price": 160000,
-    "image": "/BRAZALETES MUJER/RONDEL 4 MM + BALIN LISO 5 MM - 4 MM.png",
+    "image": "/BRAZALETES MUJER/RONDEL 4 MM + BALIN LISO 5 MM - 4 MM.webp",
     "desc": "Brazalete rondel 4mm con balín liso 5mm-4mm en oro laminado 18k."
   },
   {
@@ -204,7 +204,7 @@ export const BRAZALETES_MUJER = [
     "name": "Rondel 4 MM + Balín Liso 6 MM - 4 MM",
     "category": "Brazaletes Mujer",
     "price": 162000,
-    "image": "/BRAZALETES MUJER/RONDEL 4 MM + BALIN LISO 6 MM - 4 MM.png",
+    "image": "/BRAZALETES MUJER/RONDEL 4 MM + BALIN LISO 6 MM - 4 MM.webp",
     "desc": "Brazalete rondel 4mm con balín liso 6mm-4mm en oro laminado 18k."
   },
   {
@@ -212,7 +212,7 @@ export const BRAZALETES_MUJER = [
     "name": "Rondel y B. Diamantado 6 MM + B. Liso 5 MM",
     "category": "Brazaletes Mujer",
     "price": 172000,
-    "image": "/BRAZALETES MUJER/RONDEL Y B. DIAMANTADO 6 MM + B. LISO 5 MM.png",
+    "image": "/BRAZALETES MUJER/RONDEL Y B. DIAMANTADO 6 MM + B. LISO 5 MM.webp",
     "desc": "Brazalete rondel y diamantado 6mm con liso 5mm en oro laminado 18k."
   },
   {
@@ -220,7 +220,7 @@ export const BRAZALETES_MUJER = [
     "name": "San Benito + Balín 4 MM",
     "category": "Brazaletes Mujer",
     "price": 165000,
-    "image": "/BRAZALETES MUJER/SAN BENITO + BALIN 4 MM.png",
+    "image": "/BRAZALETES MUJER/SAN BENITO + BALIN 4 MM.webp",
     "desc": "Brazalete con medalla San Benito y balín 4mm en oro laminado 18k, de gran devoción."
   },
   {
@@ -228,7 +228,7 @@ export const BRAZALETES_MUJER = [
     "name": "Tejido Continuo 4MM",
     "category": "Brazaletes Mujer",
     "price": 148000,
-    "image": "/BRAZALETES MUJER/TEJIDO CONTINUO 4MM.png",
+    "image": "/BRAZALETES MUJER/TEJIDO CONTINUO 4MM.webp",
     "desc": "Brazalete tejido continuo 4mm en oro laminado 18k, diseño artesanal."
   },
   {
@@ -236,7 +236,7 @@ export const BRAZALETES_MUJER = [
     "name": "Unicornio + B. Liso 6 MM",
     "category": "Brazaletes Mujer",
     "price": 170000,
-    "image": "/BRAZALETES MUJER/UNICORNIO + B. LISO 6 MM.png",
+    "image": "/BRAZALETES MUJER/UNICORNIO + B. LISO 6 MM.webp",
     "desc": "Brazalete con dije unicornio y balín liso 6mm en oro laminado 18k."
   },
   {
@@ -244,7 +244,7 @@ export const BRAZALETES_MUJER = [
     "name": "Virgen Milagrosa + Tricolor 5 MM",
     "category": "Brazaletes Mujer",
     "price": 175000,
-    "image": "/BRAZALETES MUJER/VIRGEN MILAGROSA + TRICOLOR 5 MM.png",
+    "image": "/BRAZALETES MUJER/VIRGEN MILAGROSA + TRICOLOR 5 MM.webp",
     "desc": "Brazalete Virgen Milagrosa con tricolor 5mm en oro laminado 18k, de gran fe."
   },
   {

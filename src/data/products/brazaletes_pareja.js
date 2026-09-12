@@ -244,7 +244,7 @@ export const BRAZALETES_PAREJA = [
     "name": "PP043 - CANUTILLO + BALIN ITALIANO 5MM",
     "category": "Brazaletes Pareja",
     "price": 170000,
-    "image": "https://orolaminado18k.com.co/img/PP043/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP043/PERFIL.webp",
     "desc": "PP043 - CANUTILLO + BALIN ITALIANO 5MM en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP043."
   },
   {
@@ -276,7 +276,7 @@ export const BRAZALETES_PAREJA = [
     "name": "PP047 - BALIN 6MM + BALIN ROSA 4MM",
     "category": "Brazaletes Pareja",
     "price": 130000,
-    "image": "https://orolaminado18k.com.co/img/PP047/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP047/PERFIL.webp",
     "desc": "PP047 - BALIN 6MM + BALIN ROSA 4MM en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP047."
   },
   {
@@ -292,7 +292,7 @@ export const BRAZALETES_PAREJA = [
     "name": "PP049 - FULL ITALY 5MM + NEOPRENO",
     "category": "Brazaletes Pareja",
     "price": 210000,
-    "image": "https://orolaminado18k.com.co/img/PP049/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP049/PERFIL.webp",
     "desc": "PP049 - FULL ITALY 5MM + NEOPRENO en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP049."
   },
   {
@@ -300,7 +300,7 @@ export const BRAZALETES_PAREJA = [
     "name": "PP050 - ITALY 5MM + BALIN 4MM",
     "category": "Brazaletes Pareja",
     "price": 90000,
-    "image": "https://orolaminado18k.com.co/img/PP050/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP050/PERFIL.webp",
     "desc": "PP050 - ITALY 5MM + BALIN 4MM en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP050."
   },
   {
@@ -356,7 +356,7 @@ export const BRAZALETES_PAREJA = [
     "name": "PP058 - FULL 8MM",
     "category": "Brazaletes Pareja",
     "price": 160000,
-    "image": "https://orolaminado18k.com.co/img/PP058/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP058/PERFIL.webp",
     "desc": "PP058 - FULL 8MM en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP058."
   },
   {
@@ -452,7 +452,7 @@ export const BRAZALETES_PAREJA = [
     "name": "PP071 - FULL BALIN LISO 3MM",
     "category": "Brazaletes Pareja",
     "price": 150000,
-    "image": "https://orolaminado18k.com.co/img/PP071/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP071/PERFIL.webp",
     "desc": "PP071 - FULL BALIN LISO 3MM en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP071."
   },
   {
@@ -460,7 +460,7 @@ export const BRAZALETES_PAREJA = [
     "name": "PP072 - ITALY 6MM + LISO 4MM",
     "category": "Brazaletes Pareja",
     "price": 150000,
-    "image": "https://orolaminado18k.com.co/img/PP072/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP072/PERFIL.webp",
     "desc": "PP072 - ITALY 6MM + LISO 4MM en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP072."
   },
   {
@@ -468,7 +468,7 @@ export const BRAZALETES_PAREJA = [
     "name": "PP073 - FULL NEOPRENO Y BALIN LISO 4MM",
     "category": "Brazaletes Pareja",
     "price": 100000,
-    "image": "https://orolaminado18k.com.co/img/PP073/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP073/PERFIL.webp",
     "desc": "PP073 - FULL NEOPRENO Y BALIN LISO 4MM en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP073."
   },
   {
@@ -508,7 +508,7 @@ export const BRAZALETES_PAREJA = [
     "name": "Pulsera san benito 6 5 4 mm",
     "category": "Brazaletes Pareja",
     "price": 280000,
-    "image": "https://orolaminado18k.com.co/img/PP078/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP078/PERFIL.webp",
     "desc": "Pulsera san benito 6 5 4 mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP078."
   },
   {
@@ -516,7 +516,7 @@ export const BRAZALETES_PAREJA = [
     "name": "Pulsera san benito italisa 4mm",
     "category": "Brazaletes Pareja",
     "price": 240000,
-    "image": "https://orolaminado18k.com.co/img/PP079/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP079/PERFIL.webp",
     "desc": "Pulsera san benito italisa 4mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP079."
   },
   {
@@ -572,7 +572,7 @@ export const BRAZALETES_PAREJA = [
     "name": "Pulsera infinito 3 y 5mm",
     "category": "Brazaletes Pareja",
     "price": 210000,
-    "image": "https://orolaminado18k.com.co/img/PP086/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP086/PERFIL.webp",
     "desc": "Pulsera infinito 3 y 5mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP086."
   },
   {
@@ -612,7 +612,7 @@ export const BRAZALETES_PAREJA = [
     "name": "Pulsera san benito 5mm",
     "category": "Brazaletes Pareja",
     "price": 210000,
-    "image": "https://orolaminado18k.com.co/img/PP091/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP091/PERFIL.webp",
     "desc": "Pulsera san benito 5mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP091."
   },
   {
@@ -620,7 +620,7 @@ export const BRAZALETES_PAREJA = [
     "name": "Pulsera tricolor 4mm",
     "category": "Brazaletes Pareja",
     "price": 130000,
-    "image": "https://orolaminado18k.com.co/img/PP092/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP092/PERFIL.webp",
     "desc": "Pulsera tricolor 4mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP092."
   },
   {
@@ -628,7 +628,7 @@ export const BRAZALETES_PAREJA = [
     "name": "Pulsera san benito 5mm rondel 4mm",
     "category": "Brazaletes Pareja",
     "price": 260000,
-    "image": "https://orolaminado18k.com.co/img/PP093/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP093/PERFIL.webp",
     "desc": "Pulsera san benito 5mm rondel 4mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP093."
   },
   {
@@ -644,7 +644,7 @@ export const BRAZALETES_PAREJA = [
     "name": "Pulsera san benito italisa 5-6mm",
     "category": "Brazaletes Pareja",
     "price": 280000,
-    "image": "https://orolaminado18k.com.co/img/PP095/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP095/PERFIL.webp",
     "desc": "Pulsera san benito italisa 5-6mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP095."
   },
   {
@@ -668,7 +668,7 @@ export const BRAZALETES_PAREJA = [
     "name": "Pulsera san benito italiana y frances 4 6mm",
     "category": "Brazaletes Pareja",
     "price": 260000,
-    "image": "https://orolaminado18k.com.co/img/PP098/PP098.png",
+    "image": "https://orolaminado18k.com.co/img/PP098/PP098.webp",
     "desc": "Pulsera san benito italiana y frances 4 6mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP098."
   },
   {
@@ -684,7 +684,7 @@ export const BRAZALETES_PAREJA = [
     "name": "Pulsera balin 8 y 6mm rondel 5mm",
     "category": "Brazaletes Pareja",
     "price": 400000,
-    "image": "https://orolaminado18k.com.co/img/PP100/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP100/PERFIL.webp",
     "desc": "Pulsera balin 8 y 6mm rondel 5mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP100."
   },
   {
@@ -692,7 +692,7 @@ export const BRAZALETES_PAREJA = [
     "name": "Pulsera balin italiano 6mm rondel 5mm",
     "category": "Brazaletes Pareja",
     "price": 270000,
-    "image": "https://orolaminado18k.com.co/img/PP101/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP101/PERFIL.webp",
     "desc": "Pulsera balin italiano 6mm rondel 5mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP101."
   },
   {
@@ -700,7 +700,7 @@ export const BRAZALETES_PAREJA = [
     "name": "Pulsera balin diamantado y liso 6mm",
     "category": "Brazaletes Pareja",
     "price": 190000,
-    "image": "https://orolaminado18k.com.co/img/PP102/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP102/PERFIL.webp",
     "desc": "Pulsera balin diamantado y liso 6mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP102."
   },
   {
@@ -748,7 +748,7 @@ export const BRAZALETES_PAREJA = [
     "name": "Pulseras cruz 5 y 6mm",
     "category": "Brazaletes Pareja",
     "price": 220000,
-    "image": "https://orolaminado18k.com.co/img/PP108/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP108/PERFIL.webp",
     "desc": "Pulseras cruz 5 y 6mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP108."
   },
   {
@@ -796,7 +796,7 @@ export const BRAZALETES_PAREJA = [
     "name": "Pulseras balin marcado 6 4 y 3mm",
     "category": "Brazaletes Pareja",
     "price": 140000,
-    "image": "https://orolaminado18k.com.co/img/PP114/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP114/PERFIL.webp",
     "desc": "Pulseras balin marcado 6 4 y 3mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP114."
   },
   {
@@ -804,7 +804,7 @@ export const BRAZALETES_PAREJA = [
     "name": "Pulseras balin marcado 6 y 5mm",
     "category": "Brazaletes Pareja",
     "price": 230000,
-    "image": "https://orolaminado18k.com.co/img/PP115/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP115/PERFIL.webp",
     "desc": "Pulseras balin marcado 6 y 5mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP115."
   },
   {
@@ -820,7 +820,7 @@ export const BRAZALETES_PAREJA = [
     "name": "Pulseras balin diamantado 6 y 4mm",
     "category": "Brazaletes Pareja",
     "price": 90000,
-    "image": "https://orolaminado18k.com.co/img/PP117/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP117/PERFIL.webp",
     "desc": "Pulseras balin diamantado 6 y 4mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP117."
   },
   {
@@ -836,7 +836,7 @@ export const BRAZALETES_PAREJA = [
     "name": "Pulseras cruz diamantado 6 y 4mm",
     "category": "Brazaletes Pareja",
     "price": 220000,
-    "image": "https://orolaminado18k.com.co/img/PP120/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP120/PERFIL.webp",
     "desc": "Pulseras cruz diamantado 6 y 4mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP120."
   },
   {
@@ -844,7 +844,7 @@ export const BRAZALETES_PAREJA = [
     "name": "Pulseras full balin 3 y 4mm",
     "category": "Brazaletes Pareja",
     "price": 280000,
-    "image": "https://orolaminado18k.com.co/img/PP121/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP121/PERFIL.webp",
     "desc": "Pulseras full balin 3 y 4mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP121."
   },
   {
@@ -852,7 +852,7 @@ export const BRAZALETES_PAREJA = [
     "name": "Pulseras 3mm diamantadas italianas y lisas",
     "category": "Brazaletes Pareja",
     "price": 100000,
-    "image": "https://orolaminado18k.com.co/img/PP122/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP122/PERFIL.webp",
     "desc": "Pulseras 3mm diamantadas italianas y lisas en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP122."
   },
   {
@@ -860,7 +860,7 @@ export const BRAZALETES_PAREJA = [
     "name": "Pulseras balin marcado 6 y 5mm",
     "category": "Brazaletes Pareja",
     "price": 110000,
-    "image": "https://orolaminado18k.com.co/img/PP123/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP123/PERFIL.webp",
     "desc": "Pulseras balin marcado 6 y 5mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP123."
   },
   {
@@ -868,7 +868,7 @@ export const BRAZALETES_PAREJA = [
     "name": "Pulseras balin italiano 5mm rondel 5mm",
     "category": "Brazaletes Pareja",
     "price": 210000,
-    "image": "https://orolaminado18k.com.co/img/PP124/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP124/PERFIL.webp",
     "desc": "Pulseras balin italiano 5mm rondel 5mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP124."
   },
   {
@@ -876,7 +876,7 @@ export const BRAZALETES_PAREJA = [
     "name": "Pulseras clover balin italiano 5mm",
     "category": "Brazaletes Pareja",
     "price": 230000,
-    "image": "https://orolaminado18k.com.co/img/PP125/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP125/PERFIL.webp",
     "desc": "Pulseras clover balin italiano 5mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP125."
   },
   {
@@ -884,7 +884,7 @@ export const BRAZALETES_PAREJA = [
     "name": "Pulseras virgen guadalupe italiano 5mm",
     "category": "Brazaletes Pareja",
     "price": 190000,
-    "image": "https://orolaminado18k.com.co/img/PP126/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP126/PERFIL.webp",
     "desc": "Pulseras virgen guadalupe italiano 5mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP126."
   },
   {
@@ -892,7 +892,7 @@ export const BRAZALETES_PAREJA = [
     "name": "Pulsera balin san benito italiano 5mm",
     "category": "Brazaletes Pareja",
     "price": 230000,
-    "image": "https://orolaminado18k.com.co/img/PP127/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP127/PERFIL.webp",
     "desc": "Pulsera balin san benito italiano 5mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP127."
   },
   {
@@ -900,7 +900,7 @@ export const BRAZALETES_PAREJA = [
     "name": "Pulseras balin liso 6 4mm italiano 5mm",
     "category": "Brazaletes Pareja",
     "price": 200000,
-    "image": "https://orolaminado18k.com.co/img/PP128/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP128/PERFIL.webp",
     "desc": "Pulseras balin liso 6 4mm italiano 5mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP128."
   },
   {
@@ -908,7 +908,7 @@ export const BRAZALETES_PAREJA = [
     "name": "Pulseras balin italiano 5mm liso 5 4mm",
     "category": "Brazaletes Pareja",
     "price": 140000,
-    "image": "https://orolaminado18k.com.co/img/PP130/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP130/PERFIL.webp",
     "desc": "Pulseras balin italiano 5mm liso 5 4mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP130."
   },
   {
@@ -916,7 +916,7 @@ export const BRAZALETES_PAREJA = [
     "name": "Pulseras balin italiano 5mm",
     "category": "Brazaletes Pareja",
     "price": 180000,
-    "image": "https://orolaminado18k.com.co/img/PP131/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP131/PERFIL.webp",
     "desc": "Pulseras balin italiano 5mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP131."
   },
   {
@@ -924,7 +924,7 @@ export const BRAZALETES_PAREJA = [
     "name": "Pulseras balin italiano y liso 5mm san benito",
     "category": "Brazaletes Pareja",
     "price": 240000,
-    "image": "https://orolaminado18k.com.co/img/PP132/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP132/PERFIL.webp",
     "desc": "Pulseras balin italiano y liso 5mm san benito en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP132."
   },
   {
@@ -932,7 +932,7 @@ export const BRAZALETES_PAREJA = [
     "name": "Pulseras balin diamantado 6mm italiano 5mm",
     "category": "Brazaletes Pareja",
     "price": 210000,
-    "image": "https://orolaminado18k.com.co/img/PP133/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP133/PERFIL.webp",
     "desc": "Pulseras balin diamantado 6mm italiano 5mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP133."
   },
   {
@@ -940,7 +940,7 @@ export const BRAZALETES_PAREJA = [
     "name": "Pulseras balin rondel italiano 5mm liso 4mm",
     "category": "Brazaletes Pareja",
     "price": 140000,
-    "image": "https://orolaminado18k.com.co/img/PP134/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP134/PERFIL.webp",
     "desc": "Pulseras balin rondel italiano 5mm liso 4mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP134."
   },
   {
@@ -948,7 +948,7 @@ export const BRAZALETES_PAREJA = [
     "name": "Pulseras 7 nudos italiano 5mm",
     "category": "Brazaletes Pareja",
     "price": 150000,
-    "image": "https://orolaminado18k.com.co/img/PP135/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP135/PERFIL.webp",
     "desc": "Pulseras 7 nudos italiano 5mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP135."
   },
   {
@@ -956,7 +956,7 @@ export const BRAZALETES_PAREJA = [
     "name": "Pulseras Medalla San benito balin Italy 5mm",
     "category": "Brazaletes Pareja",
     "price": 200000,
-    "image": "https://orolaminado18k.com.co/img/PP137/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP137/PERFIL.webp",
     "desc": "Pulseras Medalla San benito balin Italy 5mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP137."
   },
   {
@@ -964,7 +964,7 @@ export const BRAZALETES_PAREJA = [
     "name": "Pulsera  Infinito Tricolor",
     "category": "Brazaletes Pareja",
     "price": 220000,
-    "image": "https://orolaminado18k.com.co/img/PP138/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP138/PERFIL.webp",
     "desc": "Pulsera  Infinito Tricolor en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP138."
   },
   {
@@ -1388,7 +1388,7 @@ export const BRAZALETES_PAREJA = [
     "name": "PP043 - CANUTILLO + BALIN ITALIANO 5MM",
     "category": "Brazaletes Pareja",
     "price": 170000,
-    "image": "https://orolaminado18k.com.co/img/PP043/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP043/PERFIL.webp",
     "desc": "PP043 - CANUTILLO + BALIN ITALIANO 5MM en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP043."
   },
   {
@@ -1420,7 +1420,7 @@ export const BRAZALETES_PAREJA = [
     "name": "PP047 - BALIN 6MM + BALIN ROSA 4MM",
     "category": "Brazaletes Pareja",
     "price": 130000,
-    "image": "https://orolaminado18k.com.co/img/PP047/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP047/PERFIL.webp",
     "desc": "PP047 - BALIN 6MM + BALIN ROSA 4MM en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP047."
   },
   {
@@ -1436,7 +1436,7 @@ export const BRAZALETES_PAREJA = [
     "name": "PP049 - FULL ITALY 5MM + NEOPRENO",
     "category": "Brazaletes Pareja",
     "price": 210000,
-    "image": "https://orolaminado18k.com.co/img/PP049/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP049/PERFIL.webp",
     "desc": "PP049 - FULL ITALY 5MM + NEOPRENO en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP049."
   },
   {
@@ -1444,7 +1444,7 @@ export const BRAZALETES_PAREJA = [
     "name": "PP050 - ITALY 5MM + BALIN 4MM",
     "category": "Brazaletes Pareja",
     "price": 90000,
-    "image": "https://orolaminado18k.com.co/img/PP050/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP050/PERFIL.webp",
     "desc": "PP050 - ITALY 5MM + BALIN 4MM en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP050."
   },
   {
@@ -1500,7 +1500,7 @@ export const BRAZALETES_PAREJA = [
     "name": "PP058 - FULL 8MM",
     "category": "Brazaletes Pareja",
     "price": 160000,
-    "image": "https://orolaminado18k.com.co/img/PP058/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP058/PERFIL.webp",
     "desc": "PP058 - FULL 8MM en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP058."
   },
   {
@@ -1596,7 +1596,7 @@ export const BRAZALETES_PAREJA = [
     "name": "PP071 - FULL BALIN LISO 3MM",
     "category": "Brazaletes Pareja",
     "price": 150000,
-    "image": "https://orolaminado18k.com.co/img/PP071/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP071/PERFIL.webp",
     "desc": "PP071 - FULL BALIN LISO 3MM en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP071."
   },
   {
@@ -1604,7 +1604,7 @@ export const BRAZALETES_PAREJA = [
     "name": "PP072 - ITALY 6MM + LISO 4MM",
     "category": "Brazaletes Pareja",
     "price": 150000,
-    "image": "https://orolaminado18k.com.co/img/PP072/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP072/PERFIL.webp",
     "desc": "PP072 - ITALY 6MM + LISO 4MM en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP072."
   },
   {
@@ -1612,7 +1612,7 @@ export const BRAZALETES_PAREJA = [
     "name": "PP073 - FULL NEOPRENO Y BALIN LISO 4MM",
     "category": "Brazaletes Pareja",
     "price": 100000,
-    "image": "https://orolaminado18k.com.co/img/PP073/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP073/PERFIL.webp",
     "desc": "PP073 - FULL NEOPRENO Y BALIN LISO 4MM en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP073."
   },
   {
@@ -1652,7 +1652,7 @@ export const BRAZALETES_PAREJA = [
     "name": "Pulsera san benito 6 5 4 mm",
     "category": "Brazaletes Pareja",
     "price": 280000,
-    "image": "https://orolaminado18k.com.co/img/PP078/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP078/PERFIL.webp",
     "desc": "Pulsera san benito 6 5 4 mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP078."
   },
   {
@@ -1660,7 +1660,7 @@ export const BRAZALETES_PAREJA = [
     "name": "Pulsera san benito italisa 4mm",
     "category": "Brazaletes Pareja",
     "price": 240000,
-    "image": "https://orolaminado18k.com.co/img/PP079/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP079/PERFIL.webp",
     "desc": "Pulsera san benito italisa 4mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP079."
   },
   {
@@ -1716,7 +1716,7 @@ export const BRAZALETES_PAREJA = [
     "name": "Pulsera infinito 3 y 5mm",
     "category": "Brazaletes Pareja",
     "price": 210000,
-    "image": "https://orolaminado18k.com.co/img/PP086/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP086/PERFIL.webp",
     "desc": "Pulsera infinito 3 y 5mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP086."
   },
   {
@@ -1756,7 +1756,7 @@ export const BRAZALETES_PAREJA = [
     "name": "Pulsera san benito 5mm",
     "category": "Brazaletes Pareja",
     "price": 210000,
-    "image": "https://orolaminado18k.com.co/img/PP091/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP091/PERFIL.webp",
     "desc": "Pulsera san benito 5mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP091."
   },
   {
@@ -1764,7 +1764,7 @@ export const BRAZALETES_PAREJA = [
     "name": "Pulsera tricolor 4mm",
     "category": "Brazaletes Pareja",
     "price": 130000,
-    "image": "https://orolaminado18k.com.co/img/PP092/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP092/PERFIL.webp",
     "desc": "Pulsera tricolor 4mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP092."
   },
   {
@@ -1772,7 +1772,7 @@ export const BRAZALETES_PAREJA = [
     "name": "Pulsera san benito 5mm rondel 4mm",
     "category": "Brazaletes Pareja",
     "price": 260000,
-    "image": "https://orolaminado18k.com.co/img/PP093/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP093/PERFIL.webp",
     "desc": "Pulsera san benito 5mm rondel 4mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP093."
   },
   {
@@ -1788,7 +1788,7 @@ export const BRAZALETES_PAREJA = [
     "name": "Pulsera san benito italisa 5-6mm",
     "category": "Brazaletes Pareja",
     "price": 280000,
-    "image": "https://orolaminado18k.com.co/img/PP095/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP095/PERFIL.webp",
     "desc": "Pulsera san benito italisa 5-6mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP095."
   },
   {
@@ -1812,7 +1812,7 @@ export const BRAZALETES_PAREJA = [
     "name": "Pulsera san benito italiana y frances 4 6mm",
     "category": "Brazaletes Pareja",
     "price": 260000,
-    "image": "https://orolaminado18k.com.co/img/PP098/PP098.png",
+    "image": "https://orolaminado18k.com.co/img/PP098/PP098.webp",
     "desc": "Pulsera san benito italiana y frances 4 6mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP098."
   },
   {
@@ -1828,7 +1828,7 @@ export const BRAZALETES_PAREJA = [
     "name": "Pulsera balin 8 y 6mm rondel 5mm",
     "category": "Brazaletes Pareja",
     "price": 400000,
-    "image": "https://orolaminado18k.com.co/img/PP100/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP100/PERFIL.webp",
     "desc": "Pulsera balin 8 y 6mm rondel 5mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP100."
   },
   {
@@ -1836,7 +1836,7 @@ export const BRAZALETES_PAREJA = [
     "name": "Pulsera balin italiano 6mm rondel 5mm",
     "category": "Brazaletes Pareja",
     "price": 270000,
-    "image": "https://orolaminado18k.com.co/img/PP101/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP101/PERFIL.webp",
     "desc": "Pulsera balin italiano 6mm rondel 5mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP101."
   },
   {
@@ -1844,7 +1844,7 @@ export const BRAZALETES_PAREJA = [
     "name": "Pulsera balin diamantado y liso 6mm",
     "category": "Brazaletes Pareja",
     "price": 190000,
-    "image": "https://orolaminado18k.com.co/img/PP102/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP102/PERFIL.webp",
     "desc": "Pulsera balin diamantado y liso 6mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP102."
   },
   {
@@ -1892,7 +1892,7 @@ export const BRAZALETES_PAREJA = [
     "name": "Pulseras cruz 5 y 6mm",
     "category": "Brazaletes Pareja",
     "price": 220000,
-    "image": "https://orolaminado18k.com.co/img/PP108/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP108/PERFIL.webp",
     "desc": "Pulseras cruz 5 y 6mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP108."
   },
   {
@@ -1940,7 +1940,7 @@ export const BRAZALETES_PAREJA = [
     "name": "Pulseras balin marcado 6 4 y 3mm",
     "category": "Brazaletes Pareja",
     "price": 140000,
-    "image": "https://orolaminado18k.com.co/img/PP114/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP114/PERFIL.webp",
     "desc": "Pulseras balin marcado 6 4 y 3mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP114."
   },
   {
@@ -1948,7 +1948,7 @@ export const BRAZALETES_PAREJA = [
     "name": "Pulseras balin marcado 6 y 5mm",
     "category": "Brazaletes Pareja",
     "price": 230000,
-    "image": "https://orolaminado18k.com.co/img/PP115/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP115/PERFIL.webp",
     "desc": "Pulseras balin marcado 6 y 5mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP115."
   },
   {
@@ -1964,7 +1964,7 @@ export const BRAZALETES_PAREJA = [
     "name": "Pulseras balin diamantado 6 y 4mm",
     "category": "Brazaletes Pareja",
     "price": 90000,
-    "image": "https://orolaminado18k.com.co/img/PP117/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP117/PERFIL.webp",
     "desc": "Pulseras balin diamantado 6 y 4mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP117."
   },
   {
@@ -1980,7 +1980,7 @@ export const BRAZALETES_PAREJA = [
     "name": "Pulseras cruz diamantado 6 y 4mm",
     "category": "Brazaletes Pareja",
     "price": 220000,
-    "image": "https://orolaminado18k.com.co/img/PP120/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP120/PERFIL.webp",
     "desc": "Pulseras cruz diamantado 6 y 4mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP120."
   },
   {
@@ -1988,7 +1988,7 @@ export const BRAZALETES_PAREJA = [
     "name": "Pulseras full balin 3 y 4mm",
     "category": "Brazaletes Pareja",
     "price": 280000,
-    "image": "https://orolaminado18k.com.co/img/PP121/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP121/PERFIL.webp",
     "desc": "Pulseras full balin 3 y 4mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP121."
   },
   {
@@ -1996,7 +1996,7 @@ export const BRAZALETES_PAREJA = [
     "name": "Pulseras 3mm diamantadas italianas y lisas",
     "category": "Brazaletes Pareja",
     "price": 100000,
-    "image": "https://orolaminado18k.com.co/img/PP122/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP122/PERFIL.webp",
     "desc": "Pulseras 3mm diamantadas italianas y lisas en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP122."
   },
   {
@@ -2004,7 +2004,7 @@ export const BRAZALETES_PAREJA = [
     "name": "Pulseras balin marcado 6 y 5mm",
     "category": "Brazaletes Pareja",
     "price": 110000,
-    "image": "https://orolaminado18k.com.co/img/PP123/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP123/PERFIL.webp",
     "desc": "Pulseras balin marcado 6 y 5mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP123."
   },
   {
@@ -2012,7 +2012,7 @@ export const BRAZALETES_PAREJA = [
     "name": "Pulseras balin italiano 5mm rondel 5mm",
     "category": "Brazaletes Pareja",
     "price": 210000,
-    "image": "https://orolaminado18k.com.co/img/PP124/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP124/PERFIL.webp",
     "desc": "Pulseras balin italiano 5mm rondel 5mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP124."
   },
   {
@@ -2020,7 +2020,7 @@ export const BRAZALETES_PAREJA = [
     "name": "Pulseras clover balin italiano 5mm",
     "category": "Brazaletes Pareja",
     "price": 230000,
-    "image": "https://orolaminado18k.com.co/img/PP125/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP125/PERFIL.webp",
     "desc": "Pulseras clover balin italiano 5mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP125."
   },
   {
@@ -2028,7 +2028,7 @@ export const BRAZALETES_PAREJA = [
     "name": "Pulseras virgen guadalupe italiano 5mm",
     "category": "Brazaletes Pareja",
     "price": 190000,
-    "image": "https://orolaminado18k.com.co/img/PP126/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP126/PERFIL.webp",
     "desc": "Pulseras virgen guadalupe italiano 5mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP126."
   },
   {
@@ -2036,7 +2036,7 @@ export const BRAZALETES_PAREJA = [
     "name": "Pulsera balin san benito italiano 5mm",
     "category": "Brazaletes Pareja",
     "price": 230000,
-    "image": "https://orolaminado18k.com.co/img/PP127/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP127/PERFIL.webp",
     "desc": "Pulsera balin san benito italiano 5mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP127."
   },
   {
@@ -2044,7 +2044,7 @@ export const BRAZALETES_PAREJA = [
     "name": "Pulseras balin liso 6 4mm italiano 5mm",
     "category": "Brazaletes Pareja",
     "price": 200000,
-    "image": "https://orolaminado18k.com.co/img/PP128/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP128/PERFIL.webp",
     "desc": "Pulseras balin liso 6 4mm italiano 5mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP128."
   },
   {
@@ -2052,7 +2052,7 @@ export const BRAZALETES_PAREJA = [
     "name": "Pulseras balin italiano 5mm liso 5 4mm",
     "category": "Brazaletes Pareja",
     "price": 140000,
-    "image": "https://orolaminado18k.com.co/img/PP130/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP130/PERFIL.webp",
     "desc": "Pulseras balin italiano 5mm liso 5 4mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP130."
   },
   {
@@ -2060,7 +2060,7 @@ export const BRAZALETES_PAREJA = [
     "name": "Pulseras balin italiano 5mm",
     "category": "Brazaletes Pareja",
     "price": 180000,
-    "image": "https://orolaminado18k.com.co/img/PP131/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP131/PERFIL.webp",
     "desc": "Pulseras balin italiano 5mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP131."
   },
   {
@@ -2068,7 +2068,7 @@ export const BRAZALETES_PAREJA = [
     "name": "Pulseras balin italiano y liso 5mm san benito",
     "category": "Brazaletes Pareja",
     "price": 240000,
-    "image": "https://orolaminado18k.com.co/img/PP132/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP132/PERFIL.webp",
     "desc": "Pulseras balin italiano y liso 5mm san benito en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP132."
   },
   {
@@ -2076,7 +2076,7 @@ export const BRAZALETES_PAREJA = [
     "name": "Pulseras balin diamantado 6mm italiano 5mm",
     "category": "Brazaletes Pareja",
     "price": 210000,
-    "image": "https://orolaminado18k.com.co/img/PP133/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP133/PERFIL.webp",
     "desc": "Pulseras balin diamantado 6mm italiano 5mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP133."
   },
   {
@@ -2084,7 +2084,7 @@ export const BRAZALETES_PAREJA = [
     "name": "Pulseras balin rondel italiano 5mm liso 4mm",
     "category": "Brazaletes Pareja",
     "price": 140000,
-    "image": "https://orolaminado18k.com.co/img/PP134/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP134/PERFIL.webp",
     "desc": "Pulseras balin rondel italiano 5mm liso 4mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP134."
   },
   {
@@ -2092,7 +2092,7 @@ export const BRAZALETES_PAREJA = [
     "name": "Pulseras 7 nudos italiano 5mm",
     "category": "Brazaletes Pareja",
     "price": 150000,
-    "image": "https://orolaminado18k.com.co/img/PP135/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP135/PERFIL.webp",
     "desc": "Pulseras 7 nudos italiano 5mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP135."
   },
   {
@@ -2100,7 +2100,7 @@ export const BRAZALETES_PAREJA = [
     "name": "Pulseras Medalla San benito balin Italy 5mm",
     "category": "Brazaletes Pareja",
     "price": 200000,
-    "image": "https://orolaminado18k.com.co/img/PP137/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP137/PERFIL.webp",
     "desc": "Pulseras Medalla San benito balin Italy 5mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP137."
   },
   {
@@ -2108,7 +2108,7 @@ export const BRAZALETES_PAREJA = [
     "name": "Pulsera  Infinito Tricolor",
     "category": "Brazaletes Pareja",
     "price": 220000,
-    "image": "https://orolaminado18k.com.co/img/PP138/PERFIL.png",
+    "image": "https://orolaminado18k.com.co/img/PP138/PERFIL.webp",
     "desc": "Pulsera  Infinito Tricolor en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia PP138."
   },
   {

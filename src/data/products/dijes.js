@@ -84,7 +84,7 @@ export const DIJES = [
     "name": "D Cara De Ni?a",
     "category": "Dijes",
     "price": 40000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/22444/PERFIL.jpeg",
+    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/22444/PERFIL.webp",
     "desc": "D Cara De Ni?a en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 22444."
   },
   {
@@ -908,7 +908,7 @@ export const DIJES = [
     "name": "D Charm Crystal",
     "category": "Dijes",
     "price": 85000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/23337/23337.jpg",
+    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/23337/23337.webp",
     "desc": "D Charm Crystal en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 23337."
   },
   {
@@ -1148,7 +1148,7 @@ export const DIJES = [
     "name": "D Madre Guadalupana",
     "category": "Dijes",
     "price": 85000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/23373/23373.jpg",
+    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/23373/23373.webp",
     "desc": "D Madre Guadalupana en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 23373."
   },
   {
@@ -1164,7 +1164,7 @@ export const DIJES = [
     "name": "D Virgen María",
     "category": "Dijes",
     "price": 85000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/23377/23377.jpg",
+    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/23377/23377.webp",
     "desc": "D Virgen María en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 23377."
   },
   {

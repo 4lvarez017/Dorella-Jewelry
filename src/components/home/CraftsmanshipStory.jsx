@@ -7,28 +7,28 @@ const STEPS = [
     title: "Pulsera Base",
     subtitle: "Estructura Madre",
     desc: "El tejido base de alta consistencia constituye los cimientos de la pieza, preparado para recibir los hilos y balines de oro.",
-    img: "/pulsera_base.jpg",
+    img: "/pulsera_base.webp",
   },
   {
     num: "02",
     title: "Diseño en 3 Carriles",
     subtitle: "Triple Hilera Paralela",
     desc: "La estructura se divide en tres hileras paralelas de balines. Esta configuración resalta el tramado artesanal y maximiza la reflexión lumínica.",
-    img: "/pulsera_3_carriles.jpg",
+    img: "/pulsera_3_carriles.webp",
   },
   {
     num: "03",
     title: "Diseño en 4 Carriles",
     subtitle: "Presencia Imponente",
     desc: "Para quienes buscan un volumen superior. El modelo de cuatro carriles otorga cuerpo y opulencia a la pieza.",
-    img: "/pulsera_4_carriles.jpg",
+    img: "/pulsera_4_carriles.webp",
   },
   {
     num: "04",
     title: "Ensamble de Precisión",
     subtitle: "Cierre Armónico",
     desc: "Las hileras confluyen hacia el cierre ajustable en oro. Esta unión asegura durabilidad y un ajuste perfecto al movimiento.",
-    img: "/pulsera_ensamblada.jpg",
+    img: "/pulsera_ensamblada.webp",
   },
   {
     num: "05",
@@ -42,7 +42,7 @@ const STEPS = [
       "4. Enlace de Cobre — Unión molecular sólida entre el núcleo y el oro.",
       "5. Núcleo de Bronce de Joyería — Núcleo maleable de alta densidad.",
     ],
-    img: "/pulsera_materiales.jpg",
+    img: "/pulsera_materiales.webp",
   },
 ];
 

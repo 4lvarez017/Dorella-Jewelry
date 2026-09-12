@@ -4,7 +4,7 @@ export const TOBILLERAS = [
     "name": "Blue Dream 23 CM",
     "category": "Tobilleras",
     "price": 115000,
-    "image": "/TOBILLERA/BLUE DREAM 23 CM.png",
+    "image": "/TOBILLERA/BLUE DREAM 23 CM.webp",
     "desc": "Tobillera Blue Dream 23cm en oro laminado 18k con detalles azules delicados."
   },
   {
@@ -12,7 +12,7 @@ export const TOBILLERAS = [
     "name": "Circonia Bicolor 24.5 CM",
     "category": "Tobilleras",
     "price": 128000,
-    "image": "/TOBILLERA/CIRCONIA BICOLOR 24.5 CM.png",
+    "image": "/TOBILLERA/CIRCONIA BICOLOR 24.5 CM.webp",
     "desc": "Tobillera circonia bicolor 24.5cm en oro laminado 18k, elegante y brillante."
   },
   {
@@ -20,7 +20,7 @@ export const TOBILLERAS = [
     "name": "Circonias Cristal Unisex 22 CM",
     "category": "Tobilleras",
     "price": 125000,
-    "image": "/TOBILLERA/CIRCONIAS CRISTAL UNISEX 22 CM.png",
+    "image": "/TOBILLERA/CIRCONIAS CRISTAL UNISEX 22 CM.webp",
     "desc": "Tobillera unisex con circonias cristal, 22cm en oro laminado 18k."
   },
   {
@@ -28,7 +28,7 @@ export const TOBILLERAS = [
     "name": "Circonias Verdes Unisex 22 CM",
     "category": "Tobilleras",
     "price": 125000,
-    "image": "/TOBILLERA/CIRCONIAS VERDES UNISEX 22 CM.png",
+    "image": "/TOBILLERA/CIRCONIAS VERDES UNISEX 22 CM.webp",
     "desc": "Tobillera unisex con circonias verdes, 22cm en oro laminado 18k."
   },
   {
@@ -36,7 +36,7 @@ export const TOBILLERAS = [
     "name": "Coeur",
     "category": "Tobilleras",
     "price": 118000,
-    "image": "/TOBILLERA/COEUR.png",
+    "image": "/TOBILLERA/COEUR.webp",
     "desc": "Tobillera Coeur en oro laminado 18k, inspirada en el amor y la elegancia francesa."
   },
   {
@@ -44,7 +44,7 @@ export const TOBILLERAS = [
     "name": "Escalera Plana Lisa 24.5 CM",
     "category": "Tobilleras",
     "price": 122000,
-    "image": "/TOBILLERA/ESCALERA PLANA LISA 24.5 CM.png",
+    "image": "/TOBILLERA/ESCALERA PLANA LISA 24.5 CM.webp",
     "desc": "Tobillera escalera plana lisa 24.5cm en oro laminado 18k."
   },
   {
@@ -52,7 +52,7 @@ export const TOBILLERAS = [
     "name": "Escalera y Plana 23 CM",
     "category": "Tobilleras",
     "price": 120000,
-    "image": "/TOBILLERA/ESCALERA Y PLANA 23 CM.png",
+    "image": "/TOBILLERA/ESCALERA Y PLANA 23 CM.webp",
     "desc": "Tobillera escalera y plana, 23cm en oro laminado 18k."
   },
   {
@@ -60,7 +60,7 @@ export const TOBILLERAS = [
     "name": "Militar 1.1 MM 24 CM",
     "category": "Tobilleras",
     "price": 115000,
-    "image": "/TOBILLERA/MILITAR 1.1 MM 24 CM.png",
+    "image": "/TOBILLERA/MILITAR 1.1 MM 24 CM.webp",
     "desc": "Tobillera militar 1.1mm, 24cm en oro laminado 18k."
   },
   {
@@ -68,7 +68,7 @@ export const TOBILLERAS = [
     "name": "Ojo Turco Multicolor 23 CM",
     "category": "Tobilleras",
     "price": 118000,
-    "image": "/TOBILLERA/OJO TURCO MULTICOLOR 23 CM.png",
+    "image": "/TOBILLERA/OJO TURCO MULTICOLOR 23 CM.webp",
     "desc": "Tobillera ojo turco multicolor 23cm en oro laminado 18k, protección y color."
   },
   {
@@ -76,7 +76,7 @@ export const TOBILLERAS = [
     "name": "Perla 23 CM",
     "category": "Tobilleras",
     "price": 125000,
-    "image": "/TOBILLERA/PERLA 23 CM.png",
+    "image": "/TOBILLERA/PERLA 23 CM.webp",
     "desc": "Tobillera de perlas 23cm en oro laminado 18k, delicada y femenina."
   },
   {
@@ -84,7 +84,7 @@ export const TOBILLERAS = [
     "name": "Romantic 23 CM",
     "category": "Tobilleras",
     "price": 130000,
-    "image": "/TOBILLERA/ROMANTIC 23 CM.png",
+    "image": "/TOBILLERA/ROMANTIC 23 CM.webp",
     "desc": "Tobillera Romantic 23cm en oro laminado 18k, diseño romántico y sofisticado."
   },
   {
@@ -92,7 +92,7 @@ export const TOBILLERAS = [
     "name": "Serpiente 25 CM",
     "category": "Tobilleras",
     "price": 120000,
-    "image": "/TOBILLERA/SERPIENTE 25 CM.png",
+    "image": "/TOBILLERA/SERPIENTE 25 CM.webp",
     "desc": "Tobillera serpiente 25cm en oro laminado 18k, fluida y elegante."
   },
   {
@@ -100,7 +100,7 @@ export const TOBILLERAS = [
     "name": "Sweet Lemon 23 CM",
     "category": "Tobilleras",
     "price": 118000,
-    "image": "/TOBILLERA/SWEET LEMON 23 CM.png",
+    "image": "/TOBILLERA/SWEET LEMON 23 CM.webp",
     "desc": "Tobillera Sweet Lemon 23cm en oro laminado 18k, fresca y colorida."
   },
   {
@@ -108,7 +108,7 @@ export const TOBILLERAS = [
     "name": "Tejido Chino 2 MM 25 CM",
     "category": "Tobilleras",
     "price": 122000,
-    "image": "/TOBILLERA/TEJIDO CHINO 2 MM 25 CM.png",
+    "image": "/TOBILLERA/TEJIDO CHINO 2 MM 25 CM.webp",
     "desc": "Tobillera tejido chino 2mm, 25cm en oro laminado 18k."
   },
   {

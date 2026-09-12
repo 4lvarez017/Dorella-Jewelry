@@ -4,7 +4,7 @@ export const ANILLOS = [
     "name": "Anillo Alianza T5.5",
     "category": "Anillos",
     "price": 125000,
-    "image": "/ANILLOS/ANILLO ALIANZA T5.5.png",
+    "image": "/ANILLOS/ANILLO ALIANZA T5.5.webp",
     "desc": "Anillo alianza clásico talla 5.5 en oro laminado 18k. Acabado brillante y elegante."
   },
   {
@@ -12,7 +12,7 @@ export const ANILLOS = [
     "name": "Anillo Alianza T5",
     "category": "Anillos",
     "price": 120000,
-    "image": "/ANILLOS/ANILLO ALIANZA T5.png",
+    "image": "/ANILLOS/ANILLO ALIANZA T5.webp",
     "desc": "Anillo alianza clásico talla 5 en oro laminado 18k. Diseño atemporal y sofisticado."
   },
   {
@@ -20,7 +20,7 @@ export const ANILLOS = [
     "name": "Anillo Flicker Ajustable",
     "category": "Anillos",
     "price": 115000,
-    "image": "/ANILLOS/ANILLO FLICKER AJUSTABLE.png",
+    "image": "/ANILLOS/ANILLO FLICKER AJUSTABLE.webp",
     "desc": "Anillo ajustable Flicker en oro laminado 18k. Se adapta a cualquier talla."
   },
   {
@@ -28,7 +28,7 @@ export const ANILLOS = [
     "name": "Anillo Kingdom Ajustable",
     "category": "Anillos",
     "price": 130000,
-    "image": "/ANILLOS/ANILLO KINGDOM AJUSTABLE.png",
+    "image": "/ANILLOS/ANILLO KINGDOM AJUSTABLE.webp",
     "desc": "Anillo Kingdom ajustable en oro laminado 18k con diseño majestuoso."
   },
   {
@@ -36,7 +36,7 @@ export const ANILLOS = [
     "name": "Anillo Luxe Ajustable",
     "category": "Anillos",
     "price": 140000,
-    "image": "/ANILLOS/ANILLO LUXE AJUSTABLE.png",
+    "image": "/ANILLOS/ANILLO LUXE AJUSTABLE.webp",
     "desc": "Anillo Luxe ajustable en oro laminado 18k. Diseño premium de alta joyería."
   },
   {
@@ -44,7 +44,7 @@ export const ANILLOS = [
     "name": "Anillo Signal Ajustable",
     "category": "Anillos",
     "price": 118000,
-    "image": "/ANILLOS/ANILLO SIGNAL AJUSTABLE.png",
+    "image": "/ANILLOS/ANILLO SIGNAL AJUSTABLE.webp",
     "desc": "Anillo Signal ajustable en oro laminado 18k con líneas geométricas modernas."
   },
   {
@@ -52,7 +52,7 @@ export const ANILLOS = [
     "name": "Anillo Sunrises Ajustable",
     "category": "Anillos",
     "price": 122000,
-    "image": "/ANILLOS/ANILLO SUNRISES AJUSTABLE.png",
+    "image": "/ANILLOS/ANILLO SUNRISES AJUSTABLE.webp",
     "desc": "Anillo Sunrises ajustable en oro laminado 18k inspirado en el amanecer."
   },
   {
@@ -60,7 +60,7 @@ export const ANILLOS = [
     "name": "Duality Clover Ajustable",
     "category": "Anillos",
     "price": 135000,
-    "image": "/ANILLOS/DUALITY CLOVER AJUSTABLE.png",
+    "image": "/ANILLOS/DUALITY CLOVER AJUSTABLE.webp",
     "desc": "Anillo Duality Clover ajustable en oro laminado 18k con diseño de trébol de doble cara."
   },
   {

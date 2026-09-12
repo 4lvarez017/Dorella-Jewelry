@@ -4,7 +4,7 @@ export const ARETES = [
     "name": "Amore Halo 9 MM",
     "category": "Aretes",
     "price": 95000,
-    "image": "/ARETES/AMORE HALO 9 MM.png",
+    "image": "/ARETES/AMORE HALO 9 MM.webp",
     "desc": "Aretes Amore Halo de 9mm en oro laminado 18k con piedras brillantes."
   },
   {
@@ -12,7 +12,7 @@ export const ARETES = [
     "name": "Árbol de la Vida",
     "category": "Aretes",
     "price": 98000,
-    "image": "/ARETES/ARBOL DE LA VIDA.png",
+    "image": "/ARETES/ARBOL DE LA VIDA.webp",
     "desc": "Aretes Árbol de la Vida en oro laminado 18k, símbolo de crecimiento y fortaleza."
   },
   {
@@ -20,7 +20,7 @@ export const ARETES = [
     "name": "Baby Feet",
     "category": "Aretes",
     "price": 88000,
-    "image": "/ARETES/BABY FEET.png",
+    "image": "/ARETES/BABY FEET.webp",
     "desc": "Aretes Baby Feet en oro laminado 18k, delicados y llenos de ternura."
   },
   {
@@ -28,7 +28,7 @@ export const ARETES = [
     "name": "Balín 6 MM",
     "category": "Aretes",
     "price": 75000,
-    "image": "/ARETES/BALIN 6 MM.png",
+    "image": "/ARETES/BALIN 6 MM.webp",
     "desc": "Aretes Balín 6mm en oro laminado 18k, clásicos y versátiles."
   },
   {
@@ -36,7 +36,7 @@ export const ARETES = [
     "name": "Balín 8 MM",
     "category": "Aretes",
     "price": 82000,
-    "image": "/ARETES/BALIN 8 MM.png",
+    "image": "/ARETES/BALIN 8 MM.webp",
     "desc": "Aretes Balín 8mm en oro laminado 18k, tamaño ideal para lucir elegante."
   },
   {
@@ -44,7 +44,7 @@ export const ARETES = [
     "name": "Blue",
     "category": "Aretes",
     "price": 90000,
-    "image": "/ARETES/BLUE.png",
+    "image": "/ARETES/BLUE.webp",
     "desc": "Aretes Blue en oro laminado 18k con detalles en tono azul zafiro."
   },
   {
@@ -52,7 +52,7 @@ export const ARETES = [
     "name": "Byzantine",
     "category": "Aretes",
     "price": 105000,
-    "image": "/ARETES/BYZANTINE.png",
+    "image": "/ARETES/BYZANTINE.webp",
     "desc": "Aretes Byzantine en oro laminado 18k con diseño entrelazado estilo byzantine."
   },
   {
@@ -60,7 +60,7 @@ export const ARETES = [
     "name": "Candonga Vintage",
     "category": "Aretes",
     "price": 112000,
-    "image": "/ARETES/CANDONGA VINTAGE.png",
+    "image": "/ARETES/CANDONGA VINTAGE.webp",
     "desc": "Aretes Candonga Vintage en oro laminado 18k con estilo retro y elegante."
   },
   {
@@ -68,7 +68,7 @@ export const ARETES = [
     "name": "Cat Mini",
     "category": "Aretes",
     "price": 85000,
-    "image": "/ARETES/CAT MINI.png",
+    "image": "/ARETES/CAT MINI.webp",
     "desc": "Aretes Cat Mini en oro laminado 18k, pequeños y adorables con forma de gato."
   },
   {
@@ -76,7 +76,7 @@ export const ARETES = [
     "name": "CC 14 MM",
     "category": "Aretes",
     "price": 95000,
-    "image": "/ARETES/CC 14 MM.png",
+    "image": "/ARETES/CC 14 MM.webp",
     "desc": "Aretes CC 14mm en oro laminado 18k con diseño circular clásico."
   },
   {
@@ -84,7 +84,7 @@ export const ARETES = [
     "name": "Circón Caja Redonda 4 MM Rosa",
     "category": "Aretes",
     "price": 88000,
-    "image": "/ARETES/CIRCON CAJA REDONDA 4 MM ROSA.png",
+    "image": "/ARETES/CIRCON CAJA REDONDA 4 MM ROSA.webp",
     "desc": "Aretes de circón en caja redonda 4mm color rosa en oro laminado 18k."
   },
   {
@@ -92,7 +92,7 @@ export const ARETES = [
     "name": "Classic Link 24 MM",
     "category": "Aretes",
     "price": 108000,
-    "image": "/ARETES/CLASSIC LINK 24 MM.png",
+    "image": "/ARETES/CLASSIC LINK 24 MM.webp",
     "desc": "Aretes Classic Link de 24mm en oro laminado 18k, estilo clásico y atemporal."
   },
   {
@@ -100,7 +100,7 @@ export const ARETES = [
     "name": "Clover Luxe 12 MM",
     "category": "Aretes",
     "price": 98000,
-    "image": "/ARETES/CLOVER LUXE 12 MM.png",
+    "image": "/ARETES/CLOVER LUXE 12 MM.webp",
     "desc": "Aretes Clover Luxe 12mm en oro laminado 18k con diseño de trébol de lujo."
   },
   {
@@ -108,7 +108,7 @@ export const ARETES = [
     "name": "Corazón 14 MM",
     "category": "Aretes",
     "price": 92000,
-    "image": "/ARETES/CORAZON 14 MM.png",
+    "image": "/ARETES/CORAZON 14 MM.webp",
     "desc": "Aretes corazón de 14mm en oro laminado 18k, símbolo de amor y ternura."
   },
   {
@@ -116,7 +116,7 @@ export const ARETES = [
     "name": "Corazón Cristal",
     "category": "Aretes",
     "price": 97000,
-    "image": "/ARETES/CORAZON CRISTAL.png",
+    "image": "/ARETES/CORAZON CRISTAL.webp",
     "desc": "Aretes corazón cristal en oro laminado 18k con piedra central brillante."
   },
   {
@@ -124,7 +124,7 @@ export const ARETES = [
     "name": "Corazón Mini",
     "category": "Aretes",
     "price": 80000,
-    "image": "/ARETES/CORAZON MINI.png",
+    "image": "/ARETES/CORAZON MINI.webp",
     "desc": "Aretes corazón mini en oro laminado 18k, pequeños y delicados."
   },
   {
@@ -132,7 +132,7 @@ export const ARETES = [
     "name": "Cruz Sagrada Circonias",
     "category": "Aretes",
     "price": 102000,
-    "image": "/ARETES/CRUZ SAGRADA CIRCONIAS.png",
+    "image": "/ARETES/CRUZ SAGRADA CIRCONIAS.webp",
     "desc": "Aretes Cruz Sagrada con circonias en oro laminado 18k, de gran significado espiritual."
   },
   {
@@ -140,7 +140,7 @@ export const ARETES = [
     "name": "Cupcake Cristal",
     "category": "Aretes",
     "price": 85000,
-    "image": "/ARETES/CUPCAKE CRISTAL.png",
+    "image": "/ARETES/CUPCAKE CRISTAL.webp",
     "desc": "Aretes Cupcake Cristal en oro laminado 18k con detalles brillantes."
   },
   {
@@ -148,7 +148,7 @@ export const ARETES = [
     "name": "Cupcake Verde",
     "category": "Aretes",
     "price": 85000,
-    "image": "/ARETES/CUPCAKE VERDE.png",
+    "image": "/ARETES/CUPCAKE VERDE.webp",
     "desc": "Aretes Cupcake Verde en oro laminado 18k con detalles en esmalte verde."
   },
   {
@@ -156,7 +156,7 @@ export const ARETES = [
     "name": "Double",
     "category": "Aretes",
     "price": 95000,
-    "image": "/ARETES/DOUBLE.png",
+    "image": "/ARETES/DOUBLE.webp",
     "desc": "Aretes Double en oro laminado 18k con diseño de doble eslabón."
   },
   {
@@ -164,7 +164,7 @@ export const ARETES = [
     "name": "Green Fleur 6 MM",
     "category": "Aretes",
     "price": 87000,
-    "image": "/ARETES/GREEN FLEUR 6 MM.png",
+    "image": "/ARETES/GREEN FLEUR 6 MM.webp",
     "desc": "Aretes Green Fleur 6mm en oro laminado 18k con flor verde esmeralda."
   },
   {
@@ -172,7 +172,7 @@ export const ARETES = [
     "name": "Gypsy",
     "category": "Aretes",
     "price": 110000,
-    "image": "/ARETES/GYPSY.png",
+    "image": "/ARETES/GYPSY.webp",
     "desc": "Aretes Gypsy en oro laminado 18k con diseño bohemio y libre."
   },
   {
@@ -180,7 +180,7 @@ export const ARETES = [
     "name": "Halo Cristal 12 MM",
     "category": "Aretes",
     "price": 100000,
-    "image": "/ARETES/HALO CRISTAL 12 MM.png",
+    "image": "/ARETES/HALO CRISTAL 12 MM.webp",
     "desc": "Aretes Halo Cristal 12mm en oro laminado 18k con halo de piedras brillantes."
   },
   {
@@ -188,7 +188,7 @@ export const ARETES = [
     "name": "Heart Circones 15 MM",
     "category": "Aretes",
     "price": 105000,
-    "image": "/ARETES/HEART CIRCONES 15 MM.png",
+    "image": "/ARETES/HEART CIRCONES 15 MM.webp",
     "desc": "Aretes Heart con circones de 15mm en oro laminado 18k, románticos y elegantes."
   },
   {
@@ -196,7 +196,7 @@ export const ARETES = [
     "name": "Hojas Circonias 1.7 CM",
     "category": "Aretes",
     "price": 98000,
-    "image": "/ARETES/HOJAS CIRCONIAS 1.7 CM.png",
+    "image": "/ARETES/HOJAS CIRCONIAS 1.7 CM.webp",
     "desc": "Aretes de hojas con circonias de 1.7cm en oro laminado 18k, inspirados en la naturaleza."
   },
   {
@@ -204,7 +204,7 @@ export const ARETES = [
     "name": "Hoop Cristal 16 MM",
     "category": "Aretes",
     "price": 108000,
-    "image": "/ARETES/HOOP CRISTAL 16 MM.png",
+    "image": "/ARETES/HOOP CRISTAL 16 MM.webp",
     "desc": "Aretes argolla Hoop Cristal de 16mm en oro laminado 18k con acabado brillante."
   },
   {
@@ -212,7 +212,7 @@ export const ARETES = [
     "name": "Interlace 15 MM",
     "category": "Aretes",
     "price": 103000,
-    "image": "/ARETES/INTERLACE 15 MM.png",
+    "image": "/ARETES/INTERLACE 15 MM.webp",
     "desc": "Aretes Interlace 15mm en oro laminado 18k con diseño entrelazado moderno."
   },
   {
@@ -220,7 +220,7 @@ export const ARETES = [
     "name": "Link GC 12 MM",
     "category": "Aretes",
     "price": 95000,
-    "image": "/ARETES/LINK GC 12 MM.png",
+    "image": "/ARETES/LINK GC 12 MM.webp",
     "desc": "Aretes Link GC 12mm en oro laminado 18k con eslabón articulado."
   },
   {
@@ -228,7 +228,7 @@ export const ARETES = [
     "name": "Loop GC 20 MM",
     "category": "Aretes",
     "price": 110000,
-    "image": "/ARETES/LOOP GC 20 MM.png",
+    "image": "/ARETES/LOOP GC 20 MM.webp",
     "desc": "Aretes Loop GC 20mm en oro laminado 18k con aro grande y elegante."
   },
   {
@@ -236,7 +236,7 @@ export const ARETES = [
     "name": "Love",
     "category": "Aretes",
     "price": 92000,
-    "image": "/ARETES/LOVE.png",
+    "image": "/ARETES/LOVE.webp",
     "desc": "Aretes Love en oro laminado 18k, un tributo al amor en cada detalle."
   },
   {
@@ -244,7 +244,7 @@ export const ARETES = [
     "name": "Lumi 23 MM",
     "category": "Aretes",
     "price": 115000,
-    "image": "/ARETES/LUMI 23 MM.png",
+    "image": "/ARETES/LUMI 23 MM.webp",
     "desc": "Aretes Lumi 23mm en oro laminado 18k con diseño luminoso y radiante."
   },
   {
@@ -252,7 +252,7 @@ export const ARETES = [
     "name": "Move 12 MM",
     "category": "Aretes",
     "price": 97000,
-    "image": "/ARETES/MOVE 12 MM.png",
+    "image": "/ARETES/MOVE 12 MM.webp",
     "desc": "Aretes Move 12mm en oro laminado 18k con diseño dinámico y moderno."
   },
   {
@@ -260,7 +260,7 @@ export const ARETES = [
     "name": "Ojo Turco",
     "category": "Aretes",
     "price": 90000,
-    "image": "/ARETES/OJO TURCO.png",
+    "image": "/ARETES/OJO TURCO.webp",
     "desc": "Aretes Ojo Turco en oro laminado 18k, símbolo de protección y buena suerte."
   },
   {
@@ -268,7 +268,7 @@ export const ARETES = [
     "name": "Old Keys 1.2 CM",
     "category": "Aretes",
     "price": 88000,
-    "image": "/ARETES/OLD KEYS 1.2 CM.png",
+    "image": "/ARETES/OLD KEYS 1.2 CM.webp",
     "desc": "Aretes Old Keys 1.2cm en oro laminado 18k con diseño de llave vintage."
   },
   {
@@ -276,7 +276,7 @@ export const ARETES = [
     "name": "Osito Teddy",
     "category": "Aretes",
     "price": 85000,
-    "image": "/ARETES/OSITO TEDDY.png",
+    "image": "/ARETES/OSITO TEDDY.webp",
     "desc": "Aretes Osito Teddy en oro laminado 18k, tiernos y adorables."
   },
   {
@@ -284,7 +284,7 @@ export const ARETES = [
     "name": "Parallel Circones 14 MM",
     "category": "Aretes",
     "price": 100000,
-    "image": "/ARETES/PARALLEL CIRCONES 14 MM.png",
+    "image": "/ARETES/PARALLEL CIRCONES 14 MM.webp",
     "desc": "Aretes Parallel con circones de 14mm en oro laminado 18k, diseño geométrico sofisticado."
   },
   {
@@ -292,7 +292,7 @@ export const ARETES = [
     "name": "Pavé 13 MM",
     "category": "Aretes",
     "price": 105000,
-    "image": "/ARETES/PAVE 13 MM.png",
+    "image": "/ARETES/PAVE 13 MM.webp",
     "desc": "Aretes Pavé 13mm en oro laminado 18k cubiertos de micro-circones brillantes."
   },
   {
@@ -300,7 +300,7 @@ export const ARETES = [
     "name": "Pavé Circle 14 MM",
     "category": "Aretes",
     "price": 108000,
-    "image": "/ARETES/PAVE CIRCLE 14 MM.png",
+    "image": "/ARETES/PAVE CIRCLE 14 MM.webp",
     "desc": "Aretes Pavé Circle 14mm en oro laminado 18k con aro de micro-circones."
   },
   {
@@ -308,7 +308,7 @@ export const ARETES = [
     "name": "Pearcing Fake 1.4 CM Verde",
     "category": "Aretes",
     "price": 78000,
-    "image": "/ARETES/PEARCING FAKE 1.4 CM VERDE.png",
+    "image": "/ARETES/PEARCING FAKE 1.4 CM VERDE.webp",
     "desc": "Aretes piercing falso 1.4cm en verde, elaborado en oro laminado 18k."
   },
   {
@@ -316,7 +316,7 @@ export const ARETES = [
     "name": "Quartet Cristal 14 MM",
     "category": "Aretes",
     "price": 102000,
-    "image": "/ARETES/QUARTET CRISTAL 14 MM.png",
+    "image": "/ARETES/QUARTET CRISTAL 14 MM.webp",
     "desc": "Aretes Quartet Cristal 14mm en oro laminado 18k con cuatro piedras brillantes."
   },
   {
@@ -324,7 +324,7 @@ export const ARETES = [
     "name": "Semi Candonga 3.8 CM",
     "category": "Aretes",
     "price": 118000,
-    "image": "/ARETES/SEMI CANDONGA 3.8 CM.png",
+    "image": "/ARETES/SEMI CANDONGA 3.8 CM.webp",
     "desc": "Aretes Semi Candonga 3.8cm en oro laminado 18k, elegantes y llamativos."
   },
   {
@@ -332,7 +332,7 @@ export const ARETES = [
     "name": "Shine 14 MM",
     "category": "Aretes",
     "price": 110000,
-    "image": "/ARETES/SHINE 14 MM.png",
+    "image": "/ARETES/SHINE 14 MM.webp",
     "desc": "Aretes Shine 14mm en oro laminado 18k con máximo brillo y sofisticación."
   },
   {
@@ -340,7 +340,7 @@ export const ARETES = [
     "name": "Topo Circón Cuadrado Rojo",
     "category": "Aretes",
     "price": 85000,
-    "image": "/ARETES/TOPO CIRCON CUADRADO ROJO.png",
+    "image": "/ARETES/TOPO CIRCON CUADRADO ROJO.webp",
     "desc": "Aretes topo con circón cuadrado rojo en oro laminado 18k, intensos y modernos."
   },
   {
@@ -348,7 +348,7 @@ export const ARETES = [
     "name": "Topo Circón Redondo Negro",
     "category": "Aretes",
     "price": 82000,
-    "image": "/ARETES/TOPO CIRCON REDONDO NEGRO.png",
+    "image": "/ARETES/TOPO CIRCON REDONDO NEGRO.webp",
     "desc": "Aretes topo con circón redondo negro en oro laminado 18k, minimalistas y elegantes."
   },
   {
@@ -356,7 +356,7 @@ export const ARETES = [
     "name": "Topo Circonia Corazón Negro",
     "category": "Aretes",
     "price": 88000,
-    "image": "/ARETES/TOPO CIRCONIA CORAZON NEGRO.png",
+    "image": "/ARETES/TOPO CIRCONIA CORAZON NEGRO.webp",
     "desc": "Aretes topo con circonia corazón negro en oro laminado 18k."
   },
   {
@@ -364,7 +364,7 @@ export const ARETES = [
     "name": "Topo Circonia Corazón Rojo",
     "category": "Aretes",
     "price": 88000,
-    "image": "/ARETES/TOPO CIRCONIA CORAZON ROJO.png",
+    "image": "/ARETES/TOPO CIRCONIA CORAZON ROJO.webp",
     "desc": "Aretes topo con circonia corazón rojo en oro laminado 18k, románticos y llamativos."
   },
   {
@@ -372,7 +372,7 @@ export const ARETES = [
     "name": "Topo Quadra Crystal 4 MM",
     "category": "Aretes",
     "price": 80000,
-    "image": "/ARETES/TOPO QUADRA CRYSTAL 4 MM.png",
+    "image": "/ARETES/TOPO QUADRA CRYSTAL 4 MM.webp",
     "desc": "Aretes topo Quadra Crystal 4mm en oro laminado 18k con cristal cuadrado."
   },
   {
@@ -380,7 +380,7 @@ export const ARETES = [
     "name": "Topo Rolex 8 MM",
     "category": "Aretes",
     "price": 90000,
-    "image": "/ARETES/TOPO ROLEX 8 MM.png",
+    "image": "/ARETES/TOPO ROLEX 8 MM.webp",
     "desc": "Aretes topo estilo Rolex 8mm en oro laminado 18k con diseño exclusivo."
   },
   {
@@ -388,7 +388,7 @@ export const ARETES = [
     "name": "Trazo Áurea 16 MM",
     "category": "Aretes",
     "price": 100000,
-    "image": "/ARETES/TRAZO AUREA 16 MM.png",
+    "image": "/ARETES/TRAZO AUREA 16 MM.webp",
     "desc": "Aretes Trazo Áurea 16mm en oro laminado 18k con diseño artístico y moderno."
   },
   {
@@ -396,7 +396,7 @@ export const ARETES = [
     "name": "Virgen de Guadalupe 9 MM",
     "category": "Aretes",
     "price": 95000,
-    "image": "/ARETES/VIRGEN DE GUADALUPE 9 MM.png",
+    "image": "/ARETES/VIRGEN DE GUADALUPE 9 MM.webp",
     "desc": "Aretes Virgen de Guadalupe 9mm en oro laminado 18k, de gran devoción y fe."
   },
   {
@@ -404,7 +404,7 @@ export const ARETES = [
     "name": "Wave",
     "category": "Aretes",
     "price": 92000,
-    "image": "/ARETES/WAVE.png",
+    "image": "/ARETES/WAVE.webp",
     "desc": "Aretes Wave en oro laminado 18k con diseño de ola fluida y moderna."
   },
   {
@@ -1100,7 +1100,7 @@ export const ARETES = [
     "name": "A Dynasty",
     "category": "Aretes",
     "price": 60000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/34276-CRISTAL/34276.jpg",
+    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/34276-CRISTAL/34276.webp",
     "desc": "A Dynasty en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 34276-CRISTAL."
   },
   {

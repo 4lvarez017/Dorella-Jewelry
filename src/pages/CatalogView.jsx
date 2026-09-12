@@ -34,21 +34,21 @@ export function CartFab({ totalItems, onClick }) {
 
 // ─── Vista de Catálogo ────────────────────────────────────────────────────────
 const GRID_CATEGORIES = [
-  { name: "Anillos",           icon: "💍", image: "/ANILLOS/ANILLO ALIANZA T5.5.png" },
-  { name: "Aretes",            icon: "🌙", image: "/ARETES/AMORE HALO 9 MM.png" },
-  { name: "Brazaletes Hombre", icon: "🪙", image: "/BRAZALETES HOMBRE/FULL DIAMANTADO 8 MM.png" },
-  { name: "Brazaletes Mujer",  icon: "🪙", image: "/BRAZALETES MUJER/B. LISO ROSA FULL 4 MM.png" },
-  { name: "Brazaletes Niñas",  icon: "🪙", image: "/BRAZALETES MUJER/B. LISO ROSA FULL 4 MM.png" },
-  { name: "Brazaletes Niños",  icon: "🪙", image: "/BRAZALETES HOMBRE/BALIN 8 MM.png" },
-  { name: "Brazaletes Pareja", icon: "🪙", image: "/BRAZALETES MUJER/B. LISO 6 MM Y 4 MM.png" },
-  { name: "Cadenas",           icon: "🔗", image: "/CADENAS/CUBANA CON DESTELLOS 60 CM.png" },
-  { name: "Conjuntos",         icon: "✨", image: "/ARETES/HEART CIRCONES 15 MM.png" },
-  { name: "Cruceros",          icon: "⚓", image: "/CADENAS/CUBANA SOL 65 CM.png" },
-  { name: "Dijes",             icon: "🔮", image: "/HERRAJES/CHARMING.png" },
-  { name: "Herrajes",          icon: "⚙️", image: "/HERRAJES/CORAZON CIRCONIA.png" },
-  { name: "Pulseras",          icon: "💎", image: "/PULSERAS/CUBAN LINK 3.1 MM 19 CM.png" },
-  { name: "Rosarios",          icon: "📿", image: "/ROSARIOS/ROSARIO BENEDICTUS 43 CM.png" },
-  { name: "Tobilleras",        icon: "🦶", image: "/TOBILLERA/ROMANTIC 23 CM.png" },
+  { name: "Anillos",           icon: "💍", image: "/ANILLOS/ANILLO ALIANZA T5.5.webp" },
+  { name: "Aretes",            icon: "🌙", image: "/ARETES/AMORE HALO 9 MM.webp" },
+  { name: "Brazaletes Hombre", icon: "🪙", image: "/BRAZALETES HOMBRE/FULL DIAMANTADO 8 MM.webp" },
+  { name: "Brazaletes Mujer",  icon: "🪙", image: "/BRAZALETES MUJER/B. LISO ROSA FULL 4 MM.webp" },
+  { name: "Brazaletes Niñas",  icon: "🪙", image: "/BRAZALETES MUJER/B. LISO ROSA FULL 4 MM.webp" },
+  { name: "Brazaletes Niños",  icon: "🪙", image: "/BRAZALETES HOMBRE/BALIN 8 MM.webp" },
+  { name: "Brazaletes Pareja", icon: "🪙", image: "/BRAZALETES MUJER/B. LISO 6 MM Y 4 MM.webp" },
+  { name: "Cadenas",           icon: "🔗", image: "/CADENAS/CUBANA CON DESTELLOS 60 CM.webp" },
+  { name: "Conjuntos",         icon: "✨", image: "/ARETES/HEART CIRCONES 15 MM.webp" },
+  { name: "Cruceros",          icon: "⚓", image: "/CADENAS/CUBANA SOL 65 CM.webp" },
+  { name: "Dijes",             icon: "🔮", image: "/HERRAJES/CHARMING.webp" },
+  { name: "Herrajes",          icon: "⚙️", image: "/HERRAJES/CORAZON CIRCONIA.webp" },
+  { name: "Pulseras",          icon: "💎", image: "/PULSERAS/CUBAN LINK 3.1 MM 19 CM.webp" },
+  { name: "Rosarios",          icon: "📿", image: "/ROSARIOS/ROSARIO BENEDICTUS 43 CM.webp" },
+  { name: "Tobilleras",        icon: "🦶", image: "/TOBILLERA/ROMANTIC 23 CM.webp" },
 ];
 
 
@@ -73,7 +73,7 @@ export function CatalogView({ setPage, activeCategory, setActiveCategory, onView
         style={{
           position: "fixed",
           inset: 0,
-          backgroundImage: "url('/pulsera_base.jpg')",
+          backgroundImage: "url('/pulsera_base.webp')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           filter: "brightness(0.06) blur(6px)",

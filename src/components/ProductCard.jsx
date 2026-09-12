@@ -22,7 +22,9 @@ export function ProductCard({ product, dark = false, onViewDetails }) {
   const [imgError, setImgError] = useState(false);
 
   const cardClass = dark ? "dark-product-card fade-in" : "product-card fade-in";
-  const imgSrc = imgError ? "/placeholder.jpg" : (product.image || "/placeholder.jpg");
+  const rawImg = product.image || "/placeholder.jpg";
+  const resolvedImg = rawImg.replace(/\.(png|jpg|jpeg)$/i, ".webp");
+  const imgSrc = imgError ? "/placeholder.jpg" : resolvedImg;
 
   return (
     <div

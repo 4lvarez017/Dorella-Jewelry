@@ -25,7 +25,7 @@ function ProductCard({ p, onEdit, onDelete, onToggleVisibility, onUpdatePrice })
       {/* ── Imagen ── */}
       <div className="prod-card-img-wrap">
         <img
-          src={p.image || "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=400&q=80"}
+          src={(p.image || "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=400&q=80").replace(/\.(png|jpg|jpeg)$/i, ".webp")}
           alt={p.name}
           className="prod-card-img"
           loading="lazy"
