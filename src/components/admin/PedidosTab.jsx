@@ -15,7 +15,6 @@ function OrderTimeline({ status }) {
       {steps.map((step, idx) => {
         const done    = idx <= activeIdx;
         const current = idx === activeIdx;
-        const st = ORDER_STATUS[step.key] || {};
         return (
           <div key={step.key} className="order-timeline-step" style={{ flex: 1 }}>
             {/* Línea antes */}
@@ -56,9 +55,8 @@ function OrderTimeline({ status }) {
 function OrderDetailModal({ order, onClose, onStatusChange, onDelete, showConfirm }) {
   const items = (() => {
     try { return JSON.parse(order.items || "[]"); }
-    catch (_) { return []; }
+    catch { return []; }
   })();
-  const st = ORDER_STATUS[order.status] || {};
 
   const handleDelete = () => {
     if (showConfirm) {

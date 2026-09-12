@@ -24,7 +24,7 @@ export function ProductsProvider({ children }) {
         let imgs;
         try {
           imgs = typeof p.images === "string" ? JSON.parse(p.images) : p.images;
-        } catch (_) {
+        } catch {
           imgs = ["/placeholder.jpg"];
         }
         if (!Array.isArray(imgs) || imgs.length === 0) {

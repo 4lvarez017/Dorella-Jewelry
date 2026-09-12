@@ -3,13 +3,34 @@ import { CartProvider } from "./context/CartContext";
 import { ProductsProvider, useProducts } from "./context/ProductsContext";
 import { globalCSS, G } from "./styles/theme";
 import { HomeView } from "./pages/HomeView";
-import { CatalogView } from "./pages/CatalogView";
-import { ProductDetailView } from "./pages/ProductDetailView";
 import { onAuthChange, signOut } from "./lib/firebase";
 
-// ── Carga diferida del Admin
+// ── Carga diferida de Vistas Secundarias y Admin para optimizar el bundle inicial
+const CatalogView = lazy(() => import("./pages/CatalogView").then(m => ({ default: m.CatalogView })));
+const ProductDetailView = lazy(() => import("./pages/ProductDetailView").then(m => ({ default: m.ProductDetailView })));
 const AdminPanel = lazy(() => import("./pages/AdminPanel").then(m => ({ default: m.AdminPanel })));
 const AdminLogin = lazy(() => import("./pages/AdminLogin").then(m => ({ default: m.AdminLogin })));
+
+function PageFallback() {
+  return (
+    <div style={{
+      display: "flex", alignItems: "center", justifyContent: "center",
+      minHeight: "70vh", background: G.cream, flexDirection: "column", gap: 16,
+    }}>
+      <div style={{
+        width: 36, height: 36, borderRadius: "50%",
+        border: `3px solid rgba(201,168,76,0.15)`,
+        borderTopColor: G.gold,
+        animation: "spin 0.8s linear infinite",
+      }} />
+      <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
+      <p style={{ fontFamily: "'Jost', sans-serif", fontSize: 11, letterSpacing: "3px",
+        textTransform: "uppercase", color: G.textMuted }}>
+        Cargando colección...
+      </p>
+    </div>
+  );
+}
 
 function AdminFallback() {
   return (
@@ -39,7 +60,7 @@ function AppContent() {
   const [activeCategory, setActiveCategory] = useState("Todos");
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [adminLoggedIn, setAdminLoggedIn] = useState(false);
-  const [sessionChecked, setSessionChecked] = useState(false);
+  const [_sessionChecked, setSessionChecked] = useState(false);
 
   // Escuchar estado real de sesión con Firebase
   useEffect(() => {
@@ -201,17 +222,21 @@ function AppContent() {
           </Suspense>
 
         ) : page === "product" ? (
-          <ProductDetailView
-            setPage={(p) => navigateTo(p)}
-            product={selectedProduct?._pendingId ? null : selectedProduct}
-          />
+          <Suspense fallback={<PageFallback />}>
+            <ProductDetailView
+              setPage={(p) => navigateTo(p)}
+              product={selectedProduct?._pendingId ? null : selectedProduct}
+            />
+          </Suspense>
         ) : page === "catalog" ? (
-          <CatalogView
-            setPage={(p) => navigateTo(p)}
-            activeCategory={activeCategory}
-            setActiveCategory={(c) => navigateTo("catalog", c, null)}
-            onViewDetails={handleViewDetails}
-          />
+          <Suspense fallback={<PageFallback />}>
+            <CatalogView
+              setPage={(p) => navigateTo(p)}
+              activeCategory={activeCategory}
+              setActiveCategory={(c) => navigateTo("catalog", c, null)}
+              onViewDetails={handleViewDetails}
+            />
+          </Suspense>
         ) : (
           <HomeView
             setPage={(p) => navigateTo(p)}

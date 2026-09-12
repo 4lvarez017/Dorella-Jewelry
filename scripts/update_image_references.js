@@ -6,7 +6,6 @@ const TARGET_FILES = [
   'src/pages/CatalogView.jsx',
   'src/components/home/HeroCinematic.jsx',
   'src/components/home/CraftsmanshipStory.jsx',
-  'src/components/HeroSection.jsx',
 ];
 
 // Add all files in src/data/products
@@ -30,7 +29,7 @@ for (const relPath of TARGET_FILES) {
   // e.g. /ANILLOS/...png -> .webp
   // /pulsera_base.jpg -> .webp
   // /pulsera_ensamblada.jpg -> .webp
-  content = content.replace(/\.(png|jpg|jpeg)(["'\?#])/gi, '.webp$2');
+  content = content.replace(/\.(png|jpg|jpeg)(["'?#])/gi, '.webp$2');
 
   if (content !== original) {
     fs.writeFileSync(fullPath, content, 'utf8');

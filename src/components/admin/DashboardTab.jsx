@@ -182,7 +182,6 @@ export function DashboardTab({ orders, products, chartSalesData, paymentStats, t
   const completed = orders.filter(o => o.status === "Completado");
   const revenue   = completed.reduce((s, o) => s + (o.total || 0), 0);
   const pending   = orders.filter(o => o.status === "Pendiente");
-  const sent      = orders.filter(o => o.status === "Enviado");
   const avgTicket = completed.length > 0 ? revenue / completed.length : 0;
   const lowStock  = products.filter(p => (p.stock ?? 0) < 5);
 
@@ -248,7 +247,7 @@ export function DashboardTab({ orders, products, chartSalesData, paymentStats, t
           label="Pedidos Recibidos"
           value={orders.length}
           icon="🧾"
-          trend={{ direction: "flat", label: `${sent.length} en camino · ${completed.length} completados` }}
+          trend={pendingTrend}
         />
         <MetricCard
           label="Ticket Promedio"

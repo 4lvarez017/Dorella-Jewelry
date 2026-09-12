@@ -32,11 +32,11 @@ const LABEL_STYLE = {
 // ─── Helpers de localStorage (compatibilidad) ─────────────────────────────────
 export function getLocalOrders() {
   try { return JSON.parse(localStorage.getItem("dorella_local_orders") || "[]"); }
-  catch (_) { return []; }
+  catch { return []; }
 }
 export function saveLocalOrders(orders) {
   try { localStorage.setItem("dorella_local_orders", JSON.stringify(orders)); }
-  catch (_) { }
+  catch { /* ignore */ }
 }
 
 // ─── Componente principal ─────────────────────────────────────────────────────
@@ -174,7 +174,7 @@ export function CheckoutModal({ onClose }) {
     };
     window.addEventListener("message", handleMessage);
     return () => window.removeEventListener("message", handleMessage);
-  }, [step]);
+  }, [step, dispatch, form.name, form.phone, orderId, total]);
 
   return (
     <div className="modal-backdrop" onClick={onClose}>

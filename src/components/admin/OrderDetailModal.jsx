@@ -5,7 +5,7 @@ export function OrderDetailModal({ order, onClose }) {
   if (!order) return null;
 
   let parsedItems = [];
-  try { parsedItems = JSON.parse(order.items || "[]"); } catch (_) {}
+  try { parsedItems = JSON.parse(order.items || "[]"); } catch { /* ignore */ }
 
   const fields = [
     ["ID de Pedido",       order.id],

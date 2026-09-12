@@ -49,7 +49,7 @@ async function run() {
   const rawIdCounts = {};
   const compoundKeyCounts = {};
 
-  allProducts.forEach((p, idx) => {
+  allProducts.forEach((p) => {
     const rawKey = String(p.id);
     const compoundKey = `${p.id}-${p.category}`;
 
@@ -57,7 +57,7 @@ async function run() {
     compoundKeyCounts[compoundKey] = (compoundKeyCounts[compoundKey] || 0) + 1;
   });
 
-  const rawCollisions = Object.values(rawIdCounts).filter(c => c > 1).length;
+  const _rawCollisions = Object.values(rawIdCounts).filter(c => c > 1).length;
   const crossCategoryCollisions = Object.entries(rawIdCounts).filter(([id, count]) => {
     if (count <= 1) return false;
     const cats = new Set(allProducts.filter(p => String(p.id) === id).map(p => p.category));

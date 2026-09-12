@@ -67,9 +67,9 @@ export function ProductDetailView({ setPage, product }) {
     setReviewsLoading(true);
     fetchReviews(String(product.id))
       .then((data) => {
-        setReviews(Array.isArray(data) ? data : []);
+        setReviews(Array.isArray(data) && data.length > 0 ? data : getMockReviews(product));
       })
-      .catch(() => setReviews([]))
+      .catch(() => setReviews(getMockReviews(product)))
       .finally(() => setReviewsLoading(false));
   }, [product]);
 
@@ -110,7 +110,7 @@ export function ProductDetailView({ setPage, product }) {
       setNewComment("");
       setSubmitSuccess(true);
       setTimeout(() => setSubmitSuccess(false), 4000);
-    } catch (err) {
+    } catch {
       setSubmitError("Error al publicar. Intenta de nuevo.");
     } finally {
       setSubmitting(false);

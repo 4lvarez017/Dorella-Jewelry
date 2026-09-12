@@ -82,7 +82,7 @@ export function CatalogSection({ activeCategory, id, onViewDetails }) {
   }, [categoryProducts]);
 
   const [priceRange, setPriceRange] = useState(null);
-  const effectiveRange = priceRange || [priceMin, priceMax];
+  const effectiveRange = useMemo(() => priceRange || [priceMin, priceMax], [priceRange, priceMin, priceMax]);
 
   // Filtrar + buscar + ordenar
   const filtered = useMemo(() => {
@@ -103,7 +103,6 @@ export function CatalogSection({ activeCategory, id, onViewDetails }) {
   }, [categoryProducts, search, sort, effectiveRange]);
 
   // Paginación
-  const totalPages = Math.ceil(filtered.length / PAGE_SIZE);
   const displayed = filtered.slice(0, page * PAGE_SIZE);
   const hasMore = page * PAGE_SIZE < filtered.length;
 

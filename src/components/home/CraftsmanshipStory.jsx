@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import { G } from "../../styles/theme";
 
 const STEPS = [

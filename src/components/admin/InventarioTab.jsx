@@ -8,7 +8,6 @@ function StockCard({ p, onUpdate, onDelete, showConfirm, addToast }) {
   const pct = Math.min(100, Math.round((stock / MAX_REF) * 100));
   const isOut = stock === 0;
   const isLow = !isOut && stock < 5;
-  const isOk = !isOut && !isLow;
 
   const statusColor = isOut ? A.danger : isLow ? A.warning : A.success;
   const statusBg = isOut ? A.dangerBg : isLow ? A.warningBg : A.successBg;

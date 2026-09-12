@@ -344,7 +344,9 @@ const Topography = ({
       ctxMap.delete(container);
       try {
         container.removeChild(canvas);
-      } catch {}
+      } catch {
+        /* ignore if already removed */
+      }
       gl.getExtension('WEBGL_lose_context')?.loseContext();
     };
   }, []);

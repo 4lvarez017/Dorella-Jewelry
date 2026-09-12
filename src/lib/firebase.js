@@ -121,7 +121,7 @@ export async function fetchOrders() {
       orders.push({ id: docSnap.id, ...docSnap.data() });
     });
     return orders;
-  } catch (_err) {
+  } catch {
     // Fallback si aún no se ha creado el índice compuesto
     const colRef = collection(db, "orders");
     const snapshot = await getDocs(colRef);
@@ -186,7 +186,7 @@ export async function fetchAllReviews() {
       reviews.push({ id: docSnap.id, ...docSnap.data() });
     });
     return reviews;
-  } catch (_err) {
+  } catch {
     const colRef = collection(db, "reviews");
     const snapshot = await getDocs(colRef);
     const reviews = [];

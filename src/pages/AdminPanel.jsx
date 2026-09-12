@@ -9,19 +9,15 @@ import { PedidosTab }    from "../components/admin/PedidosTab";
 import { ReviewsTab }    from "../components/admin/ReviewsTab";
 import { fetchOrders as fbFetchOrders, updateOrderStatus as fbUpdateOrderStatus, deleteOrder as fbDeleteOrder } from "../lib/firebase";
 import { useProducts }   from "../context/ProductsContext";
-import { jsPDF } from "jspdf";
-import autoTable from "jspdf-autotable";
-import ExcelJS from "exceljs";
-import { saveAs } from "file-saver";
 
 // ─── LocalStorage helpers ─────────────────────────────────────────────────────
 function getLocalOrders() {
   try { return JSON.parse(localStorage.getItem("dorella_local_orders") || "[]"); }
-  catch (_) { return []; }
+  catch { return []; }
 }
 function saveLocalOrders(orders) {
   try { localStorage.setItem("dorella_local_orders", JSON.stringify(orders)); }
-  catch (_) {}
+  catch { /* ignore */ }
 }
 
 // ─── Ventas últimos 7 días ────────────────────────────────────────────────────
@@ -65,7 +61,9 @@ function getTopProducts(orders) {
       JSON.parse(o.items || "[]").forEach(item => {
         counts[item.name] = (counts[item.name] || 0) + item.qty;
       });
-    } catch (_) {}
+    } catch {
+      /* ignore */
+    }
   });
   return Object.entries(counts)
     .map(([name, qty]) => ({ name, qty }))
@@ -75,6 +73,10 @@ function getTopProducts(orders) {
 
 // ─── Exportar Excel ──────────────────────────────────────────────────────────
 async function exportToExcel(orders) {
+  const [{ default: ExcelJS }, { saveAs }] = await Promise.all([
+    import("exceljs"),
+    import("file-saver"),
+  ]);
   const workbook = new ExcelJS.Workbook();
   const worksheet = workbook.addWorksheet("Pedidos");
 
@@ -118,7 +120,7 @@ async function exportToExcel(orders) {
       itemsStr = JSON.parse(o.items || "[]")
         .map(i => `${i.name} (x${i.qty})`)
         .join("; ");
-    } catch (_) {
+    } catch {
       itemsStr = o.items || "";
     }
     const dateStr = o.created_at ? new Date(o.created_at).toLocaleDateString("es-CO") : "—";
@@ -197,7 +199,12 @@ async function exportToExcel(orders) {
 }
 
 // ─── Exportar PDF ─────────────────────────────────────────────────────────────
-function exportToPDF(orders) {
+async function exportToPDF(orders) {
+  const [{ jsPDF }, { default: autoTable }] = await Promise.all([
+    import("jspdf"),
+    import("jspdf-autotable"),
+  ]);
+
   // jsPDF en horizontal (landscape, A4: 297mm x 210mm)
   const doc = new jsPDF("landscape", "mm", "a4");
 
@@ -258,7 +265,7 @@ function exportToPDF(orders) {
       itemsStr = JSON.parse(o.items || "[]")
         .map(i => `${i.name} (x${i.qty})`)
         .join(", ");
-    } catch (_) {
+    } catch {
       itemsStr = o.items || "";
     }
     const dateStr = o.created_at ? new Date(o.created_at).toLocaleDateString("es-CO") : "—";

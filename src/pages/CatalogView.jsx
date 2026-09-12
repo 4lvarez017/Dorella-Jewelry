@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import { G } from "../styles/theme";
-import { WHATSAPP_NUMBER, CATEGORIES } from "../data/constants";
+import { WHATSAPP_NUMBER } from "../data/constants";
 import { useCart } from "../context/CartContext";
 import { CatalogSection } from "../components/CatalogSection";
 import { CartModal } from "../components/CartModal";
