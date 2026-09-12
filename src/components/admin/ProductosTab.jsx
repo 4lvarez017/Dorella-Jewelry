@@ -28,6 +28,11 @@ function ProductCard({ p, onEdit, onDelete, onToggleVisibility, onUpdatePrice })
           src={p.image || "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=400&q=80"}
           alt={p.name}
           className="prod-card-img"
+          loading="lazy"
+          decoding="async"
+          width="260"
+          height="260"
+          style={{ width: "100%", height: "100%", objectFit: "cover" }}
           onError={e => { e.target.src = "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=400&q=80"; }}
         />
 
@@ -163,8 +168,14 @@ export function ProductosTab({
 }) {
   const [selectedCategory, setSelectedCategory] = useState("Todos");
   const [search, setSearch] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
+  const ITEMS_PER_PAGE = 24;
   const [showModal, setShowModal] = useState(false);
   const [editingProduct, setEditingProduct] = useState(null);
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [selectedCategory, search]);
 
   // Exponer acción de abrir modal al header móvil
   useEffect(() => {
@@ -194,6 +205,9 @@ export function ProductosTab({
       }
       return (a.name || "").localeCompare(b.name || "", "es", { sensitivity: "base" });
     });
+
+  const totalPages = Math.ceil(filtered.length / ITEMS_PER_PAGE) || 1;
+  const paginated = filtered.slice((currentPage - 1) * ITEMS_PER_PAGE, currentPage * ITEMS_PER_PAGE);
 
   // ── Handlers ──
   const handleSave = async (data) => {
@@ -398,18 +412,54 @@ export function ProductosTab({
             </div>
           </div>
         ) : (
-          <div className="prod-card-grid admin-stagger">
-            {filtered.map(p => (
-              <ProductCard
-                key={`${p.id}-${p.category}`}
-                p={p}
-                onEdit={prod => { setEditingProduct(prod); setShowModal(true); }}
-                onDelete={handleDelete}
-                onToggleVisibility={handleToggleVisibility}
-                onUpdatePrice={handleUpdatePrice}
-              />
-            ))}
-          </div>
+          <>
+            <div className="prod-card-grid admin-stagger">
+              {paginated.map(p => (
+                <ProductCard
+                  key={`${p.id}-${p.category}`}
+                  p={p}
+                  onEdit={prod => { setEditingProduct(prod); setShowModal(true); }}
+                  onDelete={handleDelete}
+                  onToggleVisibility={handleToggleVisibility}
+                  onUpdatePrice={handleUpdatePrice}
+                />
+              ))}
+            </div>
+
+            {totalPages > 1 && (
+              <div style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                gap: 16,
+                marginTop: 24,
+                padding: "16px 20px",
+                background: A.cardBg,
+                borderRadius: 12,
+                border: `1px solid ${A.border}`,
+              }}>
+                <button
+                  disabled={currentPage === 1}
+                  onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+                  className="admin-btn-secondary"
+                  style={{ opacity: currentPage === 1 ? 0.4 : 1, cursor: currentPage === 1 ? "not-allowed" : "pointer" }}
+                >
+                  ← Anterior
+                </button>
+                <span style={{ fontSize: 13, color: A.textSecondary, fontWeight: 600 }}>
+                  Página {currentPage} de {totalPages} ({filtered.length} productos)
+                </span>
+                <button
+                  disabled={currentPage === totalPages}
+                  onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
+                  className="admin-btn-secondary"
+                  style={{ opacity: currentPage === totalPages ? 0.4 : 1, cursor: currentPage === totalPages ? "not-allowed" : "pointer" }}
+                >
+                  Siguiente →
+                </button>
+              </div>
+            )}
+          </>
         )}
       </div>
 

@@ -46,6 +46,8 @@ export function ProductCard({ product, dark = false, onViewDetails }) {
           alt={product.name}
           loading="lazy"
           decoding="async"
+          width="320"
+          height="320"
           onLoad={() => setImgLoaded(true)}
           onError={() => { setImgError(true); setImgLoaded(true); }}
           style={{
