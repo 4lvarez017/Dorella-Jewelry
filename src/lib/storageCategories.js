@@ -1,4 +1,4 @@
-// ─── MAPA CATEGORÍA → CARPETA EN SUPABASE STORAGE ────────────────────────────
+// ─── MAPA CATEGORÍA → CARPETA DE PRODUCTOS ────────────────────────────
 export const CATEGORY_SLUG = {
   "Anillos":             "anillos",
   "Aretes":              "aretes",

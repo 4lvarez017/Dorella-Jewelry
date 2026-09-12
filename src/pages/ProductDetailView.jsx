@@ -61,7 +61,7 @@ export function ProductDetailView({ setPage, product }) {
 
   const totalItems = cart.reduce((s, i) => s + i.qty, 0);
 
-  // Cargar reseñas desde Supabase
+  // Cargar reseñas desde Firebase
   useEffect(() => {
     if (!product) return;
     setReviewsLoading(true);
@@ -101,7 +101,7 @@ export function ProductDetailView({ setPage, product }) {
         rating:    newRating,
         comment:   newComment.trim(),
       });
-      // Recargar reseñas desde Supabase para reflejar el orden real
+      // Recargar reseñas desde Firebase para reflejar el orden real
       const updated = await fetchReviews(String(product.id));
       setReviews(Array.isArray(updated) ? updated : []);
       // Limpiar formulario

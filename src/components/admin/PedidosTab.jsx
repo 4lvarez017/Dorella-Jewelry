@@ -316,7 +316,7 @@ function OrderCard({ o, onViewDetail, onStatusChange, onDelete }) {
 
 // ─── Tab Principal ────────────────────────────────────────────────────────────
 export function PedidosTab({
-  orders, loadingOrders, supabaseAvailable,
+  orders, loadingOrders, databaseAvailable,
   onStatusChange, onRefresh, onExportPDF, onExportExcel, onDeleteOrder, showConfirm,
 }) {
   const [filterStatus, setFilterStatus] = useState("Todos");
@@ -354,8 +354,8 @@ export function PedidosTab({
     <>
       <div className="admin-section-in" style={{ display: "flex", flexDirection: "column", gap: 20 }}>
 
-        {/* ── Banner Supabase offline ── */}
-        {!supabaseAvailable && (
+        {/* ── Banner Base de datos offline ── */}
+        {!databaseAvailable && (
           <div style={{
             background: A.warningBg, border: `1px solid ${A.warning}40`,
             borderRadius: 10, padding: "12px 16px",

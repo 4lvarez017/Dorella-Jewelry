@@ -329,7 +329,7 @@ export function AdminPanel({ activeTab, setActiveTab, onLogout }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [orders, setOrders]           = useState([]);
   const [loadingOrders, setLoadingOrders] = useState(true);
-  const [supabaseAvailable, setSupabaseAvail] = useState(true);
+  const [databaseAvailable, setDatabaseAvail] = useState(true);
   const addProductMobileRef = useRef(null);
 
   // ── Toast system ────────────────────────────────────────────────────────────
@@ -356,10 +356,10 @@ export function AdminPanel({ activeTab, setActiveTab, onLogout }) {
         (a, b) => new Date(b.created_at || 0) - new Date(a.created_at || 0)
       );
       setOrders(merged);
-      setSupabaseAvail(true);
+      setDatabaseAvail(true);
     } catch (err) {
       console.error("Error al cargar pedidos de Firebase:", err);
-      setSupabaseAvail(false);
+      setDatabaseAvail(false);
       // Solo mostrar pedidos locales si existen — NO mostrar datos de demostración
       if (local.length > 0) {
         setOrders(local.sort((a, b) => new Date(b.created_at || 0) - new Date(a.created_at || 0)));
@@ -523,7 +523,7 @@ export function AdminPanel({ activeTab, setActiveTab, onLogout }) {
               <PedidosTab
                 orders={orders}
                 loadingOrders={loadingOrders}
-                supabaseAvailable={supabaseAvailable}
+                databaseAvailable={databaseAvailable}
                 onStatusChange={updateOrderStatus}
                 onRefresh={fetchOrders}
                 onExportPDF={() => exportToPDF(orders)}

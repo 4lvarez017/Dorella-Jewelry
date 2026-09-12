@@ -53,7 +53,7 @@ export const CATEGORIES = [
   },
 ];
 
-// ─── PEDIDOS DE DEMOSTRACIÓN (fallback si Supabase no responde) ───────────────
+// ─── PEDIDOS DE DEMOSTRACIÓN (fallback si la base de datos no responde) ───────────────
 export const MOCK_ORDERS = [
   {
     id: "DJ-1001",

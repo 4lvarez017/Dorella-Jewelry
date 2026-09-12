@@ -111,7 +111,7 @@ function AppContent() {
     return () => window.removeEventListener("popstate", handlePopState);
   }, []);
 
-  // Resolver producto pendiente cuando los productos de Supabase estén disponibles
+  // Resolver producto pendiente cuando los productos estén disponibles
   useEffect(() => {
     if (selectedProduct?._pendingId && products.length > 0) {
       const prod = products.find((p) => String(p.id) === String(selectedProduct._pendingId));
