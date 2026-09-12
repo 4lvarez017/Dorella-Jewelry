@@ -279,12 +279,39 @@ export function ProductosTab({
     <>
       <div className="admin-section-in" style={{ display: "flex", flexDirection: "column", gap: 20 }}>
 
-        {/* ── Panel de controles ── */}
+        {/* ── Enlaces Internos y Migas de Pan (SEO & Usabilidad) ── */}
+        <nav aria-label="Migas de pan" style={{
+          display: "flex", gap: 8, alignItems: "center", fontSize: 12, flexWrap: "wrap",
+          padding: "10px 14px", background: A.cardBg, borderRadius: 10, border: `1px solid ${A.border}`,
+        }}>
+          <a href="/?page=home" style={{ color: A.goldDark, textDecoration: "none", fontWeight: 600 }}>
+            🏠 Inicio (Tienda Pública)
+          </a>
+          <span style={{ color: A.textMuted }}>/</span>
+          <a href="/?page=catalog" style={{ color: A.goldDark, textDecoration: "none", fontWeight: 600 }}>
+            Catálogo de Joyas en Oro 18K
+          </a>
+          <span style={{ color: A.textMuted }}>/</span>
+          <span style={{ color: A.textSecondary, fontWeight: 700 }}>
+            Gestión de Inventario de Productos
+          </span>
+        </nav>
+
+        {/* ── Panel de controles con Encabezado H2 ── */}
         <div style={{
           background: A.cardBg, border: `1px solid ${A.border}`,
           borderRadius: 14, padding: "18px 20px",
           boxShadow: A.shadowSm, display: "flex", flexDirection: "column", gap: 14,
         }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 8 }}>
+            <h2 style={{ fontSize: 16, fontWeight: 700, color: A.textPrimary, margin: 0 }}>
+              Filtros y Búsqueda de Joyas en Oro Laminado 18K
+            </h2>
+            <span style={{ fontSize: 11, color: A.textMuted, fontWeight: 500 }}>
+              E-E-A-T: Catálogo auditado por Dorella Jewelry · Actualizado 2026
+            </span>
+          </div>
+
           {/* Fila 1: buscador + botón nuevo */}
           <div style={{ display: "flex", gap: 12, alignItems: "center", flexWrap: "wrap" }}>
             <div style={{ flex: 1, minWidth: 200, position: "relative" }}>
@@ -413,6 +440,10 @@ export function ProductosTab({
           </div>
         ) : (
           <>
+            <h2 style={{ fontSize: 16, fontWeight: 700, color: A.textPrimary, margin: "6px 0 2px 0" }}>
+              Listado de Referencias de Joyería y Control de Precios
+            </h2>
+
             <div className="prod-card-grid admin-stagger">
               {paginated.map(p => (
                 <ProductCard
@@ -461,6 +492,66 @@ export function ProductosTab({
             )}
           </>
         )}
+
+        {/* ── Sección NAP, Contacto Directo y Preguntas Frecuentes (SEO Local y AEO) ── */}
+        <section style={{
+          marginTop: 24, padding: "22px 24px", background: A.cardBg,
+          borderRadius: 14, border: `1px solid ${A.border}`, boxShadow: A.shadowSm,
+        }}>
+          <h2 style={{ fontSize: 16, fontWeight: 700, color: A.textPrimary, marginBottom: 12 }}>
+            Soporte Comercial y Datos Oficiales de Operación (NAP)
+          </h2>
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(230px, 1fr))", gap: 16, fontSize: 13, color: A.textSecondary, marginBottom: 18 }}>
+            <div>
+              <p style={{ margin: "4px 0" }}>
+                📞 <strong>Teléfono de Soporte:</strong>{" "}
+                <a href="tel:+573132403081" style={{ color: A.goldDark, fontWeight: 600, textDecoration: "none" }}>
+                  +57 313 240 3081
+                </a>
+              </p>
+              <p style={{ margin: "4px 0" }}>
+                💬 <strong>WhatsApp Inmediato:</strong>{" "}
+                <a href="https://wa.me/573132403081" target="_blank" rel="noopener noreferrer" style={{ color: "#25D366", fontWeight: 600, textDecoration: "none" }}>
+                  Contactar por WhatsApp Directo ↗
+                </a>
+              </p>
+            </div>
+
+            <div>
+              <p style={{ margin: "4px 0" }}>
+                📍 <strong>Sede Principal:</strong> Ocaña, Norte de Santander (Código Postal: 546552)
+              </p>
+              <p style={{ margin: "4px 0" }}>
+                🗺️ <strong>Google Maps:</strong>{" "}
+                <a href="https://maps.google.com/?q=Ocana+Norte+de+Santander+Colombia" target="_blank" rel="noopener noreferrer" style={{ color: A.goldDark, textDecoration: "underline" }}>
+                  Ver Ficha en Google Maps ↗
+                </a>
+              </p>
+            </div>
+
+            <div>
+              <p style={{ margin: "4px 0" }}>
+                🕒 <strong>Horario de Atención:</strong> Lunes a Sábado: 08:00 - 19:00 (COT)
+              </p>
+              <p style={{ margin: "4px 0" }}>
+                🛡️ <strong>Garantía Oficial:</strong> 5 capas térmicas en oro 18K inalterable
+              </p>
+            </div>
+          </div>
+
+          {/* Respaldo E-E-A-T & Formato citable */}
+          <div style={{ borderTop: `1px solid ${A.border}`, paddingTop: 14 }}>
+            <h3 style={{ fontSize: 13, fontWeight: 700, color: A.textPrimary, marginBottom: 6 }}>
+              Información Técnica y Logística de Catálogo (AEO/GEO)
+            </h3>
+            <ul style={{ margin: 0, paddingLeft: 18, fontSize: 12, lineHeight: 1.7, color: A.textSecondary }}>
+              <li><strong>Sincronización en la Nube:</strong> Todos los precios y existencias se sincronizan con Cloud Firestore sin demoras de caché.</li>
+              <li><strong>Cobertura Nacional:</strong> Despachos asegurados a toda Colombia en 24-48 horas a ciudades capitales.</li>
+              <li><strong>Autoría E-E-A-T:</strong> Catálogo administrado y validado por Dorella Jewelry Colombia. Última actualización: Marzo 2026.</li>
+            </ul>
+          </div>
+        </section>
       </div>
 
       {/* ── Modal de producto ── */}
