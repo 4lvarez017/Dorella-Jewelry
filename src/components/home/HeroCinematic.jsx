@@ -290,7 +290,11 @@ export function HeroCinematic({ onExplore }) {
 
           <img
             src="/pulsera_base.jpg"
-            alt="Pulsera Dorella Oro 18K"
+            alt="Pulsera Dorella Oro 18K Inalterable"
+            width="520"
+            height="520"
+            fetchPriority="high"
+            decoding="async"
             style={{
               width: "100%",
               height: "100%",
