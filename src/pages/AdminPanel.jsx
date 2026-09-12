@@ -7,7 +7,7 @@ import { InventarioTab } from "../components/admin/InventarioTab";
 import { ProductosTab }  from "../components/admin/ProductosTab";
 import { PedidosTab }    from "../components/admin/PedidosTab";
 import { ReviewsTab }    from "../components/admin/ReviewsTab";
-import { supabaseFetch } from "../lib/supabase";
+import { fetchOrders as fbFetchOrders, updateOrderStatus as fbUpdateOrderStatus, deleteOrder as fbDeleteOrder } from "../lib/firebase";
 import { useProducts }   from "../context/ProductsContext";
 import { jsPDF } from "jspdf";
 import autoTable from "jspdf-autotable";
@@ -349,20 +349,20 @@ export function AdminPanel({ activeTab, setActiveTab, onLogout }) {
     setLoadingOrders(true);
     const local = getLocalOrders();
     try {
-      const remote = await supabaseFetch("/orders?select=*&order=created_at.desc");
+      const remote = await fbFetchOrders();
       const remoteIds = new Set(remote.map(o => o.id));
       const onlyLocal = local.filter(o => !remoteIds.has(o.id));
       const merged = [...remote, ...onlyLocal].sort(
-        (a, b) => new Date(b.created_at) - new Date(a.created_at)
+        (a, b) => new Date(b.created_at || 0) - new Date(a.created_at || 0)
       );
       setOrders(merged);
       setSupabaseAvail(true);
     } catch (err) {
-      console.error("Error al cargar pedidos:", err);
+      console.error("Error al cargar pedidos de Firebase:", err);
       setSupabaseAvail(false);
       // Solo mostrar pedidos locales si existen — NO mostrar datos de demostración
       if (local.length > 0) {
-        setOrders(local.sort((a, b) => new Date(b.created_at) - new Date(a.created_at)));
+        setOrders(local.sort((a, b) => new Date(b.created_at || 0) - new Date(a.created_at || 0)));
       } else {
         setOrders([]);
       }
@@ -379,12 +379,8 @@ export function AdminPanel({ activeTab, setActiveTab, onLogout }) {
     // Actualizar UI optimistamente
     setOrders(prev => prev.map(o => o.id === id ? { ...o, status } : o));
     try {
-      await supabaseFetch(`/orders?id=eq.${id}`, {
-        method: "PATCH",
-        headers: { "Prefer": "return=minimal" },
-        body: JSON.stringify({ status }),
-      });
-      // Solo actualizar localStorage DESPUÉS de éxito en Supabase
+      await fbUpdateOrderStatus(id, status);
+      // Solo actualizar localStorage DESPUÉS de éxito en Firebase
       const updated = getLocalOrders().map(o => o.id === id ? { ...o, status } : o);
       saveLocalOrders(updated);
       addToast(`Estado → ${status} ✓`);
@@ -403,15 +399,12 @@ export function AdminPanel({ activeTab, setActiveTab, onLogout }) {
     const updatedLocal = getLocalOrders().filter(o => o.id !== id);
     saveLocalOrders(updatedLocal);
 
-    // 2. Borrar de Supabase
+    // 2. Borrar de Firebase
     try {
-      await supabaseFetch(`/orders?id=eq.${id}`, {
-        method: "DELETE",
-        headers: { "Prefer": "return=minimal" },
-      });
+      await fbDeleteOrder(id);
       addToast("Pedido eliminado ✓", "error");
     } catch (e) {
-      console.error("Error al eliminar pedido en Supabase:", e);
+      console.error("Error al eliminar pedido en Firebase:", e);
       // Re-sincronizar para que si falló, el pedido vuelva a aparecer
       await fetchOrders();
       addToast("Error al eliminar — intenta de nuevo", "error");

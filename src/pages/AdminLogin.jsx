@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { G } from "../styles/theme";
-import { signIn } from "../lib/supabase";
+import { signIn } from "../lib/firebase";
 
 const ADMIN_USERNAMES = {
   alex: "alex.dorellajewelry@gmail.com",

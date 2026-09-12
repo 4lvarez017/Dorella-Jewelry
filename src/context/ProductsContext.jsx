@@ -1,5 +1,10 @@
 import { createContext, useContext, useState, useEffect, useCallback } from "react";
-import { supabaseFetch } from "../lib/supabase";
+import {
+  fetchProducts as fbFetchProducts,
+  addProduct as fbAddProduct,
+  updateProduct as fbUpdateProduct,
+  deleteProduct as fbDeleteProduct,
+} from "../lib/firebase";
 
 const ProductsContext = createContext(null);
 
@@ -8,28 +13,11 @@ export function ProductsProvider({ children }) {
   const [loading, setLoading] = useState(true);
   const [loadError, setLoadError] = useState(null);
 
-  // Carga inicial
-  useEffect(() => {
-    loadProducts();
-  }, []);
-
   const loadProducts = useCallback(async () => {
     setLoading(true);
     setLoadError(null);
     try {
-      let data = [];
-      // Paginar en lotes de 500 para evitar el límite max_rows de Supabase
-      const PAGE = 500;
-      let offset = 0;
-      while (true) {
-        const batch = await supabaseFetch(
-          `/products?select=*&order=created_at.desc&limit=${PAGE}&offset=${offset}`
-        );
-        if (!batch || batch.length === 0) break;
-        data = data.concat(batch);
-        if (batch.length < PAGE) break;
-        offset += PAGE;
-      }
+      const data = await fbFetchProducts();
 
       // Dar formato a los productos (convertir a formato esperado por el frontend)
       const formatted = data.map((p) => {
@@ -40,12 +28,12 @@ export function ProductsProvider({ children }) {
           imgs = ["/placeholder.jpg"];
         }
         if (!Array.isArray(imgs) || imgs.length === 0) {
-          imgs = ["/placeholder.jpg"];
+          imgs = [p.image || "/placeholder.jpg"];
         }
 
         return {
           ...p,
-          image: imgs[0] || "/placeholder.jpg",
+          image: imgs[0] || p.image || "/placeholder.jpg",
           images: imgs,
         };
       });
@@ -53,15 +41,17 @@ export function ProductsProvider({ children }) {
       setProducts(formatted);
       setLoadError(null);
     } catch (e) {
-      console.error("Error al cargar productos de Supabase:", e);
-      setLoadError(e.message || "Error al conectar con Supabase");
-      // NO cargar datos locales silenciosamente.
-      // Mantener los productos actuales (si los había) o dejar vacío.
-      // El componente que consume debe mostrar el error.
+      console.error("Error al cargar productos de Firebase:", e);
+      setLoadError(e.message || "Error al conectar con Firebase");
     } finally {
       setLoading(false);
     }
   }, []);
+
+  // Carga inicial
+  useEffect(() => {
+    loadProducts();
+  }, [loadProducts]);
 
   // Agregar un producto nuevo
   const addProduct = async (newProduct) => {
@@ -76,22 +66,13 @@ export function ProductsProvider({ children }) {
       category: (newProduct.category || "Anillos").trim(),
       price:    Number(newProduct.price),
       images:   imgs,
+      image:    imgs[0] || "/placeholder.jpg",
       desc:     (newProduct.desc || "").trim(),
       stock:    newProduct.stock !== undefined ? Number(newProduct.stock) : 10,
       visible:  newProduct.visible !== false,
     };
 
-    // Enviar a Supabase y esperar confirmación
-    const result = await supabaseFetch("/products", {
-      method: "POST",
-      headers: { "Prefer": "return=representation" },
-      body: JSON.stringify(productData),
-    });
-
-    // Verificar que se insertó correctamente
-    if (!result || (Array.isArray(result) && result.length === 0)) {
-      throw new Error("Supabase no confirmó la inserción del producto");
-    }
+    await fbAddProduct(productData);
 
     // Recargar productos para sincronizar
     await loadProducts();
@@ -106,19 +87,13 @@ export function ProductsProvider({ children }) {
     if (payload.price !== undefined) payload.price = Number(payload.price);
     if (payload.stock !== undefined) payload.stock = Number(payload.stock);
 
-    // La tabla solo tiene columna "images" (array), NO tiene "image".
     if (Array.isArray(payload.images) && payload.images.length > 0) {
-      // ya tiene images correctas
+      payload.image = payload.images[0];
     } else if (payload.image !== undefined && payload.images === undefined) {
       payload.images = [payload.image];
     }
-    delete payload.image; // La columna "image" NO existe en Supabase
 
-    await supabaseFetch(`/products?id=eq.${encodeURIComponent(id)}`, {
-      method: "PATCH",
-      headers: { "Prefer": "return=representation" },
-      body: JSON.stringify(payload),
-    });
+    await fbUpdateProduct(id, payload);
 
     // Recargar productos para sincronizar
     await loadProducts();
@@ -126,9 +101,7 @@ export function ProductsProvider({ children }) {
 
   // Eliminar un producto
   const deleteProduct = async (id) => {
-    await supabaseFetch(`/products?id=eq.${encodeURIComponent(id)}`, {
-      method: "DELETE",
-    });
+    await fbDeleteProduct(id);
     await loadProducts();
   };
 

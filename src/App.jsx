@@ -5,7 +5,7 @@ import { globalCSS, G } from "./styles/theme";
 import { HomeView } from "./pages/HomeView";
 import { CatalogView } from "./pages/CatalogView";
 import { ProductDetailView } from "./pages/ProductDetailView";
-import { getSession, signOut } from "./lib/supabase";
+import { onAuthChange, signOut } from "./lib/firebase";
 
 // ── Carga diferida del Admin
 const AdminPanel = lazy(() => import("./pages/AdminPanel").then(m => ({ default: m.AdminPanel })));
@@ -41,12 +41,13 @@ function AppContent() {
   const [adminLoggedIn, setAdminLoggedIn] = useState(false);
   const [sessionChecked, setSessionChecked] = useState(false);
 
-  // Verificar sesión real con Supabase al inicio
+  // Escuchar estado real de sesión con Firebase
   useEffect(() => {
-    getSession().then(session => {
-      setAdminLoggedIn(!!session);
+    const unsubscribe = onAuthChange((user) => {
+      setAdminLoggedIn(!!user);
       setSessionChecked(true);
     });
+    return () => unsubscribe();
   }, []);
 
   const [adminTab, setAdminTab] = useState("dashboard");

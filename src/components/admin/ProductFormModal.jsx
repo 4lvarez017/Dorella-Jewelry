@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { A, CATEGORIES_LIST } from "./AdminTheme";
-import { uploadProductImage } from "../../lib/supabase";
+import { uploadProductImage } from "../../lib/firebase";
 
 // ─── Drag & Drop Image Uploader ───────────────────────────────────────────────
 function ImageUploader({ category, images, onChange }) {
@@ -10,6 +10,15 @@ function ImageUploader({ category, images, onChange }) {
   const [uploadError, setUploadError] = useState(null);
   const [draggedIdx, setDraggedIdx] = useState(null);
   const [dragOverIdx, setDragOverIdx] = useState(null);
+  const [urlInput, setUrlInput] = useState("");
+
+  const handleAddUrl = (e) => {
+    if (e) e.preventDefault();
+    const trimmed = urlInput.trim();
+    if (!trimmed) return;
+    onChange([...images, trimmed]);
+    setUrlInput("");
+  };
 
   const handleFiles = async (files) => {
     if (!files || files.length === 0) return;
@@ -92,7 +101,7 @@ function ImageUploader({ category, images, onChange }) {
               borderRadius: "50%",
               animation: "spin 0.8s linear infinite",
             }} />
-            <span style={{ fontSize: 13, color: A.textSecondary }}>Subiendo a Supabase...</span>
+            <span style={{ fontSize: 13, color: A.textSecondary }}>Subiendo imagen...</span>
           </div>
         ) : (
           <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 6 }}>
@@ -116,6 +125,42 @@ function ImageUploader({ category, images, onChange }) {
       {uploadError && (
         <p style={{ fontSize: 12, color: A.danger, margin: 0 }}>⚠️ {uploadError}</p>
       )}
+
+      {/* Opción manual: agregar por URL o ruta local */}
+      <div style={{ display: "flex", gap: 8 }}>
+        <input
+          type="text"
+          placeholder="O ingresa ruta local o enlace (ej: /ANILLOS/foto.png o https://...)"
+          value={urlInput}
+          onChange={(e) => setUrlInput(e.target.value)}
+          onKeyDown={(e) => e.key === "Enter" && handleAddUrl(e)}
+          style={{
+            flex: 1,
+            padding: "8px 12px",
+            fontSize: 12,
+            border: `1px solid ${A.border}`,
+            borderRadius: 8,
+            background: "#fff",
+            color: A.textPrimary,
+          }}
+        />
+        <button
+          type="button"
+          onClick={handleAddUrl}
+          style={{
+            padding: "8px 14px",
+            fontSize: 12,
+            background: A.goldMid,
+            color: "#fff",
+            border: "none",
+            borderRadius: 8,
+            cursor: "pointer",
+            fontWeight: 600,
+          }}
+        >
+          + Agregar
+        </button>
+      </div>
 
       {/* Galería y reordenación de imágenes */}
       {images.length > 0 && (

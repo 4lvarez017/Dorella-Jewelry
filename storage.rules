@@ -1,0 +1,16 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+
+    // Regla auxiliar: usuario autenticado (administrador)
+    function isAdmin() {
+      return request.auth != null;
+    }
+
+    // Imágenes de productos: lectura pública permanente; subida y modificación solo por admin
+    match /products/{allPaths=**} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+  }
+}

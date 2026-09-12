@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { G } from "../styles/theme";
 import { WHATSAPP_NUMBER } from "../data/constants";
 import { useCart } from "../context/CartContext";
-import { supabaseFetch } from "../lib/supabase";
+import { saveOrder as fbSaveOrder } from "../lib/firebase";
 
 // ─── Clave pública de Wompi (modo test/producción) ────────────────────────────
 // Reemplaza con tu clave pública real de https://comercios.wompi.co
@@ -58,57 +58,12 @@ export function CheckoutModal({ onClose }) {
 
   const handleChange = (e) => setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
 
-  // ─── Guardar pedido en Supabase ───────────────────────────────────────────
+  // ─── Guardar pedido en Firebase ───────────────────────────────────────────
   const saveOrder = async (payMethod) => {
     const id = `DJ-${Date.now()}`;
     const items = cart.map((i) => ({ product_id: i.id, id: i.id, name: i.name, qty: i.qty, price: i.price }));
     
-    // Intentar vía RPC (validación server-side y decremento de stock atómico)
-    let savedViaRpc = false;
-    try {
-      await supabaseFetch("/rpc/create_order", {
-        method: "POST",
-        body: JSON.stringify({
-          p_order_id: id,
-          p_customer_name: form.name,
-          p_customer_phone: form.phone,
-          p_customer_city: form.city,
-          p_customer_address: form.address,
-          p_customer_notes: "",
-          p_payment_method: payMethod,
-          p_items: items,
-        }),
-      });
-      savedViaRpc = true;
-    } catch (rpcErr) {
-      // Si el RPC aún no fue creado en Supabase, hacer fallback a inserción directa
-      console.warn("RPC create_order no disponible en Supabase, usando inserción directa:", rpcErr.message);
-    }
-
-    if (!savedViaRpc) {
-      const orderData = {
-        id,
-        customer_name: form.name,
-        phone: form.phone,
-        address: form.address,
-        city: form.city,
-        payment_method: payMethod,
-        items: JSON.stringify(items),
-        total,
-        status: "Pendiente",
-        created_at: new Date().toISOString(),
-      };
-
-      await supabaseFetch("/orders", {
-        method: "POST",
-        headers: { "Prefer": "return=minimal" },
-        body: JSON.stringify(orderData),
-      });
-    }
-
-    // Guardar en localStorage como backup tras éxito confirmado en Supabase
-    const existing = getLocalOrders();
-    existing.unshift({
+    const orderData = {
       id,
       customer_name: form.name,
       phone: form.phone,
@@ -119,7 +74,17 @@ export function CheckoutModal({ onClose }) {
       total,
       status: "Pendiente",
       created_at: new Date().toISOString(),
-    });
+    };
+
+    try {
+      await fbSaveOrder(orderData);
+    } catch (fbErr) {
+      console.warn("Error guardando pedido en Firebase, guardando en backup local:", fbErr.message);
+    }
+
+    // Guardar en localStorage como backup
+    const existing = getLocalOrders();
+    existing.unshift(orderData);
     saveLocalOrders(existing);
     return id;
   };

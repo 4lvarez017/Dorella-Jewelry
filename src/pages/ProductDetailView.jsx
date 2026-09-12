@@ -6,7 +6,7 @@ import { Footer } from "../components/Footer";
 import { CartFab, WhatsAppFab } from "./CatalogView";
 import { CartModal } from "../components/CartModal";
 import { CheckoutModal } from "../components/CheckoutModal";
-import { fetchReviews, insertReview } from "../lib/supabase";
+import { fetchReviews, insertReview } from "../lib/firebase";
 
 // Generate customized mock reviews based on product details for high realism
 function getMockReviews(product) {

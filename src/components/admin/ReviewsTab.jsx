@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import { A } from "./AdminTheme";
-import { fetchAllReviews, deleteReview } from "../../lib/supabase";
+import { fetchAllReviews, deleteReview } from "../../lib/firebase";
 
 // ─── Estrellas ────────────────────────────────────────────────────────────────
 function Stars({ rating }) {
