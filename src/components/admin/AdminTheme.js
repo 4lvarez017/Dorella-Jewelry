@@ -297,35 +297,41 @@ export const adminCSS = `
   /* ─── Product Card Grid ─── */
   .prod-card-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 18px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 260px));
+    gap: 16px;
+    justify-content: start;
   }
-  @media (max-width: 1300px) { .prod-card-grid { grid-template-columns: repeat(3, 1fr); } }
-  @media (max-width: 900px)  { .prod-card-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; } }
+  @media (max-width: 900px)  { .prod-card-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; } }
   @media (max-width: 480px)  { .prod-card-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; } }
 
   /* ─── Product Card ─── */
   .prod-card {
     background: ${A.cardBg};
     border: 1px solid ${A.border};
-    border-radius: 14px;
+    border-radius: 12px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     transition: all 0.28s cubic-bezier(0.16,1,0.3,1);
     box-shadow: ${A.shadowSm};
     position: relative;
+    width: 100%;
+    max-width: 260px;
   }
   .prod-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 36px rgba(0,0,0,0.13);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 28px rgba(0,0,0,0.12);
     border-color: ${A.gold}50;
   }
   .prod-card-img-wrap {
     position: relative;
     overflow: hidden;
-    aspect-ratio: 1;
+    height: 190px;
+    max-height: 200px;
     background: ${A.bg};
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .prod-card-img {
     width: 100%; height: 100%;
@@ -333,7 +339,7 @@ export const adminCSS = `
     transition: transform 0.5s cubic-bezier(0.16,1,0.3,1);
     display: block;
   }
-  .prod-card:hover .prod-card-img { transform: scale(1.06); }
+  .prod-card:hover .prod-card-img { transform: scale(1.05); }
   .prod-card-body {
     padding: 14px 14px 14px;
     display: flex;
