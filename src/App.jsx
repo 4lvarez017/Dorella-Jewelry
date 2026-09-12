@@ -57,6 +57,24 @@ function AppContent() {
     window.scrollTo({ top: 0, behavior: "instant" });
   }, [page, activeCategory]);
 
+  // Sincronizar dinámicamente Title y Meta Description para SEO y AEO
+  useEffect(() => {
+    let title = "Dorella Jewelry | Joyas en Oro Laminado 18K en Colombia";
+    let desc = "Joyas en oro laminado 18K inalterable con 5 capas térmicas y garantía real. Compra cadenas, pulseras y anillos hipoalergénicos con envío gratis a Colombia.";
+
+    if (page === "catalog") {
+      title = "Catálogo de Joyas en Oro Laminado 18K | Dorella Jewelry";
+      desc = "Explora nuestro catálogo de joyas en oro laminado 18K con 5 capas de fusión y garantía real. Anillos, cadenas y pulseras con envíos asegurados a Colombia.";
+    } else if (page === "admin") {
+      title = "Gestión de Catálogo de Joyas | Dorella Jewelry Panel";
+      desc = "Panel de administración y control de inventario de joyas en oro laminado 18K de Dorella Jewelry. Actualización de existencias, precios y pedidos en Colombia.";
+    }
+
+    document.title = title;
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) metaDesc.setAttribute("content", desc);
+  }, [page]);
+
   // Leer estado inicial de la URL y sincronizar History API
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);

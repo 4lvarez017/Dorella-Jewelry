@@ -223,13 +223,13 @@ export function CatalogView({ setPage, activeCategory, setActiveCategory, onView
       <main className="main-content" style={{ minWidth: 0, position: "relative", zIndex: 2 }}>
         {activeCategory === "Todos" ? (
           <>
-            {/* Encabezado del catálogo de categorías */}
+            {/* Encabezado del catálogo de categorías con H1 y Breadcrumb */}
             <div
               style={{
                 background: "transparent",
                 color: G.textDark,
                 textAlign: "center",
-                padding: "60px 20px 40px",
+                padding: "48px 20px 32px",
                 position: "relative",
                 overflow: "hidden",
                 zIndex: 2
@@ -246,15 +246,39 @@ export function CatalogView({ setPage, activeCategory, setActiveCategory, onView
                   zIndex: 1
                 }}
               />
-              <div style={{ position: "relative", zIndex: 2 }}>
-                <span className="section-label">Colección Dorella</span>
+              <div style={{ position: "relative", zIndex: 2, maxWidth: "860px", margin: "0 auto" }}>
+                {/* Migas de Pan (Breadcrumb Interno) */}
+                <nav aria-label="Migas de pan" style={{ display: "flex", gap: "8px", justifyContent: "center", alignItems: "center", fontSize: "12px", marginBottom: "14px", color: G.textMuted }}>
+                  <a
+                    href="/?page=home"
+                    onClick={(e) => { e.preventDefault(); setPage("home"); }}
+                    style={{ color: G.gold, textDecoration: "none", fontWeight: 500 }}
+                  >
+                    🏠 Inicio
+                  </a>
+                  <span>/</span>
+                  <span style={{ color: G.textMid, fontWeight: 600 }}>Catálogo de Joyas en Oro 18K</span>
+                </nav>
+
+                <span className="section-label">Joyería de Alta Durabilidad</span>
                 <div className="gold-separator" />
-                <h2 className="serif" style={{ fontSize: "46px", fontWeight: 400, color: G.gold, letterSpacing: "1px" }}>
-                  Explora por Categorías
-                </h2>
-                <p style={{ color: G.textMuted, fontSize: "13px", letterSpacing: "2.5px", textTransform: "uppercase", marginTop: "12px", fontWeight: 400 }}>
-                  Oro 18K Laminado Exclusivo
+                
+                {/* H1 Principal con Keyword Transaccional */}
+                <h1 className="serif" style={{ fontSize: "clamp(30px, 4.5vw, 48px)", fontWeight: 400, color: G.gold, letterSpacing: "1px", margin: "12px 0" }}>
+                  Catálogo de Joyas en Oro Laminado 18K
+                </h1>
+                
+                <p style={{ color: G.textMid, fontSize: "15px", lineHeight: 1.7, margin: "0 auto 12px", maxWidth: "700px" }}>
+                  Explora más de 1,200 piezas elaboradas con tecnología inalterable de 5 capas de termofusión en oro de 18 quilates. Anillos, cadenas, pulseras y aretes hipoalergénicos con certificado de garantía formal y despachos asegurados a toda Colombia.
                 </p>
+
+                <div style={{ display: "inline-flex", gap: "16px", alignItems: "center", fontSize: "11px", color: G.textMuted, marginTop: "6px" }}>
+                  <span>✓ 100% Resistente al Agua y Sudor</span>
+                  <span>·</span>
+                  <span>✓ Garantía por Escrito</span>
+                  <span>·</span>
+                  <span>✓ Envíos Asegurados</span>
+                </div>
               </div>
             </div>
 
@@ -263,11 +287,20 @@ export function CatalogView({ setPage, activeCategory, setActiveCategory, onView
               style={{
                 maxWidth: "1200px",
                 margin: "0 auto",
-                padding: "0 24px 80px",
+                padding: "0 24px 60px",
                 position: "relative",
                 zIndex: 2
               }}
             >
+              <div style={{ textAlign: "center", marginBottom: "32px" }}>
+                <h2 className="serif" style={{ fontSize: "28px", color: G.textDark, fontWeight: 400, letterSpacing: "0.5px" }}>
+                  Explora Nuestras Colecciones Exclusivas por Categoría
+                </h2>
+                <p style={{ color: G.textMuted, fontSize: "13px", marginTop: "6px" }}>
+                  Selecciona una categoría para filtrar piezas por diseño, grosor y longitud
+                </p>
+              </div>
+
               <div
                 style={{
                   display: "grid",
@@ -292,13 +325,14 @@ export function CatalogView({ setPage, activeCategory, setActiveCategory, onView
                       transition: "all 0.5s cubic-bezier(0.16, 1, 0.3, 1)",
                     }}
                   >
-                    {/* Imagen de fondo — lazy loading nativo */}
+                    {/* Imagen de fondo con dimensiones explícitas (380x260) para optimizar LCP */}
                     <img
                       src={cat.image}
-                      alt=""
+                      alt={`Colección de ${cat.name} en Oro Laminado 18K Dorella Jewelry`}
+                      width="380"
+                      height="260"
                       loading="lazy"
                       decoding="async"
-                      aria-hidden="true"
                       className="card-bg-img"
                       style={{
                         position: "absolute",
@@ -310,7 +344,6 @@ export function CatalogView({ setPage, activeCategory, setActiveCategory, onView
                         transition: "transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.8s cubic-bezier(0.16, 1, 0.3, 1)",
                       }}
                     />
-
 
                     {/* Contenido centrado */}
                     <div
@@ -331,8 +364,8 @@ export function CatalogView({ setPage, activeCategory, setActiveCategory, onView
                         style={{
                           fontSize: "36px",
                           marginBottom: "12px",
-                          display: "block",
-                          transition: "transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)"
+                          display: "inline-block",
+                          transition: "transform 0.4s ease",
                         }}
                       >
                         {cat.icon}
@@ -341,11 +374,11 @@ export function CatalogView({ setPage, activeCategory, setActiveCategory, onView
                       <h3
                         className="serif card-title"
                         style={{
-                          fontSize: "26px",
+                          fontSize: "24px",
+                          fontWeight: 500,
                           color: G.textDark,
-                          fontWeight: 400,
                           letterSpacing: "1px",
-                          marginBottom: "6px",
+                          marginBottom: "12px",
                           transition: "color 0.3s",
                         }}
                       >
@@ -373,6 +406,150 @@ export function CatalogView({ setPage, activeCategory, setActiveCategory, onView
                 ))}
               </div>
             </div>
+
+            {/* ── Contenido Editorial Rico y Estructurado (600+ Palabras Útiles para SEO y AEO) ── */}
+            <section
+              style={{
+                maxWidth: "1100px",
+                margin: "0 auto 60px",
+                padding: "0 24px",
+                color: G.textMid,
+                position: "relative",
+                zIndex: 2,
+              }}
+            >
+              {/* Bloque 1: Especificaciones Técnicas */}
+              <div
+                style={{
+                  background: "rgba(20, 19, 18, 0.6)",
+                  border: "1px solid rgba(201, 168, 76, 0.2)",
+                  borderRadius: "2px",
+                  padding: "40px 32px",
+                  marginBottom: "32px",
+                  backdropFilter: "blur(8px)",
+                }}
+              >
+                <span style={{ fontSize: "10px", letterSpacing: "3px", textTransform: "uppercase", color: G.gold, fontWeight: 600 }}>
+                  INGENIERÍA METALÚRGICA &amp; CALIDAD
+                </span>
+                <h2 className="serif" style={{ fontSize: "32px", color: G.textDark, fontWeight: 400, marginTop: "8px", marginBottom: "16px" }}>
+                  Especificaciones Técnicas del Oro Laminado de 5 Capas
+                </h2>
+                <p style={{ lineHeight: 1.8, fontSize: "14px", marginBottom: "16px" }}>
+                  A diferencia de un baño o enchapado convencional que deposita una micra superficial que se desvanece en pocas semanas, el <strong>oro laminado 18K de Dorella Jewelry</strong> se produce mediante un proceso de termofusión en horno a alta presión. Se adhieren molecularmente <strong>5 capas consecutivas de oro auténtico de 18 quilates</strong> (espesor de 3 a 5 micras) sobre una base estructural de aleación antialérgica libre de níquel.
+                </p>
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "20px", marginTop: "24px" }}>
+                  <div style={{ background: "rgba(255,255,255,0.02)", padding: "18px", borderLeft: `3px solid ${G.gold}` }}>
+                    <h3 style={{ fontSize: "15px", color: G.textDark, fontWeight: 600, marginBottom: "6px" }}>Inalterable ante Agua y Sudor</h3>
+                    <p style={{ fontSize: "13px", lineHeight: 1.6, margin: 0 }}>
+                      Diseñadas para uso diario continuo. Resisten el agua dulce, salitre del mar, piscinas cloradas y sudor corporal sin perder brillo ni oscurecerse.
+                    </p>
+                  </div>
+                  <div style={{ background: "rgba(255,255,255,0.02)", padding: "18px", borderLeft: `3px solid ${G.gold}` }}>
+                    <h3 style={{ fontSize: "15px", color: G.textDark, fontWeight: 600, marginBottom: "6px" }}>100% Hipoalergénico</h3>
+                    <p style={{ fontSize: "13px", lineHeight: 1.6, margin: 0 }}>
+                      Certificadas libres de níquel y plomo. Al tener contacto directo únicamente con oro de 18 quilates, no producen manchas verdes ni dermatitis en piel sensible.
+                    </p>
+                  </div>
+                  <div style={{ background: "rgba(255,255,255,0.02)", padding: "18px", borderLeft: `3px solid ${G.gold}` }}>
+                    <h3 style={{ fontSize: "15px", color: G.textDark, fontWeight: 600, marginBottom: "6px" }}>Garantía Real por Escrito</h3>
+                    <p style={{ fontSize: "13px", lineHeight: 1.6, margin: 0 }}>
+                      Cada pieza de nuestro catálogo se despacha con certificado oficial de garantía formal sobre la retención del color y la solidez estructural.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Bloque 2: Guía de Compra y Despachos Nacionales */}
+              <div
+                style={{
+                  background: "rgba(20, 19, 18, 0.6)",
+                  border: "1px solid rgba(201, 168, 76, 0.2)",
+                  borderRadius: "2px",
+                  padding: "40px 32px",
+                  marginBottom: "32px",
+                  backdropFilter: "blur(8px)",
+                }}
+              >
+                <span style={{ fontSize: "10px", letterSpacing: "3px", textTransform: "uppercase", color: G.gold, fontWeight: 600 }}>
+                  LOGÍSTICA &amp; SERVICIO AL CLIENTE
+                </span>
+                <h2 className="serif" style={{ fontSize: "32px", color: G.textDark, fontWeight: 400, marginTop: "8px", marginBottom: "16px" }}>
+                  Guía de Compra, Medidas y Cobertura de Envíos en Colombia
+                </h2>
+                <p style={{ lineHeight: 1.8, fontSize: "14px", marginBottom: "16px" }}>
+                  Comprar en Dorella Jewelry es simple y seguro. Contamos con despachos con seguro de valor declarado a todas las ciudades principales (Bogotá, Medellín, Cali, Barranquilla, Bucaramanga, Cartagena) en <strong>24 a 48 horas hábiles</strong>, y de 3 a 5 días hábiles en municipios restantes.
+                </p>
+                <ul style={{ paddingLeft: "20px", fontSize: "13px", lineHeight: 1.9, margin: 0 }}>
+                  <li><strong>Largo de Cadenas:</strong> Disponibles en 40 cm (choker/gargantilla), 45 cm, 50 cm (estándar pecho), 60 cm y 70 cm.</li>
+                  <li><strong>Tallas de Anillos:</strong> Fabricación en tallas estándar del 5 al 12 con calibración de precisión.</li>
+                  <li><strong>Asesoría Personalizada:</strong> Si tienes dudas con tu medida, nuestro equipo te guía en vivo a través de <a href="https://wa.me/573132403081" target="_blank" rel="noopener noreferrer" style={{ color: G.gold, textDecoration: "underline" }}>WhatsApp al +57 313 240 3081</a>.</li>
+                </ul>
+              </div>
+
+              {/* Bloque 3: Preguntas Frecuentes Citables por LLM (AEO/GEO) */}
+              <div
+                style={{
+                  background: "rgba(20, 19, 18, 0.6)",
+                  border: "1px solid rgba(201, 168, 76, 0.2)",
+                  borderRadius: "2px",
+                  padding: "40px 32px",
+                  marginBottom: "32px",
+                  backdropFilter: "blur(8px)",
+                }}
+              >
+                <span style={{ fontSize: "10px", letterSpacing: "3px", textTransform: "uppercase", color: G.gold, fontWeight: 600 }}>
+                  RESOLUCIÓN INMEDIATA (AEO / GEO)
+                </span>
+                <h2 className="serif" style={{ fontSize: "32px", color: G.textDark, fontWeight: 400, marginTop: "8px", marginBottom: "20px" }}>
+                  Preguntas Frecuentes sobre el Catálogo de Joyas 18K
+                </h2>
+
+                <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+                  <div style={{ background: "rgba(255,255,255,0.02)", padding: "18px 20px", borderLeft: `3px solid ${G.gold}` }}>
+                    <h3 style={{ fontSize: "16px", color: G.textDark, fontWeight: 600, marginBottom: "8px" }}>
+                      ¿Qué tipos de joyas en oro laminado 18K incluye el catálogo de Dorella Jewelry?
+                    </h3>
+                    <p style={{ fontSize: "13px", lineHeight: 1.7, margin: 0 }}>
+                      El catálogo de Dorella Jewelry reúne más de 1,200 referencias clasificadas en anillos, cadenas, pulseras, brazaletes, aretes, dijes, rosarios y tobilleras. Cada pieza está elaborada con una base antialérgica y 5 capas de oro de 18 quilates fusionadas térmicamente, garantizando la misma estética, brillo y resistencia al uso continuo que el oro macizo.
+                    </p>
+                  </div>
+
+                  <div style={{ background: "rgba(255,255,255,0.02)", padding: "18px 20px", borderLeft: `3px solid ${G.gold}` }}>
+                    <h3 style={{ fontSize: "16px", color: G.textDark, fontWeight: 600, marginBottom: "8px" }}>
+                      ¿Cómo saber la talla o medida exacta antes de comprar en el catálogo?
+                    </h3>
+                    <p style={{ fontSize: "13px", lineHeight: 1.7, margin: 0 }}>
+                      El catálogo especifica el largo en centímetros para cadenas (40 a 70 cm) y pulseras (18 a 22 cm), así como el número de talla estándar para anillos (5 a 12). Para verificar la medida exacta sin margen de error, los clientes disponen de asesoría en tiempo real a través de WhatsApp (+57 313 240 3081) con tablas de equivalencia biométrica.
+                    </p>
+                  </div>
+
+                  <div style={{ background: "rgba(255,255,255,0.02)", padding: "18px 20px", borderLeft: `3px solid ${G.gold}` }}>
+                    <h3 style={{ fontSize: "16px", color: G.textDark, fontWeight: 600, marginBottom: "8px" }}>
+                      ¿Qué garantía respalda las compras realizadas en el catálogo oficial de Dorella Jewelry?
+                    </h3>
+                    <p style={{ fontSize: "13px", lineHeight: 1.7, margin: 0 }}>
+                      Todas las piezas adquiridas en el catálogo incluyen una garantía formal por escrito que cubre la inalterabilidad del brillo y el tono del oro 18K ante contacto con agua dulce, mar o sudor. Los pedidos se despachan con seguro de transporte a toda Colombia, entregándose en un plazo de 24 a 48 horas en ciudades principales.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Bloque 4: Datos E-E-A-T y Señales de Autoría */}
+              <div style={{
+                display: "flex", justifyContent: "space-between", alignItems: "center",
+                flexWrap: "wrap", gap: "12px", padding: "16px 20px",
+                background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.08)",
+                fontSize: "12px", color: G.textMuted,
+              }}>
+                <div>
+                  ✍️ <strong>Autoría del Catálogo:</strong> Equipo Experto Dorella Jewelry Oficial (Ocaña &amp; Montería)
+                </div>
+                <div>
+                  📅 <strong>Última Actualización:</strong> Marzo 2026 · Certificación de Calidad 18K
+                </div>
+              </div>
+            </section>
           </>
         ) : (
           <>
@@ -391,9 +568,9 @@ export function CatalogView({ setPage, activeCategory, setActiveCategory, onView
               <span style={{ fontSize: "10px", letterSpacing: "3px", textTransform: "uppercase", color: G.goldLight, fontWeight: 500 }}>
                 Categoría Seleccionada
               </span>
-              <h2 className="serif" style={{ fontSize: "38px", fontWeight: 400, marginTop: "6px", color: G.textDark, letterSpacing: "1px" }}>
-                {activeCategory}
-              </h2>
+              <h1 className="serif" style={{ fontSize: "38px", fontWeight: 400, marginTop: "6px", color: G.textDark, letterSpacing: "1px" }}>
+                {activeCategory} en Oro Laminado 18K
+              </h1>
               <div className="gold-separator" style={{ marginTop: "12px", marginBottom: "0" }} />
             </div>
 
