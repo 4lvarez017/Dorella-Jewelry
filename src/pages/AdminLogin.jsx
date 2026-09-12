@@ -31,7 +31,17 @@ export function AdminLogin({ onLogin }) {
     try {
       await signIn(emailToUse, creds.password);
       onLogin();
-    } catch (err) {
+    } catch (_err) {
+      // Si falló y el usuario ingresado fue 'alex', intentar con la otra cuenta de admin
+      if (emailToUse !== "alanalvarez1507@gmail.com") {
+        try {
+          await signIn("alanalvarez1507@gmail.com", creds.password);
+          onLogin();
+          return;
+        } catch (_e2) {
+          // Ambos fallaron
+        }
+      }
       setError("Usuario o contraseña incorrectos");
     } finally {
       setLoading(false);
