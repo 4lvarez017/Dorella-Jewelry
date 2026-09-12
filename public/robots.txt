@@ -1,6 +1,7 @@
 User-agent: *
 Allow: /
 Disallow: /admin
+Disallow: /*page=admin*
 Disallow: /api/
 
 # Sitemaps y directrices para agentes de IA y buscadores
