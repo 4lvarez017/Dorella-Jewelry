@@ -4,7 +4,9 @@ const TAB_TITLES = {
   dashboard:  "Dashboard",
   inventario: "Inventario",
   productos:  "Productos",
+  ordenar:    "Ordenar Catálogo",
   pedidos:    "Pedidos",
+  resenas:    "Reseñas",
 };
 
 export function AdminHeader({ activeTab, onMenuOpen, isOpen, pendingOrders, onAddProduct }) {

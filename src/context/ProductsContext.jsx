@@ -4,6 +4,7 @@ import {
   addProduct as fbAddProduct,
   updateProduct as fbUpdateProduct,
   deleteProduct as fbDeleteProduct,
+  updateProductsOrderBatch as fbUpdateProductsOrderBatch,
 } from "../lib/firebase";
 
 const ProductsContext = createContext(null);
@@ -35,7 +36,16 @@ export function ProductsProvider({ children }) {
           ...p,
           image: imgs[0] || p.image || "/placeholder.jpg",
           images: imgs,
+          order: p.order !== undefined && p.order !== null ? Number(p.order) : 999999,
         };
+      });
+
+      // Ordenar por 'order' ascendente, fallback alfabético
+      formatted.sort((a, b) => {
+        const ordA = a.order !== undefined ? Number(a.order) : 999999;
+        const ordB = b.order !== undefined ? Number(b.order) : 999999;
+        if (ordA !== ordB) return ordA - ordB;
+        return (a.name || "").localeCompare(b.name || "", "es");
       });
 
       setProducts(formatted);
@@ -114,6 +124,38 @@ export function ProductsProvider({ children }) {
     await updateProduct(id, { visible: !product.visible });
   };
 
+  // Reordenar productos (optimista + persistencia atómica en Firestore)
+  const reorderProducts = async (newOrderedList) => {
+    // 1. Asignar orden secuencial basado en la nueva posición
+    const orderUpdates = newOrderedList.map((p, index) => ({
+      id: p.id,
+      order: index + 1,
+    }));
+
+    const orderMap = new Map(orderUpdates.map((u) => [String(u.id), u.order]));
+
+    // 2. Actualización optimista en el estado de React
+    setProducts((prev) => {
+      const updated = prev.map((p) => {
+        const strId = String(p.id);
+        if (orderMap.has(strId)) {
+          return { ...p, order: orderMap.get(strId) };
+        }
+        return p;
+      });
+
+      return updated.sort((a, b) => {
+        const ordA = a.order !== undefined ? Number(a.order) : 999999;
+        const ordB = b.order !== undefined ? Number(b.order) : 999999;
+        if (ordA !== ordB) return ordA - ordB;
+        return (a.name || "").localeCompare(b.name || "", "es");
+      });
+    });
+
+    // 3. Persistir en Firestore en segundo plano (lote atómico)
+    await fbUpdateProductsOrderBatch(orderUpdates);
+  };
+
   return (
     <ProductsContext.Provider
       value={{
@@ -124,6 +166,7 @@ export function ProductsProvider({ children }) {
         updateProduct,
         deleteProduct,
         toggleVisibility,
+        reorderProducts,
         reloadProducts: loadProducts,
       }}
     >

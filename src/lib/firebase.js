@@ -17,6 +17,7 @@ import {
   query,
   where,
   orderBy,
+  writeBatch,
 } from "firebase/firestore";
 import {
   getStorage,
@@ -108,6 +109,35 @@ export async function updateProduct(id, fields) {
 export async function deleteProduct(id) {
   const docRef = doc(db, "products", String(id));
   await deleteDoc(docRef);
+  return true;
+}
+
+export async function updateProductsOrderBatch(productsOrders) {
+  if (!Array.isArray(productsOrders) || productsOrders.length === 0) return true;
+  const BATCH_SIZE = 450;
+  let batch = writeBatch(db);
+  let count = 0;
+  const now = new Date().toISOString();
+
+  for (const item of productsOrders) {
+    if (!item || !item.id) continue;
+    const docRef = doc(db, "products", String(item.id));
+    batch.update(docRef, {
+      order: Number(item.order),
+      updated_at: now,
+    });
+    count++;
+
+    if (count >= BATCH_SIZE) {
+      await batch.commit();
+      batch = writeBatch(db);
+      count = 0;
+    }
+  }
+
+  if (count > 0) {
+    await batch.commit();
+  }
   return true;
 }
 

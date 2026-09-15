@@ -7,6 +7,7 @@ import { InventarioTab } from "../components/admin/InventarioTab";
 import { ProductosTab }  from "../components/admin/ProductosTab";
 import { PedidosTab }    from "../components/admin/PedidosTab";
 import { ReviewsTab }    from "../components/admin/ReviewsTab";
+import { ReorderTab }    from "../components/admin/ReorderTab";
 import { fetchOrders as fbFetchOrders, updateOrderStatus as fbUpdateOrderStatus, deleteOrder as fbDeleteOrder } from "../lib/firebase";
 import { useProducts }   from "../context/ProductsContext";
 
@@ -477,6 +478,7 @@ export function AdminPanel({ activeTab, setActiveTab, onLogout }) {
                 {activeTab === "dashboard"  && "Dashboard"}
                 {activeTab === "inventario" && "Inventario"}
                 {activeTab === "productos"  && "Productos"}
+                {activeTab === "ordenar"    && "Ordenar Catálogo"}
                 {activeTab === "pedidos"    && "Pedidos"}
                 {activeTab === "resenas"    && "Reseñas"}
               </h1>
@@ -484,6 +486,7 @@ export function AdminPanel({ activeTab, setActiveTab, onLogout }) {
                 {activeTab === "dashboard"  && "Resumen en tiempo real de finanzas, ventas y existencias."}
                 {activeTab === "inventario" && "Controla el stock de cada categoría de joyería."}
                 {activeTab === "productos"  && "Gestiona precios, visibilidad y registro de piezas."}
+                {activeTab === "ordenar"    && "Organiza el orden de los productos en la tienda mediante arrastrar y soltar o controles numéricos."}
                 {activeTab === "pedidos"    && "Administra y hace seguimiento de todos los pedidos."}
                 {activeTab === "resenas"    && "Modera y gestiona las opiniones de los clientes."}
               </p>
@@ -521,9 +524,14 @@ export function AdminPanel({ activeTab, setActiveTab, onLogout }) {
                 addProduct={addProduct}
                 getCategoryStats={getCategoryStats}
                 onAddProductMobileRef={addProductMobileRef}
+                onGoToReorder={() => handleTabChange("ordenar")}
                 addToast={addToast}
                 showConfirm={showConfirm}
               />
+            )}
+
+            {activeTab === "ordenar" && (
+              <ReorderTab addToast={addToast} />
             )}
 
             {activeTab === "pedidos" && (

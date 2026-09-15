@@ -17,7 +17,7 @@ export function FeaturedCurated({ onViewDetails, onNavigate }) {
 
   const handleAddToCart = (e, product) => {
     e.stopPropagation();
-    dispatch({ type: "ADD_ITEM", payload: product });
+    dispatch({ type: "ADD", item: product });
     setAddedId(product.id);
     setTimeout(() => setAddedId(null), 2000);
   };

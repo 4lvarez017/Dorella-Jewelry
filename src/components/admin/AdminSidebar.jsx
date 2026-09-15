@@ -4,6 +4,7 @@ const NAV_ITEMS = [
   { id: "dashboard",  label: "Dashboard",  icon: "📊", tooltip: "Dashboard"  },
   { id: "inventario", label: "Inventario", icon: "📦", tooltip: "Inventario" },
   { id: "productos",  label: "Productos",  icon: "💍", tooltip: "Productos"  },
+  { id: "ordenar",    label: "Ordenar Catálogo", icon: "↕️", tooltip: "Ordenar Catálogo" },
   { id: "pedidos",    label: "Pedidos",    icon: "🧾", tooltip: "Pedidos"    },
   { id: "resenas",    label: "Reseñas",    icon: "⭐", tooltip: "Reseñas"    },
 ];

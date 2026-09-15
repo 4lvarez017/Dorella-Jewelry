@@ -96,6 +96,14 @@ export function CatalogSection({ activeCategory, id, onViewDetails }) {
       return inPrice && inSearch;
     });
 
+    if (sort === "default") {
+      result = [...result].sort((a, b) => {
+        const ordA = a.order !== undefined && a.order !== null ? Number(a.order) : 999999;
+        const ordB = b.order !== undefined && b.order !== null ? Number(b.order) : 999999;
+        if (ordA !== ordB) return ordA - ordB;
+        return (a.name || "").localeCompare(b.name || "", "es");
+      });
+    }
     if (sort === "price_asc")  result = [...result].sort((a, b) => a.price - b.price);
     if (sort === "price_desc") result = [...result].sort((a, b) => b.price - a.price);
     if (sort === "name_asc")   result = [...result].sort((a, b) => a.name.localeCompare(b.name));

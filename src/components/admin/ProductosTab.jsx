@@ -164,7 +164,7 @@ function ProductCard({ p, onEdit, onDelete, onToggleVisibility, onUpdatePrice })
 export function ProductosTab({
   products, updateProduct, deleteProduct,
   toggleVisibility, addProduct, getCategoryStats,
-  onAddProductMobileRef, addToast, showConfirm,
+  onAddProductMobileRef, onGoToReorder, addToast, showConfirm,
 }) {
   const [selectedCategory, setSelectedCategory] = useState("Todos");
   const [search, setSearch] = useState("");
@@ -329,6 +329,25 @@ export function ProductosTab({
                 style={{ paddingLeft: 40 }}
               />
             </div>
+            {onGoToReorder && (
+              <button
+                className="admin-btn-secondary"
+                onClick={onGoToReorder}
+                style={{
+                  whiteSpace: "nowrap",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 7,
+                  flexShrink: 0,
+                  border: `1px solid ${A.gold}`,
+                  color: A.goldDark,
+                }}
+                title="Acomodar el orden en que se muestran los productos en la tienda"
+              >
+                <span style={{ fontSize: 16 }}>↕️</span>
+                <span>Acomodar Orden</span>
+              </button>
+            )}
             <button
               className="admin-btn-primary"
               onClick={() => { setEditingProduct(null); setShowModal(true); }}
