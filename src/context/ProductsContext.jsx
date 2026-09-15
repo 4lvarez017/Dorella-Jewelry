@@ -6,19 +6,40 @@ import {
   deleteProduct as fbDeleteProduct,
   updateProductsOrderBatch as fbUpdateProductsOrderBatch,
 } from "../lib/firebase";
+import { PRODUCTS as FALLBACK_PRODUCTS } from "../data/constants";
+
+function getInitialProducts() {
+  try {
+    const cached = localStorage.getItem("dorella_products_cache");
+    if (cached) {
+      const parsed = JSON.parse(cached);
+      if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+    }
+  } catch {
+    // ignore
+  }
+  return (FALLBACK_PRODUCTS || []).map((p) => {
+    let imgs = Array.isArray(p.images) && p.images.length > 0 ? p.images : [p.image || "/placeholder.jpg"];
+    return {
+      ...p,
+      image: imgs[0] || "/placeholder.jpg",
+      images: imgs,
+      order: p.order !== undefined && p.order !== null ? Number(p.order) : 999999,
+    };
+  });
+}
 
 const ProductsContext = createContext(null);
 
 export function ProductsProvider({ children }) {
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [products, setProducts] = useState(getInitialProducts);
+  const [loading, setLoading] = useState(false);
   const [loadError, setLoadError] = useState(null);
 
   const loadProducts = useCallback(async () => {
-    setLoading(true);
-    setLoadError(null);
     try {
       const data = await fbFetchProducts();
+      if (!Array.isArray(data) || data.length === 0) return;
 
       // Dar formato a los productos (convertir a formato esperado por el frontend)
       const formatted = data.map((p) => {
@@ -49,16 +70,24 @@ export function ProductsProvider({ children }) {
       });
 
       setProducts(formatted);
+      try {
+        localStorage.setItem("dorella_products_cache", JSON.stringify(formatted));
+      } catch {
+        // ignore
+      }
       setLoadError(null);
     } catch (e) {
-      console.error("Error al cargar productos de Firebase:", e);
-      setLoadError(e.message || "Error al conectar con Firebase");
+      console.error("Error al sincronizar productos de Firebase:", e);
+      // No bloquea la UI si ya tenemos productos iniciales
+      if (!products || products.length === 0) {
+        setLoadError(e.message || "Error al conectar con Firebase");
+      }
     } finally {
       setLoading(false);
     }
   }, []);
 
-  // Carga inicial
+  // Carga inicial / sincronización en segundo plano
   useEffect(() => {
     loadProducts();
   }, [loadProducts]);
@@ -134,7 +163,8 @@ export function ProductsProvider({ children }) {
 
     const orderMap = new Map(orderUpdates.map((u) => [String(u.id), u.order]));
 
-    // 2. Actualización optimista en el estado de React
+    // 2. Actualización optimista en el estado de React y caché local
+    let updatedSorted = [];
     setProducts((prev) => {
       const updated = prev.map((p) => {
         const strId = String(p.id);
@@ -144,12 +174,20 @@ export function ProductsProvider({ children }) {
         return p;
       });
 
-      return updated.sort((a, b) => {
+      updatedSorted = updated.sort((a, b) => {
         const ordA = a.order !== undefined ? Number(a.order) : 999999;
         const ordB = b.order !== undefined ? Number(b.order) : 999999;
         if (ordA !== ordB) return ordA - ordB;
         return (a.name || "").localeCompare(b.name || "", "es");
       });
+
+      try {
+        localStorage.setItem("dorella_products_cache", JSON.stringify(updatedSorted));
+      } catch {
+        // ignore
+      }
+
+      return updatedSorted;
     });
 
     // 3. Persistir en Firestore en segundo plano (lote atómico)

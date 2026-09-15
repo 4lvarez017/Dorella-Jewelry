@@ -1,49 +1,7 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { G } from "../../styles/theme";
-import Topography from "../Topography";
-
-class GoldParticle {
-  constructor(w, h) {
-    this.reset(w, h);
-    this.y = Math.random() * h;
-  }
-
-  reset(w, h) {
-    this.x = Math.random() * w;
-    this.y = h + 10;
-    this.radius = 0.5 + Math.random() * 1.5;
-    this.speedY = -(0.2 + Math.random() * 0.4);
-    this.speedX = (Math.random() - 0.5) * 0.2;
-    this.opacity = 0.12 + Math.random() * 0.35;
-    this.oscillation = 0.004 + Math.random() * 0.01;
-    this.time = Math.random() * 100;
-  }
-
-  update(w, h, mx, my) {
-    this.y += this.speedY;
-    this.time += this.oscillation;
-    this.x += this.speedX + Math.sin(this.time) * 0.15;
-
-    if (mx !== null && my !== null) {
-      const dx = this.x - mx;
-      const dy = this.y - my;
-      const dist = Math.sqrt(dx * dx + dy * dy);
-      if (dist < 100) {
-        const force = (100 - dist) / 100;
-        this.x += (dx / dist) * force * 1.5;
-        this.y += (dy / dist) * force * 1.5;
-      }
-    }
-
-    if (this.y < -10 || this.x < -10 || this.x > w + 10) {
-      this.reset(w, h);
-    }
-  }
-}
 
 export function HeroCinematic({ onExplore }) {
-  const canvasRef = useRef(null);
-  const [mouse, setMouse] = useState({ x: null, y: null });
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -55,51 +13,6 @@ export function HeroCinematic({ onExplore }) {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext("2d");
-    let animId;
-
-    const resize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    };
-    resize();
-    window.addEventListener("resize", resize);
-
-    const particleCount = isMobile ? 25 : 55;
-    const particles = Array.from({ length: particleCount }, () => new GoldParticle(canvas.width, canvas.height));
-
-    const render = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      particles.forEach((p) => {
-        p.update(canvas.width, canvas.height, mouse.x, mouse.y);
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(232, 201, 107, ${p.opacity})`;
-        ctx.shadowBlur = p.radius * 2;
-        ctx.shadowColor = "#C9A84C";
-        ctx.fill();
-      });
-      animId = requestAnimationFrame(render);
-    };
-    render();
-
-    return () => {
-      window.removeEventListener("resize", resize);
-      cancelAnimationFrame(animId);
-    };
-  }, [mouse, isMobile]);
-
-  const handleMouseMove = (e) => {
-    setMouse({ x: e.clientX, y: e.clientY });
-  };
-
-  const handleMouseLeave = () => {
-    setMouse({ x: null, y: null });
-  };
-
   const scrollToStory = () => {
     const el = document.getElementById("craftsmanship");
     if (el) el.scrollIntoView({ behavior: "smooth" });
@@ -107,8 +20,6 @@ export function HeroCinematic({ onExplore }) {
 
   return (
     <section
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
       style={{
         position: "relative",
         width: "100%",
@@ -122,81 +33,35 @@ export function HeroCinematic({ onExplore }) {
         paddingTop: "80px",
       }}
     >
-      {/* Layer 1: Ambient WebGL Topography Shader (Subtle Gold/Amber/Olive energy field) */}
+      {/* ── Ambient Luxury Glow (Pure CSS, 0ms render, 0 CPU overhead) ── */}
       <div
         style={{
           position: "absolute",
-          inset: 0,
-          zIndex: 1,
-          pointerEvents: "none",
-          opacity: 0.85,
-        }}
-      >
-        <Topography
-          lowColor="#c9a84c"
-          midColor="#63390c"
-          highColor="#2b3123"
-          speed={0.35}
-          morphAmount={2.5}
-          morphSpeed={0.04}
-          bands={1.8}
-          thickness={0.008}
-          scale={1.8}
-          pixelSize={1}
-          glow={0.6}
-          colorMode="elevation"
-          contrast={2.8}
-          brightness={0.85}
-          fillBands={false}
-          opacity={0.9}
-          grain
-          grainIntensity={0.04}
-          mouseInteraction
-          mouseRadius={0.3}
-          mouseStrength={0.35}
-        />
-      </div>
-
-      {/* Layer 2: Floating Canvas Particles */}
-      <canvas
-        ref={canvasRef}
-        style={{
-          position: "absolute",
-          inset: 0,
-          zIndex: 2,
-          pointerEvents: "none",
-        }}
-      />
-
-      {/* Layer 3: Central Ambient Light Core (Radial Glow) */}
-      <div
-        style={{
-          position: "absolute",
-          top: "50%",
+          top: "42%",
           left: "50%",
           transform: "translate(-50%, -50%)",
-          width: isMobile ? "300px" : "650px",
-          height: isMobile ? "300px" : "650px",
-          background: "radial-gradient(circle, rgba(201, 168, 76, 0.14) 0%, rgba(201, 168, 76, 0.03) 50%, transparent 75%)",
+          width: isMobile ? "320px" : "700px",
+          height: isMobile ? "320px" : "700px",
+          background: "radial-gradient(circle, rgba(201, 168, 76, 0.18) 0%, rgba(201, 168, 76, 0.04) 45%, transparent 70%)",
           borderRadius: "50%",
-          filter: "blur(40px)",
+          filter: "blur(50px)",
           pointerEvents: "none",
-          zIndex: 3,
+          zIndex: 1,
         }}
       />
 
-      {/* Layer 4: Soft Edge Vignette Overlay */}
+      {/* ── Subtle Vignette Depth ── */}
       <div
         style={{
           position: "absolute",
           inset: 0,
-          background: "radial-gradient(circle at center, transparent 35%, rgba(10, 9, 9, 0.7) 75%, #0A0909 100%)",
+          background: "radial-gradient(circle at center, transparent 30%, rgba(10, 9, 9, 0.75) 75%, #0A0909 100%)",
           pointerEvents: "none",
-          zIndex: 4,
+          zIndex: 2,
         }}
       />
 
-      {/* Layer 5: Hero Content & Seamless Integrated Jewelry Showcase */}
+      {/* ── Hero Content & Seamless Integrated Jewelry Showcase ── */}
       <div
         style={{
           position: "relative",
@@ -222,7 +87,7 @@ export function HeroCinematic({ onExplore }) {
               textShadow: "0 2px 10px rgba(0,0,0,0.8)",
             }}
           >
-            DORELLA JEWELRY • EXPERIENCIA INMERSIVA
+            DORELLA JEWELRY • ORO LAMINADO 18K
           </span>
           <div
             style={{
@@ -264,7 +129,7 @@ export function HeroCinematic({ onExplore }) {
           Dorella Jewelry diseña alta joyería en oro laminado de 18 quilates. Cada pieza ofrece 100% de resistencia frente al agua, mar y sudor. Respaldamos cada joya con garantía inalterable de fábrica. Realizamos despachos rápidos en 24 a 48 horas a toda Colombia.
         </p>
 
-        {/* Hero Product Visual Stage (Seamlessly feathered into background) */}
+        {/* Hero Product Visual Stage */}
         <div
           style={{
             position: "relative",
