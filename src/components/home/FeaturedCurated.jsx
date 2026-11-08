@@ -11,11 +11,22 @@ export function FeaturedCurated({ onViewDetails, onNavigate }) {
   const [addedId, setAddedId] = useState(null);
 
   // Filter curated selection from products context or fallbacks
-  const featured = products
-    .filter((p) => CURATED_IDS.includes(Number(p.id)) || p.visible)
-    .slice(0, 6);
+  const curatedMatches = products.filter(
+    (p) => p.visible !== false && CURATED_IDS.includes(Number(p.id))
+  );
+  const featured = (
+    curatedMatches.length >= 6
+      ? curatedMatches
+      : [
+          ...curatedMatches,
+          ...products.filter(
+            (p) => p.visible !== false && !CURATED_IDS.includes(Number(p.id))
+          ),
+        ]
+  ).slice(0, 6);
 
   const handleAddToCart = (e, product) => {
+    e.preventDefault();
     e.stopPropagation();
     dispatch({ type: "ADD", item: product });
     setAddedId(product.id);
@@ -70,7 +81,7 @@ export function FeaturedCurated({ onViewDetails, onNavigate }) {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))",
+            gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))",
             gap: "32px",
           }}
         >
@@ -111,7 +122,7 @@ export function FeaturedCurated({ onViewDetails, onNavigate }) {
                 }}
               >
                 <img
-                  src={prod.image || (prod.images && prod.images[0]) || "/placeholder.jpg"}
+                  src={prod.image || (prod.images && prod.images[0]) || "/pulsera_base.webp"}
                   alt={prod.name}
                   width="240"
                   height="240"

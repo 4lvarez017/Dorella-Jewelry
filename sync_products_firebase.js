@@ -79,13 +79,24 @@ async function syncToFirebase() {
     for (const p of localProducts) {
       let id = String(p.id);
       if (seenIds.has(id)) {
-        id = `${id}-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 6)}`;
+        const catSlug = String(p.category || "gen")
+          .toLowerCase()
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .replace(/[^a-z0-9]+/g, "-")
+          .replace(/^-|-$/g, "");
+        let candidate = `${id}-${catSlug}`;
+        let suffix = 2;
+        while (seenIds.has(candidate)) {
+          candidate = `${id}-${catSlug}-${suffix++}`;
+        }
+        id = candidate;
       }
       seenIds.add(id);
 
       const imgs = Array.isArray(p.images) && p.images.length > 0
         ? p.images
-        : [p.image || "/placeholder.jpg"];
+        : [p.image || "/pulsera_base.webp"];
 
       const productDoc = {
         id,
@@ -93,7 +104,7 @@ async function syncToFirebase() {
         category: (p.category || "General").trim(),
         price: Number(p.price) || 0,
         images: imgs,
-        image: imgs[0] || "/placeholder.jpg",
+        image: imgs[0] || "/pulsera_base.webp",
         desc: (p.desc || "").trim(),
         stock: p.stock !== undefined ? Number(p.stock) : 10,
         visible: p.visible !== false,

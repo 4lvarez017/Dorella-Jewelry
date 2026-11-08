@@ -4,9 +4,9 @@ import { WHATSAPP_NUMBER } from "../data/constants";
 import { useCart } from "../context/CartContext";
 import { saveOrder as fbSaveOrder } from "../lib/firebase";
 
-// ─── Clave pública de Wompi (modo test/producción) ────────────────────────────
-// Reemplaza con tu clave pública real de https://comercios.wompi.co
-const WOMPI_PUBLIC_KEY = "pub_test_yourkey"; // ← Cambiar a tu clave real
+// ─── Clave pública de Wompi (modo test/producción desde .env) ──────────────
+const WOMPI_PUBLIC_KEY = import.meta.env.VITE_WOMPI_PUBLIC_KEY || "";
+const WOMPI_ENABLED = Boolean(WOMPI_PUBLIC_KEY && WOMPI_PUBLIC_KEY !== "pub_test_yourkey");
 
 const INPUT_STYLE = {
   width: "100%",
@@ -50,13 +50,17 @@ export function CheckoutModal({ onClose }) {
     address: "",
     city: "Ocaña",
     paymentMethod: "WhatsApp",
+    acceptedTerms: true,
   });
   const [step, setStep] = useState("form"); // "form" | "success" | "payment"
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [orderId, setOrderId] = useState(null);
 
-  const handleChange = (e) => setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    setForm((f) => ({ ...f, [name]: type === "checkbox" ? checked : value }));
+  };
 
   // ─── Guardar pedido en Firebase ───────────────────────────────────────────
   const saveOrder = async (payMethod) => {
@@ -65,9 +69,9 @@ export function CheckoutModal({ onClose }) {
     
     const orderData = {
       id,
-      customer_name: form.name,
-      phone: form.phone,
-      address: form.address,
+      customer_name: form.name.trim(),
+      phone: form.phone.trim(),
+      address: form.address.trim(),
       city: form.city,
       payment_method: payMethod,
       items: JSON.stringify(items),
@@ -76,46 +80,57 @@ export function CheckoutModal({ onClose }) {
       created_at: new Date().toISOString(),
     };
 
-    try {
-      await fbSaveOrder(orderData);
-    } catch (fbErr) {
-      console.warn("Error guardando pedido en Firebase, guardando en backup local:", fbErr.message);
-    }
+    await fbSaveOrder(orderData);
 
-    // Guardar en localStorage como backup
+    // Guardar también en localStorage como respaldo del historial local
     const existing = getLocalOrders();
     existing.unshift(orderData);
     saveLocalOrders(existing);
     return id;
   };
 
-  // ─── Flujo WhatsApp (original) ────────────────────────────────────────────
+  // ─── Flujo WhatsApp ───────────────────────────────────────────────────────
   const handleWhatsApp = async () => {
-    if (!form.name || !form.phone || !form.address) {
-      setError("Por favor completa todos los campos.");
+    if (!form.name.trim() || !form.phone.trim() || !form.address.trim()) {
+      setError("Por favor completa todos los campos obligatorios.");
       return;
     }
+    if (!form.acceptedTerms) {
+      setError("Debes aceptar la política de datos y condiciones de compra para continuar.");
+      return;
+    }
+
+    const isMobile = /Android|iPhone|iPad/i.test(navigator.userAgent);
+    // En escritorio abrimos la pestaña de forma síncrona al clic para evitar bloqueadores de pop-ups
+    const waWindow = !isMobile ? window.open("", "_blank") : null;
+
     setLoading(true);
     setError(null);
+    let id = `DJ-${Date.now()}`;
     try {
-      const id = await saveOrder("WhatsApp");
-      setOrderId(id);
-      dispatch({ type: "CLEAR" });
-      setStep("success");
-      const productList = cart.map((i) => `${i.name} x${i.qty}`).join(", ");
-      const msg = encodeURIComponent(
-        `Hola Dorella Jewelry 💎, acabo de realizar un pedido desde la web.\n\n👤 *${form.name}*\n📱 ${form.phone}\n📍 ${form.address}, ${form.city}\n\n🛒 *Productos:* ${productList}\n\n💰 *Total: $${total.toLocaleString("es-CO")}*\n\n🆔 Pedido: ${id}`
-      );
-      const isMobile = /Android|iPhone|iPad/i.test(navigator.userAgent);
-      setTimeout(() => {
-        if (isMobile) window.location.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`;
-        else window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`, "_blank");
-      }, 800);
+      id = await saveOrder("WhatsApp");
     } catch (err) {
-      console.error("Error al registrar pedido:", err);
-      setError("No se pudo registrar tu pedido. Por favor intenta de nuevo o contáctanos por WhatsApp.");
+      console.warn("Aviso al registrar pedido en servidor, continuando por WhatsApp:", err);
     } finally {
       setLoading(false);
+    }
+
+    setOrderId(id);
+    const productList = cart.map((i) => `${i.name} x${i.qty}`).join(", ");
+    const msg = encodeURIComponent(
+      `Hola Dorella Jewelry 💎, acabo de realizar un pedido desde la web.\n\n👤 *${form.name.trim()}*\n📱 ${form.phone.trim()}\n📍 ${form.address.trim()}, ${form.city}\n\n🛒 *Productos:* ${productList}\n\n💰 *Total: $${total.toLocaleString("es-CO")}*\n\n🆔 Pedido: ${id}`
+    );
+    const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`;
+
+    dispatch({ type: "CLEAR" });
+    setStep("success");
+
+    if (isMobile) {
+      window.location.href = waUrl;
+    } else if (waWindow) {
+      waWindow.location.href = waUrl;
+    } else {
+      window.open(waUrl, "_blank");
     }
   };
 
@@ -343,6 +358,20 @@ export function CheckoutModal({ onClose }) {
               </div>
             </div>
 
+            {/* Consentimiento Ley 1581 y Ley 1480 */}
+            <label style={{ display: "flex", alignItems: "flex-start", gap: "8px", fontSize: "11px", color: G.textMuted, marginBottom: "16px", cursor: "pointer", lineHeight: 1.5 }}>
+              <input
+                type="checkbox"
+                name="acceptedTerms"
+                checked={form.acceptedTerms}
+                onChange={handleChange}
+                style={{ marginTop: "2px", accentColor: G.gold, cursor: "pointer" }}
+              />
+              <span>
+                Acepto el tratamiento de mis datos personales (Ley 1581 de 2012) y las condiciones de envío, garantía escrita y derecho de retracto de 5 días hábiles (Ley 1480 de 2011).
+              </span>
+            </label>
+
             {error && <p style={{ color: "#e74c3c", fontSize: "13px", marginBottom: "14px" }}>{error}</p>}
 
             {/* Botones de pago */}
@@ -354,24 +383,26 @@ export function CheckoutModal({ onClose }) {
                 disabled={loading}
               >
                 <span style={{ fontSize: 22 }}>💬</span>
-                <span>{loading ? "Procesando..." : "Confirmar por WhatsApp"}</span>
-                <span style={{ fontSize: 10, opacity: 0.7, fontWeight: 400 }}>Gratis · Sin comisiones</span>
+                <span>{loading ? "Procesando..." : "Confirmar Pedido por WhatsApp"}</span>
+                <span style={{ fontSize: 10, opacity: 0.7, fontWeight: 400 }}>Atención inmediata · Nequi · Bancolombia · PSE</span>
               </button>
 
-              {/* Wompi */}
-              <button
-                className="pay-option-btn pay-online-btn"
-                onClick={handleWompiPay}
-                disabled={loading}
-              >
-                <span style={{ fontSize: 22 }}>💳</span>
-                <span>{loading ? "Procesando..." : "Pagar en Línea"}</span>
-                <span style={{ fontSize: 10, opacity: 0.7, fontWeight: 400 }}>Tarjeta · Nequi · PSE</span>
-              </button>
+              {/* Wompi (solo visible cuando está habilitado con llave pública real) */}
+              {WOMPI_ENABLED && (
+                <button
+                  className="pay-option-btn pay-online-btn"
+                  onClick={handleWompiPay}
+                  disabled={loading}
+                >
+                  <span style={{ fontSize: 22 }}>💳</span>
+                  <span>{loading ? "Procesando..." : "Pagar en Línea"}</span>
+                  <span style={{ fontSize: 10, opacity: 0.7, fontWeight: 400 }}>Tarjeta · Nequi · PSE</span>
+                </button>
+              )}
             </div>
 
             <p style={{ fontSize: 10, color: G.textMuted, textAlign: "center", marginTop: 12, letterSpacing: "0.5px" }}>
-              🔒 Pago seguro con Wompi by Bancolombia
+              🔒 Compra protegida con garantía escrita y envío asegurado a toda Colombia
             </p>
           </div>
         )}

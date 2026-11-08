@@ -7,10 +7,13 @@ service firebase.storage {
       return request.auth != null;
     }
 
-    // Imágenes de productos: lectura pública permanente; subida y modificación solo por admin
+    // Imágenes de productos: lectura pública permanente; subida y modificación solo por admin con validación de imagen y peso (< 5MB)
     match /products/{allPaths=**} {
       allow read: if true;
-      allow write: if isAdmin();
+      allow write: if isAdmin()
+                   && (request.resource == null
+                       || (request.resource.size < 5 * 1024 * 1024
+                           && request.resource.contentType.matches('image/.*')));
     }
   }
 }

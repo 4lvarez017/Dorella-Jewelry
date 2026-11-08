@@ -47,15 +47,15 @@ export function ProductsProvider({ children }) {
         try {
           imgs = typeof p.images === "string" ? JSON.parse(p.images) : p.images;
         } catch {
-          imgs = ["/placeholder.jpg"];
+          imgs = ["/pulsera_base.webp"];
         }
         if (!Array.isArray(imgs) || imgs.length === 0) {
-          imgs = [p.image || "/placeholder.jpg"];
+          imgs = [p.image || "/pulsera_base.webp"];
         }
 
         return {
           ...p,
-          image: imgs[0] || p.image || "/placeholder.jpg",
+          image: imgs[0] || p.image || "/pulsera_base.webp",
           images: imgs,
           order: p.order !== undefined && p.order !== null ? Number(p.order) : 999999,
         };
@@ -97,7 +97,7 @@ export function ProductsProvider({ children }) {
     const id = newProduct.id || `custom-${Date.now()}`;
     const imgs = Array.isArray(newProduct.images) && newProduct.images.length > 0
       ? newProduct.images
-      : [newProduct.image || "/placeholder.jpg"];
+      : [newProduct.image || "/pulsera_base.webp"];
 
     const productData = {
       id,
@@ -105,7 +105,7 @@ export function ProductsProvider({ children }) {
       category: (newProduct.category || "Anillos").trim(),
       price:    Number(newProduct.price),
       images:   imgs,
-      image:    imgs[0] || "/placeholder.jpg",
+      image:    imgs[0] || "/pulsera_base.webp",
       desc:     (newProduct.desc || "").trim(),
       stock:    newProduct.stock !== undefined ? Number(newProduct.stock) : 10,
       visible:  newProduct.visible !== false,

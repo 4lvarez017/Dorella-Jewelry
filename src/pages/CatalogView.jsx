@@ -622,22 +622,6 @@ export function CatalogView({ setPage, activeCategory, setActiveCategory, onView
         )}
 
         <Footer />
-
-        {/* Acceso Admin */}
-        <div
-          onClick={() => setPage("admin")}
-          style={{
-            textAlign: "center",
-            padding: "8px",
-            background: G.black,
-            fontSize: "10px",
-            color: "rgba(255,255,255,0.2)",
-            cursor: "pointer",
-            letterSpacing: "1px",
-          }}
-        >
-          Admin
-        </div>
       </main>
 
       {/* FABs flotantes */}

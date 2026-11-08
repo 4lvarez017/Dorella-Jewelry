@@ -170,18 +170,17 @@ export function GoldComparisonTable() {
             <p style={{ fontSize: "12px", color: G.textMuted, margin: 0 }}>Entrega rápida y asegurada en ciudades principales.</p>
           </li>
           <li style={{ background: "rgba(255,255,255,0.03)", padding: "24px", borderRadius: "4px", border: "1px solid rgba(201,168,76,0.15)" }}>
-            <span style={{ fontSize: "32px", fontWeight: 700, color: G.gold, fontFamily: "'Jost', sans-serif" }}>4.9 / 5</span>
-            <h3 style={{ fontSize: "14px", color: G.textDark, margin: "8px 0 4px", fontWeight: 600 }}>Valoración Clientes</h3>
-            <p style={{ fontSize: "12px", color: G.textMuted, margin: 0 }}>Más de 128 reseñas verificadas en Colombia.</p>
+            <span style={{ fontSize: "32px", fontWeight: 700, color: G.gold, fontFamily: "'Jost', sans-serif" }}>5 Capas</span>
+            <h3 style={{ fontSize: "14px", color: G.textDark, margin: "8px 0 4px", fontWeight: 600 }}>Termofusión Molecular</h3>
+            <p style={{ fontSize: "12px", color: G.textMuted, margin: 0 }}>Acabado hipoalergénico libre de níquel con garantía escrita.</p>
           </li>
         </ul>
 
-        {/* E-E-A-T Date & Authority Signal */}
+        {/* E-E-A-T Authority Signal */}
         <div style={{ textAlign: "center", fontSize: "12px", color: G.textMuted }}>
-          <span>Publicado y certificado por el Equipo Técnico de </span>
+          <span>Especificaciones técnicas respaldadas por </span>
           <strong style={{ color: G.gold }}>Dorella Jewelry</strong>
-          <span> • Fecha de actualización: </span>
-          <time dateTime="2026-09-10" style={{ color: G.goldLight }}>10 de septiembre de 2026</time>
+          <span> • Ocaña &amp; Montería, Colombia</span>
         </div>
       </div>
     </section>

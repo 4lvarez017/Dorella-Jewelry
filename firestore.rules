@@ -2,24 +2,40 @@ rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
 
-    // 1. Catálogo de productos: lectura pública y sincronización/gestión permitida
+    function isAdmin() {
+      return request.auth != null;
+    }
+
+    // 1. Catálogo de productos: lectura pública; escritura exclusiva para administradores autenticados
     match /products/{productId} {
       allow read: if true;
-      allow write: if true;
+      allow write: if isAdmin();
     }
 
-    // 2. Pedidos: cualquier cliente puede crear su pedido desde el checkout; 
-    // lectura y gestión completa permitida
+    // 2. Pedidos: creación pública validada desde el checkout;
+    // lectura, actualización y borrado exclusivos para administradores (protección de datos personales Ley 1581)
     match /orders/{orderId} {
-      allow create, read, update, delete: if true;
+      allow create: if request.resource.data.customer_name is string
+                    && request.resource.data.customer_name.size() > 0
+                    && request.resource.data.phone is string
+                    && request.resource.data.total is number
+                    && request.resource.data.total >= 0;
+      allow read, update, delete: if isAdmin();
     }
 
-    // 3. Reseñas: lectura pública y publicación con validación básica de texto
+    // 3. Reseñas: lectura pública y publicación con validación; edición y borrado exclusivos para admin
     match /reviews/{reviewId} {
       allow read: if true;
-      allow create: if request.resource.data.name is string 
-                    && request.resource.data.comment is string;
-      allow update, delete: if true;
+      allow create: if request.resource.data.name is string
+                    && request.resource.data.name.size() > 0
+                    && request.resource.data.name.size() <= 80
+                    && request.resource.data.comment is string
+                    && request.resource.data.comment.size() > 0
+                    && request.resource.data.comment.size() <= 1000
+                    && request.resource.data.rating is number
+                    && request.resource.data.rating >= 1
+                    && request.resource.data.rating <= 5;
+      allow update, delete: if isAdmin();
     }
   }
 }

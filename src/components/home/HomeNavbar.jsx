@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { G } from "../../styles/theme";
 
-export function HomeNavbar({ onNavigate, onSelectCategory }) {
+export function HomeNavbar({ onNavigate, onSelectCategory, cartCount = 0, onOpenCart }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -165,6 +165,32 @@ export function HomeNavbar({ onNavigate, onSelectCategory }) {
             <span>📞</span>
             <span>+57 313 240 3081</span>
           </a>
+
+          {/* Cart Button */}
+          {onOpenCart && (
+            <button
+              onClick={onOpenCart}
+              aria-label="Abrir carrito de compras"
+              style={{
+                position: "relative",
+                background: "rgba(201, 168, 76, 0.08)",
+                border: `1px solid ${G.gold}50`,
+                color: G.textDark,
+                padding: "7px 14px",
+                borderRadius: "20px",
+                cursor: "pointer",
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "6px",
+                fontSize: "12px",
+                fontWeight: 500,
+                transition: "all 0.25s ease",
+              }}
+            >
+              <span>🛒</span>
+              <span>{cartCount}</span>
+            </button>
+          )}
 
           {/* CTA Button */}
           <button

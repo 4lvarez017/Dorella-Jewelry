@@ -3,33 +3,38 @@ import { G } from "../../styles/theme";
 const EDITORIAL_CATEGORIES = [
   {
     name: "Pulseras",
+    categoryTarget: "Pulseras",
     tagline: "Elegancia en la Muñeca",
     desc: "Tejidos clásicos Cuban Link, 3x1 y diseños exclusivos en oro laminado 18K.",
-    img: "/PULSERAS/CUBAN LINK 3.1 MM 19 CM.png",
+    img: "/PULSERAS/CUBAN LINK 3.1 MM 19 CM.webp",
   },
   {
     name: "Cadenas",
+    categoryTarget: "Cadenas",
     tagline: "Presencia e Impacto",
     desc: "Cubana Sol, Franco y Serpiente con acabado brillante impecable.",
-    img: "/CADENAS/CUBANA SOL 65 CM.png",
+    img: "/CADENAS/CUBANA SOL 65 CM.webp",
   },
   {
     name: "Anillos",
+    categoryTarget: "Anillos",
     tagline: "Detalles Eternos",
     desc: "Anillos Alianza, Flicker y Duality creados para ocasiones memorables.",
-    img: "/ANILLOS/ANILLO ALIANZA T5.5.png",
+    img: "/ANILLOS/ANILLO ALIANZA T5.5.webp",
   },
   {
     name: "Aretes",
+    categoryTarget: "Aretes",
     tagline: "Destellos de Luz",
     desc: "Topos y candongas de oro laminado con zirconias seleccionadas a mano.",
-    img: "/ARETES/SHINE 14 MM.png",
+    img: "/ARETES/SHINE 14 MM.webp",
   },
   {
-    name: "Brazaletes",
+    name: "Brazaletes Hombre",
+    categoryTarget: "Brazaletes Hombre",
     tagline: "Carácter Único",
-    desc: "Diseños de balín 8mm y neopreno para Hombre, Mujer y Parejas.",
-    img: "/BRAZALETES HOMBRE/BALIN 8 MM.png",
+    desc: "Diseños de balín 8mm y neopreno de alta resistencia en oro laminado 18K.",
+    img: "/BRAZALETES HOMBRE/BALIN 8 MM.webp",
   },
 ];
 
@@ -112,10 +117,10 @@ export function EditorialCollections({ onSelectCategory, onNavigate }) {
             return (
               <a
                 key={cat.name}
-                href={`?page=catalog&category=${encodeURIComponent(cat.name)}`}
+                href={`?page=catalog&category=${encodeURIComponent(cat.categoryTarget || cat.name)}`}
                 onClick={(e) => {
                   e.preventDefault();
-                  handleCategoryClick(cat.name);
+                  handleCategoryClick(cat.categoryTarget || cat.name);
                 }}
                 style={{
                   gridColumn: colSpan,
