@@ -19,10 +19,10 @@ function getInitialProducts() {
     // ignore
   }
   return (FALLBACK_PRODUCTS || []).map((p) => {
-    let imgs = Array.isArray(p.images) && p.images.length > 0 ? p.images : [p.image || "/placeholder.jpg"];
+    let imgs = Array.isArray(p.images) && p.images.length > 0 ? p.images : [p.image || "/pulsera_base.webp"];
     return {
       ...p,
-      image: imgs[0] || "/placeholder.jpg",
+      image: imgs[0] || "/pulsera_base.webp",
       images: imgs,
       order: p.order !== undefined && p.order !== null ? Number(p.order) : 999999,
     };
@@ -79,9 +79,12 @@ export function ProductsProvider({ children }) {
     } catch (e) {
       console.error("Error al sincronizar productos de Firebase:", e);
       // No bloquea la UI si ya tenemos productos iniciales
-      if (!products || products.length === 0) {
-        setLoadError(e.message || "Error al conectar con Firebase");
-      }
+      setProducts((prev) => {
+        if (!prev || prev.length === 0) {
+          setLoadError(e.message || "Error al conectar con Firebase");
+        }
+        return prev;
+      });
     } finally {
       setLoading(false);
     }
