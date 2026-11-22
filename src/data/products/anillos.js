@@ -1,19 +1,42 @@
 export const ANILLOS = [
   {
     "id": 1,
-    "name": "Anillo Alianza T5.5",
-    "category": "Anillos",
-    "price": 125000,
-    "image": "/ANILLOS/ANILLO ALIANZA T5.5.webp",
-    "desc": "Anillo alianza clásico talla 5.5 en oro laminado 18k. Acabado brillante y elegante."
-  },
-  {
-    "id": 2,
-    "name": "Anillo Alianza T5",
+    "name": "Anillo Alianza",
     "category": "Anillos",
     "price": 120000,
+    "priceMax": 125000,
     "image": "/ANILLOS/ANILLO ALIANZA T5.webp",
-    "desc": "Anillo alianza clásico talla 5 en oro laminado 18k. Diseño atemporal y sofisticado."
+    "images": [
+      "/ANILLOS/ANILLO ALIANZA T5.webp",
+      "/ANILLOS/ANILLO ALIANZA T5.5.webp"
+    ],
+    "desc": "Anillo alianza clásico en oro laminado 18k. Diseño atemporal y sofisticado.",
+    "hasVariants": true,
+    "variantType": "Talla",
+    "variants": [
+      {
+        "id": "2",
+        "sku": "2",
+        "measure": "Talla 5",
+        "name": "Talla 5",
+        "price": 120000,
+        "stock": 10,
+        "image": "/ANILLOS/ANILLO ALIANZA T5.webp",
+        "desc": "Anillo alianza clásico talla 5 en oro laminado 18k. Diseño atemporal y sofisticado."
+      },
+      {
+        "id": "1",
+        "sku": "1",
+        "measure": "Talla 5.5",
+        "name": "Talla 5.5",
+        "price": 125000,
+        "stock": 10,
+        "image": "/ANILLOS/ANILLO ALIANZA T5.5.webp",
+        "desc": "Anillo alianza clásico talla 5.5 en oro laminado 18k. Acabado brillante y elegante."
+      }
+    ],
+    "stock": 20,
+    "order": 999999
   },
   {
     "id": 3,
@@ -62,14 +85,6 @@ export const ANILLOS = [
     "price": 135000,
     "image": "/ANILLOS/DUALITY CLOVER AJUSTABLE.webp",
     "desc": "Anillo Duality Clover ajustable en oro laminado 18k con diseño de trébol de doble cara."
-  },
-  {
-    "id": 13105,
-    "name": "Anillo CT Kingdom Ajustable",
-    "category": "Anillos",
-    "price": 90000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/13105/PERFIL.webp",
-    "desc": "Anillo CT Kingdom Ajustable en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 13105."
   },
   {
     "id": 13112,
@@ -462,5 +477,13 @@ export const ANILLOS = [
     "price": 90000,
     "image": "/ANILLOS/1782588148250-qmzb9z.webp",
     "desc": "Anillo Triple Carril Barril Grande en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 13155."
+  },
+  {
+    "id": 13105,
+    "name": "Anillo CT Kingdom Ajustable",
+    "category": "Anillos",
+    "price": 90000,
+    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/13105/PERFIL.webp",
+    "desc": "Anillo CT Kingdom Ajustable en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 13105."
   }
 ];

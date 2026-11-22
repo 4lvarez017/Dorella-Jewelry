@@ -153,7 +153,10 @@ function AppContent() {
   // Resolver producto pendiente cuando los productos estén disponibles
   useEffect(() => {
     if (selectedProduct?._pendingId && products.length > 0) {
-      const prod = products.find((p) => String(p.id) === String(selectedProduct._pendingId));
+      const targetId = String(selectedProduct._pendingId);
+      const prod = products.find(
+        (p) => String(p.id) === targetId || (Array.isArray(p.variants) && p.variants.some((v) => String(v.id) === targetId || String(v.sku) === targetId))
+      );
       setSelectedProduct(prod || null);
     }
   }, [products, selectedProduct?._pendingId]);

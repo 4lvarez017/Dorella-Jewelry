@@ -14,9 +14,27 @@ export function ProductDetailView({ setPage, product }) {
   const [reviewsLoading, setReviewsLoading] = useState(true);
   const [activeImageIdx, setActiveImageIdx] = useState(0);
 
-  // Reset active image index & update dynamic SEO tags when product changes
+  const hasVariants = Boolean(product?.variants && product.variants.length > 0);
+
+  // Variant selections: map of variantId -> quantity
+  const [variantSelections, setVariantSelections] = useState(() => {
+    const initial = {};
+    if (product?.variants && product.variants.length > 0) {
+      initial[product.variants[0].id] = 1;
+    }
+    return initial;
+  });
+
+  // Reset active image index & variant selections when product changes
   useEffect(() => {
     setActiveImageIdx(0);
+    setQty(1);
+    const initial = {};
+    if (product?.variants && product.variants.length > 0) {
+      initial[product.variants[0].id] = 1;
+    }
+    setVariantSelections(initial);
+
     if (!product) return;
 
     const prevTitle = document.title;
@@ -60,34 +78,58 @@ export function ProductDetailView({ setPage, product }) {
   const [submitError, setSubmitError] = useState(null);
   const [submitting, setSubmitting] = useState(false);
 
-  const totalItems = cart.reduce((s, i) => s + i.qty, 0);
+  // Computations for variants
+  const selectedVariantsList = hasVariants
+    ? product.variants.filter((v) => (variantSelections[v.id] || 0) > 0)
+    : [];
+  const totalSelectedVariantsQty = selectedVariantsList.reduce(
+    (acc, v) => acc + (variantSelections[v.id] || 0),
+    0
+  );
+  const totalSelectedVariantsPrice = selectedVariantsList.reduce(
+    (acc, v) => acc + v.price * (variantSelections[v.id] || 0),
+    0
+  );
 
-  // Cargar reseñas reales desde Firebase (sin reseñas ficticias)
-  useEffect(() => {
-    if (!product) return;
-    setReviewsLoading(true);
-    fetchReviews(String(product.id))
-      .then((data) => {
-        setReviews(Array.isArray(data) ? data : []);
-      })
-      .catch(() => setReviews([]))
-      .finally(() => setReviewsLoading(false));
-  }, [product]);
+  const handleToggleVariant = (variant) => {
+    setVariantSelections((prev) => {
+      const current = prev[variant.id] || 0;
+      return { ...prev, [variant.id]: current > 0 ? 0 : 1 };
+    });
+    if (variant.image) {
+      const idx = productImages.indexOf(variant.image);
+      if (idx !== -1) setActiveImageIdx(idx);
+    }
+  };
 
-  if (!product) {
-    return (
-      <div style={{ padding: "80px", textAlign: "center", background: G.cream, color: G.textDark }}>
-        <p className="serif" style={{ fontSize: "24px" }}>Producto no encontrado</p>
-        <button className="gold-btn" style={{ marginTop: "20px" }} onClick={() => setPage("catalog")}>
-          Volver al Catálogo
-        </button>
-      </div>
-    );
-  }
+  const handleVariantQtyChange = (variantId, delta) => {
+    setVariantSelections((prev) => {
+      const current = prev[variantId] || 0;
+      const next = Math.max(0, current + delta);
+      return { ...prev, [variantId]: next };
+    });
+  };
 
   const handleAddToCart = () => {
-    dispatch({ type: "ADD_MULTIPLE", item: product, qty: qty });
-    setCartOpen(true); // Open the cart so they see their item added!
+    if (hasVariants) {
+      if (selectedVariantsList.length === 0) return;
+      const itemsToAdd = selectedVariantsList.map((v) => ({
+        id: `${product.id}_${v.id}`,
+        cartItemId: `${product.id}_${v.id}`,
+        productId: product.id,
+        variantId: v.id,
+        name: product.name,
+        measure: v.measure,
+        price: v.price,
+        image: v.image || product.image || "/pulsera_base.webp",
+        stock: v.stock !== undefined ? v.stock : 10,
+        qty: variantSelections[v.id] || 1,
+      }));
+      dispatch({ type: "ADD_VARIANTS_BATCH", items: itemsToAdd });
+    } else {
+      dispatch({ type: "ADD_MULTIPLE", item: product, qty: qty });
+    }
+    setCartOpen(true);
   };
 
   const handleAddReview = async (e) => {
@@ -306,9 +348,25 @@ export function ProductDetailView({ setPage, product }) {
 
             {/* Price & Material */}
             <div style={{ display: "flex", alignItems: "center", gap: "24px", marginBottom: "24px", paddingBottom: "24px", borderBottom: `1px solid ${G.creamDark}` }}>
-              <span style={{ fontSize: "32px", fontWeight: 600, color: G.goldLight }}>
-                ${product.price.toLocaleString("es-CO")}
-              </span>
+              <div>
+                <span style={{ fontSize: "32px", fontWeight: 600, color: G.goldLight }}>
+                  {hasVariants && product.priceMax && product.priceMax > product.price ? (
+                    <>
+                      <span style={{ fontSize: "14px", fontWeight: 400, color: G.textMuted, marginRight: "6px" }}>
+                        Desde
+                      </span>
+                      ${product.price.toLocaleString("es-CO")}
+                    </>
+                  ) : (
+                    `$${product.price.toLocaleString("es-CO")}`
+                  )}
+                </span>
+                {hasVariants && product.priceMax && product.priceMax > product.price && (
+                  <span style={{ display: "block", fontSize: "12px", color: G.textMuted, marginTop: "2px" }}>
+                    Rango: ${product.price.toLocaleString("es-CO")} a ${product.priceMax.toLocaleString("es-CO")} según medida
+                  </span>
+                )}
+              </div>
               <span 
                 style={{ 
                   background: "rgba(201,168,76,0.06)", 
@@ -344,67 +402,281 @@ export function ProductDetailView({ setPage, product }) {
                 gap: "20px"
               }}
             >
-              {/* Qty Selector */}
-              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                <span style={{ fontSize: "14px", fontWeight: 500, color: G.textMid, textTransform: "uppercase", letterSpacing: "1px" }}>
-                  Cantidad:
-                </span>
-                <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-                  <button
-                    onClick={() => setQty((q) => Math.max(1, q - 1))}
-                    style={{
-                      width: "36px",
-                      height: "36px",
-                      background: G.creamDark,
-                      border: "none",
-                      color: G.textDark,
-                      fontSize: "18px",
-                      fontWeight: 600,
-                      cursor: "pointer",
-                      borderRadius: "1px",
-                      transition: "opacity 0.2s"
-                    }}
-                    onMouseEnter={(e) => (e.currentTarget.style.opacity = 0.8)}
-                    onMouseLeave={(e) => (e.currentTarget.style.opacity = 1)}
-                  >
-                    −
-                  </button>
-                  <span style={{ fontSize: "18px", fontWeight: 600, minWidth: "24px", textAlign: "center" }}>{qty}</span>
-                  <button
-                    onClick={() => setQty((q) => q + 1)}
-                    style={{
-                      width: "36px",
-                      height: "36px",
-                      background: G.creamDark,
-                      border: "none",
-                      color: G.textDark,
-                      fontSize: "18px",
-                      fontWeight: 600,
-                      cursor: "pointer",
-                      borderRadius: "1px",
-                      transition: "opacity 0.2s"
-                    }}
-                    onMouseEnter={(e) => (e.currentTarget.style.opacity = 0.8)}
-                    onMouseLeave={(e) => (e.currentTarget.style.opacity = 1)}
-                  >
-                    +
-                  </button>
-                </div>
-              </div>
+              {hasVariants ? (
+                /* ─── Multi-Variant Interactive Selector ───────────────────────── */
+                <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                    <div>
+                      <span style={{ fontSize: "12px", fontWeight: 700, letterSpacing: "1.5px", textTransform: "uppercase", color: G.textDark }}>
+                        Medidas Disponibles
+                      </span>
+                      <p style={{ fontSize: "11px", color: G.textMuted, marginTop: "2px" }}>
+                        Selecciona una o varias medidas y ajusta la cantidad deseada para cada una:
+                      </p>
+                    </div>
+                    <span style={{ fontSize: "11px", color: G.gold, fontWeight: 600, background: "rgba(201, 168, 76, 0.1)", padding: "3px 8px", borderRadius: "10px", whiteSpace: "nowrap" }}>
+                      {selectedVariantsList.length} seleccionada{selectedVariantsList.length !== 1 ? "s" : ""}
+                    </span>
+                  </div>
 
-              {/* Action Buttons */}
-              <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: "12px" }}>
-                <button className="gold-btn" style={{ width: "100%", padding: "16px 20px" }} onClick={handleAddToCart}>
-                  Agregar al Carrito
-                </button>
-                <button 
-                  className="gold-outline-btn" 
-                  style={{ width: "100%", padding: "12px 20px", borderColor: G.textMuted, color: G.textDark }}
-                  onClick={() => window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=Hola,%20estoy%20interesado%20en%20el%20producto%20${encodeURIComponent(product.name)}`, "_blank")}
-                >
-                  Consultar por WhatsApp
-                </button>
-              </div>
+                  <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+                    {product.variants.map((v) => {
+                      const isSelected = (variantSelections[v.id] || 0) > 0;
+                      const vQty = variantSelections[v.id] || 0;
+                      const isOut = v.stock === 0;
+
+                      return (
+                        <div
+                          key={v.id}
+                          onClick={() => !isOut && handleToggleVariant(v)}
+                          style={{
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "space-between",
+                            padding: "12px 16px",
+                            background: isSelected ? "rgba(201, 168, 76, 0.08)" : G.cream,
+                            border: isSelected ? `1.5px solid ${G.gold}` : `1px solid ${G.creamDark}`,
+                            borderRadius: "4px",
+                            cursor: isOut ? "not-allowed" : "pointer",
+                            transition: "all 0.2s ease",
+                            opacity: isOut ? 0.6 : 1,
+                          }}
+                        >
+                          {/* Checkbox + Measure Label + Unit Price */}
+                          <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+                            <div
+                              style={{
+                                width: "20px",
+                                height: "20px",
+                                borderRadius: "3px",
+                                border: isSelected ? `2px solid ${G.gold}` : `2px solid ${G.creamDark}`,
+                                background: isSelected ? G.gold : "transparent",
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "center",
+                                color: G.white,
+                                fontSize: "12px",
+                                fontWeight: 800,
+                                transition: "all 0.15s ease",
+                                flexShrink: 0,
+                              }}
+                            >
+                              {isSelected ? "✓" : ""}
+                            </div>
+                            <div>
+                              <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                                <span style={{ fontWeight: 600, fontSize: "15px", color: G.textDark }}>
+                                  {v.measure}
+                                </span>
+                                <span
+                                  style={{
+                                    fontSize: "10px",
+                                    color: isOut ? "#e74c3c" : "#27ae60",
+                                    background: isOut ? "rgba(231,76,60,0.1)" : "rgba(39,174,96,0.1)",
+                                    padding: "1px 6px",
+                                    borderRadius: "6px",
+                                    fontWeight: 500,
+                                  }}
+                                >
+                                  {isOut ? "Agotado" : "En stock"}
+                                </span>
+                              </div>
+                              <span style={{ fontSize: "13px", color: G.gold, fontWeight: 600, display: "block", marginTop: "2px" }}>
+                                ${v.price.toLocaleString("es-CO")}
+                              </span>
+                            </div>
+                          </div>
+
+                          {/* Independent Quantity Selector for this variant */}
+                          <div
+                            onClick={(e) => e.stopPropagation()}
+                            style={{ display: "flex", alignItems: "center", gap: "8px" }}
+                          >
+                            <button
+                              disabled={isOut || vQty === 0}
+                              onClick={() => handleVariantQtyChange(v.id, -1)}
+                              style={{
+                                width: "28px",
+                                height: "28px",
+                                background: G.white,
+                                border: `1px solid ${G.creamDark}`,
+                                color: G.textDark,
+                                fontSize: "14px",
+                                fontWeight: 700,
+                                cursor: isOut || vQty === 0 ? "not-allowed" : "pointer",
+                                borderRadius: "2px",
+                                opacity: vQty === 0 ? 0.35 : 1,
+                                transition: "all 0.15s ease",
+                              }}
+                            >
+                              −
+                            </button>
+                            <span
+                              style={{
+                                fontSize: "14px",
+                                fontWeight: 700,
+                                minWidth: "22px",
+                                textAlign: "center",
+                                color: isSelected ? G.textDark : G.textMuted,
+                              }}
+                            >
+                              {vQty}
+                            </span>
+                            <button
+                              disabled={isOut}
+                              onClick={() => handleVariantQtyChange(v.id, 1)}
+                              style={{
+                                width: "28px",
+                                height: "28px",
+                                background: G.white,
+                                border: `1px solid ${G.creamDark}`,
+                                color: G.textDark,
+                                fontSize: "14px",
+                                fontWeight: 700,
+                                cursor: isOut ? "not-allowed" : "pointer",
+                                borderRadius: "2px",
+                                transition: "all 0.15s ease",
+                              }}
+                            >
+                              +
+                            </button>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+
+                  {/* Real-time Order Summary for Variants */}
+                  <div
+                    style={{
+                      background: "rgba(18, 17, 16, 0.03)",
+                      border: `1px dashed ${G.creamDark}`,
+                      padding: "14px 18px",
+                      borderRadius: "4px",
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                    }}
+                  >
+                    <div>
+                      <span style={{ fontSize: "11px", color: G.textMuted, display: "block", textTransform: "uppercase", letterSpacing: "1px" }}>
+                        Resumen de selección
+                      </span>
+                      <strong style={{ fontSize: "13px", color: G.textDark }}>
+                        {totalSelectedVariantsQty > 0
+                          ? `${selectedVariantsList.length} medida${selectedVariantsList.length !== 1 ? "s" : ""} (${totalSelectedVariantsQty} un. total)`
+                          : "Ninguna medida seleccionada"}
+                      </strong>
+                    </div>
+                    <div style={{ textAlign: "right" }}>
+                      <span style={{ fontSize: "11px", color: G.textMuted, display: "block", textTransform: "uppercase", letterSpacing: "1px" }}>
+                        Subtotal
+                      </span>
+                      <strong style={{ fontSize: "20px", color: G.gold }}>
+                        ${totalSelectedVariantsPrice.toLocaleString("es-CO")}
+                      </strong>
+                    </div>
+                  </div>
+
+                  {/* Actions for Multi-Variant */}
+                  <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: "12px", marginTop: "4px" }}>
+                    <button
+                      className="gold-btn"
+                      disabled={totalSelectedVariantsQty === 0}
+                      style={{
+                        width: "100%",
+                        padding: "16px 20px",
+                        fontSize: "13px",
+                        letterSpacing: "1px",
+                        textTransform: "uppercase",
+                        opacity: totalSelectedVariantsQty === 0 ? 0.45 : 1,
+                        cursor: totalSelectedVariantsQty === 0 ? "not-allowed" : "pointer",
+                      }}
+                      onClick={handleAddToCart}
+                    >
+                      {totalSelectedVariantsQty > 0
+                        ? `Agregar ${totalSelectedVariantsQty} al Carrito · $${totalSelectedVariantsPrice.toLocaleString("es-CO")}`
+                        : "Selecciona una medida para comprar"}
+                    </button>
+                    <button 
+                      className="gold-outline-btn" 
+                      style={{ width: "100%", padding: "12px 20px", borderColor: G.textMuted, color: G.textDark }}
+                      onClick={() => {
+                        const variantDetails = selectedVariantsList.map(v => `${v.measure} x${variantSelections[v.id]}`).join(", ");
+                        const msg = variantDetails
+                          ? `Hola, estoy interesado en el producto ${product.name} en las medidas: ${variantDetails}`
+                          : `Hola, estoy interesado en el producto ${product.name}`;
+                        window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, "_blank");
+                      }}
+                    >
+                      Consultar por WhatsApp
+                    </button>
+                  </div>
+                </div>
+              ) : (
+                /* ─── Standard Single Product Qty Selector ─────────────────────── */
+                <>
+                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                    <span style={{ fontSize: "14px", fontWeight: 500, color: G.textMid, textTransform: "uppercase", letterSpacing: "1px" }}>
+                      Cantidad:
+                    </span>
+                    <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+                      <button
+                        onClick={() => setQty((q) => Math.max(1, q - 1))}
+                        style={{
+                          width: "36px",
+                          height: "36px",
+                          background: G.creamDark,
+                          border: "none",
+                          color: G.textDark,
+                          fontSize: "18px",
+                          fontWeight: 600,
+                          cursor: "pointer",
+                          borderRadius: "1px",
+                          transition: "opacity 0.2s"
+                        }}
+                        onMouseEnter={(e) => (e.currentTarget.style.opacity = 0.8)}
+                        onMouseLeave={(e) => (e.currentTarget.style.opacity = 1)}
+                      >
+                        −
+                      </button>
+                      <span style={{ fontSize: "18px", fontWeight: 600, minWidth: "24px", textAlign: "center" }}>{qty}</span>
+                      <button
+                        onClick={() => setQty((q) => q + 1)}
+                        style={{
+                          width: "36px",
+                          height: "36px",
+                          background: G.creamDark,
+                          border: "none",
+                          color: G.textDark,
+                          fontSize: "18px",
+                          fontWeight: 600,
+                          cursor: "pointer",
+                          borderRadius: "1px",
+                          transition: "opacity 0.2s"
+                        }}
+                        onMouseEnter={(e) => (e.currentTarget.style.opacity = 0.8)}
+                        onMouseLeave={(e) => (e.currentTarget.style.opacity = 1)}
+                      >
+                        +
+                      </button>
+                    </div>
+                  </div>
+
+                  <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: "12px" }}>
+                    <button className="gold-btn" style={{ width: "100%", padding: "16px 20px" }} onClick={handleAddToCart}>
+                      Agregar al Carrito · ${(product.price * qty).toLocaleString("es-CO")}
+                    </button>
+                    <button 
+                      className="gold-outline-btn" 
+                      style={{ width: "100%", padding: "12px 20px", borderColor: G.textMuted, color: G.textDark }}
+                      onClick={() => window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=Hola,%20estoy%20interesado%20en%20el%20producto%20${encodeURIComponent(product.name)}`, "_blank")}
+                    >
+                      Consultar por WhatsApp
+                    </button>
+                  </div>
+                </>
+              )}
             </div>
           </div>
         </div>

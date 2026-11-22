@@ -65,7 +65,16 @@ export function CheckoutModal({ onClose }) {
   // ─── Guardar pedido en Firebase ───────────────────────────────────────────
   const saveOrder = async (payMethod) => {
     const id = `DJ-${Date.now()}`;
-    const items = cart.map((i) => ({ product_id: i.id, id: i.id, name: i.name, qty: i.qty, price: i.price }));
+    const items = cart.map((i) => ({
+      product_id: i.productId || i.id,
+      id: i.id,
+      cart_item_id: i.cartItemId || i.id,
+      name: i.name,
+      measure: i.measure || null,
+      variant_id: i.variantId || null,
+      qty: i.qty,
+      price: i.price,
+    }));
     
     const orderData = {
       id,
@@ -116,7 +125,9 @@ export function CheckoutModal({ onClose }) {
     }
 
     setOrderId(id);
-    const productList = cart.map((i) => `${i.name} x${i.qty}`).join(", ");
+    const productList = cart
+      .map((i) => `${i.name}${i.measure ? ` [${i.measure}]` : ""} x${i.qty}`)
+      .join(", ");
     const msg = encodeURIComponent(
       `Hola Dorella Jewelry 💎, acabo de realizar un pedido desde la web.\n\n👤 *${form.name.trim()}*\n📱 ${form.phone.trim()}\n📍 ${form.address.trim()}, ${form.city}\n\n🛒 *Productos:* ${productList}\n\n💰 *Total: $${total.toLocaleString("es-CO")}*\n\n🆔 Pedido: ${id}`
     );

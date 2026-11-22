@@ -35,52 +35,72 @@ export function CartModal({ onClose, onCheckout }) {
               Tu carrito está vacío
             </p>
           ) : (
-            cart.map((item) => (
-              <div
-                key={item.id}
-                style={{
-                  display: "flex",
-                  gap: "16px",
-                  alignItems: "center",
-                  marginBottom: "20px",
-                  paddingBottom: "20px",
-                  borderBottom: `1px solid ${G.creamDark}`,
-                }}
-              >
-                <img
-                  src={item.image}
-                  alt={item.name}
-                  style={{ width: "70px", height: "70px", objectFit: "cover" }}
-                />
-                <div style={{ flex: 1 }}>
-                  <p style={{ fontWeight: 500, fontSize: "15px" }}>{item.name}</p>
-                  <p style={{ color: G.gold, fontSize: "14px" }}>
-                    ${item.price.toLocaleString("es-CO")}
-                  </p>
-                  <div style={{ display: "flex", alignItems: "center", gap: "8px", marginTop: "8px" }}>
-                    <button
-                      onClick={() => dispatch({ type: "UPDATE_QTY", id: item.id, qty: item.qty - 1 })}
-                      style={{ width: "24px", height: "24px", background: G.creamDark, border: "none", cursor: "pointer", fontWeight: 700 }}
-                    >
-                      −
-                    </button>
-                    <span style={{ fontSize: "14px" }}>{item.qty}</span>
-                    <button
-                      onClick={() => dispatch({ type: "UPDATE_QTY", id: item.id, qty: item.qty + 1 })}
-                      style={{ width: "24px", height: "24px", background: G.creamDark, border: "none", cursor: "pointer", fontWeight: 700 }}
-                    >
-                      +
-                    </button>
-                    <button
-                      onClick={() => dispatch({ type: "REMOVE", id: item.id })}
-                      style={{ marginLeft: "8px", background: "none", border: "none", color: "#e74c3c", cursor: "pointer", fontSize: "12px" }}
-                    >
-                      ✕ Quitar
-                    </button>
+            cart.map((item) => {
+              const itemKey = item.cartItemId || item.id;
+              return (
+                <div
+                  key={itemKey}
+                  style={{
+                    display: "flex",
+                    gap: "16px",
+                    alignItems: "center",
+                    marginBottom: "20px",
+                    paddingBottom: "20px",
+                    borderBottom: `1px solid ${G.creamDark}`,
+                  }}
+                >
+                  <img
+                    src={item.image || "/pulsera_base.webp"}
+                    alt={item.name}
+                    style={{ width: "70px", height: "70px", objectFit: "cover", borderRadius: "4px" }}
+                  />
+                  <div style={{ flex: 1, minWidth: 0 }}>
+                    <p style={{ fontWeight: 500, fontSize: "15px", marginBottom: "2px" }}>{item.name}</p>
+                    {item.measure && (
+                      <span
+                        style={{
+                          display: "inline-block",
+                          background: "rgba(201, 168, 76, 0.12)",
+                          color: G.gold,
+                          fontSize: "11px",
+                          fontWeight: 600,
+                          padding: "2px 8px",
+                          borderRadius: "10px",
+                          marginBottom: "4px",
+                          border: "1px solid rgba(201, 168, 76, 0.25)",
+                        }}
+                      >
+                        Medida: {item.measure}
+                      </span>
+                    )}
+                    <p style={{ color: G.gold, fontSize: "14px", fontWeight: 600 }}>
+                      ${item.price.toLocaleString("es-CO")}
+                    </p>
+                    <div style={{ display: "flex", alignItems: "center", gap: "8px", marginTop: "8px" }}>
+                      <button
+                        onClick={() => dispatch({ type: "UPDATE_QTY", id: itemKey, qty: item.qty - 1 })}
+                        style={{ width: "24px", height: "24px", background: G.creamDark, border: "none", cursor: "pointer", fontWeight: 700 }}
+                      >
+                        −
+                      </button>
+                      <span style={{ fontSize: "14px", minWidth: "20px", textAlign: "center" }}>{item.qty}</span>
+                      <button
+                        onClick={() => dispatch({ type: "UPDATE_QTY", id: itemKey, qty: item.qty + 1 })}
+                        style={{ width: "24px", height: "24px", background: G.creamDark, border: "none", cursor: "pointer", fontWeight: 700 }}
+                      >
+                        +
+                      </button>
+                      <button
+                        onClick={() => dispatch({ type: "REMOVE", id: itemKey })}
+                        style={{ marginLeft: "8px", background: "none", border: "none", color: "#e74c3c", cursor: "pointer", fontSize: "12px" }}
+                      >
+                        ✕ Quitar
+                      </button>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))
+              );
+            })
           )}
         </div>
 

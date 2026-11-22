@@ -19,26 +19,51 @@ function cartReducer(state, action) {
     case "ADD": {
       const item = action.item || action.payload;
       if (!item) return state;
-      const exists = state.find((i) => i.id === item.id);
+      const key = item.cartItemId || item.id;
+      const exists = state.find((i) => (i.cartItemId || i.id) === key);
       if (exists)
         return state.map((i) =>
-          i.id === item.id ? { ...i, qty: i.qty + 1 } : i
+          (i.cartItemId || i.id) === key ? { ...i, qty: i.qty + 1 } : i
         );
-      return [...state, { ...item, qty: 1 }];
+      return [...state, { ...item, cartItemId: key, qty: 1 }];
     }
     case "ADD_MULTIPLE": {
-      const exists = state.find((i) => i.id === action.item.id);
+      const item = action.item || action.payload;
+      if (!item) return state;
+      const key = item.cartItemId || item.id;
+      const qty = Number(action.qty) || 1;
+      const exists = state.find((i) => (i.cartItemId || i.id) === key);
       if (exists)
         return state.map((i) =>
-          i.id === action.item.id ? { ...i, qty: i.qty + action.qty } : i
+          (i.cartItemId || i.id) === key ? { ...i, qty: i.qty + qty } : i
         );
-      return [...state, { ...action.item, qty: action.qty }];
+      return [...state, { ...item, cartItemId: key, qty }];
+    }
+    case "ADD_VARIANTS_BATCH": {
+      const items = Array.isArray(action.items) ? action.items : [];
+      if (items.length === 0) return state;
+      let newState = [...state];
+      for (const entry of items) {
+        const item = entry.item || entry;
+        const qty = Number(entry.qty) || 1;
+        if (!item || qty <= 0) continue;
+        const key = item.cartItemId || item.id;
+        const exists = newState.find((i) => (i.cartItemId || i.id) === key);
+        if (exists) {
+          newState = newState.map((i) =>
+            (i.cartItemId || i.id) === key ? { ...i, qty: i.qty + qty } : i
+          );
+        } else {
+          newState.push({ ...item, cartItemId: key, qty });
+        }
+      }
+      return newState;
     }
     case "REMOVE":
-      return state.filter((i) => i.id !== action.id);
+      return state.filter((i) => (i.cartItemId || i.id) !== action.id);
     case "UPDATE_QTY":
       return state
-        .map((i) => (i.id === action.id ? { ...i, qty: action.qty } : i))
+        .map((i) => ((i.cartItemId || i.id) === action.id ? { ...i, qty: action.qty } : i))
         .filter((i) => i.qty > 0);
     case "CLEAR":
       return [];
