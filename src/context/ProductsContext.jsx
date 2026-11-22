@@ -10,7 +10,7 @@ import { PRODUCTS as FALLBACK_PRODUCTS } from "../data/constants";
 
 function getInitialProducts() {
   try {
-    const cached = localStorage.getItem("dorella_products_cache");
+    const cached = localStorage.getItem("dorella_products_cache_v2");
     if (cached) {
       const parsed = JSON.parse(cached);
       if (Array.isArray(parsed) && parsed.length > 0) return parsed;
@@ -20,10 +20,16 @@ function getInitialProducts() {
   }
   return (FALLBACK_PRODUCTS || []).map((p) => {
     let imgs = Array.isArray(p.images) && p.images.length > 0 ? p.images : [p.image || "/pulsera_base.webp"];
+    const variants = Array.isArray(p.variants) ? p.variants : [];
     return {
       ...p,
       image: imgs[0] || "/pulsera_base.webp",
       images: imgs,
+      variants: variants,
+      hasVariants: Boolean(p.hasVariants || variants.length > 0),
+      variantType: p.variantType || (variants.length > 0 ? "Medida" : null),
+      price: Number(p.price) || 0,
+      priceMax: p.priceMax !== undefined ? Number(p.priceMax) : (variants.length > 0 ? Math.max(...variants.map(v => Number(v.price) || 0)) : Number(p.price) || 0),
       order: p.order !== undefined && p.order !== null ? Number(p.order) : 999999,
     };
   });
@@ -53,10 +59,27 @@ export function ProductsProvider({ children }) {
           imgs = [p.image || "/pulsera_base.webp"];
         }
 
+        let variants = p.variants;
+        if (typeof variants === "string") {
+          try {
+            variants = JSON.parse(variants);
+          } catch {
+            variants = [];
+          }
+        }
+        if (!Array.isArray(variants)) {
+          variants = [];
+        }
+
         return {
           ...p,
           image: imgs[0] || p.image || "/pulsera_base.webp",
           images: imgs,
+          variants: variants,
+          hasVariants: Boolean(p.hasVariants || variants.length > 0),
+          variantType: p.variantType || (variants.length > 0 ? "Medida" : null),
+          price: Number(p.price) || 0,
+          priceMax: p.priceMax !== undefined ? Number(p.priceMax) : (variants.length > 0 ? Math.max(...variants.map(v => Number(v.price) || 0)) : Number(p.price) || 0),
           order: p.order !== undefined && p.order !== null ? Number(p.order) : 999999,
         };
       });
@@ -71,7 +94,8 @@ export function ProductsProvider({ children }) {
 
       setProducts(formatted);
       try {
-        localStorage.setItem("dorella_products_cache", JSON.stringify(formatted));
+        localStorage.setItem("dorella_products_cache_v2", JSON.stringify(formatted));
+        localStorage.removeItem("dorella_products_cache");
       } catch {
         // ignore
       }

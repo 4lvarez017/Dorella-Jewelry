@@ -4,6 +4,7 @@ import { ProductsProvider, useProducts } from "./context/ProductsContext";
 import { globalCSS, G } from "./styles/theme";
 import { HomeView } from "./pages/HomeView";
 import { onAuthChange, signOut } from "./lib/firebase";
+import { ErrorBoundary } from "./components/ErrorBoundary";
 
 // ── Carga diferida de Vistas Secundarias y Admin para optimizar el bundle inicial
 const CatalogView = lazy(() => import("./pages/CatalogView").then(m => ({ default: m.CatalogView })));
@@ -157,7 +158,7 @@ function AppContent() {
       const prod = products.find(
         (p) => String(p.id) === targetId || (Array.isArray(p.variants) && p.variants.some((v) => String(v.id) === targetId || String(v.sku) === targetId))
       );
-      setSelectedProduct(prod || null);
+      setSelectedProduct(prod || { _notFound: true, id: targetId });
     }
   }, [products, selectedProduct?._pendingId]);
 
@@ -228,7 +229,7 @@ function AppContent() {
           <Suspense fallback={<PageFallback />}>
             <ProductDetailView
               setPage={(p) => navigateTo(p)}
-              product={selectedProduct?._pendingId ? null : selectedProduct}
+              product={selectedProduct}
             />
           </Suspense>
         ) : page === "catalog" ? (
@@ -255,13 +256,13 @@ function AppContent() {
 
 export default function App() {
   return (
-    <>
+    <ErrorBoundary>
       {/* Estilos globales inyectados una sola vez */}
       <style>{globalCSS}</style>
 
       <ProductsProvider>
         <AppContent />
       </ProductsProvider>
-    </>
+    </ErrorBoundary>
   );
 }

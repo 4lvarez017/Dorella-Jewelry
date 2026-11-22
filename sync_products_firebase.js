@@ -98,11 +98,16 @@ async function syncToFirebase() {
         ? p.images
         : [p.image || "/pulsera_base.webp"];
 
+      const variants = Array.isArray(p.variants) ? p.variants : [];
       const productDoc = {
         id,
         name: (p.name || "").trim(),
         category: (p.category || "General").trim(),
         price: Number(p.price) || 0,
+        priceMax: p.priceMax !== undefined ? Number(p.priceMax) : (variants.length > 0 ? Math.max(...variants.map(v => Number(v.price) || 0)) : Number(p.price) || 0),
+        hasVariants: Boolean(p.hasVariants || variants.length > 0),
+        variantType: p.variantType || (variants.length > 0 ? "Medida" : null),
+        variants: variants,
         images: imgs,
         image: imgs[0] || "/pulsera_base.webp",
         desc: (p.desc || "").trim(),

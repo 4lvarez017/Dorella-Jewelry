@@ -78,6 +78,8 @@ export function ProductDetailView({ setPage, product }) {
   const [submitError, setSubmitError] = useState(null);
   const [submitting, setSubmitting] = useState(false);
 
+  const totalItems = Array.isArray(cart) ? cart.reduce((acc, item) => acc + (item.qty || 1), 0) : 0;
+
   // Computations for variants
   const selectedVariantsList = hasVariants
     ? product.variants.filter((v) => (variantSelections[v.id] || 0) > 0)
@@ -163,6 +165,77 @@ export function ProductDetailView({ setPage, product }) {
   const averageRating = reviews.length > 0 
     ? (reviews.reduce((acc, curr) => acc + curr.rating, 0) / reviews.length).toFixed(1)
     : "5.0";
+
+  if (!product || product._pendingId) {
+    return (
+      <div
+        style={{
+          background: G.cream,
+          minHeight: "100vh",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          padding: "40px",
+          textAlign: "center",
+          color: G.textDark,
+          fontFamily: "'Jost', sans-serif",
+        }}
+      >
+        <div
+          style={{
+            width: "36px",
+            height: "36px",
+            border: `3px solid rgba(201,168,76,0.2)`,
+            borderTopColor: G.gold,
+            borderRadius: "50%",
+            animation: "spin 0.8s linear infinite",
+            marginBottom: "20px",
+          }}
+        />
+        <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
+        <p className="serif" style={{ fontSize: "24px", color: G.textDark, marginBottom: "8px" }}>
+          Cargando joya...
+        </p>
+        <p style={{ color: G.textMuted, fontSize: "13px" }}>
+          Un momento por favor
+        </p>
+      </div>
+    );
+  }
+
+  if (product._notFound) {
+    return (
+      <div
+        style={{
+          background: G.cream,
+          minHeight: "100vh",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          padding: "40px",
+          textAlign: "center",
+          color: G.textDark,
+          fontFamily: "'Jost', sans-serif",
+        }}
+      >
+        <p className="serif" style={{ fontSize: "32px", color: G.textDark, marginBottom: "16px" }}>
+          Joya no encontrada
+        </p>
+        <p style={{ color: G.textMuted, fontSize: "14px", marginBottom: "24px", maxWidth: "420px", lineHeight: 1.6 }}>
+          La referencia que buscas no se encuentra disponible en el catálogo actual o el enlace ha cambiado.
+        </p>
+        <button
+          className="gold-btn"
+          style={{ padding: "12px 28px", fontSize: "12px", textTransform: "uppercase", letterSpacing: "1.5px" }}
+          onClick={() => setPage("catalog")}
+        >
+          Explorar Catálogo
+        </button>
+      </div>
+    );
+  }
 
   return (
     <div style={{ background: G.cream, minHeight: "100vh", color: G.textDark, fontFamily: "'Jost', sans-serif", position: "relative" }}>
@@ -350,20 +423,20 @@ export function ProductDetailView({ setPage, product }) {
             <div style={{ display: "flex", alignItems: "center", gap: "24px", marginBottom: "24px", paddingBottom: "24px", borderBottom: `1px solid ${G.creamDark}` }}>
               <div>
                 <span style={{ fontSize: "32px", fontWeight: 600, color: G.goldLight }}>
-                  {hasVariants && product.priceMax && product.priceMax > product.price ? (
+                  {hasVariants && product.priceMax && Number(product.priceMax) > Number(product.price) ? (
                     <>
                       <span style={{ fontSize: "14px", fontWeight: 400, color: G.textMuted, marginRight: "6px" }}>
                         Desde
                       </span>
-                      ${product.price.toLocaleString("es-CO")}
+                      ${Number(product.price || 0).toLocaleString("es-CO")}
                     </>
                   ) : (
-                    `$${product.price.toLocaleString("es-CO")}`
+                    `$${Number(product.price || 0).toLocaleString("es-CO")}`
                   )}
                 </span>
-                {hasVariants && product.priceMax && product.priceMax > product.price && (
+                {hasVariants && product.priceMax && Number(product.priceMax) > Number(product.price) && (
                   <span style={{ display: "block", fontSize: "12px", color: G.textMuted, marginTop: "2px" }}>
-                    Rango: ${product.price.toLocaleString("es-CO")} a ${product.priceMax.toLocaleString("es-CO")} según medida
+                    Rango: ${Number(product.price || 0).toLocaleString("es-CO")} a ${Number(product.priceMax || 0).toLocaleString("es-CO")} según medida
                   </span>
                 )}
               </div>
@@ -665,7 +738,7 @@ export function ProductDetailView({ setPage, product }) {
 
                   <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: "12px" }}>
                     <button className="gold-btn" style={{ width: "100%", padding: "16px 20px" }} onClick={handleAddToCart}>
-                      Agregar al Carrito · ${(product.price * qty).toLocaleString("es-CO")}
+                      Agregar al Carrito · ${(Number(product.price || 0) * (Number(qty) || 1)).toLocaleString("es-CO")}
                     </button>
                     <button 
                       className="gold-outline-btn" 
