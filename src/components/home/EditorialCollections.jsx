@@ -20,7 +20,7 @@ const EDITORIAL_CATEGORIES = [
     categoryTarget: "Anillos",
     tagline: "Detalles Eternos",
     desc: "Anillos Alianza, Flicker y Duality creados para ocasiones memorables.",
-    img: "/ANILLOS/ANILLO ALIANZA T5.5.webp",
+    img: "/ANILLOS/premium/anillo_triple_carril_diamantado_full_4mm.webp",
   },
   {
     name: "Aretes",
