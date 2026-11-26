@@ -46,7 +46,7 @@ const GRID_CATEGORIES = [
   { name: "Cruceros",          icon: "⚓", image: "/CRUCEROS/premium/crucero_virgen_de_guadalupe_circonias.webp" },
   { name: "Dijes",             icon: "🔮", image: "/HERRAJES/CHARMING.webp" },
   { name: "Herrajes",          icon: "⚙️", image: "/HERRAJES/premium/h_clover_circonia_8_mm.webp" },
-  { name: "Pulseras",          icon: "💎", image: "/PULSERAS/CUBAN LINK 3.1 MM 19 CM.webp" },
+  { name: "Pulseras",          icon: "💎", image: "/PULSERAS/premium/p_cuban_link_it_3_1_mm_19_cms.webp" },
   { name: "Rosarios",          icon: "📿", image: "/ROSARIOS/ROSARIO BENEDICTUS 43 CM.webp" },
   { name: "Tobilleras",        icon: "🦶", image: "/TOBILLERA/ROMANTIC 23 CM.webp" },
 ];
