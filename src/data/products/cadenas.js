@@ -51,16 +51,24 @@ export const CADENAS = [
     "name": "Continua 4 MM 65 CM",
     "category": "Cadenas",
     "price": 205000,
-    "image": "/CADENAS/CONTINUA 4 MM 65 CM.webp",
-    "desc": "Cadena continua 4mm, 65cm en oro laminado 18k. Referencia 44468."
+    "image": "/CADENAS/premium/c_continua_65_cms_4_mm.webp",
+    "desc": "Cadena continua 4mm, 65cm en oro laminado 18k. Referencia 44468.",
+    "images": [
+      "/CADENAS/premium/c_continua_65_cms_4_mm.webp",
+      "/CADENAS/CONTINUA 4 MM 65 CM.webp"
+    ]
   },
   {
     "id": 404,
     "name": "Cubana Circonios 45 CM",
     "category": "Cadenas",
     "price": 240000,
-    "image": "/CADENAS/CUBANA CIRCONIOS 45 CM.webp",
-    "desc": "Cadena cubana con circonios, 45cm en oro laminado 18k, máximo brillo. Referencia 44006."
+    "image": "/CADENAS/premium/c_cubana_circonios_45_cm_extenso.webp",
+    "desc": "Cadena cubana con circonios, 45cm en oro laminado 18k, máximo brillo. Referencia 44006.",
+    "images": [
+      "/CADENAS/premium/c_cubana_circonios_45_cm_extenso.webp",
+      "/CADENAS/CUBANA CIRCONIOS 45 CM.webp"
+    ]
   },
   {
     "id": 405,
@@ -83,16 +91,24 @@ export const CADENAS = [
     "name": "Espejo Cuadrada 65 CM",
     "category": "Cadenas",
     "price": 230000,
-    "image": "/CADENAS/ESPEJO CUADRADA 65 CM.webp",
-    "desc": "Cadena espejo cuadrada, 65cm en oro laminado 18k, acabado espejo impactante. Referencia 42108."
+    "image": "/CADENAS/premium/c_espejo_mediana_45cms.webp",
+    "desc": "Cadena espejo cuadrada, 65cm en oro laminado 18k, acabado espejo impactante. Referencia 42108.",
+    "images": [
+      "/CADENAS/premium/c_espejo_mediana_45cms.webp",
+      "/CADENAS/ESPEJO CUADRADA 65 CM.webp"
+    ]
   },
   {
     "id": 412,
     "name": "Gypsy + Extensor 35 CM",
     "category": "Cadenas",
     "price": 175000,
-    "image": "/CADENAS/GYPSY + EXTENSOR 35 CM.webp",
-    "desc": "Cadena gypsy con extensor, 35cm en oro laminado 18k, estilo bohemio. Referencia 44000."
+    "image": "/CADENAS/premium/c_gypsy_35_cms_5_cms_extensor.webp",
+    "desc": "Cadena gypsy con extensor, 35cm en oro laminado 18k, estilo bohemio. Referencia 44000.",
+    "images": [
+      "/CADENAS/premium/c_gypsy_35_cms_5_cms_extensor.webp",
+      "/CADENAS/GYPSY + EXTENSOR 35 CM.webp"
+    ]
   },
   {
     "id": 414,
@@ -115,16 +131,24 @@ export const CADENAS = [
     "name": "Serpiente Plana 1 MM 65 CM",
     "category": "Cadenas",
     "price": 185000,
-    "image": "/CADENAS/SERPIENTE PLANA 1 MM 65 CM.webp",
-    "desc": "Cadena serpiente plana 1mm, 65cm en oro laminado 18k. Referencia 44833."
+    "image": "/CADENAS/premium/c_serpiente_plana_delg_1mm_65cm.webp",
+    "desc": "Cadena serpiente plana 1mm, 65cm en oro laminado 18k. Referencia 44833.",
+    "images": [
+      "/CADENAS/premium/c_serpiente_plana_delg_1mm_65cm.webp",
+      "/CADENAS/SERPIENTE PLANA 1 MM 65 CM.webp"
+    ]
   },
   {
     "id": 418,
     "name": "Tejido Chino Doble Carril 65 CM",
     "category": "Cadenas",
     "price": 230000,
-    "image": "/CADENAS/TEJIDO CHINO DOBLE CARRIL 65 CM.webp",
-    "desc": "Cadena tejido chino doble carril, 65cm en oro laminado 18k. Referencia 44888."
+    "image": "/CADENAS/premium/c_t_chino_doble_carril_65cm.webp",
+    "desc": "Cadena tejido chino doble carril, 65cm en oro laminado 18k. Referencia 44888.",
+    "images": [
+      "/CADENAS/premium/c_t_chino_doble_carril_65cm.webp",
+      "/CADENAS/TEJIDO CHINO DOBLE CARRIL 65 CM.webp"
+    ]
   },
   {
     "id": 420,
@@ -140,8 +164,9 @@ export const CADENAS = [
     "category": "Cadenas",
     "price": 550000,
     "priceMax": 900000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45041/PERFIL.webp",
+    "image": "/CADENAS/premium/c_barril_italy_3_mm_45_65_cms.webp",
     "images": [
+      "/CADENAS/premium/c_barril_italy_3_mm_45_65_cms.webp",
       "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45041/PERFIL.webp",
       "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45042/PERFIL.webp",
       "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45043/PERFIL.webp"
@@ -157,7 +182,7 @@ export const CADENAS = [
         "name": "45 cm",
         "price": 550000,
         "stock": 10,
-        "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45041/PERFIL.webp",
+        "image": "/CADENAS/premium/c_barril_italy_3_mm_45_65_cms.webp",
         "desc": "C Barril italy 3 mm 45 Cms en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 45041."
       },
       {
@@ -190,8 +215,9 @@ export const CADENAS = [
     "category": "Cadenas",
     "price": 290000,
     "priceMax": 360000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45021/PERFIL.webp",
+    "image": "/CADENAS/premium/c_barril_nova_it_45_65_cms.webp",
     "images": [
+      "/CADENAS/premium/c_barril_nova_it_45_65_cms.webp",
       "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45021/PERFIL.webp",
       "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45023/PERFIL.webp"
     ],
@@ -206,7 +232,7 @@ export const CADENAS = [
         "name": "45 cm",
         "price": 290000,
         "stock": 10,
-        "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45021/PERFIL.webp",
+        "image": "/CADENAS/premium/c_barril_nova_it_45_65_cms.webp",
         "desc": "C Barril Nova IT 45 Cms en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 45021."
       },
       {
@@ -229,8 +255,9 @@ export const CADENAS = [
     "category": "Cadenas",
     "price": 290000,
     "priceMax": 360000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45071/PERFIL.webp",
+    "image": "/CADENAS/premium/c_barril_prismc_it_45_65_cms.webp",
     "images": [
+      "/CADENAS/premium/c_barril_prismc_it_45_65_cms.webp",
       "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45071/PERFIL.webp",
       "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45073/PERFIL.webp"
     ],
@@ -245,7 +272,7 @@ export const CADENAS = [
         "name": "45 cm",
         "price": 290000,
         "stock": 10,
-        "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45071/PERFIL.webp",
+        "image": "/CADENAS/premium/c_barril_prismc_it_45_65_cms.webp",
         "desc": "C Barril Prismc IT 45 Cms en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 45071."
       },
       {
@@ -268,8 +295,9 @@ export const CADENAS = [
     "category": "Cadenas",
     "price": 290000,
     "priceMax": 360000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45091/PERFIL.webp",
+    "image": "/CADENAS/premium/c_barril_prismc_rose_it_45_cms.webp",
     "images": [
+      "/CADENAS/premium/c_barril_prismc_rose_it_45_cms.webp",
       "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45091/PERFIL.webp",
       "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45093/PERFIL.webp"
     ],
@@ -284,7 +312,7 @@ export const CADENAS = [
         "name": "45 cm",
         "price": 290000,
         "stock": 10,
-        "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45091/PERFIL.webp",
+        "image": "/CADENAS/premium/c_barril_prismc_rose_it_45_cms.webp",
         "desc": "C Barril Prismc Rose IT 45 Cms en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 45091."
       },
       {
@@ -307,8 +335,9 @@ export const CADENAS = [
     "category": "Cadenas",
     "price": 220000,
     "priceMax": 300000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45206/PERFIL.webp",
+    "image": "/CADENAS/premium/c_cubana_cruzada_2_4_mm_65_cms.webp",
     "images": [
+      "/CADENAS/premium/c_cubana_cruzada_2_4_mm_65_cms.webp",
       "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45206/PERFIL.webp",
       "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45208/PERFIL.webp"
     ],
@@ -323,7 +352,7 @@ export const CADENAS = [
         "name": "45 cm",
         "price": 220000,
         "stock": 10,
-        "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45206/PERFIL.webp",
+        "image": "/CADENAS/premium/c_cubana_cruzada_2_4_mm_65_cms.webp",
         "desc": "C Cubana Cruzada 2,4 mm 45 Cms en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 45206."
       },
       {
@@ -346,8 +375,9 @@ export const CADENAS = [
     "category": "Cadenas",
     "price": 130000,
     "priceMax": 200000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45150/PERFIL.webp",
+    "image": "/CADENAS/premium/c_cubanita_it_1_5_mm_45_60_65_cms.webp",
     "images": [
+      "/CADENAS/premium/c_cubanita_it_1_5_mm_45_60_65_cms.webp",
       "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45150/PERFIL.webp",
       "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45151/PERFIL.webp",
       "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45153/PERFIL.webp"
@@ -363,7 +393,7 @@ export const CADENAS = [
         "name": "40 cm",
         "price": 130000,
         "stock": 10,
-        "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45150/PERFIL.webp",
+        "image": "/CADENAS/premium/c_cubanita_it_1_5_mm_45_60_65_cms.webp",
         "desc": "C Cubanita IT 1.5 mm 40 Cms en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 45150."
       },
       {
@@ -396,8 +426,9 @@ export const CADENAS = [
     "category": "Cadenas",
     "price": 75000,
     "priceMax": 120000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/44930/PERFIL.webp",
+    "image": "/CADENAS/premium/c_escalera_45_cms.webp",
     "images": [
+      "/CADENAS/premium/c_escalera_45_cms.webp",
       "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/44930/PERFIL.webp",
       "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/44936/PERFIL.webp"
     ],
@@ -412,7 +443,7 @@ export const CADENAS = [
         "name": "40 cm",
         "price": 75000,
         "stock": 10,
-        "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/44930/PERFIL.webp",
+        "image": "/CADENAS/premium/c_escalera_45_cms.webp",
         "desc": "C Escalera 40 Cms en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 44930."
       },
       {
@@ -474,8 +505,9 @@ export const CADENAS = [
     "category": "Cadenas",
     "price": 320000,
     "priceMax": 440000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45036/PERFIL.webp",
+    "image": "/CADENAS/premium/c_gucci_it_2_5_mm_45_65_cms.webp",
     "images": [
+      "/CADENAS/premium/c_gucci_it_2_5_mm_45_65_cms.webp",
       "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45036/PERFIL.webp",
       "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45038/PERFIL.webp"
     ],
@@ -490,7 +522,7 @@ export const CADENAS = [
         "name": "45 cm",
         "price": 320000,
         "stock": 10,
-        "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45036/PERFIL.webp",
+        "image": "/CADENAS/premium/c_gucci_it_2_5_mm_45_65_cms.webp",
         "desc": "C Gucci IT 2,5 mm 45 Cms en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 45036."
       },
       {
@@ -513,8 +545,9 @@ export const CADENAS = [
     "category": "Cadenas",
     "price": 600000,
     "priceMax": 950000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45081/PERFIL.webp",
+    "image": "/CADENAS/premium/c_ice_2l_it_45_65_cms.webp",
     "images": [
+      "/CADENAS/premium/c_ice_2l_it_45_65_cms.webp",
       "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45081/PERFIL.webp",
       "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45083/PERFIL.webp"
     ],
@@ -529,7 +562,7 @@ export const CADENAS = [
         "name": "45 cm",
         "price": 600000,
         "stock": 10,
-        "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45081/PERFIL.webp",
+        "image": "/CADENAS/premium/c_ice_2l_it_45_65_cms.webp",
         "desc": "C ICE 2L IT 45 Cms en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 45081."
       },
       {
@@ -591,8 +624,9 @@ export const CADENAS = [
     "category": "Cadenas",
     "price": 100000,
     "priceMax": 140000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45061/PERFIL.webp",
+    "image": "/CADENAS/premium/c_marine_it_1_5_mm_65_cms.webp",
     "images": [
+      "/CADENAS/premium/c_marine_it_1_5_mm_65_cms.webp",
       "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45061/PERFIL.webp",
       "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45063/PERFIL.webp"
     ],
@@ -607,7 +641,7 @@ export const CADENAS = [
         "name": "45 cm",
         "price": 100000,
         "stock": 10,
-        "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45061/PERFIL.webp",
+        "image": "/CADENAS/premium/c_marine_it_1_5_mm_65_cms.webp",
         "desc": "C Marine IT 1.5 mm 45 Cms en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 45061."
       },
       {
@@ -630,8 +664,9 @@ export const CADENAS = [
     "category": "Cadenas",
     "price": 200000,
     "priceMax": 260000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45066/PERFIL.webp",
+    "image": "/CADENAS/premium/c_marine_it_2_8_mm_45_65_cms.webp",
     "images": [
+      "/CADENAS/premium/c_marine_it_2_8_mm_45_65_cms.webp",
       "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45066/PERFIL.webp",
       "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45068/PERFIL.webp"
     ],
@@ -646,7 +681,7 @@ export const CADENAS = [
         "name": "45 cm",
         "price": 200000,
         "stock": 10,
-        "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45066/PERFIL.webp",
+        "image": "/CADENAS/premium/c_marine_it_2_8_mm_45_65_cms.webp",
         "desc": "C Marine IT 2.8 mm 45 Cms en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 45066."
       },
       {
@@ -708,8 +743,9 @@ export const CADENAS = [
     "category": "Cadenas",
     "price": 350000,
     "priceMax": 480000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45001/PERFIL.webp",
+    "image": "/CADENAS/premium/c_militar_it_45_65_cms.webp",
     "images": [
+      "/CADENAS/premium/c_militar_it_45_65_cms.webp",
       "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45001/PERFIL.webp",
       "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45003/PERFIL.webp"
     ],
@@ -724,7 +760,7 @@ export const CADENAS = [
         "name": "45 cm",
         "price": 350000,
         "stock": 10,
-        "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45001/PERFIL.webp",
+        "image": "/CADENAS/premium/c_militar_it_45_65_cms.webp",
         "desc": "C Militar Italy IT 45 Cms en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 45001."
       },
       {
@@ -786,8 +822,9 @@ export const CADENAS = [
     "category": "Cadenas",
     "price": 200000,
     "priceMax": 220000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45049/PERFIL.webp",
+    "image": "/CADENAS/premium/singapur_it_1_7_mm_65_cms.webp",
     "images": [
+      "/CADENAS/premium/singapur_it_1_7_mm_65_cms.webp",
       "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45049/PERFIL.webp",
       "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45048/PERFIL.webp"
     ],
@@ -802,7 +839,7 @@ export const CADENAS = [
         "name": "60 cm",
         "price": 200000,
         "stock": 10,
-        "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45049/PERFIL.webp",
+        "image": "/CADENAS/premium/singapur_it_1_7_mm_65_cms.webp",
         "desc": "C Singapur IT 1.7 mm 60 Cms en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 45049."
       },
       {
@@ -825,8 +862,9 @@ export const CADENAS = [
     "category": "Cadenas",
     "price": 330000,
     "priceMax": 460000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45311/PERFIL.webp",
+    "image": "/CADENAS/premium/c_station_redonda_3c_it_45_65_cms.webp",
     "images": [
+      "/CADENAS/premium/c_station_redonda_3c_it_45_65_cms.webp",
       "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45311/PERFIL.webp",
       "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45313/PERFIL.webp"
     ],
@@ -841,7 +879,7 @@ export const CADENAS = [
         "name": "45 cm",
         "price": 330000,
         "stock": 10,
-        "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45311/PERFIL.webp",
+        "image": "/CADENAS/premium/c_station_redonda_3c_it_45_65_cms.webp",
         "desc": "C Station Redonda 3C IT 45 Cms en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 45311."
       },
       {
@@ -864,8 +902,9 @@ export const CADENAS = [
     "category": "Cadenas",
     "price": 200000,
     "priceMax": 250000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/43886/PERFIL.webp",
+    "image": "/CADENAS/premium/c_tejido_chino_3_mm_45_cms.webp",
     "images": [
+      "/CADENAS/premium/c_tejido_chino_3_mm_45_cms.webp",
       "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/43886/PERFIL.webp",
       "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/43888/PERFIL.webp"
     ],
@@ -880,7 +919,7 @@ export const CADENAS = [
         "name": "45 cm",
         "price": 200000,
         "stock": 10,
-        "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/43886/PERFIL.webp",
+        "image": "/CADENAS/premium/c_tejido_chino_3_mm_45_cms.webp",
         "desc": "C Tejido Chino 3 mm 45 Cms en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 43886."
       },
       {
@@ -903,8 +942,9 @@ export const CADENAS = [
     "category": "Cadenas",
     "price": 200000,
     "priceMax": 320000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45026/PERFIL.webp",
+    "image": "/CADENAS/premium/c_arrow_it_2_6_mm_45_cms.webp",
     "images": [
+      "/CADENAS/premium/c_arrow_it_2_6_mm_45_cms.webp",
       "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45026/PERFIL.webp",
       "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45028/PERFIL.webp"
     ],
@@ -919,7 +959,7 @@ export const CADENAS = [
         "name": "45 cm",
         "price": 200000,
         "stock": 10,
-        "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45026/PERFIL.webp",
+        "image": "/CADENAS/premium/c_arrow_it_2_6_mm_45_cms.webp",
         "desc": "C Arrow IT 2.6 mm 45 Cms en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 45026."
       },
       {
@@ -973,8 +1013,12 @@ export const CADENAS = [
     "name": "C Caracol Gruesa 45 Cms",
     "category": "Cadenas",
     "price": 180000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/46521/PERFIL.webp",
-    "desc": "C Caracol Gruesa 45 Cms en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 46521."
+    "image": "/CADENAS/premium/c_caracol_gruesa_45_cms.webp",
+    "desc": "C Caracol Gruesa 45 Cms en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 46521.",
+    "images": [
+      "/CADENAS/premium/c_caracol_gruesa_45_cms.webp",
+      "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/46521/PERFIL.webp"
+    ]
   },
   {
     "id": 47001,
@@ -989,40 +1033,60 @@ export const CADENAS = [
     "name": "C China IT 2 mm 65 Cms",
     "category": "Cadenas",
     "price": 260000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/46883/PERFIL.webp",
-    "desc": "C China IT 2 mm 65 Cms en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 46883."
+    "image": "/CADENAS/premium/c_china_it_2_mm_45_50_60_65_cms.webp",
+    "desc": "C China IT 2 mm 65 Cms en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 46883.",
+    "images": [
+      "/CADENAS/premium/c_china_it_2_mm_45_50_60_65_cms.webp",
+      "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/46883/PERFIL.webp"
+    ]
   },
   {
     "id": 45881,
     "name": "C China IT 5 mm 45 Cms",
     "category": "Cadenas",
     "price": 340000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45881/PERFIL.webp",
-    "desc": "C China IT 5 mm 45 Cms en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 45881."
+    "image": "/CADENAS/premium/c_china_it_5_mm_45_65_cms.webp",
+    "desc": "C China IT 5 mm 45 Cms en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 45881.",
+    "images": [
+      "/CADENAS/premium/c_china_it_5_mm_45_65_cms.webp",
+      "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45881/PERFIL.webp"
+    ]
   },
   {
     "id": 46033,
     "name": "C Cuban Link IT 3,1 mm 65 Cms",
     "category": "Cadenas",
     "price": 450000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/46033/PERFIL.webp",
-    "desc": "C Cuban Link IT 3,1 mm 65 Cms en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 46033."
+    "image": "/CADENAS/premium/c_cuban_link_it_3_1_mm_65_cms.webp",
+    "desc": "C Cuban Link IT 3,1 mm 65 Cms en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 46033.",
+    "images": [
+      "/CADENAS/premium/c_cuban_link_it_3_1_mm_65_cms.webp",
+      "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/46033/PERFIL.webp"
+    ]
   },
   {
     "id": 45078,
     "name": "C Cubana Continua IT 2,3 mm 65 Cms",
     "category": "Cadenas",
     "price": 250000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45078/PERFIL.webp",
-    "desc": "C Cubana Continua IT 2,3 mm 65 Cms en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 45078."
+    "image": "/CADENAS/premium/c_cubana_continua_it_2_3_mm_65_cms.webp",
+    "desc": "C Cubana Continua IT 2,3 mm 65 Cms en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 45078.",
+    "images": [
+      "/CADENAS/premium/c_cubana_continua_it_2_3_mm_65_cms.webp",
+      "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45078/PERFIL.webp"
+    ]
   },
   {
     "id": 45156,
     "name": "C Cubanita IT 1 mm 45 Cms",
     "category": "Cadenas",
     "price": 90000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45156/PERFIL.webp",
-    "desc": "C Cubanita IT 1 mm 45 Cms en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 45156."
+    "image": "/CADENAS/premium/c_cubanita_it_1_mm_65_cms.webp",
+    "desc": "C Cubanita IT 1 mm 45 Cms en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 45156.",
+    "images": [
+      "/CADENAS/premium/c_cubanita_it_1_mm_65_cms.webp",
+      "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45156/PERFIL.webp"
+    ]
   },
   {
     "id": 44753,
@@ -1037,64 +1101,96 @@ export const CADENAS = [
     "name": "C Escalera y Plana 65 Cms",
     "category": "Cadenas",
     "price": 160000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/44873/PERFIL.webp",
-    "desc": "C Escalera y Plana 65 Cms en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 44873."
+    "image": "/CADENAS/premium/c_escalera_y_plana_65_cms.webp",
+    "desc": "C Escalera y Plana 65 Cms en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 44873.",
+    "images": [
+      "/CADENAS/premium/c_escalera_y_plana_65_cms.webp",
+      "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/44873/PERFIL.webp"
+    ]
   },
   {
     "id": 45176,
     "name": "C Escalerita Con Destellos IT 1.7 mm 45 Cms",
     "category": "Cadenas",
     "price": 140000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45176/PERFIL.webp",
-    "desc": "C Escalerita Con Destellos IT 1.7 mm 45 Cms en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 45176."
+    "image": "/CADENAS/premium/c_escalerita_con_destellos_it_1_7_mm_45_cms.webp",
+    "desc": "C Escalerita Con Destellos IT 1.7 mm 45 Cms en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 45176.",
+    "images": [
+      "/CADENAS/premium/c_escalerita_con_destellos_it_1_7_mm_45_cms.webp",
+      "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45176/PERFIL.webp"
+    ]
   },
   {
     "id": 45103,
     "name": "C ICE 3L TRI IT 65 Cms",
     "category": "Cadenas",
     "price": 1300000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45103/PERFIL.webp",
-    "desc": "C ICE 3L TRI IT 65 Cms en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 45103."
+    "image": "/CADENAS/premium/c_ice_3l_tri_it_65_cms.webp",
+    "desc": "C ICE 3L TRI IT 65 Cms en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 45103.",
+    "images": [
+      "/CADENAS/premium/c_ice_3l_tri_it_65_cms.webp",
+      "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45103/PERFIL.webp"
+    ]
   },
   {
     "id": 45088,
     "name": "C ICE GOLD 2L IT 65 Cms",
     "category": "Cadenas",
     "price": 950000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45088/PERFIL.webp",
-    "desc": "C ICE GOLD 2L IT 65 Cms en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 45088."
+    "image": "/CADENAS/premium/c_ice_gold_2l_it_65_cms.webp",
+    "desc": "C ICE GOLD 2L IT 65 Cms en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 45088.",
+    "images": [
+      "/CADENAS/premium/c_ice_gold_2l_it_65_cms.webp",
+      "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45088/PERFIL.webp"
+    ]
   },
   {
     "id": 45303,
     "name": "C Militar Espaciada Ovalada Italy IT 65 Cms",
     "category": "Cadenas",
     "price": 280000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45303/PERFIL.webp",
-    "desc": "C Militar Espaciada Ovalada Italy IT 65 Cms en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 45303."
+    "image": "/CADENAS/premium/c_militar_espaciada_ovalada_italy_it_65_cms.webp",
+    "desc": "C Militar Espaciada Ovalada Italy IT 65 Cms en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 45303.",
+    "images": [
+      "/CADENAS/premium/c_militar_espaciada_ovalada_italy_it_65_cms.webp",
+      "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45303/PERFIL.webp"
+    ]
   },
   {
     "id": 45308,
     "name": "C Militar Ovalada Italy IT 65 Cms",
     "category": "Cadenas",
     "price": 400000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45308/PERFIL.webp",
-    "desc": "C Militar Ovalada Italy IT 65 Cms en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 45308."
+    "image": "/CADENAS/premium/c_militar_ovalada_italy_it_65_cms.webp",
+    "desc": "C Militar Ovalada Italy IT 65 Cms en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 45308.",
+    "images": [
+      "/CADENAS/premium/c_militar_ovalada_italy_it_65_cms.webp",
+      "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45308/PERFIL.webp"
+    ]
   },
   {
     "id": 45223,
     "name": "C Tube Gold IT 65 Cms",
     "category": "Cadenas",
     "price": 280000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45223/PERFIL.webp",
-    "desc": "C Tube Gold IT 65 Cms en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 45223."
+    "image": "/CADENAS/premium/c_tube_gold_it_65_cms.webp",
+    "desc": "C Tube Gold IT 65 Cms en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 45223.",
+    "images": [
+      "/CADENAS/premium/c_tube_gold_it_65_cms.webp",
+      "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45223/PERFIL.webp"
+    ]
   },
   {
     "id": 45213,
     "name": "C Tube Rose IT 65 Cms",
     "category": "Cadenas",
     "price": 280000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45213/PERFIL.webp",
-    "desc": "C Tube Rose IT 65 Cms en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 45213."
+    "image": "/CADENAS/premium/c_tube_rose_it_65_cms.webp",
+    "desc": "C Tube Rose IT 65 Cms en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 45213.",
+    "images": [
+      "/CADENAS/premium/c_tube_rose_it_65_cms.webp",
+      "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45213/PERFIL.webp"
+    ]
   },
   {
     "id": 45101,
@@ -1109,7 +1205,11 @@ export const CADENAS = [
     "name": "C Veneciana IT 0.7 mm 45 Cms",
     "category": "Cadenas",
     "price": 100000,
-    "image": "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45761/PERFIL.webp",
-    "desc": "C Veneciana IT 0.7 mm 45 Cms en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 45761."
+    "image": "/CADENAS/premium/c_veneciana_it_0_7_mm_45_cms.webp",
+    "desc": "C Veneciana IT 0.7 mm 45 Cms en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 45761.",
+    "images": [
+      "/CADENAS/premium/c_veneciana_it_0_7_mm_45_cms.webp",
+      "https://belatrizcolombia.com/app/public/template/shop/img/img_productos/45761/PERFIL.webp"
+    ]
   }
 ];

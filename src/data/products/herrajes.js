@@ -7,6 +7,7 @@ export const HERRAJES = [
     "priceMax": 90000,
     "image": "/HERRAJES/BOLA DE FUEGO 5 MM CRISTAL.webp",
     "images": [
+      "/HERRAJES/premium/h_bola_de_fuego_6_mm_cristal.webp",
       "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/uploads/productos/55ed8751-11bf-4f40-b834-2d58b8c1622f/1788377058983-mx3d40.webp",
       "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/uploads/productos/55ed8751-11bf-4f40-b834-2d58b8c1622f/1788377046738-vjqyb4.webp",
       "/HERRAJES/BOLA DE FUEGO 5 MM CRISTAL.webp"
@@ -22,8 +23,12 @@ export const HERRAJES = [
         "name": "6 mm",
         "price": 50000,
         "stock": 10,
-        "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/uploads/productos/55ed8751-11bf-4f40-b834-2d58b8c1622f/1788377058983-mx3d40.webp",
-        "desc": "Bola de fuego cristal 6mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 20002."
+        "image": "/HERRAJES/premium/h_bola_de_fuego_6_mm_cristal.webp",
+        "desc": "Bola de fuego cristal 6mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 20002.",
+        "images": [
+          "/HERRAJES/premium/h_bola_de_fuego_6_mm_cristal.webp",
+          "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/uploads/productos/55ed8751-11bf-4f40-b834-2d58b8c1622f/1788377058983-mx3d40.webp"
+        ]
       },
       {
         "id": "20001",
@@ -55,8 +60,9 @@ export const HERRAJES = [
     "category": "Herrajes",
     "price": 30000,
     "priceMax": 95000,
-    "image": "/HERRAJES/RONDEL CIRCONIAS X3 4 MM NEGRO.webp",
+    "image": "/HERRAJES/premium/h_rondel_circonias_5mm_x_3u_negro.webp",
     "images": [
+      "/HERRAJES/premium/h_rondel_circonias_5mm_x_3u_negro.webp",
       "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/uploads/productos/55ed8751-11bf-4f40-b834-2d58b8c1622f/1789403890252-6bw03i.webp",
       "/HERRAJES/RONDEL CIRCONIAS X3 4 MM NEGRO.webp"
     ],
@@ -71,8 +77,12 @@ export const HERRAJES = [
         "name": "5 mm (x3)",
         "price": 30000,
         "stock": 10,
-        "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/uploads/productos/55ed8751-11bf-4f40-b834-2d58b8c1622f/1789403890252-6bw03i.webp",
-        "desc": "Rondel Negro 5mm (paquete x 3 unidades) en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 24800-N1."
+        "image": "/HERRAJES/premium/h_rondel_circonias_5mm_x_3u_negro.webp",
+        "desc": "Rondel Negro 5mm (paquete x 3 unidades) en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 24800-N1.",
+        "images": [
+          "/HERRAJES/premium/h_rondel_circonias_5mm_x_3u_negro.webp",
+          "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/uploads/productos/55ed8751-11bf-4f40-b834-2d58b8c1622f/1789403890252-6bw03i.webp"
+        ]
       },
       {
         "id": "508",
@@ -94,8 +104,10 @@ export const HERRAJES = [
     "category": "Herrajes",
     "price": 25000,
     "priceMax": 98000,
-    "image": "/HERRAJES/RONDEL CIRCONIAS X3 5 MM CRISTAL.webp",
+    "image": "/HERRAJES/premium/h_rondel_circonias_x_3_4_mm_cristal.webp",
     "images": [
+      "/HERRAJES/premium/h_rondel_circonias_x_3_4_mm_cristal.webp",
+      "/HERRAJES/premium/h_rondel_circonias_5mm_x_3u_cristal.webp",
       "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/uploads/productos/55ed8751-11bf-4f40-b834-2d58b8c1622f/1789403834658-a4rmrg.webp",
       "/HERRAJES/RONDEL CIRCONIAS X3 5 MM CRISTAL.webp"
     ],
@@ -110,8 +122,12 @@ export const HERRAJES = [
         "name": "4 mm (x3)",
         "price": 25000,
         "stock": 10,
-        "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/uploads/productos/55ed8751-11bf-4f40-b834-2d58b8c1622f/1789403834658-a4rmrg.webp",
-        "desc": "Rondel Cristal 4mm (paquete x 3 unidades) en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 24799-C1."
+        "image": "/HERRAJES/premium/h_rondel_circonias_x_3_4_mm_cristal.webp",
+        "desc": "Rondel Cristal 4mm (paquete x 3 unidades) en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 24799-C1.",
+        "images": [
+          "/HERRAJES/premium/h_rondel_circonias_x_3_4_mm_cristal.webp",
+          "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/uploads/productos/55ed8751-11bf-4f40-b834-2d58b8c1622f/1789403834658-a4rmrg.webp"
+        ]
       },
       {
         "id": "509",
@@ -120,8 +136,12 @@ export const HERRAJES = [
         "name": "5 mm (x3)",
         "price": 98000,
         "stock": 10,
-        "image": "/HERRAJES/RONDEL CIRCONIAS X3 5 MM CRISTAL.webp",
-        "desc": "Set de 3 rondeles con circonias cristal 5mm en oro laminado 18k. Referencia 24800-C1."
+        "image": "/HERRAJES/premium/h_rondel_circonias_5mm_x_3u_cristal.webp",
+        "desc": "Set de 3 rondeles con circonias cristal 5mm en oro laminado 18k. Referencia 24800-C1.",
+        "images": [
+          "/HERRAJES/premium/h_rondel_circonias_5mm_x_3u_cristal.webp",
+          "/HERRAJES/RONDEL CIRCONIAS X3 5 MM CRISTAL.webp"
+        ]
       }
     ],
     "stock": 20,
@@ -132,24 +152,36 @@ export const HERRAJES = [
     "name": "Cruz 15 MM",
     "category": "Herrajes",
     "price": 100000,
-    "image": "/HERRAJES/CRUZ 15 MM.webp",
-    "desc": "Herraje cruz 15mm en oro laminado 18k, símbolo de fe con acabado impecable. Referencia 20033."
+    "image": "/HERRAJES/premium/h_cruz_mini_11_mm.webp",
+    "desc": "Herraje cruz 15mm en oro laminado 18k, símbolo de fe con acabado impecable. Referencia 20033.",
+    "images": [
+      "/HERRAJES/premium/h_cruz_mini_11_mm.webp",
+      "/HERRAJES/CRUZ 15 MM.webp"
+    ]
   },
   {
     "id": 503,
     "name": "Clover Circonia 8MM",
     "category": "Herrajes",
     "price": 105000,
-    "image": "/HERRAJES/CLOVER CIRCONIA 8MM.webp",
-    "desc": "Herraje trébol circonia 8mm en oro laminado 18k, suerte y elegancia en cada detalle. Referencia 20099."
+    "image": "/HERRAJES/premium/h_clover_circonia_8_mm.webp",
+    "desc": "Herraje trébol circonia 8mm en oro laminado 18k, suerte y elegancia en cada detalle. Referencia 20099.",
+    "images": [
+      "/HERRAJES/premium/h_clover_circonia_8_mm.webp",
+      "/HERRAJES/CLOVER CIRCONIA 8MM.webp"
+    ]
   },
   {
     "id": 504,
     "name": "Corazón Circonia",
     "category": "Herrajes",
     "price": 92000,
-    "image": "/HERRAJES/CORAZON CIRCONIA.webp",
-    "desc": "Herraje corazón con circonia en oro laminado 18k, romántico y brillante. Referencia 20360-CORAZON."
+    "image": "/HERRAJES/premium/h_corazon_circonia.webp",
+    "desc": "Herraje corazón con circonia en oro laminado 18k, romántico y brillante. Referencia 20360-CORAZON.",
+    "images": [
+      "/HERRAJES/premium/h_corazon_circonia.webp",
+      "/HERRAJES/CORAZON CIRCONIA.webp"
+    ]
   },
   {
     "id": "20058",
@@ -257,8 +289,9 @@ export const HERRAJES = [
     "category": "Herrajes",
     "price": 25000,
     "priceMax": 30000,
-    "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/uploads/productos/55ed8751-11bf-4f40-b834-2d58b8c1622f/1789403865018-qf69f8.webp",
+    "image": "/HERRAJES/premium/h_rondel_circonias_5mm_x_3u_verde.webp",
     "images": [
+      "/HERRAJES/premium/h_rondel_circonias_5mm_x_3u_verde.webp",
       "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/uploads/productos/55ed8751-11bf-4f40-b834-2d58b8c1622f/1789403865018-qf69f8.webp",
       "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/uploads/productos/55ed8751-11bf-4f40-b834-2d58b8c1622f/1789403901478-ooupxm.webp"
     ],
@@ -283,8 +316,12 @@ export const HERRAJES = [
         "name": "5 mm (x3)",
         "price": 30000,
         "stock": 10,
-        "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/uploads/productos/55ed8751-11bf-4f40-b834-2d58b8c1622f/1789403901478-ooupxm.webp",
-        "desc": "Rondel Verde 5mm (paquete x 3 unidades) en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 24800-V1."
+        "image": "/HERRAJES/premium/h_rondel_circonias_5mm_x_3u_verde.webp",
+        "desc": "Rondel Verde 5mm (paquete x 3 unidades) en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 24800-V1.",
+        "images": [
+          "/HERRAJES/premium/h_rondel_circonias_5mm_x_3u_verde.webp",
+          "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/uploads/productos/55ed8751-11bf-4f40-b834-2d58b8c1622f/1789403901478-ooupxm.webp"
+        ]
       }
     ],
     "stock": 20,
@@ -375,8 +412,12 @@ export const HERRAJES = [
     "name": "Clover Sol Mediano",
     "category": "Herrajes",
     "price": 55000,
-    "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/20027/perfil.webp",
-    "desc": "Clover Sol Mediano en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 20027."
+    "image": "/HERRAJES/premium/h_clover_sol.webp",
+    "desc": "Clover Sol Mediano en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 20027.",
+    "images": [
+      "/HERRAJES/premium/h_clover_sol.webp",
+      "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/20027/perfil.webp"
+    ]
   },
   {
     "id": 20026,
@@ -471,8 +512,12 @@ export const HERRAJES = [
     "name": "Herradura Caballo",
     "category": "Herrajes",
     "price": 50000,
-    "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/20035/perfil.webp",
-    "desc": "Herradura Caballo en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 20035."
+    "image": "/HERRAJES/premium/h_fortune.webp",
+    "desc": "Herradura Caballo en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 20035.",
+    "images": [
+      "/HERRAJES/premium/h_fortune.webp",
+      "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/20035/perfil.webp"
+    ]
   },
   {
     "id": 20048,
@@ -503,8 +548,12 @@ export const HERRAJES = [
     "name": "Herraje Clover Sol",
     "category": "Herrajes",
     "price": 45000,
-    "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/uploads/productos/55ed8751-11bf-4f40-b834-2d58b8c1622f/1783791580911-hjeyh0.webp",
-    "desc": "Herraje Clover Sol en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 20067."
+    "image": "/HERRAJES/premium/h_clover_sol_esfera_cristal.webp",
+    "desc": "Herraje Clover Sol en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 20067.",
+    "images": [
+      "/HERRAJES/premium/h_clover_sol_esfera_cristal.webp",
+      "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/uploads/productos/55ed8751-11bf-4f40-b834-2d58b8c1622f/1783791580911-hjeyh0.webp"
+    ]
   },
   {
     "id": "20062-1",
@@ -991,8 +1040,12 @@ export const HERRAJES = [
     "name": "Herraje San Benito Luxe",
     "category": "Herrajes",
     "price": 30000,
-    "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/uploads/productos/394e32d5-fc09-4bdf-bfb0-c84cd13e4a79/1779732882199-sab3p7.webp",
-    "desc": "Herraje San Benito Luxe en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 20040."
+    "image": "/HERRAJES/premium/h_san_benito.webp",
+    "desc": "Herraje San Benito Luxe en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 20040.",
+    "images": [
+      "/HERRAJES/premium/h_san_benito.webp",
+      "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/uploads/productos/394e32d5-fc09-4bdf-bfb0-c84cd13e4a79/1779732882199-sab3p7.webp"
+    ]
   },
   {
     "id": "23103-1",
@@ -1095,8 +1148,12 @@ export const HERRAJES = [
     "name": "Rondel Lux 6mm",
     "category": "Herrajes",
     "price": 40000,
-    "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/uploads/productos/55ed8751-11bf-4f40-b834-2d58b8c1622f/1788377339738-edj7gm.webp",
-    "desc": "Rondel Lux 6mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 20003."
+    "image": "/HERRAJES/premium/h_redondo_1_linea.webp",
+    "desc": "Rondel Lux 6mm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 20003.",
+    "images": [
+      "/HERRAJES/premium/h_redondo_1_linea.webp",
+      "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/uploads/productos/55ed8751-11bf-4f40-b834-2d58b8c1622f/1788377339738-edj7gm.webp"
+    ]
   },
   {
     "id": "24801-4MM",
@@ -1119,8 +1176,12 @@ export const HERRAJES = [
     "name": "San Benito 1cm",
     "category": "Herrajes",
     "price": 45000,
-    "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/uploads/productos/394e32d5-fc09-4bdf-bfb0-c84cd13e4a79/1776728497072-dfac0n.webp",
-    "desc": "San Benito 1cm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 24477-1."
+    "image": "/HERRAJES/premium/h_san_benito_10_mm.webp",
+    "desc": "San Benito 1cm en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 24477-1.",
+    "images": [
+      "/HERRAJES/premium/h_san_benito_10_mm.webp",
+      "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/uploads/productos/394e32d5-fc09-4bdf-bfb0-c84cd13e4a79/1776728497072-dfac0n.webp"
+    ]
   },
   {
     "id": 20089,
@@ -1159,8 +1220,12 @@ export const HERRAJES = [
     "name": "San Benito Mini",
     "category": "Herrajes",
     "price": 38000,
-    "image": "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/23102-1/perfil.webp",
-    "desc": "San Benito Mini en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 23102-1."
+    "image": "/HERRAJES/premium/h_san_benito_8_mm.webp",
+    "desc": "San Benito Mini en oro laminado 18k. Diseño exclusivo y de alta durabilidad. Referencia 23102-1.",
+    "images": [
+      "/HERRAJES/premium/h_san_benito_8_mm.webp",
+      "https://oepxxlqvfxkwgwjchkzz.supabase.co/storage/v1/object/public/productos/23102-1/perfil.webp"
+    ]
   },
   {
     "id": 20095,

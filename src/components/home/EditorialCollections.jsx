@@ -13,7 +13,7 @@ const EDITORIAL_CATEGORIES = [
     categoryTarget: "Cadenas",
     tagline: "Presencia e Impacto",
     desc: "Cubana Sol, Franco y Serpiente con acabado brillante impecable.",
-    img: "/CADENAS/CUBANA SOL 65 CM.webp",
+    img: "/CADENAS/premium/c_tejido_egipcio_40_cms_extensor.webp",
   },
   {
     name: "Anillos",
