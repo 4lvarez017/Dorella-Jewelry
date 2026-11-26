@@ -47,8 +47,8 @@ const GRID_CATEGORIES = [
   { name: "Dijes",             icon: "🔮", image: "/HERRAJES/CHARMING.webp" },
   { name: "Herrajes",          icon: "⚙️", image: "/HERRAJES/premium/h_clover_circonia_8_mm.webp" },
   { name: "Pulseras",          icon: "💎", image: "/PULSERAS/premium/p_cuban_link_it_3_1_mm_19_cms.webp" },
-  { name: "Rosarios",          icon: "📿", image: "/ROSARIOS/ROSARIO BENEDICTUS 43 CM.webp" },
-  { name: "Tobilleras",        icon: "🦶", image: "/TOBILLERA/ROMANTIC 23 CM.webp" },
+  { name: "Rosarios",          icon: "📿", image: "/ROSARIOS/premium/rosario_benedictus_43_cms_ext.webp" },
+  { name: "Tobilleras",        icon: "🦶", image: "/TOBILLERAS/premium/t_tejido_chino_3_mm_24_5_cms.webp" },
 ];
 
 
