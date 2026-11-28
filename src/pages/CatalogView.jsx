@@ -35,7 +35,7 @@ export function CartFab({ totalItems, onClick }) {
 // ─── Vista de Catálogo ────────────────────────────────────────────────────────
 const GRID_CATEGORIES = [
   { name: "Anillos",           icon: "💍", image: "/ANILLOS/premium/anillo_triple_carril_diamantado_full_4mm.webp" },
-  { name: "Aretes",            icon: "🌙", image: "/ARETES/AMORE HALO 9 MM.webp" },
+  { name: "Aretes",            icon: "🌙", image: "/ARETES/premium/topos_cristalia.webp" },
   { name: "Brazaletes Hombre", icon: "🪙", image: "/BRAZALETES HOMBRE/FULL DIAMANTADO 8 MM.webp" },
   { name: "Brazaletes Mujer",  icon: "🪙", image: "/BRAZALETES MUJER/B. LISO ROSA FULL 4 MM.webp" },
   { name: "Brazaletes Niñas",  icon: "🪙", image: "/BRAZALETES MUJER/B. LISO ROSA FULL 4 MM.webp" },
