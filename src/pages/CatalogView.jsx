@@ -37,7 +37,7 @@ const GRID_CATEGORIES = [
   { name: "Anillos",           icon: "💍", image: "/ANILLOS/premium/anillo_triple_carril_diamantado_full_4mm.webp" },
   { name: "Aretes",            icon: "🌙", image: "/ARETES/premium/topos_cristalia.webp" },
   { name: "Brazaletes Hombre", icon: "🪙", image: "/BRAZALETES HOMBRE/premium/ph036_full_diamantado_8mm.webp" },
-  { name: "Brazaletes Mujer",  icon: "🪙", image: "/BRAZALETES MUJER/B. LISO ROSA FULL 4 MM.webp" },
+  { name: "Brazaletes Mujer",  icon: "🪙", image: "/BRAZALETES MUJER/premium/pm22_full_balin_rosado_4mm.webp" },
   { name: "Brazaletes Niñas",  icon: "🪙", image: "/BRAZALETES MUJER/B. LISO ROSA FULL 4 MM.webp" },
   { name: "Brazaletes Niños",  icon: "🪙", image: "/BRAZALETES HOMBRE/BALIN 8 MM.webp" },
   { name: "Brazaletes Pareja", icon: "🪙", image: "/BRAZALETES MUJER/B. LISO 6 MM Y 4 MM.webp" },
