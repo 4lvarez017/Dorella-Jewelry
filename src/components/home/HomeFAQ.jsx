@@ -15,7 +15,7 @@ const FAQS = [
   },
   {
     q: "¿Cómo comprar joyas con garantía y cuánto tarda el envío en Colombia?",
-    a: "Dorella Jewelry ofrece garantía formal por escrito sobre la inalterabilidad del tono y brillo del oro 18K. Los envíos asegurados tardan de 24 a 48 horas hábiles en ciudades principales y de 3 a 5 días en el resto de Colombia. Puedes comprar con pasarela segura o mediante asesoría personalizada directa en WhatsApp (+57 313 240 3081).",
+    a: "Dorella Jewelry ofrece garantía formal por escrito sobre la inalterabilidad del tono y brillo del oro 18K. Los envíos asegurados tardan de 24 a 48 horas hábiles en ciudades principales y de 3 a 5 días en el resto de Colombia. Puedes comprar con pasarela segura o mediante asesoría personalizada directa en WhatsApp (+57 3011030470).",
     tag: "Garantía & Envíos",
   },
   {

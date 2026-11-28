@@ -525,13 +525,13 @@ export function ProductosTab({
             <div>
               <p style={{ margin: "4px 0" }}>
                 📞 <strong>Teléfono de Soporte:</strong>{" "}
-                <a href="tel:+573132403081" style={{ color: A.goldDark, fontWeight: 600, textDecoration: "none" }}>
-                  +57 313 240 3081
+                <a href="tel:+573011030470" style={{ color: A.goldDark, fontWeight: 600, textDecoration: "none" }}>
+                  +57 3011030470
                 </a>
               </p>
               <p style={{ margin: "4px 0" }}>
                 💬 <strong>WhatsApp Inmediato:</strong>{" "}
-                <a href="https://wa.me/573132403081" target="_blank" rel="noopener noreferrer" style={{ color: "#25D366", fontWeight: 600, textDecoration: "none" }}>
+                <a href="https://wa.me/573011030470" target="_blank" rel="noopener noreferrer" style={{ color: "#25D366", fontWeight: 600, textDecoration: "none" }}>
                   Contactar por WhatsApp Directo ↗
                 </a>
               </p>

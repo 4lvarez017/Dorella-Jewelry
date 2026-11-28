@@ -53,6 +53,6 @@ export const CATEGORIES = [
 ];
 
 // ─── NÚMERO DE WHATSAPP ───────────────────────────────────────────────────────
-export const WHATSAPP_NUMBER = "573132403081";
+export const WHATSAPP_NUMBER = "573011030470";
 
 

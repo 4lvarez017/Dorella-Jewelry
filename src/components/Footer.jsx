@@ -89,11 +89,11 @@ export function Footer() {
             <p style={{ margin: "2px 0" }}>
               📱 Tel:{" "}
               <a
-                href="tel:+573132403081"
+                href="tel:+573011030470"
                 style={{ color: "rgba(255,255,255,0.85)", textDecoration: "none", fontWeight: 500 }}
                 title="Llamar a Dorella Jewelry"
               >
-                +57 313 240 3081
+                +57 3011030470
               </a>
             </p>
             <p style={{ margin: "2px 0" }}>
@@ -105,7 +105,7 @@ export function Footer() {
                 style={{ color: G.gold, textDecoration: "underline" }}
                 title="Escribir por WhatsApp a Dorella Jewelry"
               >
-                Chat Directo (+57 313 240 3081)
+                Chat Directo (+57 3011030470)
               </a>
             </p>
             <p style={{ margin: "4px 0", color: "rgba(255,255,255,0.5)", fontSize: "12px" }}>

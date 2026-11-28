@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { G } from "../../styles/theme";
+import { WHATSAPP_NUMBER } from "../../data/constants";
 
 export function HomeNavbar({ onNavigate, onSelectCategory, cartCount = 0, onOpenCart }) {
   const [scrolled, setScrolled] = useState(false);
@@ -142,9 +143,11 @@ export function HomeNavbar({ onNavigate, onSelectCategory, cartCount = 0, onOpen
             Catálogo
           </a>
 
-          {/* Enlace telefónico directo (SEO Local / NAP) */}
+          {/* Botón de contacto directo superior derecho (WhatsApp / Atención al Cliente) */}
           <a
-            href="tel:+573132403081"
+            href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hola Dorella Jewelry, quisiera recibir asesoría personalizada.")}`}
+            target="_blank"
+            rel="noopener noreferrer"
             className="nav-phone-btn"
             style={{
               display: "inline-flex",
@@ -158,12 +161,13 @@ export function HomeNavbar({ onNavigate, onSelectCategory, cartCount = 0, onOpen
               borderRadius: "20px",
               border: `1px solid ${G.gold}50`,
               background: "rgba(201, 168, 76, 0.08)",
+              cursor: "pointer",
               transition: "all 0.25s ease",
             }}
-            title="Llamar a atención al cliente Dorella Jewelry"
+            title="Contactar por WhatsApp a Dorella Jewelry (+57 3011030470)"
           >
             <span>📞</span>
-            <span>+57 313 240 3081</span>
+            <span>+57 3011030470</span>
           </a>
 
           {/* Cart Button */}
@@ -345,7 +349,10 @@ export function HomeNavbar({ onNavigate, onSelectCategory, cartCount = 0, onOpen
 
           <div style={{ marginTop: "auto", display: "flex", flexDirection: "column", gap: "12px" }}>
             <a
-              href="tel:+573132403081"
+              href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hola Dorella Jewelry, quisiera recibir asesoría personalizada.")}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMobileMenuOpen(false)}
               style={{
                 display: "flex",
                 alignItems: "center",
@@ -361,7 +368,7 @@ export function HomeNavbar({ onNavigate, onSelectCategory, cartCount = 0, onOpen
                 background: "rgba(201, 168, 76, 0.08)",
               }}
             >
-              <span>📞 Llamar: +57 313 240 3081</span>
+              <span>📞 Contacto: +57 3011030470</span>
             </a>
             <button
               className="gold-btn"
@@ -396,6 +403,13 @@ export function HomeNavbar({ onNavigate, onSelectCategory, cartCount = 0, onOpen
         }
         .nav-link-item:hover {
           color: ${G.goldLight};
+        }
+        .nav-phone-btn:hover {
+          border-color: ${G.gold} !important;
+          background: rgba(201, 168, 76, 0.2) !important;
+          color: ${G.goldLight} !important;
+          transform: translateY(-1px);
+          box-shadow: 0 4px 14px rgba(201, 168, 76, 0.2);
         }
         .nav-gold-cta {
           background: linear-gradient(135deg, ${G.gold} 0%, ${G.goldLight} 50%, ${G.gold} 100%);

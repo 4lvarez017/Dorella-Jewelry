@@ -483,7 +483,7 @@ export function CatalogView({ setPage, activeCategory, setActiveCategory, onView
                 <ul style={{ paddingLeft: "20px", fontSize: "13px", lineHeight: 1.9, margin: 0 }}>
                   <li><strong>Largo de Cadenas:</strong> Disponibles en 40 cm (choker/gargantilla), 45 cm, 50 cm (estándar pecho), 60 cm y 70 cm.</li>
                   <li><strong>Tallas de Anillos:</strong> Fabricación en tallas estándar del 5 al 12 con calibración de precisión.</li>
-                  <li><strong>Asesoría Personalizada:</strong> Si tienes dudas con tu medida, nuestro equipo te guía en vivo a través de <a href="https://wa.me/573132403081" target="_blank" rel="noopener noreferrer" style={{ color: G.gold, textDecoration: "underline" }}>WhatsApp al +57 313 240 3081</a>.</li>
+                  <li><strong>Asesoría Personalizada:</strong> Si tienes dudas con tu medida, nuestro equipo te guía en vivo a través de <a href="https://wa.me/573011030470" target="_blank" rel="noopener noreferrer" style={{ color: G.gold, textDecoration: "underline" }}>WhatsApp al +57 3011030470</a>.</li>
                 </ul>
               </div>
 
@@ -520,7 +520,7 @@ export function CatalogView({ setPage, activeCategory, setActiveCategory, onView
                       ¿Cómo saber la talla o medida exacta antes de comprar en el catálogo?
                     </h3>
                     <p style={{ fontSize: "13px", lineHeight: 1.7, margin: 0 }}>
-                      El catálogo especifica el largo en centímetros para cadenas (40 a 70 cm) y pulseras (18 a 22 cm), así como el número de talla estándar para anillos (5 a 12). Para verificar la medida exacta sin margen de error, los clientes disponen de asesoría en tiempo real a través de WhatsApp (+57 313 240 3081) con tablas de equivalencia biométrica.
+                      El catálogo especifica el largo en centímetros para cadenas (40 a 70 cm) y pulseras (18 a 22 cm), así como el número de talla estándar para anillos (5 a 12). Para verificar la medida exacta sin margen de error, los clientes disponen de asesoría en tiempo real a través de WhatsApp (+57 3011030470) con tablas de equivalencia biométrica.
                     </p>
                   </div>
 
