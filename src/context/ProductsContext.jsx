@@ -10,7 +10,7 @@ import { PRODUCTS as FALLBACK_PRODUCTS } from "../data/constants";
 
 function getInitialProducts() {
   try {
-    const cached = localStorage.getItem("dorella_products_cache_v2");
+    const cached = localStorage.getItem("dorella_products_cache_v3");
     if (cached) {
       const parsed = JSON.parse(cached);
       if (Array.isArray(parsed) && parsed.length > 0) return parsed;
@@ -94,7 +94,8 @@ export function ProductsProvider({ children }) {
 
       setProducts(formatted);
       try {
-        localStorage.setItem("dorella_products_cache_v2", JSON.stringify(formatted));
+        localStorage.setItem("dorella_products_cache_v3", JSON.stringify(formatted));
+        localStorage.removeItem("dorella_products_cache_v2");
         localStorage.removeItem("dorella_products_cache");
       } catch {
         // ignore
